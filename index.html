@@ -79,7 +79,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><g fill="%23D5D8DC" fill-opacity=".2"><path d="M0 50 L50 0 L100 50 L50 100 Z"/></g></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><g fill="%23D5D8DC" fill-opacity=".2"><path d="M0 50 L50 0 L100 50 L50 100 Z"/ ></g></svg>');
             animation: starlight 300s linear infinite;
         }
 
@@ -458,6 +458,58 @@
             font-weight: bold;
         }
 
+        .archives-section {
+            background-color: #FFFFFF;
+            text-align: center;
+            padding: 100px 20%;
+        }
+
+        .archives-section h2 {
+            font-family: 'Cinzel', serif;
+            color: #1A3A5F;
+        }
+
+        .archives-section .book-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            gap: 40px;
+        }
+
+        .archives-section .book {
+            width: 250px;
+            text-align: center;
+        }
+
+        .archives-section .book-cover {
+            background-color: #1A3A5F;
+            color: #D5D8DC;
+            padding: 40px 20px;
+            border-radius: 5px;
+            border-left: 10px solid #D5D8DC; /* Silver spine */
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .archives-section .book-cover h3 {
+            color: #D5D8DC;
+        }
+
+        .archives-section .download-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: 2px solid #D5D8DC;
+            color: #1A3A5F;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            background-color: #D5D8DC;
+        }
+
         .pillars-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
@@ -519,11 +571,11 @@
             .pillars-grid {
                 grid-template-columns: 1fr;
             }
-            .timeline {
+            .timeline, .archives-section .book-grid {
                 flex-direction: column;
                 align-items: center;
             }
-            .strategy-hub, .contact-section {
+            .strategy-hub, .contact-section, .archives-section {
                 padding: 60px 20px;
             }
             .haven-outfitters-section .merch-grid {
@@ -718,6 +770,34 @@
             </div>
         </div>
         <a href="#" class="cta-button">[Support the Land Acquisition Fund]</a>
+    </section>
+
+    <section class="archives-section">
+        <h2>THE HAVEN ARCHIVES: OUR BLUEPRINTS</h2>
+        <p>Transparency is the foundation of integrity. Explore our comprehensive whitepapers to understand the full scope of our vision and operations.</p>
+        <div class="book-grid">
+            <div class="book">
+                <div class="book-cover">
+                    <h3>Glow’s Haven Master Whitepaper</h3>
+                    <p>Sanctuary, Branding, and LLC Ecosystem</p>
+                </div>
+                <a href="#" class="download-button">[Download PDF]</a>
+            </div>
+            <div class="book">
+                <div class="book-cover">
+                    <h3>Wings DAO Litepaper</h3>
+                    <p>Professional Strategy, Operations, and Governance</p>
+                </div>
+                <a href="#" class="download-button">[Download PDF]</a>
+            </div>
+            <div class="book">
+                <div class="book-cover">
+                    <h3>Sea Haven Whitepaper</h3>
+                    <p>Legacy, Ocean Conservation, and 3D Literacy</p>
+                </div>
+                <a href="#" class="download-button">[Download PDF]</a>
+            </div>
+        </div>
     </section>
 
     <section class="pillars-grid">
