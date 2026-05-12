@@ -340,6 +340,62 @@
             border-radius: 10px;
         }
 
+        .contact-section {
+            background-color: #1A3A5F;
+            color: #D5D8DC;
+            padding: 100px 20%;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-family: 'Cinzel', serif;
+            color: #D5D8DC;
+        }
+
+        .contact-section .sub-header {
+            font-family: 'La Belle Aurore', cursive;
+            font-size: 1.8em;
+            margin-bottom: 40px;
+        }
+
+        .contact-section form input, .contact-section form select, .contact-section form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #D5D8DC;
+        }
+        
+        .contact-section form button {
+            background-color: #1A3A5F;
+            color: #D5D8DC;
+            padding: 10px 25px;
+            border: 2px solid #D5D8DC;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .sanctuary-anchor-box {
+            border: 2px solid #D5D8DC;
+            padding: 40px;
+            margin-top: 60px;
+            border-radius: 10px;
+        }
+
+        .sanctuary-anchor-box h3 {
+            color: #D5D8DC;
+        }
+
+        .sanctuary-anchor-box .cta-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 25px;
+            border: 2px solid #D5D8DC;
+            color: #D5D8DC;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
         .odins-haven {
             background-color: #1A3A5F;
             color: #D5D8DC;
@@ -491,7 +547,7 @@
                 flex-direction: column;
                 align-items: center;
             }
-            .strategy-hub {
+            .strategy-hub, .contact-section {
                 padding: 60px 20px;
             }
             .haven-outfitters-section .merch-grid {
@@ -626,6 +682,31 @@
                 <h3>Sea Haven (Legacy Line)</h3>
                 <p>Coastal/eco-friendly aesthetic.</p>
             </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <h2>REACH THE HAVEN</h2>
+        <p class="sub-header">We’ve been waiting for you</p>
+        <form>
+            <input type="text" placeholder="Your name or alias...">
+            <input type="text" placeholder="Email or X/Discord handle...">
+            <select>
+                <option>The Heart (Community & General Inquiry)</option>
+                <option>The Engine (Wings DAO, Business & Partnerships)</option>
+                <option>The Legacy (Sea Haven & Philanthropy)</option>
+                <option>The Lore (Story, Content & Creatives)</option>
+                <option>The Morning Glow (The Newsletter)</option>
+            </select>
+            <textarea placeholder="Tell us your story..."></textarea>
+            <label><input type="checkbox"> Check here to receive information on land acquisition for Odin's Haven, our Tennessee Sanctuary.</label>
+            <button type="submit">SUBMIT</button>
+        </form>
+
+        <div class="sanctuary-anchor-box">
+            <h3>SECURE THE ANCHOR</h3>
+            <p>Our VIVO (Value-In, Value-Out) model ensures that 40% of all revenue is directed to our Land Acquisition Fund, securing the future of our Tennessee Sanctuary.</p>
+            <a href="#" class="cta-button">[Donate to the Sanctuary Fund]</a>
         </div>
     </section>
 
