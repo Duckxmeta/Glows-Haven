@@ -1,0 +1,23 @@
+{
+  "name": "glows-haven-backend",
+  "version": "1.0.0",
+  "description": "Basic Node.js backend scaffold for Glows Haven Firebase App Hosting.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "firebase",
+    "app hosting",
+    "node.js",
+    "express"
+  ],
+  "author": "Glows Haven",
+  "license": "ISC",
+  "engines": {
+    "node": "18"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
