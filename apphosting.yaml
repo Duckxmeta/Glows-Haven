@@ -1,19 +1,2 @@
-# apphosting.yaml
-service:
-  # Specifies the main entry point for your Node.js application.
-  # This file will be executed when your application starts.
-  target: index.js
-
-  # Optional: You can define environment variables here if your application needs them.
-  # env:
-  #   MY_API_KEY: "your_api_key_here"
-  #   NODE_ENV: "production"
-
-  # Optional: You can configure resources like CPU, memory, and instance scaling.
-  # These settings control the underlying Cloud Run service that powers App Hosting.
-  # resources:
-  #   cpu: 1             # Number of CPU cores (e.g., 1, 2)
-  #   memory_gb: 0.5     # Amount of memory in GB (e.g., 0.5, 1, 2)
-  #   concurrency: 80    # Maximum number of concurrent requests per instance
-  #   min_instances: 0   # Minimum number of instances to keep running
-  #   max_instances: 3   # Maximum number of instances to scale to
+backend: 
+  run: node index.js

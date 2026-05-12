@@ -1,41 +1,84 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glows Haven - Coming Soon</title>
+    <title>Glow's Haven</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #FFFFFF;
+            color: #1A3A5F;
             margin: 0;
-            background-color: #f0f0f0;
-            color: #333;
+            padding: 0;
         }
-        .container {
-            text-align: center;
+
+        h1, h2, h3 {
+            font-family: 'Cinzel', serif;
+        }
+
+        .header {
+            background-color: #1A3A5F;
+            color: #D5D8DC;
             padding: 20px;
-            border-radius: 8px;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
-        h1 {
-            color: #e44d26; /* Firebase red-ish */
+
+        .content {
+            padding: 20px;
         }
-        p {
-            margin-top: 15px;
+
+        .nav a {
+            color: #D5D8DC;
+            text-decoration: none;
+            margin: 0 15px;
         }
+
+        .nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sea Haven Theme */
+        .sea-haven-theme {
+            background-color: #F0FFF0; /* A light green for the body */
+        }
+
+        .sea-haven-theme .header {
+            background-color: #48C9B0; /* Aurora Green */
+            color: #FFFFFF;
+        }
+        
+        .sea-haven-theme .nav a {
+            color: #FFFFFF;
+        }
+
+        .sea-haven-theme h1, .sea-haven-theme h2, .sea-haven-theme h3 {
+            color: #1A3A5F; /* Sanctuary Blue for headers */
+        }
+
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to Glows Haven!</h1>
-        <p>This is a placeholder page for your Firebase App Hosting application.</p>
-        <p>Please update the <code>index.html</code> file with content from your "Glow's Haven Master Directive".</p>
-        <p>Your Node.js backend is running.</p>
+
+    <div class="header">
+        <h1>Glow's Haven</h1>
+        <div class="nav">
+            <a href="#" onclick="toggleTheme()">Switch to Sea Haven</a>
+        </div>
     </div>
+
+    <div class="content">
+        <h2>Welcome to Glow's Haven</h2>
+        <p>This is the legacy spoke for Sea Haven.</p>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('sea-haven-theme');
+        }
+    </script>
+
 </body>
 </html>
