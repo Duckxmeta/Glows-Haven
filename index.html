@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,35 +71,44 @@
             padding: 80px 15%;
         }
 
+        .founder-statement h2 {
+            font-family: 'Cinzel', serif;
+        }
+
+        .founder-statement .signature {
+            font-family: 'La Belle Aurore', cursive;
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+
         .core-spokes {
             display: flex;
             justify-content: center;
             gap: 40px;
             padding: 60px 20px;
             background-color: #f4f4f4;
+            flex-wrap: wrap;
         }
 
         .spoke-card {
             width: 400px;
-            border: 1px solid #D5D8DC;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            color: #FFFFFF;
         }
 
         .spoke-card .card-content {
-            padding: 20px;
+            padding: 40px;
+        }
+
+        .spoke-card.wings-dao {
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
         }
 
         .spoke-card.sea-haven {
-            background-color: #48C9B0;
-            color: #FFFFFF;
+            background-color: #16a085;
         }
-        
-        .spoke-card.sea-haven h3, .spoke-card.sea-haven p {
-            color: #FFFFFF;
-        }
-
 
         .pillars-grid {
             display: grid;
@@ -131,6 +141,17 @@
             color: #1A3A5F;
         }
 
+        @media (max-width: 768px) {
+            .core-spokes {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .spoke-card {
+                width: 90%;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -153,21 +174,25 @@
     </section>
 
     <section class="founder-statement">
-        <h2>Founder's Statement</h2>
-        <p>"We are the light that cuts through the darkness, the sanctuary for those who seek solace, and the wings for those who dare to dream. Glow's Haven is not just a place; it's a promise."</p>
+        <h2>A SANCTUARY IN MOTION: A LETTER FROM GLOW</h2>
+        <p>To our cherished community, allies, and newcomers,</p>
+        <p>Glow with us.</p>
+        <p>We are a social sanctuary for kindred spirits, a digital ecosystem providing pathways to personal and collective growth. A home for creatives, builders, and humanitarians, all dedicated to leaving a legacy of impact.</p>
+        <p>Our ecosystem is built on the core tenets of Community, Creativity, Sanctuary, Growth, and Legacy. These pillars guide our every action, ensuring that as we grow, we do so with intention and integrity.</p>
+        <div class="signature">Glow | Founder & COO, Glow’s Haven LLC</div>
     </section>
 
     <section class="core-spokes">
-        <div class="spoke-card">
+        <div class="spoke-card wings-dao">
             <div class="card-content">
                 <h3>Wings DAO</h3>
-                <p>Empowering decentralized governance and community-led initiatives. The driving force of our collective future.</p>
+                <p>The professional infrastructure of the Haven, a decentralized autonomous organization that empowers our members to have a voice and a vote in the future of our ecosystem. </p>
             </div>
         </div>
         <div class="spoke-card sea-haven">
             <div class="card-content">
                 <h3>Sea Haven</h3>
-                <p>A tranquil sanctuary for creative minds. A place to rest, rejuvenate, and find your inner glow. Now with Aurora Green.</p>
+                <p>A community-led movement bridging 3D cinematic art, storytelling, and philanthropy. A tranquil sanctuary for creative minds to rest, rejuvenate, and find their inner glow.</p>
             </div>
         </div>
     </section>
