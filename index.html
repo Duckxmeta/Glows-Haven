@@ -477,6 +477,22 @@
             background-color: #FFFFFF;
             text-align: center;
             padding: 100px 20%;
+            position: relative;
+        }
+
+        .archives-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 300px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><g fill="%23D5D8DC" fill-opacity="0.1"><circle cx="50" cy="50" r="45"/><text x="50" y="55" font-family="Cinzel" font-size="10" text-anchor="middle">GLOW'S HAVEN LLC</text></g></svg>');
+            background-repeat: no-repeat;
+            background-size: contain;
+            transform: translate(-50%, -50%);
+            opacity: 0.5;
+            z-index: -1;
         }
 
         .archives-section h2 {
@@ -564,6 +580,7 @@
             background-size: contain;
             transform: translate(-50%, -50%);
             opacity: 0.5;
+            z-index: -1;
         }
 
         .team-haven-section h2 {
@@ -608,6 +625,13 @@
             text-align: center;
         }
 
+        .vivo-note {
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+
         .footer {
             background-color: #1A3A5F;
             color: #D5D8DC;
@@ -621,6 +645,18 @@
 
         .footer small {
             font-size: 0.8em;
+        }
+
+        .footer .live-status {
+            color: #D5D8DC;
+            text-shadow: 0 0 10px #D5D8DC;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
         }
 
         @media (max-width: 768px) {
@@ -661,11 +697,11 @@
     <nav class="nav-bar">
         <div class="logo">Glow’s Haven Master Logo</div>
         <div class="nav-links">
-            <a href="#">The Hub</a>
-            <a href="#">Wings DAO</a>
-            <a href="#">Sea Haven</a>
-            <a href="#">The Library</a>
-            <a href="#">Contact</a>
+            <a href="sanctuary.html">The Sanctuary</a>
+            <a href="strategy-hub.html">The Strategy Hub</a>
+            <a href="sea-haven.html">The Legacy</a>
+            <a href="#archives-section">The Library</a>
+            <a href="#contact-section">Contact</a>
         </div>
         <a href="#" class="support-button">Support the Sanctuary</a>
     </nav>
@@ -675,7 +711,7 @@
         <p class="sub-headline">A social sanctuary for kindred spirits, a digital ecosystem providing pathways to personal and collective growth.</p>
         <div class="accent-quote">'Just fluttering around'</div>
         <div class="hero-buttons">
-            <a href="#">Explore the Sanctuary</a>
+            <a href="sanctuary.html">Explore the Sanctuary</a>
             <a href="https://x.com/GlowsHaven" target="_blank">The Morning Glow</a>
         </div>
     </section>
@@ -687,22 +723,23 @@
         <p><strong>Our 25 Pillars:</strong> Our ecosystem is built on the core tenets of Community, Creativity, Sanctuary, Growth, and Legacy. These pillars guide our every action, ensuring that as we grow, we do so with intention and integrity. They are our constitution, our values made manifest.</p>
         <p><strong>The Invitation:</strong> We are not just building a platform; we are building a home. A place to rest, to grow, to create, and to connect. This is an invitation to join us. To lend your voice, your talent, your spirit to this collective. Together, we shine brighter.</p>
         <div class="signature">Glow</div>
-        <a href="#" class="cta-button">[View the Haven Archives (Whitepapers)]</a>
+        <a href="#archives-section" class="cta-button">[View the Haven Archives (Whitepapers)]</a>
     </section>
 
     <section class="core-spokes">
         <div class="spoke-card wings-dao">
             <h3>Wings DAO</h3>
             <p>The professional infrastructure of the Haven, a decentralized autonomous organization that empowers our members to have a voice and a vote in the future of our ecosystem.</p>
-            <a href="#">Enter Strategy Hub</a>
+            <a href="strategy-hub.html">Enter Strategy Hub</a>
         </div>
         <div class="spoke-card sea-haven">
             <h3>Sea Haven</h3>
             <p>A community-led movement bridging 3D cinematic art, storytelling, and philanthropy. A tranquil sanctuary for creative minds to rest, rejuvenate, and find their inner glow. (Icon: Turtle/Wave)</p>
+            <a href="sea-haven.html">Explore the Legacy</a>
         </div>
     </section>
 
-    <section class="strategy-hub">
+    <section id="strategy-hub" class="strategy-hub">
         <h2>THE ARCHITECTURE OF INTEGRITY</h2>
         <p>Professional Alpha for Web3. We provide specialized services to ensure your project is built on a foundation of quality, integrity, and community.</p>
 
@@ -742,11 +779,11 @@
         <div class="b2b-section">
             <h2>BUILD WITH INTEGRITY</h2>
             <p>Partner with Wings DAO to bring your vision to life. We offer a full suite of services for businesses and projects looking to build in Web3.</p>
-            <a href="#" class="cta-button">[Inquire via the Invitation to Connect]</a>
+            <a href="#contact-section" class="cta-button">[Inquire via the Invitation to Connect]</a>
         </div>
     </section>
 
-    <section class="sea-haven-section">
+    <section id="sea-haven-section" class="sea-haven-section">
         <h2>Dive Deep. Make Waves. Protect the Seas.</h2>
         <p>A legacy of community resilience, where digital art and tangible impact converge. The Sea Haven is our commitment to ocean conservation, funded by the creative endeavors of our community.</p>
         <div class="feature-grid">
@@ -789,7 +826,7 @@
         </div>
     </section>
 
-    <section class="contact-section">
+    <section id="contact-section" class="contact-section">
         <h2>REACH THE HAVEN</h2>
         <p class="sub-header">We’ve been waiting for you</p>
         <form>
@@ -848,7 +885,7 @@
         <a href="#" class="cta-button">[Support the Land Acquisition Fund]</a>
     </section>
 
-    <section class="archives-section">
+    <section id="archives-section" class="archives-section">
         <h2>THE HAVEN ARCHIVES: OUR BLUEPRINTS</h2>
         <p>Transparency is the foundation of integrity. Explore our comprehensive whitepapers to understand the full scope of our vision and operations.</p>
         <div class="book-grid">
@@ -952,11 +989,16 @@
         </div>
     </section>
 
+    <div class="vivo-note">
+        <p>40% of digital proceeds fund the Physical Haven</p>
+    </div>
+
     <div class="transparency-statement">
         <p>Glow’s Haven LLC operates with total transparency. All funding, operations, and decisions are documented and available to our community.</p>
     </div>
 
     <footer class="footer">
+        <p class="live-status">Join us live at 7 am EST on X Spaces</p>
         <p>Glow’s Haven LLC: Built in Web3. Rooted in Tennessee. Defined by Integrity.</p>
         <p><small>© 2026 Glow’s Haven LLC | Tennessee, USA | All Rights Reserved.</small></p>
     </footer>
