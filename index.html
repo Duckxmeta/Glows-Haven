@@ -34,6 +34,10 @@
             font-weight: 700;
         }
 
+        .nav-bar .nav-links {
+            text-align: center;
+        }
+
         .nav-bar .nav-links a {
             margin: 0 20px;
             text-decoration: none;
@@ -42,8 +46,8 @@
         }
 
         .nav-bar .support-button {
-            background-color: #1A3A5F;
-            color: #FFFFFF;
+            border: 2px solid #D5D8DC;
+            color: #1A3A5F;
             padding: 10px 20px;
             border-radius: 5px;
             text-decoration: none;
@@ -51,28 +55,74 @@
         }
 
         .hero {
-            height: 80vh;
+            height: 90vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: #1A3A5F; /* Placeholder for motion graphic */
+            background: #1A3A5F;
             color: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes starlight {
+            0% { background-position: 0 0; }
+            100% { background-position: -10000px -10000px; }
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><g fill="%23D5D8DC" fill-opacity=".2"><path d="M0 50 L50 0 L100 50 L50 100 Z"/></g></svg>');
+            animation: starlight 300s linear infinite;
         }
 
         .hero h1 {
             font-size: 4em;
+            z-index: 1;
+        }
+        
+        .hero .sub-headline {
+            font-size: 1.5em;
+            margin-top: 10px;
+            z-index: 1;
+        }
+
+        .hero .accent-quote {
+            font-family: 'La Belle Aurore', cursive;
+            font-size: 1.8em;
+            margin-top: 20px;
+            z-index: 1;
+        }
+
+        .hero .hero-buttons {
+            margin-top: 30px;
+            z-index: 1;
+        }
+
+        .hero .hero-buttons a {
+            color: #FFFFFF;
+            background-color: transparent;
+            border: 2px solid #FFFFFF;
+            padding: 10px 25px;
+            text-decoration: none;
+            margin: 0 10px;
+            border-radius: 5px;
+            font-weight: bold;
         }
 
         .founder-statement {
             background-color: #1A3A5F;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><g fill="%23162a42" fill-opacity="0.4"><rect x="0" y="0" width="100" height="100"/></g></svg>');
             color: #D5D8DC;
             text-align: center;
-            padding: 80px 15%;
-        }
-
-        .founder-statement h2 {
-            font-family: 'Cinzel', serif;
+            padding: 100px 20%;
         }
 
         .founder-statement .signature {
@@ -91,23 +141,32 @@
         }
 
         .spoke-card {
-            width: 400px;
+            width: 450px;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             color: #FFFFFF;
-        }
-
-        .spoke-card .card-content {
             padding: 40px;
+            position: relative;
         }
 
         .spoke-card.wings-dao {
-            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            background: linear-gradient(to right, #4a00e0, #8e2de2, #ff416c);
         }
 
         .spoke-card.sea-haven {
-            background-color: #16a085;
+            background-color: #48C9B0;
+        }
+        
+        .spoke-card a {
+            color: #FFFFFF;
+            text-decoration: none;
+            border: 1px solid #FFFFFF;
+            padding: 8px 15px;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
         }
 
         .pillars-grid {
@@ -119,39 +178,66 @@
         }
 
         .pillar {
-            padding: 20px;
+            padding: 40px 20px;
             border: 1px solid #D5D8DC;
-            transition: background-color 0.3s, color 0.3s;
+            transition: box-shadow 0.3s, color 0.3s;
         }
 
         .pillar:hover {
-            background-color: #D5D8DC;
+            box-shadow: 0 0 15px #D5D8DC;
             color: #1A3A5F;
             cursor: pointer;
         }
 
-        .flutter-section, .contact-section {
+        .footer {
+            background-color: #1A3A5F;
+            color: #D5D8DC;
+            padding: 60px 40px;
             text-align: center;
-            padding: 60px 20px;
         }
 
-        .flutter-section h2, .contact-section h3 {
-            font-family: 'La Belle Aurore', cursive;
-            font-size: 3em;
+        .donation-block {
+            border: 2px solid #D5D8DC;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .archive-section {
+            padding: 40px 0;
+        }
+
+        .archive-section .book-mockup {
+            display: inline-block;
+            width: 150px;
+            height: 220px;
+            background: #D5D8DC;
+            margin: 0 15px;
             color: #1A3A5F;
+            text-align: center;
+            line-height: 220px;
         }
 
         @media (max-width: 768px) {
+            .nav-bar {
+                flex-direction: column;
+            }
+            .nav-bar .nav-links {
+                margin-top: 15px;
+            }
+            .nav-bar .support-button {
+                margin-top: 15px;
+            }
             .core-spokes {
                 flex-direction: column;
                 align-items: center;
             }
-
             .spoke-card {
                 width: 90%;
             }
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
         }
-
     </style>
 </head>
 <body>
@@ -159,59 +245,88 @@
     <nav class="nav-bar">
         <div class="logo">Glow's Haven</div>
         <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">About</a>
+            <a href="#">The Hub</a>
             <a href="#">Wings DAO</a>
             <a href="#">Sea Haven</a>
+            <a href="#">The Library</a>
             <a href="#">Contact</a>
         </div>
         <a href="#" class="support-button">Support</a>
     </nav>
 
     <section class="hero">
-        <!-- Motion Graphic Container -->
         <h1>TOGETHER, WE SHINE BRIGHTER</h1>
+        <p class="sub-headline">A social sanctuary for kindred spirits, a digital ecosystem providing pathways to personal and collective growth.</p>
+        <div class="accent-quote">'Just fluttering around'</div>
+        <div class="hero-buttons">
+            <a href="#">Explore the Sanctuary</a>
+            <a href="https://x.com/Ducksonx" target="_blank">The Morning Glow</a>
+        </div>
     </section>
 
     <section class="founder-statement">
-        <h2>A SANCTUARY IN MOTION: A LETTER FROM GLOW</h2>
-        <p>To our cherished community, allies, and newcomers,</p>
-        <p>Glow with us.</p>
-        <p>We are a social sanctuary for kindred spirits, a digital ecosystem providing pathways to personal and collective growth. A home for creatives, builders, and humanitarians, all dedicated to leaving a legacy of impact.</p>
-        <p>Our ecosystem is built on the core tenets of Community, Creativity, Sanctuary, Growth, and Legacy. These pillars guide our every action, ensuring that as we grow, we do so with intention and integrity.</p>
-        <div class="signature">Glow | Founder & COO, Glow’s Haven LLC</div>
+        <h2>A SANCTUARY IN MOTION</h2>
+        <p>To our cherished community, allies, and newcomers, Glow with us. We are a social sanctuary for kindred spirits, a digital ecosystem providing pathways to personal and collective growth. A home for creatives, builders, and humanitarians, all dedicated to leaving a legacy of impact. Our ecosystem is built on the core tenets of Community, Creativity, Sanctuary, Growth, and Legacy. These pillars guide our every action, ensuring that as we grow, we do so with intention and integrity.</p>
+        <div class="signature">Glow</div>
     </section>
 
     <section class="core-spokes">
         <div class="spoke-card wings-dao">
-            <div class="card-content">
-                <h3>Wings DAO</h3>
-                <p>The professional infrastructure of the Haven, a decentralized autonomous organization that empowers our members to have a voice and a vote in the future of our ecosystem. </p>
-            </div>
+            <h3>Wings DAO</h3>
+            <p>The professional infrastructure of the Haven, a decentralized autonomous organization that empowers our members to have a voice and a vote in the future of our ecosystem.</p>
+            <a href="#">Enter Strategy Hub</a>
         </div>
         <div class="spoke-card sea-haven">
-            <div class="card-content">
-                <h3>Sea Haven</h3>
-                <p>A community-led movement bridging 3D cinematic art, storytelling, and philanthropy. A tranquil sanctuary for creative minds to rest, rejuvenate, and find their inner glow.</p>
-            </div>
+            <h3>Sea Haven</h3>
+            <p>A community-led movement bridging 3D cinematic art, storytelling, and philanthropy. A tranquil sanctuary for creative minds to rest, rejuvenate, and find their inner glow. (Icon: Turtle/Wave)</p>
         </div>
     </section>
 
     <section class="pillars-grid">
-        <div class="pillar"><h4>Community</h4></div>
-        <div class="pillar"><h4>Creativity</h4></div>
-        <div class="pillar"><h4>Sanctuary</h4></div>
-        <div class="pillar"><h4>Growth</h4></div>
-        <div class="pillar"><h4>Legacy</h4></div>
+        <!-- The 25 Pillars of Light -->
+        <div class="pillar"><h4>Pillar 1</h4></div>
+        <div class="pillar"><h4>Pillar 2</h4></div>
+        <div class="pillar"><h4>Pillar 3</h4></div>
+        <div class="pillar"><h4>Pillar 4</h4></div>
+        <div class="pillar"><h4>Pillar 5</h4></div>
+        <div class="pillar"><h4>Pillar 6</h4></div>
+        <div class="pillar"><h4>Pillar 7</h4></div>
+        <div class="pillar"><h4>Pillar 8</h4></div>
+        <div class="pillar"><h4>Pillar 9</h4></div>
+        <div class="pillar"><h4>Pillar 10</h4></div>
+        <div class="pillar"><h4>Pillar 11</h4></div>
+        <div class="pillar"><h4>Pillar 12</h4></div>
+        <div class="pillar"><h4>Pillar 13</h4></div>
+        <div class="pillar"><h4>Pillar 14</h4></div>
+        <div class="pillar"><h4>Pillar 15</h4></div>
+        <div class="pillar"><h4>Pillar 16</h4></div>
+        <div class="pillar"><h4>Pillar 17</h4></div>
+        <div class="pillar"><h4>Pillar 18</h4></div>
+        <div class="pillar"><h4>Pillar 19</h4></div>
+        <div class="pillar"><h4>Pillar 20</h4></div>
+        <div class="pillar"><h4>Pillar 21</h4></div>
+        <div class="pillar"><h4>Pillar 22</h4></div>
+        <div class="pillar"><h4>Pillar 23</h4></div>
+        <div class="pillar"><h4>Pillar 24</h4></div>
+        <div class="pillar"><h4>Pillar 25</h4></div>
     </section>
 
-    <section class="flutter-section">
-        <h2>Fluttering with Hope</h2>
-    </section>
+    <footer class="footer">
+        <div class="archive-section">
+            <h2>Haven Archives</h2>
+            <div class="book-mockup">Digital Book 1</div>
+            <div class="book-mockup">Digital Book 2</div>
+            <div class="book-mockup">Digital Book 3</div>
+        </div>
 
-    <section class="contact-section">
-        <h3>Contact Us</h3>
-    </section>
+        <div class="donation-block">
+            <h2>Secure the Anchor</h2>
+            <p>Support our mission and help us build a brighter future.</p>
+            <a href="#" class="support-button">Donate Now</a>
+        </div>
+        
+        <p>Glow’s Haven LLC: Built in Web3. Rooted in Tennessee. Defined by Integrity.</p>
+    </footer>
 
 </body>
 </html>
