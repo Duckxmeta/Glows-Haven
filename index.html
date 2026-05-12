@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glow's Haven</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400&family=La+Belle+Aurore&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
@@ -13,127 +12,181 @@
             color: #1A3A5F;
             margin: 0;
             padding: 0;
-            transition: background-color 0.5s, color 0.5s;
         }
 
-        h1, h2, h3 {
+        h1, h2, h3, h4, h5 {
             font-family: 'Cinzel', serif;
         }
 
-        .header {
-            background-color: #1A3A5F;
-            color: #D5D8DC;
-            padding: 20px;
-            text-align: center;
+        .nav-bar {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 20px 40px;
+            background-color: #FFFFFF;
+            border-bottom: 1px solid #D5D8DC;
         }
 
-        .content {
-            padding: 20px;
+        .nav-bar .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8em;
+            font-weight: 700;
         }
 
-        .nav a {
-            color: #D5D8DC;
+        .nav-bar .nav-links a {
+            margin: 0 20px;
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.2em;
+            color: #1A3A5F;
             font-weight: bold;
         }
 
-        .nav a:hover {
-            text-decoration: underline;
+        .nav-bar .support-button {
+            background-color: #1A3A5F;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
         }
 
         .hero {
-            background: url('https://placehold.co/1200x400/F0FFF0/1A3A5F?text=Sanctuary') no-repeat center center;
-            background-size: cover;
-            color: #1A3A5F;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 100px 20px;
+            background: #1A3A5F; /* Placeholder for motion graphic */
+            color: #FFFFFF;
         }
 
         .hero h1 {
             font-size: 4em;
-            margin: 0;
         }
 
-        .gallery {
+        .founder-statement {
+            background-color: #1A3A5F;
+            color: #D5D8DC;
+            text-align: center;
+            padding: 80px 15%;
+        }
+
+        .core-spokes {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            padding: 40px 20px;
-            flex-wrap: wrap;
+            gap: 40px;
+            padding: 60px 20px;
+            background-color: #f4f4f4;
         }
 
-        .gallery-item {
-            width: 300px;
-            height: 200px;
-            background-color: #EAECEE;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #1A3A5F;
-            font-size: 1.2em;
+        .spoke-card {
+            width: 400px;
+            border: 1px solid #D5D8DC;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
-        /* Sea Haven Theme */
-        .sea-haven-theme {
-            background-color: #F0FFF0; /* A light green for the body */
+        .spoke-card .card-content {
+            padding: 20px;
         }
 
-        .sea-haven-theme .header {
-            background-color: #48C9B0; /* Aurora Green */
+        .spoke-card.sea-haven {
+            background-color: #48C9B0;
             color: #FFFFFF;
         }
         
-        .sea-haven-theme .nav a {
+        .spoke-card.sea-haven h3, .spoke-card.sea-haven p {
             color: #FFFFFF;
         }
 
-        .sea-haven-theme h1, .sea-haven-theme h2, .sea-haven-theme h3, .sea-haven-theme .hero {
-            color: #1A3A5F; /* Sanctuary Blue for headers */
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            padding: 60px 40px;
+            text-align: center;
         }
 
-        .sea-haven-theme .gallery-item {
-            background-color: #D4EFDF;
+        .pillar {
+            padding: 20px;
+            border: 1px solid #D5D8DC;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .pillar:hover {
+            background-color: #D5D8DC;
+            color: #1A3A5F;
+            cursor: pointer;
+        }
+
+        .flutter-section, .contact-section {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .flutter-section h2, .contact-section h3 {
+            font-family: 'La Belle Aurore', cursive;
+            font-size: 3em;
+            color: #1A3A5F;
         }
 
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>Glow's Haven</h1>
-        <div class="nav">
-            <a href="#" onclick="toggleTheme()">Switch to Sea Haven</a>
+    <nav class="nav-bar">
+        <div class="logo">Glow's Haven</div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Wings DAO</a>
+            <a href="#">Sea Haven</a>
+            <a href="#">Contact</a>
         </div>
-    </div>
+        <a href="#" class="support-button">Support</a>
+    </nav>
 
-    <div class="hero">
-        <h1>Welcome to Glow's Haven</h1>
-    </div>
+    <section class="hero">
+        <!-- Motion Graphic Container -->
+        <h1>TOGETHER, WE SHINE BRIGHTER</h1>
+    </section>
 
-    <div class="content">
-        <div class="gallery">
-            <div class="gallery-item">Duck Photo 1</div>
-            <div class="gallery-item">Duck Photo 2</div>
-            <div class="gallery-item">Duck Photo 3</div>
+    <section class="founder-statement">
+        <h2>Founder's Statement</h2>
+        <p>"We are the light that cuts through the darkness, the sanctuary for those who seek solace, and the wings for those who dare to dream. Glow's Haven is not just a place; it's a promise."</p>
+    </section>
+
+    <section class="core-spokes">
+        <div class="spoke-card">
+            <div class="card-content">
+                <h3>Wings DAO</h3>
+                <p>Empowering decentralized governance and community-led initiatives. The driving force of our collective future.</p>
+            </div>
         </div>
-    </div>
+        <div class="spoke-card sea-haven">
+            <div class="card-content">
+                <h3>Sea Haven</h3>
+                <p>A tranquil sanctuary for creative minds. A place to rest, rejuvenate, and find your inner glow. Now with Aurora Green.</p>
+            </div>
+        </div>
+    </section>
 
-    <script>
-        function toggleTheme() {
-            document.body.classList.toggle('sea-haven-theme');
-            const themeToggle = document.querySelector('.nav a');
-            if (document.body.classList.contains('sea-haven-theme')) {
-                themeToggle.textContent = 'Switch to Glow\'s Haven';
-            } else {
-                themeToggle.textContent = 'Switch to Sea Haven';
-            }
-        }
-    </script>
+    <section class="pillars-grid">
+        <div class="pillar"><h4>Community</h4></div>
+        <div class="pillar"><h4>Creativity</h4></div>
+        <div class="pillar"><h4>Sanctuary</h4></div>
+        <div class="pillar"><h4>Growth</h4></div>
+        <div class="pillar"><h4>Legacy</h4></div>
+    </section>
+
+    <section class="flutter-section">
+        <h2>Fluttering with Hope</h2>
+    </section>
+
+    <section class="contact-section">
+        <h3>Contact Us</h3>
+    </section>
 
 </body>
 </html>
