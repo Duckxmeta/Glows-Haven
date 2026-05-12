@@ -13,6 +13,7 @@
             color: #1A3A5F;
             margin: 0;
             padding: 0;
+            transition: background-color 0.5s, color 0.5s;
         }
 
         h1, h2, h3 {
@@ -24,6 +25,9 @@
             color: #D5D8DC;
             padding: 20px;
             text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .content {
@@ -34,10 +38,44 @@
             color: #D5D8DC;
             text-decoration: none;
             margin: 0 15px;
+            font-size: 1.2em;
+            font-weight: bold;
         }
 
         .nav a:hover {
             text-decoration: underline;
+        }
+
+        .hero {
+            background: url('https://placehold.co/1200x400/F0FFF0/1A3A5F?text=Sanctuary') no-repeat center center;
+            background-size: cover;
+            color: #1A3A5F;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            margin: 0;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px 20px;
+            flex-wrap: wrap;
+        }
+
+        .gallery-item {
+            width: 300px;
+            height: 200px;
+            background-color: #EAECEE;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #1A3A5F;
+            font-size: 1.2em;
         }
 
         /* Sea Haven Theme */
@@ -54,8 +92,12 @@
             color: #FFFFFF;
         }
 
-        .sea-haven-theme h1, .sea-haven-theme h2, .sea-haven-theme h3 {
+        .sea-haven-theme h1, .sea-haven-theme h2, .sea-haven-theme h3, .sea-haven-theme .hero {
             color: #1A3A5F; /* Sanctuary Blue for headers */
+        }
+
+        .sea-haven-theme .gallery-item {
+            background-color: #D4EFDF;
         }
 
     </style>
@@ -69,14 +111,27 @@
         </div>
     </div>
 
+    <div class="hero">
+        <h1>Welcome to Glow's Haven</h1>
+    </div>
+
     <div class="content">
-        <h2>Welcome to Glow's Haven</h2>
-        <p>This is the legacy spoke for Sea Haven.</p>
+        <div class="gallery">
+            <div class="gallery-item">Duck Photo 1</div>
+            <div class="gallery-item">Duck Photo 2</div>
+            <div class="gallery-item">Duck Photo 3</div>
+        </div>
     </div>
 
     <script>
         function toggleTheme() {
             document.body.classList.toggle('sea-haven-theme');
+            const themeToggle = document.querySelector('.nav a');
+            if (document.body.classList.contains('sea-haven-theme')) {
+                themeToggle.textContent = 'Switch to Glow\'s Haven';
+            } else {
+                themeToggle.textContent = 'Switch to Sea Haven';
+            }
         }
     </script>
 
