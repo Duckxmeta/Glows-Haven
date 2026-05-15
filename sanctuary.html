@@ -1,77 +1,101 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glow's Haven - The Sanctuary</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400&family=La+Belle+Aurore&display=swap&v=2" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;700&family=La+Belle+Aurore&display=swap&v=2" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="sanctuary-blue-bg">
 
-    <nav class="nav-bar">
-        <div class="logo"><a href="index.html"><img src="assets/GlowsHaven1nobg.png" alt="Glow's Haven Logo"></a></div>
-        <div class="nav-links">
-            <a href="index.html">The Gateway</a>
-            <a href="strategy-hub.html">The Strategy Hub</a>
-            <a href="sea-haven.html">The Legacy</a>
-            <a href="#archives-section">The Library</a>
-            <a href="contact.html">Contact</a>
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="nav-logo-link">
+                <a href="index.html">
+                    <img src="assets/GlowsHavenLLCnobg.png" alt="Glow's Haven Logo" class="nav-logo">
+                </a>
+            </div>
+            <nav class="nav-links-center">
+                <a href="index.html">The Hub</a>
+                <a href="sanctuary.html" class="active">The Sanctuary</a>
+                <a href="sea-haven.html">The Legacy</a>
+                <a href="index.html#archives-section">The Library</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <a href="contact.html#donate" class="btn-support-silver">Support the Sanctuary</a>
         </div>
-        <a href="#" class="support-button">Support the Sanctuary</a>
-    </nav>
+    </header>
 
-    <section class="hero" style="background-image: url('assets/GlowsHaven2.png'); background-size: cover; background-position: center; height: 50vh;">
-        <h1>A Sanctuary in Motion</h1>
+    <section class="hero" style="background-image: linear-gradient(to bottom, rgba(5, 16, 31, 0.5), rgba(5, 16, 31, 0.95)), url('assets/GlowsHaven2.png'); background-size: cover; background-position: center; height: 50vh; display: flex; align-items: center; justify-content: center; padding-top: 80px;">
+        <div class="text-block-centered">
+            <h1 class="cinzel-header" style="font-size: 3rem; letter-spacing: 4px; text-shadow: 0 0 20px rgba(255,255,255,0.1);">A Sanctuary in Motion</h1>
+        </div>
     </section>
 
-    <div class="luxury-section">
-        <div class="glass-frame">
-            <div class="text-block-centered">
-                <h2>ODIN’S PLACE: A SAFE HARBOR IN TENNESSEE</h2>
-                <div class="accent-line"></div>
-                <p>The physical anchor of our digital sanctuary. A 7.54-acre property in Doyle, Tennessee, dedicated to veteran peer support, canine advocacy, and nature-based healing. Our VIVO (Value-In, Value-Out) model means we have an on-site creative office to produce content that brings value back to our community.</p>
+    <main class="luxury-section">
+        <div class="contact-container">
+            <div class="glass-frame text-block-centered" style="padding: 50px 40px; margin-bottom: 40px;">
+                <h2 class="cinzel-header" style="font-size: 1.8rem; letter-spacing: 2px; margin-bottom: 15px;">ODIN’S PLACE: A SAFE HARBOR IN TENNESSEE</h2>
+                <div class="accent-line" style="margin: 0 auto 25px;"></div>
+                <p class="montserrat-text" style="font-size: 1.1rem; line-height: 1.9; opacity: 0.9; max-width: 700px; margin: 0 auto;">
+                    The physical anchor of our digital sanctuary. A 7.54-acre property in Doyle, Tennessee, dedicated to veteran peer support, canine advocacy, and nature-based healing. Our VIVO (Value-In, Value-Out) model means we have an on-site creative office to produce content that brings value back to our community.
+                </p>
             </div>
         </div>
-    </div>
+    </main>
 
-    <div class="luxury-section" style="padding-top: 0;">
-        <div class="glass-frame">
-            <div class="text-block-centered roadmap">
-                <h2>OUR JOURNEY TO THE ANCHOR</h2>
-                <div class="accent-line"></div>
-                <div class="timeline">
-                    <div class="milestone completed">
-                        <h4>Phase 1: The Foundation</h4>
-                        <p>COMPLETED</p>
+    <section class="luxury-section" style="padding-top: 0;">
+        <div class="contact-container">
+            <div class="glass-frame text-block-centered roadmap" style="padding: 50px 40px;">
+                <h2 class="cinzel-header" style="font-size: 1.8rem; letter-spacing: 2px; margin-bottom: 15px;">OUR JOURNEY TO THE ANCHOR</h2>
+                <div class="accent-line" style="margin: 0 auto 40px;"></div>
+                
+                <div class="timeline" style="display: flex; flex-direction: column; gap: 30px; text-align: left; max-width: 600px; margin: 0 auto 40px;">
+                    <div class="milestone completed" style="border-left: 3px solid var(--silver-accent); padding-left: 20px; position: relative;">
+                        <h4 class="cinzel-header" style="font-size: 1.1rem; color: var(--silver-accent);">Phase 1: The Foundation</h4>
+                        <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.6; letter-spacing: 1px;">COMPLETED</p>
                     </div>
-                    <div class="milestone current">
-                        <h4>Phase 2: The Acquisition</h4>
-                        <p>CURRENT - GLOWING SILVER</p>
+                    <div class="milestone current" style="border-left: 3px solid var(--champagne); padding-left: 20px; position: relative;">
+                        <h4 class="cinzel-header" style="font-size: 1.1rem; color: var(--champagne);">Phase 2: The Acquisition</h4>
+                        <p class="montserrat-text" style="font-size: 0.9rem; font-weight: bold; color: var(--champagne); letter-spacing: 1px;">CURRENT - GLOWING SILVER</p>
                     </div>
-                    <div class="milestone">
-                        <h4>Phase 3: The Brain Trust</h4>
-                        <p>Upcoming</p>
+                    <div class="milestone" style="border-left: 3px solid rgba(255,255,255,0.1); padding-left: 20px; position: relative;">
+                        <h4 class="cinzel-header" style="font-size: 1.1rem; opacity: 0.4;">Phase 3: The Brain Trust</h4>
+                        <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.3;">Upcoming</p>
                     </div>
-                    <div class="milestone">
-                        <h4>Phase 4: The Safe Harbor</h4>
-                        <p>The Future</p>
+                    <div class="milestone" style="border-left: 3px solid rgba(255,255,255,0.1); padding-left: 20px; position: relative;">
+                        <h4 class="cinzel-header" style="font-size: 1.1rem; opacity: 0.4;">Phase 4: The Safe Harbor</h4>
+                        <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.3;">The Future</p>
                     </div>
                 </div>
-                <a href="#" class="premium-glass-button">[Support the Land Acquisition Fund]</a>
+                
+                <div class="centered-text">
+                    <a href="contact.html#donate" class="glass-button">Support the Land Acquisition Fund</a>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="vivo-note">
-        <p>40% of digital proceeds fund Odin's Place</p>
-    </div>
+    <aside class="donation-footer-block centered-text" style="margin-top: 40px; padding: 40px 20px; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+        <div class="contact-container">
+            <p class="montserrat-text" style="font-size: 1.1rem; color: var(--champagne); font-weight: 700; letter-spacing: 1px; margin-bottom: 10px;">
+                40% of digital proceeds fund Odin's Place
+            </p>
+        </div>
+    </aside>
 
-    <footer class="footer">
-        <p class="live-status">Join us live at 7 am EST on X Spaces</p>
-        <p>Glow’s Haven LLC: Built in Web3. Rooted in Tennessee. Defined by Integrity.</p>
-        <p><small>© 2026 Glow’s Haven LLC | Tennessee, USA | All Rights Reserved.</small></p>
+    <footer class="site-footer centered-text">
+        <div class="footer-content">
+            <p class="montserrat-text live-status" style="font-style: italic; color: var(--silver-accent); margin-bottom: 15px; font-size: 0.95rem;">
+                Join us live at 7 am EST on X Spaces
+            </p>
+            <p class="cinzel-header" style="font-size: 0.9rem; letter-spacing: 1.5px; margin-bottom: 8px;">Glow’s Haven LLC</p>
+            <p class="montserrat-text small-print" style="opacity: 0.5; font-size: 0.8rem; line-height: 1.6;">
+                Built in Web3. Rooted in Tennessee. Defined by Integrity. <br>
+                &copy; 2026 Glow’s Haven LLC | Tennessee, USA | All Rights Reserved.
+            </p>
+        </div>
     </footer>
 
 </body>
