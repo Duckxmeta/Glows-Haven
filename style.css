@@ -635,3 +635,96 @@ h1, h2, h3, h4, h5, .cinzel-header {
         grid-template-columns: 1fr;
     }
 }
+/* --- EXTRA CONTACT PAGE ADDITIONS --- */
+.contact-lead-in {
+    font-size: 1rem;
+    opacity: 0.85;
+    max-width: 620px;
+    margin: 25px auto 40px;
+    line-height: 1.8;
+}
+.cinzel-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    color: var(--champagne);
+    margin-bottom: 8px;
+    display: block;
+    text-transform: uppercase;
+}
+.form-group {
+    margin-bottom: 25px;
+}
+/* Form Select Fields Dropdown Styling */
+#haven-contact-form select {
+    width: 100%;
+    background: rgba(5, 16, 31, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 16px;
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    transition: var(--transition-standard);
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    border-radius: 0;
+}
+#haven-contact-form select:focus {
+    border-color: var(--silver-accent);
+}
+.select-wrapper {
+    position: relative;
+}
+/* Subtle custom arrow drop icon indicators */
+.select-wrapper::after {
+    content: '▼';
+    font-size: 0.7rem;
+    color: var(--champagne);
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+/* Checkbox Layout adjustments */
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin: 15px 0 35px;
+}
+.checkbox-group input[type="checkbox"] {
+    width: auto !important;
+    margin-top: 6px;
+    cursor: pointer;
+    accent-color: var(--primary-blue);
+}
+.text-checkbox-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    line-height: 1.6;
+    cursor: pointer;
+}
+/* Sanctuary Blue Button variant for the submission entry */
+.premium-form-btn.sanctuary-btn {
+    background: var(--primary-blue-deep);
+    border: 1px solid var(--champagne-line);
+    color: var(--champagne);
+    transition: var(--transition-standard);
+}
+.premium-form-btn.sanctuary-btn:hover {
+    background: var(--white);
+    color: var(--ink);
+    border-color: var(--white);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+}
+.donation-box-icon {
+    max-height: 60px;
+    width: auto;
+    margin-bottom: 20px;
+}
+.standard-glow-btn {
+    display: inline-block;
+    margin-top: 10px;
+}
