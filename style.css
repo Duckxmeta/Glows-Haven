@@ -440,6 +440,30 @@ h1, h2, h3, h4, h5, .nav-links a {
 .contact-section form {
     max-width: 800px;
     margin: 40px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-section input, .contact-section textarea, .contact-section select {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    padding: 15px;
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contact-section button {
+    background: var(--aurora-green);
+    color: var(--ink);
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    letter-spacing: 3px;
 }
 
 .premium-glass-button {
@@ -490,16 +514,16 @@ h1, h2, h3, h4, h5, .nav-links a {
     margin: 20px auto;
 }
 
-.member-vault ul {
+.member-vault ul, .odins-place ul {
     list-style: none;
     padding: 0;
 }
 
-.member-vault li {
+.member-vault li, .odins-place li {
     padding-left: 20px;
 }
 
-.member-vault li::before {
+.member-vault li::before, .odins-place li::before {
     content: "◈";
     color: var(--aurora-green);
     padding-right: 10px;
