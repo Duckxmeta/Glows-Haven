@@ -514,22 +514,22 @@ h1, h2, h3, h4, h5, .nav-links a {
     margin: 20px auto;
 }
 
-.member-vault ul, .odins-place ul {
+.member-vault ul, .odins-place ul, .archives-section ul, .roadmap ul {
     list-style: none;
     padding: 0;
 }
 
-.member-vault li, .odins-place li {
+.member-vault li, .odins-place li, .archives-section li, .roadmap li {
     padding-left: 20px;
 }
 
-.member-vault li::before, .odins-place li::before {
+.member-vault li::before, .odins-place li::before, .archives-section li::before, .roadmap li::before {
     content: "◈";
     color: var(--aurora-green);
     padding-right: 10px;
 }
 
-.feature-grid, .merch-grid {
+.feature-grid, .merch-grid, .book-grid, .timeline {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
@@ -537,7 +537,7 @@ h1, h2, h3, h4, h5, .nav-links a {
     width: 100%;
 }
 
-.feature h4, .merch-line h3 {
+.feature h4, .merch-line h3, .book h3, .milestone h4 {
     font-family: 'Cinzel', serif;
     letter-spacing: 3px;
     color: var(--silver-accent);
