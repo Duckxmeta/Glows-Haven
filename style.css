@@ -505,9 +505,16 @@ h1, h2, h3, h4, h5, .cinzel-header {
 /* --- VII. SECTION 5: REACH THE HAVEN (CONTACT) --- */
 .contact-section {
     padding: 120px 20px;
+    display: flex;          /* Force a flex layout context */
+    justify-content: center; /* Horizontally center the container child */
+    align-items: center;
+    width: 100%;
 }
+
 .contact-container {
     max-width: 700px;
+    width: 100%;            /* Ensure it is responsive up to 700px */
+    margin: 0 auto;         /* Standard block auto-centering fallback */
 }
 .orb-icon-glow {
     max-height: 90px;
