@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reach the Haven | Glow's Haven</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;700&family=La+Belle+Aurore&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="sanctuary-blue-bg">
+
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="/" class="nav-logo-link">
+                <img src="assets/GlowsHavenLLCnobg.png" alt="Glow's Haven Logo" class="nav-logo">
+            </a>
+            <nav class="nav-links-center">
+                <a href="/">The Hub</a>
+                <a href="sanctuary.html">The Sanctuary</a>
+                <a href="strategy-hub.html">The Strategy Hub</a>
+                <a href="sea-haven.html">The Legacy</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+            <a href="#donate" class="btn-support-silver">Support the Sanctuary</a>
+        </div>
+    </header>
+
+    <main class="contact-section">
+        <div class="contact-container glass-frame">
+            
+            <div class="centered-text">
+                <img src="assets/GlowsHavenLLCnobg.png" alt="Glow's Haven Icon" class="orb-icon-glow">
+                <h1 class="cinzel-header">Reach the Haven</h1>
+                <span class="la-belle-accent">We’ve been waiting for you.</span>
+                
+                <p class="montserrat-text contact-lead-in">
+                    "Whether you are a Veteran seeking a quiet harbor, a builder looking to collaborate with Wings DAO, or a community member inspired by the Morning Glow, your message is a valued thread in our web. Tell us how we can support your journey today."
+                </p>
+            </div>
+
+            <form id="haven-contact-form" action="/submit-contact" method="POST">
+                
+                <div class="form-group">
+                    <label for="name" class="cinzel-label">How should we address you?</label>
+                    <input type="text" id="name" name="name" placeholder="Your name or alias..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-method" class="cinzel-label">Where do you flutter most?</label>
+                    <input type="text" id="contact-method" name="contactMethod" placeholder="Email or X/Discord handle..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="spoke-selection" class="cinzel-label">Which Spoke brought you here?</label>
+                    <div class="select-wrapper">
+                        <select id="spoke-selection" name="spoke" required>
+                            <option value="" disabled selected>Select a path...</option>
+                            <option value="the-heart">The Heart (Glow’s Haven / Veteran & Mental Health Support)</option>
+                            <option value="the-engine">The Engine (Wings DAO / Professional Partnerships)</option>
+                            <option value="the-legacy">The Legacy (Sea Haven / Conservation & Literacy)</option>
+                            <option value="the-lore">The Lore (True Love / Transmedia & Storytelling)</option>
+                            <option value="the-morning-glow">The Morning Glow (X Spaces & Daily Inspiration)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message" class="cinzel-label">How can we help you shine today?</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Tell us your story, your idea, or simply say hello..." required></textarea>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="sanctuary-fund-interest" name="fundInterest">
+                    <label for="sanctuary-fund-interest" class="montserrat-text text-checkbox-label">
+                        Check here to receive information on land acquisition and donation opportunities.
+                    </label>
+                </div>
+
+                <button type="submit" class="premium-form-btn sanctuary-btn">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <section id="donate" class="donation-footer-block centered-text">
+        <div class="silver-bordered-box glass-frame">
+            <img src="assets/GlowsHavenLLCnobg.png" alt="Glow's Haven Icon" class="donation-box-icon">
+            <h3 class="cinzel-header">Secure the Anchor</h3>
+            <p class="montserrat-text">
+                "Every contribution to Glow's Haven LLC is a seed planted in Tennessee soil. Through our VIVO model, your donations directly fund the 40% Land Acquisition Fund for our public-facing veteran sanctuary and animal rescue. Help us build a legacy that lasts."
+            </p>
+            <a href="#" class="glass-button standard-glow-btn">Donate to the Sanctuary Fund</a>
+        </div>
+    </section>
+
+    <footer class="site-footer centered-text">
+        <div class="footer-content">
+            <p class="cinzel-header">Glow's Haven LLC</p>
+            <p class="montserrat-text small-print">Built in Web3. Rooted in Tennessee. Defined by Integrity.</p>
+            <p class="montserrat-text small-print">&copy; 2026 Glow's Haven LLC. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
