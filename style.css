@@ -1,4 +1,4 @@
-/* GLOW'S HAVEN - MASTER AUTHORITATIVE STYLESHEET 
+/* GLOW\'S HAVEN - MASTER AUTHORITATIVE STYLESHEET 
     Luxury Edition: Premium Aesthetics Upgrade
     Target: index, sanctuary, sea-haven, strategy-hub
 */
@@ -60,10 +60,7 @@ h1, h2, h3, h4, h5, .nav-links a, .live-status, .footer p {
 
 /* --- NAVIGATION BAR --- */
 .nav-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 22px 72px;
+    padding: 22px 0;
     background: rgba(255, 255, 255, 0.88);
     backdrop-filter: blur(24px) saturate(180%);
     -webkit-backdrop-filter: blur(24px) saturate(180%);
@@ -74,19 +71,19 @@ h1, h2, h3, h4, h5, .nav-links a, .live-status, .footer p {
     transition: var(--transition-standard);
 }
 
-.nav-bar::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 72px;
-    right: 72px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--champagne-line), transparent);
-    pointer-events: none;
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .nav-bar .logo img {
     height: 55px;
+    object-fit: contain;
+    background: transparent;
     transition: var(--transition-standard);
 }
 
@@ -95,7 +92,7 @@ h1, h2, h3, h4, h5, .nav-links a, .live-status, .footer p {
     transform: scale(0.98);
 }
 
-.nav-bar .nav-links a {
+.nav-wrapper .nav-links a {
     margin: 0 22px;
     text-decoration: none;
     color: var(--primary-blue);
@@ -106,7 +103,7 @@ h1, h2, h3, h4, h5, .nav-links a, .live-status, .footer p {
     padding-bottom: 4px;
 }
 
-.nav-bar .nav-links a::after {
+.nav-wrapper .nav-links a::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -117,15 +114,15 @@ h1, h2, h3, h4, h5, .nav-links a, .live-status, .footer p {
     transition: var(--transition-standard);
 }
 
-.nav-bar .nav-links a:hover {
+.nav-wrapper .nav-links a:hover {
     color: var(--aurora-green);
 }
 
-.nav-bar .nav-links a:hover::after {
+.nav-wrapper .nav-links a:hover::after {
     width: 100%;
 }
 
-.nav-bar .support-button {
+.nav-wrapper .support-button {
     border: 1px solid var(--primary-blue);
     color: var(--primary-blue);
     padding: 11px 30px;
@@ -138,7 +135,7 @@ h1, h2, h3, h4, h5, .nav-links a, .live-status, .footer p {
     transition: var(--transition-standard);
 }
 
-.nav-bar .support-button:hover {
+.nav-wrapper .support-button:hover {
     background-color: var(--primary-blue);
     color: var(--white);
     box-shadow: 0 8px 24px rgba(26, 58, 95, 0.25);
