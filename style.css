@@ -275,17 +275,19 @@ h1, h2, h3, h4, h5, .nav-links a {
 }
 
 /* --- WINGS DAO LOGO --- */
-.wings-logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
+.logo-wrapper {
+    overflow: visible;
 }
 
-.wings-logo {
-    max-width: 450px;
+.premium-logo {
+    width: 400px;
+    max-width: 90%;
     height: auto;
     object-fit: contain;
+}
+
+.text-block-centered {
+    text-align: center;
 }
 
 
@@ -351,7 +353,6 @@ h1, h2, h3, h4, h5, .nav-links a {
 }
 
 .spoke-card {
-    height: 540px;
     border-radius: 4px;
     padding: 64px;
     color: var(--white);
@@ -361,7 +362,6 @@ h1, h2, h3, h4, h5, .nav-links a {
     position: relative;
     transition: var(--transition-slow);
     box-shadow: var(--shadow-premium);
-    overflow: hidden;
 }
 
 .spoke-card::before {
