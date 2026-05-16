@@ -82,8 +82,14 @@ h1, h2, h3, h4, h5, .cinzel-header {
     display: flex;
     align-items: center;
 }
+.nav-logo-link {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
 .nav-logo {
-    max-height: 55px; /* Firm constraint preventing header blowout */
+    max-height: 50px; /* Adjust based on your current header constraints */
     width: auto;
     object-fit: contain;
 }
