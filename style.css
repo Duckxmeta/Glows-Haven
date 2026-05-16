@@ -782,3 +782,84 @@ h1, h2, h3, h4, h5, .cinzel-header {
     border-color: var(--champagne) !important;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
+/* --- LUXURY DIGITAL LIBRARY SKINS --- */
+.archive-book-card {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.book-cover-wrapper {
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.book-cover {
+    width: 170px;
+    height: 240px;
+    background: #0f1a24; /* Sanctuary Blue deep baseline */
+    border-radius: 2px 8px 8px 2px;
+    position: relative;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    transform-style: preserve-3d;
+}
+
+/* Morning Glow Silver Book Spine Accent Mechanics */
+.book-spine {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 12px;
+    height: 100%;
+    background: linear-gradient(90deg, #566573 0%, #D5D8DC 50%, #566573 100%); /* Morning Glow Metallic Base */
+    border-radius: 2px 0 0 2px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.book-title-block {
+    text-align: center;
+    pointer-events: none;
+}
+
+.book-title-block h3 {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.book-title-block span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    color: var(--champagne);
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+/* INTERACTIVE VISUAL PHYSICS HOVER HITS */
+.archive-book-card:hover {
+    border-color: rgba(213, 216, 220, 0.2);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.archive-book-card:hover .book-cover {
+    transform: rotateY(-12deg) scale(1.03);
+    box-shadow: 15px 15px 30px rgba(0,0,0,0.8);
+}
+
+.archive-book-card:hover .book-spine {
+    opacity: 1;
+    filter: brightness(1.2);
+}
