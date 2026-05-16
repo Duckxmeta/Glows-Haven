@@ -979,3 +979,97 @@ h1, h2, h3, h4, h5, .cinzel-header {
         grid-template-columns: 1fr;
     }
 }
+
+/* ==========================================================================
+   DYNAMIC MOBILE HAMBURGER & INTERACTIVE OVERLAY SYSTEM
+   ========================================================================== */
+
+/* Default visibility states for desktop layouts */
+.mobile-nav-toggle { display: none; }
+.mobile-only-cta { display: none; }
+.desktop-only-cta { display: inline-block; }
+
+@media (max-width: 991px) {
+    /* Hide standard desktop CTA button logic */
+    .desktop-only-cta { display: none; }
+    .mobile-only-cta { 
+        display: inline-block; 
+        margin-top: 30px;
+        width: calc(100% - 40px);
+        text-align: center;
+    }
+
+    /* Manifest the Three-Line Hamburger Trigger Button */
+    .mobile-nav-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1001; /* Layer button strictly above the overlay glass */
+    }
+
+    .hamburger-bar {
+        width: 100%;
+        height: 3px;
+        background-color: var(--silver-accent);
+        border-radius: 2px;
+        transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    /* Pivot Center Navigation Array Into an Premium Fullscreen Popup Overlay */
+    .nav-links-center {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(10, 23, 36, 0.98); /* Deep Sanctuary Blue solid baseline shield */
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        z-index: 1000;
+        
+        /* Initial hidden animation layout mechanics */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Core Link Scaling for clean mobile hitboxes */
+    .nav-links-center a {
+        font-family: 'Cinzel', serif;
+        font-size: 1.4rem;
+        letter-spacing: 2px;
+        color: var(--white) !important;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    /* Manifest Activation Engine Trigger Classes */
+    .nav-links-center.mobile-menu-active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    /* Transform Hamburger Lines Into an 'X' Close Configuration On Active Overlay */
+    .mobile-nav-toggle.open-active .hamburger-bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .mobile-nav-toggle.open-active .hamburger-bar:nth-child(2) {
+        opacity: 0;
+    }
+    .mobile-nav-toggle.open-active .hamburger-bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-44deg);
+    }
+}
