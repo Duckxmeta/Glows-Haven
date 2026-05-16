@@ -863,3 +863,119 @@ h1, h2, h3, h4, h5, .cinzel-header {
     opacity: 1;
     filter: brightness(1.2);
 }
+
+/* ==========================================================================
+   THE ARCHITECTS OF THE SANCTUARY: TEAM HAVEN STYLES
+   ========================================================================== */
+
+.team-row-title {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    color: var(--champagne);
+    margin: 50px 0 20px;
+    text-transform: uppercase;
+    border-left: 2px solid var(--champagne);
+    padding-left: 15px;
+}
+
+.team-grid {
+    display: grid;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.grid-2-col { grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); }
+.grid-3-col { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+
+.team-id-card {
+    position: relative;
+    padding: 35px 30px;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(213, 216, 220, 0.08); 
+    border-radius: 8px;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-crest {
+    font-size: 1.5rem;
+    color: var(--silver-accent);
+    opacity: 0.4;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.card-name {
+    font-size: 1.3rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 5px;
+    color: var(--white);
+}
+
+.card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--champagne);
+    margin-bottom: 15px;
+}
+
+.card-role {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    line-height: 1.6;
+}
+
+.team-id-card::after {
+    content: attr(data-tagline);
+    position: absolute;
+    bottom: -20px;
+    right: 25px;
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.1rem;
+    color: var(--silver-accent);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.team-id-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(213, 216, 220, 0.4) !important; 
+    background: rgba(255, 255, 255, 0.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.team-id-card:hover .card-crest {
+    opacity: 1;
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+.team-id-card:hover::after {
+    bottom: 15px;
+    opacity: 0.8;
+}
+
+.integrity-seal-watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    background: url('assets/GlowsHavenLLCnobg.png') no-repeat center center;
+    background-size: contain;
+    opacity: 0.02; 
+    pointer-events: none;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .grid-2-col, .grid-3-col {
+        grid-template-columns: 1fr;
+    }
+}
