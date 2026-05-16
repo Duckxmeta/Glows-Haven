@@ -728,3 +728,35 @@ h1, h2, h3, h4, h5, .cinzel-header {
     display: inline-block;
     margin-top: 10px;
 }
+/* --- COMPLIANCE FOOTER FINE TUNING --- */
+.expanded-footer-links a {
+    transition: var(--transition-standard);
+    opacity: 0.75;
+}
+.expanded-footer-links a:hover {
+    opacity: 1;
+    color: var(--white) !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+.legal-page-body h3 {
+    font-size: 1.1rem;
+    color: var(--champagne);
+    margin: 35px 0 12px;
+    letter-spacing: 1px;
+}
+.legal-page-body p {
+    margin-bottom: 20px;
+    opacity: 0.85;
+    font-size: 0.95rem;
+}
+.legal-page-body ul {
+    margin-left: 20px;
+    margin-bottom: 25px;
+}
+.legal-section-title {
+    font-size: 1.5rem;
+    margin: 50px 0 25px;
+    border-bottom: 1px solid var(--champagne-line);
+    padding-bottom: 10px;
+    color: var(--white);
+}
