@@ -769,3 +769,10 @@ h1, h2, h3, h4, h5, .cinzel-header {
     opacity: 1;
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
+/* --- HAVEN OUTFITTERS SPECIFIC STYLING --- */
+.merch-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.04) !important;
+    border-color: var(--champagne) !important;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
