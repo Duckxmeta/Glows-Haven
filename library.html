@@ -15,15 +15,25 @@
             <a href="index.html" class="nav-logo-link">
                 <img src="assets/GlowsHavenlogonobg.png" alt="Glow's Haven Logo" class="nav-logo">
             </a>
-            <nav class="nav-links-center">
-                <a href="index.html">The Hub</a>
-                <a href="strategy-hub.html">Wings DAO</a>
-                <a href="sea-haven.html">Sea Haven</a>
-                <a href="library.html" class="active">The Library</a>
-                <a href="merch.html">Outfitters</a>
-                <a href="contact.html">Contact</a>
+            
+            <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu" onclick="toggleMobileMenu()">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+            
+            <nav class="nav-links-center" id="navigationMenu">
+                <a href="index.html" onclick="toggleMobileMenu()">The Hub</a>
+                <a href="strategy-hub.html" onclick="toggleMobileMenu()">Wings DAO</a>
+                <a href="sea-haven.html" onclick="toggleMobileMenu()">Sea Haven</a>
+                <a href="library.html" onclick="toggleMobileMenu()">The Library</a>
+                <a href="merch.html" onclick="toggleMobileMenu()">Outfitters</a>
+                <a href="contact.html" onclick="toggleMobileMenu()">Contact</a>
+                
+                <a href="contact.html#donate" class="btn-support-silver mobile-only-cta" onclick="toggleMobileMenu()">Support the Sanctuary</a>
             </nav>
-            <a href="contact.html#donate" class="btn-support-silver">Support the Sanctuary</a>
+            
+            <a href="contact.html#donate" class="btn-support-silver desktop-only-cta">Support the Sanctuary</a>
         </div>
     </header>
 
