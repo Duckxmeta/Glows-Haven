@@ -63,24 +63,22 @@ h1, h2, h3, h4, h5, .cinzel-header {
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -1; /* Layered directly behind website content blocks */
+    z-index: -1; 
     overflow: hidden;
 }
-
 .video-background-container video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    pointer-events: none; /* Disables right-clicks and layout interaction */
+    pointer-events: none; 
 }
-
 .video-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(5, 16, 31, 0.4); /* Smoothly darkens starlight to balance readibility */
+    background: rgba(5, 16, 31, 0.4); 
     z-index: 1;
 }
 
@@ -121,6 +119,7 @@ h1, h2, h3, h4, h5, .cinzel-header {
 .nav-links-center {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 40px;
 }
 .nav-links-center a {
@@ -132,6 +131,7 @@ h1, h2, h3, h4, h5, .cinzel-header {
     text-decoration: none;
     transition: var(--transition-standard);
     opacity: 0.8;
+    display: inline-block;
 }
 .nav-links-center a:hover {
     color: var(--silver-accent);
@@ -139,7 +139,14 @@ h1, h2, h3, h4, h5, .cinzel-header {
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
-/* Right Anchor: Silver Border Button */
+/* Right Anchor: Handled nicely via displaying block on desktop layout */
+.desktop-only-cta {
+    display: inline-block;
+}
+.mobile-only-cta {
+    display: none;
+}
+
 .btn-support-silver {
     border: 1.5px solid var(--silver-accent);
     border-radius: 50px;
@@ -168,10 +175,9 @@ h1, h2, h3, h4, h5, .cinzel-header {
     justify-content: center;
     position: relative;
     padding: 100px 20px;
-    background: transparent; /* Changed to let video background show through */
+    background: transparent; 
     overflow: hidden;
 }
-/* Cyber-topographical matrix overlay simulation */
 .hero.starlight-bg::before {
     content: '';
     position: absolute;
@@ -262,13 +268,12 @@ h1, h2, h3, h4, h5, .cinzel-header {
 
 /* --- BACKGROUND WRAPPERS --- */
 .sanctuary-blue-bg {
-    background-color: rgba(10, 22, 40, 0.75); /* Updated to semi-transparent to pass background aesthetics */
+    background-color: rgba(10, 22, 40, 0.75); 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     position: relative;
 }
 
-/* Ensure structured landing sections explicitly overlay background deck */
 .site-header, .hero, .founder-letter, .team-haven-section, .core-spokes, .pillars-section, .archives-section, .scroll-letter-section, .contact-section, .donation-footer-block, .site-footer {
     position: relative;
     z-index: 2;
@@ -347,6 +352,35 @@ h1, h2, h3, h4, h5, .cinzel-header {
     font-size: 12px;
     letter-spacing: 2px;
     opacity: 0.6;
+}
+
+/* --- EXPERT COMPONENT: TEAM LAYOUT ALIGNMENT ENGINE --- */
+.team-haven-section {
+    padding: 100px 40px;
+}
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+}
+.team-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    text-align: left; /* Left-align standard developer profile info */
+    border-radius: 4px;
+}
+.ecosystem-support-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start; /* Forces the standalone grid/box directly to the left */
+}
+.ecosystem-support-wrapper .team-card {
+    width: calc(50% - 15px); /* Perfectly snaps width constraints to match standard grid column geometry */
+    text-align: left;        /* Overrides any inherited centering to ensure left text layout */
 }
 
 /* --- IV. SECTION 2: THE CORE SPOKES --- */
@@ -444,7 +478,7 @@ h1, h2, h3, h4, h5, .cinzel-header {
 }
 .pillars-grid-container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Enforced Authoritative 5 Columns */
+    grid-template-columns: repeat(5, 1fr); 
     gap: 25px;
     margin-top: 60px;
 }
@@ -542,15 +576,15 @@ h1, h2, h3, h4, h5, .cinzel-header {
 /* --- VII. SECTION 5: REACH THE HAVEN (CONTACT) --- */
 .contact-section {
     padding: 120px 20px;
-    display: flex;          /* Force a flex layout context */
-    justify-content: center; /* Horizontally center the container child */
+    display: flex;          
+    justify-content: center; 
     align-items: center;
     width: 100%;
 }
 .contact-container {
     max-width: 700px;
-    width: 100%;            /* Ensure it is responsive up to 700px */
-    margin: 0 auto;         /* Standard block auto-centering fallback */
+    width: 100%;            
+    margin: 0 auto;         
 }
 .orb-icon-glow {
     max-height: 90px;
@@ -605,8 +639,6 @@ h1, h2, h3, h4, h5, .cinzel-header {
 .donation-footer-block {
     padding: 80px 40px;
 }
-
-/* Unified Pill Box Stabilization Rules Engine */
 .silver-bordered-box {
     border: 1px solid var(--silver-accent);
     max-width: 1000px;
@@ -625,12 +657,10 @@ h1, h2, h3, h4, h5, .cinzel-header {
     max-width: 750px;
     margin: 0 auto 35px;
 }
-
-/* Target Pill Link Structure */
 .silver-bordered-box .btn-support-silver {
     display: inline-block;
-    white-space: nowrap;      /* Completely bars multi-line layout splits */
-    max-width: 100%;          /* Restrains bounds within mobile boxes */
+    white-space: nowrap;      
+    max-width: 100%;          
     overflow: hidden;
     text-overflow: ellipsis;  
     box-sizing: border-box;
@@ -658,7 +688,6 @@ h1, h2, h3, h4, h5, .cinzel-header {
     }
 }
 @media (max-width: 991px) {
-    /* Hide standard desktop CTA button logic */
     .desktop-only-cta { display: none; }
     .mobile-only-cta { 
         display: inline-block; 
@@ -666,8 +695,6 @@ h1, h2, h3, h4, h5, .cinzel-header {
         width: calc(100% - 40px);
         text-align: center;
     }
-
-    /* Manifest the Three-Line Hamburger Trigger Button */
     .mobile-nav-toggle {
         display: flex;
         flex-direction: column;
@@ -678,9 +705,8 @@ h1, h2, h3, h4, h5, .cinzel-header {
         border: none;
         cursor: pointer;
         padding: 0;
-        z-index: 1001; /* Layer button strictly above the overlay glass */
+        z-index: 1001; 
     }
-
     .hamburger-bar {
         width: 100%;
         height: 3px;
@@ -688,15 +714,13 @@ h1, h2, h3, h4, h5, .cinzel-header {
         border-radius: 2px;
         transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
     }
-
-    /* Pivot Center Navigation Array Into an Premium Fullscreen Popup Overlay */
     .nav-links-center {
         position: fixed;
         top: 0;
         left: 0;
         width: 100vw;
         height: 100vh;
-        background: rgba(10, 23, 36, 0.98); /* Deep Sanctuary Blue solid baseline shield */
+        background: rgba(10, 23, 36, 0.98); 
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
         display: flex;
@@ -705,15 +729,11 @@ h1, h2, h3, h4, h5, .cinzel-header {
         align-items: center;
         gap: 25px;
         z-index: 1000;
-        
-        /* Initial hidden animation layout mechanics */
         opacity: 0;
         visibility: hidden;
         transform: translateY(-20px);
         transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
     }
-
-    /* Core Link Scaling for clean mobile hitboxes */
     .nav-links-center a {
         font-family: 'Cinzel', serif;
         font-size: 1.4rem;
@@ -722,15 +742,11 @@ h1, h2, h3, h4, h5, .cinzel-header {
         text-decoration: none;
         transition: color 0.3s ease;
     }
-
-    /* Manifest Activation Engine Trigger Classes */
     .nav-links-center.mobile-menu-active {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
     }
-
-    /* Transform Hamburger Lines Into an 'X' Close Configuration On Active Overlay */
     .mobile-nav-toggle.open-active .hamburger-bar:nth-child(1) {
         transform: translateY(9px) rotate(45deg);
     }
@@ -753,8 +769,11 @@ h1, h2, h3, h4, h5, .cinzel-header {
         justify-content: center;
         gap: 20px;
     }
-    .spokes-grid {
+    .spokes-grid, .team-grid {
         grid-template-columns: 1fr;
+    }
+    .ecosystem-support-wrapper .team-card {
+        width: 100%;
     }
     .pillars-grid-container {
         grid-template-columns: repeat(2, 1fr);
@@ -768,10 +787,9 @@ h1, h2, h3, h4, h5, .cinzel-header {
     .pillars-grid-container {
         grid-template-columns: 1fr;
     }
-    /* Mobile-First Text Adjustments for the Pill Callout Box */
     .silver-bordered-box .btn-support-silver {
-        font-size: 10px;       /* Gently scale typography to prevent truncation */
-        padding: 10px 18px;    /* Pull horizontal alignment constraints back */
+        font-size: 10px;       
+        padding: 10px 18px;    
         letter-spacing: 1px;
     }
 }
