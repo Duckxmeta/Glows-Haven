@@ -139,7 +139,7 @@ h1, h2, h3, h4, h5, .cinzel-header {
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
-/* Right Anchor: Handled nicely via displaying block on desktop layout */
+/* Right Anchor: Structural CTA System */
 .desktop-only-cta {
     display: inline-block;
 }
@@ -369,18 +369,18 @@ h1, h2, h3, h4, h5, .cinzel-header {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
     padding: 40px;
-    text-align: left; /* Left-align standard developer profile info */
+    text-align: left;
     border-radius: 4px;
 }
 .ecosystem-support-wrapper {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: flex-start; /* Forces the standalone grid/box directly to the left */
+    justify-content: flex-start;
 }
 .ecosystem-support-wrapper .team-card {
-    width: calc(50% - 15px); /* Perfectly snaps width constraints to match standard grid column geometry */
-    text-align: left;        /* Overrides any inherited centering to ensure left text layout */
+    width: calc(50% - 15px);
+    text-align: left;        
 }
 
 /* --- IV. SECTION 2: THE CORE SPOKES --- */
@@ -584,7 +584,7 @@ h1, h2, h3, h4, h5, .cinzel-header {
 .contact-container {
     max-width: 700px;
     width: 100%;            
-    margin: 0 auto;         
+    margin: 0 auto;          
 }
 .orb-icon-glow {
     max-height: 90px;
@@ -687,8 +687,11 @@ h1, h2, h3, h4, h5, .cinzel-header {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
 @media (max-width: 991px) {
-    .desktop-only-cta { display: none; }
+    .desktop-only-cta { 
+        display: none !important; 
+    }
     .mobile-only-cta { 
         display: inline-block; 
         margin-top: 30px;
@@ -714,20 +717,20 @@ h1, h2, h3, h4, h5, .cinzel-header {
         border-radius: 2px;
         transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
     }
+    
+    /* FIX: High-readability solid modal layout using standard palette variables */
     .nav-links-center {
         position: fixed;
         top: 0;
         left: 0;
         width: 100vw;
         height: 100vh;
-        background: rgba(10, 23, 36, 0.98); 
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
+        background: var(--sanctuary-blue); /* Solid dark brand blue overlay */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 25px;
+        gap: 30px; /* Enhanced link distribution layout */
         z-index: 1000;
         opacity: 0;
         visibility: hidden;
@@ -736,12 +739,21 @@ h1, h2, h3, h4, h5, .cinzel-header {
     }
     .nav-links-center a {
         font-family: 'Cinzel', serif;
-        font-size: 1.4rem;
-        letter-spacing: 2px;
+        font-size: 1.5rem; /* Upgraded for cleaner readability and touch precision */
+        letter-spacing: 3px;
+        text-transform: uppercase;
         color: var(--white) !important;
         text-decoration: none;
         transition: color 0.3s ease;
+        padding: 5px 0;
+        display: block;
+        width: 100%;
+        text-align: center;
     }
+    .nav-links-center a:hover, .nav-links-center a:active {
+        color: var(--champagne) !important; /* Elegant gold feedback indicator on interactive navigation */
+    }
+    
     .nav-links-center.mobile-menu-active {
         opacity: 1;
         visibility: visible;
@@ -759,16 +771,7 @@ h1, h2, h3, h4, h5, .cinzel-header {
 }
 
 @media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        gap: 20px;
-        padding: 10px;
-    }
-    .nav-links-center {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-    }
+    /* FIX: Removed conflicting mobile menu wraps to maintain structural layout balance */
     .spokes-grid, .team-grid {
         grid-template-columns: 1fr;
     }
@@ -800,16 +803,10 @@ h1, h2, h3, h4, h5, .cinzel-header {
     opacity: 0.85;
     max-width: 620px;
 }
-/* Hide the mobile-specific CTA link entirely on desktop viewports */
+
+/* --- X. CLEANUP SYSTEM: DEFINITIVE CTA MEDIA ISOLATION --- */
 @media (min-width: 992px) {
     .mobile-only-cta {
-        display: none !important;
-    }
-}
-
-/* Ensure the desktop CTA remains hidden when screen shrinks to mobile/tablet layout */
-@media (max-width: 991px) {
-    .desktop-only-cta {
         display: none !important;
     }
 }
