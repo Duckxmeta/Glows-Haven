@@ -56,6 +56,34 @@ h1, h2, h3, h4, h5, .cinzel-header {
 }
 .centered-text { text-align: center; }
 
+/* --- VIDEO BACKGROUND FRAMEWORK --- */
+.video-background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Layered directly behind website content blocks */
+    overflow: hidden;
+}
+
+.video-background-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none; /* Disables right-clicks and layout interaction */
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 16, 31, 0.4); /* Smoothly darkens starlight to balance readibility */
+    z-index: 1;
+}
+
 /* --- I. THE NAVIGATION BAR (TRIPLE-ANCHOR SYSTEM) --- */
 .site-header {
     background: rgba(5, 16, 31, 0.92);
@@ -77,7 +105,7 @@ h1, h2, h3, h4, h5, .cinzel-header {
     padding: 0 40px;
 }
 
-/* Left Anchor: Logo (Fixed Duplicate CSS Declaration Block) */
+/* Left Anchor: Logo */
 .nav-logo-link {
     display: inline-flex;
     align-items: center;
@@ -140,7 +168,7 @@ h1, h2, h3, h4, h5, .cinzel-header {
     justify-content: center;
     position: relative;
     padding: 100px 20px;
-    background: var(--ink);
+    background: transparent; /* Changed to let video background show through */
     overflow: hidden;
 }
 /* Cyber-topographical matrix overlay simulation */
@@ -234,8 +262,16 @@ h1, h2, h3, h4, h5, .cinzel-header {
 
 /* --- BACKGROUND WRAPPERS --- */
 .sanctuary-blue-bg {
-    background-color: var(--sanctuary-blue);
+    background-color: rgba(10, 22, 40, 0.75); /* Updated to semi-transparent to pass background aesthetics */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     position: relative;
+}
+
+/* Ensure structured landing sections explicitly overlay background deck */
+.site-header, .hero, .founder-letter, .team-haven-section, .core-spokes, .pillars-section, .archives-section, .scroll-letter-section, .contact-section, .donation-footer-block, .site-footer {
+    position: relative;
+    z-index: 2;
 }
 
 /* --- III. SECTION 1: THE FOUNDER’S STATEMENT --- */
@@ -744,4 +780,5 @@ h1, h2, h3, h4, h5, .cinzel-header {
 .contact-lead-in {
     font-size: 1rem;
     opacity: 0.85;
-    max-width: 620px
+    max-width: 620px;
+}
