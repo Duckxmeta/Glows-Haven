@@ -77,19 +77,14 @@ h1, h2, h3, h4, h5, .cinzel-header {
     padding: 0 40px;
 }
 
-/* Left Anchor: Logo */
-.nav-logo-link {
-    display: flex;
-    align-items: center;
-}
+/* Left Anchor: Logo (Fixed Duplicate CSS Declaration Block) */
 .nav-logo-link {
     display: inline-flex;
     align-items: center;
     cursor: pointer;
 }
-
 .nav-logo {
-    max-height: 50px; /* Adjust based on your current header constraints */
+    max-height: 50px; 
     width: auto;
     object-fit: contain;
 }
@@ -516,7 +511,6 @@ h1, h2, h3, h4, h5, .cinzel-header {
     align-items: center;
     width: 100%;
 }
-
 .contact-container {
     max-width: 700px;
     width: 100%;            /* Ensure it is responsive up to 700px */
@@ -575,6 +569,8 @@ h1, h2, h3, h4, h5, .cinzel-header {
 .donation-footer-block {
     padding: 80px 40px;
 }
+
+/* Unified Pill Box Stabilization Rules Engine */
 .silver-bordered-box {
     border: 1px solid var(--silver-accent);
     max-width: 1000px;
@@ -592,6 +588,16 @@ h1, h2, h3, h4, h5, .cinzel-header {
     opacity: 0.8;
     max-width: 750px;
     margin: 0 auto 35px;
+}
+
+/* Target Pill Link Structure */
+.silver-bordered-box .btn-support-silver {
+    display: inline-block;
+    white-space: nowrap;      /* Completely bars multi-line layout splits */
+    max-width: 100%;          /* Restrains bounds within mobile boxes */
+    overflow: hidden;
+    text-overflow: ellipsis;  
+    box-sizing: border-box;
 }
 
 /* --- IX. FOOTER --- */
@@ -615,380 +621,6 @@ h1, h2, h3, h4, h5, .cinzel-header {
         grid-template-columns: repeat(3, 1fr);
     }
 }
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        gap: 20px;
-        padding: 10px;
-    }
-    .nav-links-center {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-    }
-    .spokes-grid {
-        grid-template-columns: 1fr;
-    }
-    .pillars-grid-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .glass-frame {
-        padding: 30px;
-    }
-}
-@media (max-width: 480px) {
-    .pillars-grid-container {
-        grid-template-columns: 1fr;
-    }
-}
-/* --- EXTRA CONTACT PAGE ADDITIONS --- */
-.contact-lead-in {
-    font-size: 1rem;
-    opacity: 0.85;
-    max-width: 620px;
-    margin: 25px auto 40px;
-    line-height: 1.8;
-}
-.cinzel-label {
-    font-family: 'Cinzel', serif;
-    font-size: 0.85rem;
-    letter-spacing: 1.5px;
-    color: var(--champagne);
-    margin-bottom: 8px;
-    display: block;
-    text-transform: uppercase;
-}
-.form-group {
-    margin-bottom: 25px;
-}
-/* Form Select Fields Dropdown Styling */
-#haven-contact-form select {
-    width: 100%;
-    background: rgba(5, 16, 31, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 16px;
-    color: var(--white);
-    font-family: 'Montserrat', sans-serif;
-    outline: none;
-    transition: var(--transition-standard);
-    appearance: none;
-    -webkit-appearance: none;
-    cursor: pointer;
-    border-radius: 0;
-}
-#haven-contact-form select:focus {
-    border-color: var(--silver-accent);
-}
-.select-wrapper {
-    position: relative;
-}
-/* Subtle custom arrow drop icon indicators */
-.select-wrapper::after {
-    content: '▼';
-    font-size: 0.7rem;
-    color: var(--champagne);
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
-}
-/* Checkbox Layout adjustments */
-.checkbox-group {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    margin: 15px 0 35px;
-}
-.checkbox-group input[type="checkbox"] {
-    width: auto !important;
-    margin-top: 6px;
-    cursor: pointer;
-    accent-color: var(--primary-blue);
-}
-.text-checkbox-label {
-    font-size: 0.9rem;
-    opacity: 0.8;
-    line-height: 1.6;
-    cursor: pointer;
-}
-/* Sanctuary Blue Button variant for the submission entry */
-.premium-form-btn.sanctuary-btn {
-    background: var(--primary-blue-deep);
-    border: 1px solid var(--champagne-line);
-    color: var(--champagne);
-    transition: var(--transition-standard);
-}
-.premium-form-btn.sanctuary-btn:hover {
-    background: var(--white);
-    color: var(--ink);
-    border-color: var(--white);
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
-}
-.donation-box-icon {
-    max-height: 60px;
-    width: auto;
-    margin-bottom: 20px;
-}
-.standard-glow-btn {
-    display: inline-block;
-    margin-top: 10px;
-}
-/* --- COMPLIANCE FOOTER FINE TUNING --- */
-.expanded-footer-links a {
-    transition: var(--transition-standard);
-    opacity: 0.75;
-}
-.expanded-footer-links a:hover {
-    opacity: 1;
-    color: var(--white) !important;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
-}
-.legal-page-body h3 {
-    font-size: 1.1rem;
-    color: var(--champagne);
-    margin: 35px 0 12px;
-    letter-spacing: 1px;
-}
-.legal-page-body p {
-    margin-bottom: 20px;
-    opacity: 0.85;
-    font-size: 0.95rem;
-}
-.legal-page-body ul {
-    margin-left: 20px;
-    margin-bottom: 25px;
-}
-.legal-section-title {
-    font-size: 1.5rem;
-    margin: 50px 0 25px;
-    border-bottom: 1px solid var(--champagne-line);
-    padding-bottom: 10px;
-    color: var(--white);
-}
-.legal-links-row a {
-    transition: all 0.3s ease;
-}
-
-.legal-links-row a:hover {
-    color: var(--white) !important;
-    opacity: 1;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-}
-/* --- HAVEN OUTFITTERS SPECIFIC STYLING --- */
-.merch-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.04) !important;
-    border-color: var(--champagne) !important;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-}
-/* --- LUXURY DIGITAL LIBRARY SKINS --- */
-.archive-book-card {
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.01);
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-.book-cover-wrapper {
-    perspective: 1000px;
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
-}
-
-.book-cover {
-    width: 170px;
-    height: 240px;
-    background: #0f1a24; /* Sanctuary Blue deep baseline */
-    border-radius: 2px 8px 8px 2px;
-    position: relative;
-    box-shadow: 5px 5px 20px rgba(0,0,0,0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    box-sizing: border-box;
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    transform-style: preserve-3d;
-}
-
-/* Morning Glow Silver Book Spine Accent Mechanics */
-.book-spine {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 12px;
-    height: 100%;
-    background: linear-gradient(90deg, #566573 0%, #D5D8DC 50%, #566573 100%); /* Morning Glow Metallic Base */
-    border-radius: 2px 0 0 2px;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
-}
-
-.book-title-block {
-    text-align: center;
-    pointer-events: none;
-}
-
-.book-title-block h3 {
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    color: #ffffff;
-    margin-bottom: 8px;
-}
-
-.book-title-block span {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    color: var(--champagne);
-    letter-spacing: 1px;
-    opacity: 0.8;
-}
-
-/* INTERACTIVE VISUAL PHYSICS HOVER HITS */
-.archive-book-card:hover {
-    border-color: rgba(213, 216, 220, 0.2);
-    background: rgba(255, 255, 255, 0.03);
-}
-
-.archive-book-card:hover .book-cover {
-    transform: rotateY(-12deg) scale(1.03);
-    box-shadow: 15px 15px 30px rgba(0,0,0,0.8);
-}
-
-.archive-book-card:hover .book-spine {
-    opacity: 1;
-    filter: brightness(1.2);
-}
-
-/* ==========================================================================
-   THE ARCHITECTS OF THE SANCTUARY: TEAM HAVEN STYLES
-   ========================================================================== */
-
-.team-row-title {
-    font-size: 1.1rem;
-    letter-spacing: 2px;
-    color: var(--champagne);
-    margin: 50px 0 20px;
-    text-transform: uppercase;
-    border-left: 2px solid var(--champagne);
-    padding-left: 15px;
-}
-
-.team-grid {
-    display: grid;
-    gap: 25px;
-    margin-bottom: 40px;
-}
-
-.grid-2-col { grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); }
-.grid-3-col { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-
-.team-id-card {
-    position: relative;
-    padding: 35px 30px;
-    background: rgba(255, 255, 255, 0.01);
-    border: 1px solid rgba(213, 216, 220, 0.08); 
-    border-radius: 8px;
-    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-
-.card-crest {
-    font-size: 1.5rem;
-    color: var(--silver-accent);
-    opacity: 0.4;
-    margin-bottom: 15px;
-    transition: all 0.3s ease;
-}
-
-.card-name {
-    font-size: 1.3rem;
-    letter-spacing: 1.5px;
-    margin-bottom: 5px;
-    color: var(--white);
-}
-
-.card-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--champagne);
-    margin-bottom: 15px;
-}
-
-.card-role {
-    font-size: 0.9rem;
-    opacity: 0.7;
-    line-height: 1.6;
-}
-
-.team-id-card::after {
-    content: attr(data-tagline);
-    position: absolute;
-    bottom: -20px;
-    right: 25px;
-    font-family: 'La Belle Aurore', cursive;
-    font-size: 1.1rem;
-    color: var(--silver-accent);
-    opacity: 0;
-    transition: all 0.4s ease;
-}
-
-.team-id-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(213, 216, 220, 0.4) !important; 
-    background: rgba(255, 255, 255, 0.03);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-}
-
-.team-id-card:hover .card-crest {
-    opacity: 1;
-    color: var(--white);
-    transform: scale(1.05);
-}
-
-.team-id-card:hover::after {
-    bottom: 15px;
-    opacity: 0.8;
-}
-
-.integrity-seal-watermark {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 500px;
-    height: 500px;
-    background: url('assets/GlowsHavenLLCnobg.png') no-repeat center center;
-    background-size: contain;
-    opacity: 0.02; 
-    pointer-events: none;
-    z-index: 1;
-}
-
-@media (max-width: 768px) {
-    .grid-2-col, .grid-3-col {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ==========================================================================
-   DYNAMIC MOBILE HAMBURGER & INTERACTIVE OVERLAY SYSTEM
-   ========================================================================== */
-
-/* Default visibility states for desktop layouts */
-.mobile-nav-toggle { display: none; }
-.mobile-only-cta { display: none; }
-.desktop-only-cta { display: inline-block; }
-
 @media (max-width: 991px) {
     /* Hide standard desktop CTA button logic */
     .desktop-only-cta { display: none; }
@@ -1073,3 +705,43 @@ h1, h2, h3, h4, h5, .cinzel-header {
         transform: translateY(-9px) rotate(-44deg);
     }
 }
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+    }
+    .nav-links-center {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    .spokes-grid {
+        grid-template-columns: 1fr;
+    }
+    .pillars-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .glass-frame {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pillars-grid-container {
+        grid-template-columns: 1fr;
+    }
+    /* Mobile-First Text Adjustments for the Pill Callout Box */
+    .silver-bordered-box .btn-support-silver {
+        font-size: 10px;       /* Gently scale typography to prevent truncation */
+        padding: 10px 18px;    /* Pull horizontal alignment constraints back */
+        letter-spacing: 1px;
+    }
+}
+
+/* --- EXTRA CONTACT PAGE ADDITIONS --- */
+.contact-lead-in {
+    font-size: 1rem;
+    opacity: 0.85;
+    max-width: 620px
