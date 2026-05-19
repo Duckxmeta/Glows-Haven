@@ -800,3 +800,16 @@ h1, h2, h3, h4, h5, .cinzel-header {
     opacity: 0.85;
     max-width: 620px;
 }
+/* Hide the mobile-specific CTA link entirely on desktop viewports */
+@media (min-width: 992px) {
+    .mobile-only-cta {
+        display: none !important;
+    }
+}
+
+/* Ensure the desktop CTA remains hidden when screen shrinks to mobile/tablet layout */
+@media (max-width: 991px) {
+    .desktop-only-cta {
+        display: none !important;
+    }
+}
