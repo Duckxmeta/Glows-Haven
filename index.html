@@ -25,14 +25,26 @@
             <span class="hamburger-bar"></span>
         </button>
         <nav class="nav-links-center" id="navigationMenu">
-            <a href="index.html" onclick="toggleMobileMenu()">The Hub</a>
+            <a href="index.html" onclick="toggleMobileMenu()">The Haven</a>
             <a href="strategy-hub.html" onclick="toggleMobileMenu()">Wings DAO</a>
             <a href="sea-haven.html" onclick="toggleMobileMenu()">Sea Haven</a>
             <a href="library.html" onclick="toggleMobileMenu()">The Library</a>
             <a href="merch.html" onclick="toggleMobileMenu()">Outfitters</a>
-            <a href="contact.html" onclick="toggleMobileMenu()">Contact</a>
+            <a href="team.html" class="mobile-only-nav-extra" onclick="toggleMobileMenu()">Team</a>
+            <a href="contact.html" class="mobile-only-nav-extra" onclick="toggleMobileMenu()">Contact</a>
             <a href="contact.html#donate" class="btn-support-silver mobile-only-cta" onclick="toggleMobileMenu()">Support the Sanctuary</a>
         </nav>
+        <div class="nav-more-wrap desktop-only-nav-more">
+            <button type="button" class="nav-more-toggle" id="navMoreToggle" aria-label="More pages" aria-expanded="false" aria-haspopup="true">
+                <span class="nav-more-bar"></span>
+                <span class="nav-more-bar"></span>
+                <span class="nav-more-bar"></span>
+            </button>
+            <ul class="nav-more-dropdown" id="navMoreMenu" role="menu">
+                <li role="none"><a href="team.html" role="menuitem">Team</a></li>
+                <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+            </ul>
+        </div>
         <a href="contact.html#donate" class="btn-support-silver desktop-only-cta">Support the Sanctuary</a>
     </div>
 </header>
@@ -143,104 +155,12 @@
     </div>
 </section>
 
-<section class="team-haven-section" style="position: relative; padding: 100px 0; border-top: 1px solid rgba(255,255,255,0.05); background: var(--sanctuary-blue);">
-    <div class="integrity-seal-watermark"></div>
-    <div class="contact-container" style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-        <div class="centered-text" style="margin-bottom: 70px; text-align: center;">
-            <h2 class="cinzel-header" style="font-size: 2rem; letter-spacing: 4px; margin-bottom: 20px;">THE ARCHITECTS OF THE SANCTUARY</h2>
-            <div class="accent-line" style="margin: 0 auto 25px;"></div>
-            <p class="montserrat-text" style="font-style: italic; opacity: 0.8; max-width: 800px; margin: 0 auto; line-height: 1.8; font-size: 1.05rem; color: var(--silver-accent);">
-                "Guided by the 25 Pillars, our team provides the professional infrastructure required to build a legacy that lasts. We are more than a staff; we are the guardians of the Haven."
-            </p>
-        </div>
-        <h3 class="cinzel-header team-row-title" style="margin-top: 40px; margin-bottom: 20px;">Executive Leadership</h3>
-        <div class="team-grid">
-            <div class="glass-frame team-id-card" data-tagline="Ecosystem Anchor">
-                <div class="card-crest"><i class="fa-solid fa-crown"></i></div>
-                <h4 class="cinzel-header card-name">Glow</h4>
-                <span class="card-title">Founder & COO</span>
-                <p class="montserrat-text card-role">Strategic Vision, Ecosystem Architecture, and Community Advocacy.</p>
-            </div>
-            <div class="glass-frame team-id-card" data-tagline="Operational Execution">
-                <div class="card-crest"><i class="fa-solid fa-compass"></i></div>
-                <h4 class="cinzel-header card-name">Mister</h4>
-                <span class="card-title">Managing Director</span>
-                <p class="montserrat-text card-role">Operational Leadership and Strategic Execution.</p>
-            </div>
-        </div>
-        <h3 class="cinzel-header team-row-title" style="margin-top: 40px; margin-bottom: 20px;">Security & Infrastructure</h3>
-        <div class="team-grid">
-            <div class="glass-frame team-id-card" data-tagline="Asset Protection">
-                <div class="card-crest"><i class="fa-solid fa-lock"></i></div>
-                <h4 class="cinzel-header card-name">Henry</h4>
-                <span class="card-title">Security Specialist</span>
-                <p class="montserrat-text card-role">Technical Infrastructure Defense and Digital Asset Protection.</p>
-            </div>
-            <div class="glass-frame team-id-card" data-tagline="System Defense Architecture">
-                <div class="card-crest"><i class="fa-solid fa-terminal"></i></div>
-                <h4 class="cinzel-header card-name">Red</h4>
-                <span class="card-title">Security & Discord Developer</span>
-                <p class="montserrat-text card-role">Server Architecture, Bot Development, and Strategic System Defense.</p>
-            </div>
-        </div>
-        <h3 class="cinzel-header team-row-title" style="margin-top: 40px; margin-bottom: 20px;">Administration</h3>
-        <div class="team-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-            <div class="glass-frame team-id-card" data-tagline="Operational Flow">
-                <div class="card-crest"><i class="fa-solid fa-feather-pointed"></i></div>
-                <h4 class="cinzel-header card-name">Sonia</h4>
-                <span class="card-title">Admin & Communications Director</span>
-                <p class="montserrat-text card-role">Systems Management, Operational Flow, and Brand Voice.</p>
-            </div>
-            <div class="glass-frame team-id-card" data-tagline="Kinship Advocacy">
-                <div class="card-crest"><i class="fa-solid fa-comments"></i></div>
-                <h4 class="cinzel-header card-name">The Sul</h4>
-                <span class="card-title">Community Manager & Socials</span>
-                <p class="montserrat-text card-role">Strategic Community Growth, Social Media Management, and Kinship Advocacy.</p>
-            </div>
-            <div class="glass-frame team-id-card" data-tagline="Guardian of the Haven">
-                <div class="card-crest"><i class="fa-solid fa-shield-halved"></i></div>
-                <h4 class="cinzel-header card-name">Mr Zackson</h4>
-                <span class="card-title">Moderator & Socials Manager</span>
-                <p class="montserrat-text card-role">Engagement Stability, Content Distribution, and Guardian of the Haven.</p>
-            </div>
-        </div>
-        <h3 class="cinzel-header team-row-title" style="margin-top: 40px; margin-bottom: 20px;">Creative & Technical Design</h3>
-        <div class="team-grid">
-            <div class="glass-frame team-id-card" data-tagline="Wings DAO UX Creator">
-                <div class="card-crest"><i class="fa-solid fa-cubes"></i></div>
-                <h4 class="cinzel-header card-name">Gabe</h4>
-                <span class="card-title">3D Art & Web3 Architecture</span>
-                <p class="montserrat-text card-role">Designer for Website, App Interface, 3D Character Art, and Web3 UX.</p>
-            </div>
-            <div class="glass-frame team-id-card" data-tagline="Interface Integrity">
-                <div class="card-crest"><i class="fa-solid fa-code"></i></div>
-                <h4 class="cinzel-header card-name">Duck</h4>
-                <span class="card-title">Web Developer</span>
-                <p class="montserrat-text card-role">Digital Architecture and Interface Integrity.</p>
-            </div>
-        </div>
-        <h3 class="cinzel-header team-row-title" style="margin-top: 40px; margin-bottom: 20px;">Ecosystem Support</h3>
-        <div class="ecosystem-support-wrapper">
-            <div class="glass-frame team-id-card" data-tagline="Guardian Ally">
-                <div class="card-crest"><i class="fa-solid fa-hand-fist"></i></div>
-                <h4 class="cinzel-header card-name">Savage</h4>
-                <span class="card-title">Ecosystem Moderator & Support</span>
-                <p class="montserrat-text card-role">Community Infrastructure Defense, Kinship Moderation, and Operational Support.</p>
-            </div>
-        </div>
-        <div class="silver-bordered-box glass-frame global-network-box" style="margin-top: 80px; padding: 40px; text-align: center;">
-            <h4 class="cinzel-header" style="font-size: 1.2rem; letter-spacing: 2px; color: var(--champagne); margin-bottom: 15px;">Our Global Network</h4>
-            <p class="montserrat-text" style="font-size: 0.95rem; opacity: 0.8; line-height: 1.8; max-width: 850px; margin: 0 auto;">
-                <strong>The Brain Trust:</strong> While our central administrative hub is located on-site in Tennessee, the Haven is powered by a world-class network of remote operators, designers, and systems architects. Our modular operational blueprint perfectly pairs physical on-site presence with elite digital specialists to safeguard ecosystem 24/7/365.
-            </p>
-        </div>
-    </div>
-</section>
-
 <section class="core-spokes sanctuary-blue-bg" style="padding: 100px 0; border-top: 1px solid rgba(255,255,255,0.05);">
     <div class="spokes-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
         <div id="haven-sanctuary" class="spoke-card glass-frame" style="text-align: center; padding: 30px;">
-            <div class="aurora-glow" style="margin-bottom: 20px; font-size: 2rem; color: var(--silver-accent);"><i class="fa-solid fa-building-shield"></i></div>
+            <div class="aurora-glow spoke-logo-wrap">
+                <img src="assets/haven-sanctuary-logo.png" alt="Haven Sanctuary" class="spoke-icon spoke-logo-img">
+            </div>
             <h3 class="cinzel-header" style="font-size: 1.2rem; margin-bottom: 15px;">The Heart: Haven Sanctuary</h3>
             <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.8; min-height: 80px; margin-bottom: 20px;">Our offline physical anchorage in Tennessee. Peer support infrastructure and avian conservation modules built for mental health solace.</p>
             <div class="spoke-links" style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
@@ -249,7 +169,9 @@
             </div>
         </div>
         <div id="wings-dao" class="spoke-card glass-frame" style="text-align: center; padding: 30px;">
-            <div class="aurora-glow" style="margin-bottom: 20px;"><img src="assets/WingsDaonobg.png" alt="Wings DAO Logo" class="spoke-icon" style="height: 40px; filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));"></div>
+            <div class="aurora-glow spoke-logo-wrap">
+                <img src="assets/WingsDaonobg.png" alt="Wings DAO Logo" class="spoke-icon spoke-logo-img">
+            </div>
             <h3 class="cinzel-header" style="font-size: 1.2rem; margin-bottom: 15px;">The Engine: Wings DAO</h3>
             <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.8; min-height: 80px; margin-bottom: 20px;">The professional infrastructure of the Haven. Providing strategic branding, marketing, and quality assurance with a focus on performance.</p>
             <div class="spoke-links" style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
@@ -258,7 +180,9 @@
             </div>
         </div>
         <div id="sea-haven" class="spoke-card glass-frame" style="text-align: center; padding: 30px;">
-            <div class="aurora-glow" style="margin-bottom: 20px; font-size: 2rem; color: var(--silver-accent);"><i class="fas fa-water icon-sea"></i></div>
+            <div class="aurora-glow spoke-logo-wrap">
+                <img src="assets/sea-haven-logo.png" alt="Sea Haven" class="spoke-icon spoke-logo-img">
+            </div>
             <h3 class="cinzel-header" style="font-size: 1.2rem; margin-bottom: 15px;">The Legacy: Sea Haven</h3>
             <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.8; min-height: 80px; margin-bottom: 20px;">A community-led movement bridging 3D cinematic art with a world-class mission for ocean and moral educational literacy platforms.</p>
             <div class="spoke-links" style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
