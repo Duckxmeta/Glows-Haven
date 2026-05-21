@@ -1,23 +1,4 @@
-random() * 1.4 + 0.3,
-                phase: Math.random() * Math.PI * 2,
-                speed: 0.4 + Math.random() * 1.1,
-                baseAlpha: 0.25 + Math.random() * 0.55,
-                color: Math.random() > 0.85
-                    ? 'rgba(72,201,176,'
-                    : Math.random() > 0.6
-                        ? 'rgba(232,213,176,'
-                        : 'rgba(255,255,255,'
-            });
-        }
-    }
-
-    function draw(ts) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        const t = ts * 0.001;
-
-        for (const s of stars) {
-            const alpha = s.baseAlpha * (0.45 + 0.55 * Math.sin(t * s.speed + s.phase));
-            ctx.beginPath(const express = require('express');
+const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -38,10 +19,12 @@ function toggleMobileMenu() {
     if (window.innerWidth <= 991) {
         const menu = document.getElementById('navigationMenu');
         const toggleBtn = document.querySelector('.mobile-nav-toggle');
-        
+        const moreWrap = document.querySelector('.nav-more-wrap');
+
         menu.classList.toggle('mobile-menu-active');
         toggleBtn.classList.toggle('open-active');
-        
+        if (moreWrap) moreWrap.classList.remove('is-open');
+
         if (menu.classList.contains('mobile-menu-active')) {
             document.body.style.overflow = 'hidden';
         } else {
@@ -49,6 +32,45 @@ function toggleMobileMenu() {
         }
     }
 }
+
+/* More-pages dropdown (desktop hamburger) */
+(function initNavMoreMenu() {
+    const wrap = document.querySelector('.nav-more-wrap');
+    const toggle = document.getElementById('navMoreToggle');
+    const menu = document.getElementById('navMoreMenu');
+    if (!wrap || !toggle || !menu) return;
+
+    function closeMenu() {
+        wrap.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+    }
+
+    function openMenu() {
+        wrap.classList.add('is-open');
+        toggle.setAttribute('aria-expanded', 'true');
+    }
+
+    toggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (wrap.classList.contains('is-open')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+
+    document.addEventListener('click', function (e) {
+        if (!wrap.contains(e.target)) closeMenu();
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeMenu();
+    });
+
+    menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+    });
+})();
 
 /* ==========================================================================
    HERO STAR CANVAS: TWINKLING CONSTELLATION LAYER
@@ -77,7 +99,26 @@ function toggleMobileMenu() {
             stars.push({
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
-                r: Math.);
+                r: Math.random() * 1.4 + 0.3,
+                phase: Math.random() * Math.PI * 2,
+                speed: 0.4 + Math.random() * 1.1,
+                baseAlpha: 0.25 + Math.random() * 0.55,
+                color: Math.random() > 0.85
+                    ? 'rgba(72,201,176,'
+                    : Math.random() > 0.6
+                        ? 'rgba(232,213,176,'
+                        : 'rgba(255,255,255,'
+            });
+        }
+    }
+
+    function draw(ts) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const t = ts * 0.001;
+
+        for (const s of stars) {
+            const alpha = s.baseAlpha * (0.45 + 0.55 * Math.sin(t * s.speed + s.phase));
+            ctx.beginPath();
             ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
             ctx.fillStyle = s.color + alpha.toFixed(3) + ')';
             ctx.fill();
