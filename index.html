@@ -1,33 +1,428 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ARXON - The Future of Private, Fast, and Secure Transactions</title>
-    <meta name="description" content="Privacy chain for the people. Fast, secure, and private blockchain transactions at scale. Mine $ARX and join the network." />
-    <meta name="author" content="ARXON" />
-    <link href="https://fonts.cdnfonts.com/css/creato-display" rel="stylesheet">
-    <link rel="icon" href="/favicon.png" type="image/png">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow's Haven | Together, We Shine Brighter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;700&family=La+Belle+Aurore&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/48c9b0a619.js" crossorigin="anonymous"></script>
+</head>
+<body class="luxury-theme">
 
-    <meta property="og:title" content="ARXON - The Future of Private, Fast, and Secure Transactions" />
-    <meta property="og:description" content="Privacy chain for the people. Fast, secure, and private blockchain transactions at scale. Mine $ARX and join the network." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://arxon.io" />
-    <meta property="og:image" content="https://arxon.io/favicon.png" />
-    <meta property="og:image:width" content="512" />
-    <meta property="og:image:height" content="512" />
-    <meta property="og:site_name" content="ARXON" />
+    <div class="starfield-bg-container">
+        <img src="assets/starfield-hero.png" alt="" class="starfield-bg-img" aria-hidden="true">
+        <div class="starfield-bg-veil"></div>
+    </div>
 
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@ARXONarx" />
-    <meta name="twitter:creator" content="@ARXONarx" />
-    <meta name="twitter:title" content="ARXON - Privacy Chain for the People" />
-    <meta name="twitter:description" content="Privacy chain for the people. Fast, secure, and private blockchain transactions at scale. Mine $ARX and join the network." />
-    <meta name="twitter:image" content="https://arxon.io/favicon.png" />
-  </head>
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo-link">
+                <img src="assets/GlowsHavenlogonobg.png" alt="Glow's Haven Logo" class="nav-logo">
+            </a>
+            
+            <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu" onclick="toggleMobileMenu()">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+            
+            <nav class="nav-links-center" id="navigationMenu">
+                <a href="index.html" onclick="toggleMobileMenu()">The Hub</a>
+                <a href="strategy-hub.html" onclick="toggleMobileMenu()">Wings DAO</a>
+                <a href="sea-haven.html" onclick="toggleMobileMenu()">Sea Haven</a>
+                <a href="library.html" onclick="toggleMobileMenu()">The Library</a>
+                <a href="merch.html" onclick="toggleMobileMenu()">Outfitters</a>
+                <a href="contact.html" onclick="toggleMobileMenu()">Contact</a>
+                
+                <a href="contact.html#donate" class="btn-support-silver mobile-only-cta" onclick="toggleMobileMenu()">Support the Sanctuary</a>
+            </nav>
+            
+            <a href="contact.html#donate" class="btn-support-silver desktop-only-cta">Support the Sanctuary</a>
+        </div>
+    </header>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <section class="hero starlight-bg">
+        <canvas id="starCanvas" class="star-canvas" aria-hidden="true"></canvas>
+        <div class="hero-butterfly bf-1" aria-hidden="true">
+            <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="40" cy="28" rx="35" ry="24" fill="rgba(232,213,176,0.12)" transform="rotate(-18 40 28)"/>
+                <ellipse cx="33" cy="52" rx="22" ry="16" fill="rgba(232,213,176,0.08)" transform="rotate(12 33 52)"/>
+                <ellipse cx="80" cy="28" rx="35" ry="24" fill="rgba(232,213,176,0.12)" transform="rotate(18 80 28)"/>
+                <ellipse cx="87" cy="52" rx="22" ry="16" fill="rgba(232,213,176,0.08)" transform="rotate(-12 87 52)"/>
+                <ellipse cx="60" cy="38" rx="3.5" ry="20" fill="rgba(232,213,176,0.22)"/>
+            </svg>
+        </div>
+        <div class="hero-butterfly bf-2" aria-hidden="true">
+            <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="40" cy="28" rx="35" ry="24" fill="rgba(72,201,176,0.09)" transform="rotate(-18 40 28)"/>
+                <ellipse cx="33" cy="52" rx="22" ry="16" fill="rgba(72,201,176,0.06)" transform="rotate(12 33 52)"/>
+                <ellipse cx="80" cy="28" rx="35" ry="24" fill="rgba(72,201,176,0.09)" transform="rotate(18 80 28)"/>
+                <ellipse cx="87" cy="52" rx="22" ry="16" fill="rgba(72,201,176,0.06)" transform="rotate(-12 87 52)"/>
+                <ellipse cx="60" cy="38" rx="3.5" ry="20" fill="rgba(72,201,176,0.18)"/>
+            </svg>
+        </div>
+        <div class="hero-butterfly bf-3" aria-hidden="true">
+            <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="40" cy="28" rx="35" ry="24" fill="rgba(255,255,255,0.07)" transform="rotate(-18 40 28)"/>
+                <ellipse cx="33" cy="52" rx="22" ry="16" fill="rgba(255,255,255,0.05)" transform="rotate(12 33 52)"/>
+                <ellipse cx="80" cy="28" rx="35" ry="24" fill="rgba(255,255,255,0.07)" transform="rotate(18 80 28)"/>
+                <ellipse cx="87" cy="52" rx="22" ry="16" fill="rgba(255,255,255,0.05)" transform="rotate(-12 87 52)"/>
+                <ellipse cx="60" cy="38" rx="3.5" ry="20" fill="rgba(255,255,255,0.14)"/>
+            </svg>
+        </div>
+        <div class="hero-content">
+            <h1 class="cinzel-header">TOGETHER, WE SHINE BRIGHTER.</h1>
+            <p class="sub-headline montserrat-text">A dual-world ecosystem dedicated to healing, connection, and resilience. From the digital frontier to the soil of Tennessee, we provide a landing spot for those who choose kindness, courage, and positivity.</p>
+            
+            <div class="flutter-section">
+                <span class="la-belle-accent">"Just Fluttering Around"</span>
+                <p class="flutter-subtext">— A reminder that even the smallest wings can create a storm of positive change.</p>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="sanctuary.html" class="glass-button">Explore the Sanctuary</a>
+                <a href="library.html" class="glass-button">Read Whitepaper</a>
+                <a href="https://x.com/GlowsHaven" target="_blank" class="morning-glow-link">The Morning Glow</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="founder-letter sanctuary-blue-bg">
+        <div class="letter-container">
+            <h2 class="cinzel-header">A SANCTUARY IN MOTION: A LETTER FROM GLOW</h2>
+        </div>
+
+        <div class="glow-letter-frame-outer">
+            <div class="glow-letter-frame">
+                <div class="glow-frame-border">
+                    <div class="glow-frame-corner glow-frame-corner-tl"></div>
+                    <div class="glow-frame-corner glow-frame-corner-tr"></div>
+                    <div class="glow-frame-corner glow-frame-corner-bl"></div>
+                    <div class="glow-frame-corner glow-frame-corner-br"></div>
+                    <div class="glow-frame-side glow-frame-top"></div>
+                    <div class="glow-frame-side glow-frame-bottom"></div>
+                    <div class="glow-frame-side glow-frame-left"></div>
+                    <div class="glow-frame-side glow-frame-right"></div>
+                    <div class="glow-frame-ornament glow-frame-ornament-top">&#10022; &#10022; &#10022;</div>
+                    <div class="glow-frame-ornament glow-frame-ornament-bottom">&#10022; &#10022; &#10022;</div>
+                </div>
+
+                <div class="glow-letter-inner montserrat-text">
+                    <p class="letter-salutation">To the Wings, the Veterans, and the Seekers,</p>
+
+                    <p>In the quiet hours, during the first light of <strong>The Morning Glow</strong>, I often speak about metamorphosis. We watch the butterfly and marvel at its beauty, but we rarely discuss the grit it takes to survive the cocoon.</p>
+
+                    <p>Today, Glow's Haven LLC is emerging from its own cocoon.</p>
+
+                    <p>What started as a digital refuge has transformed into a mission that spans worlds. We have navigated the volatile frontiers of Web3 and the complex realities of Web2, always guided by a single truth: <strong>Integrity is our only anchor.</strong></p>
+
+                    <h3 class="letter-subhead">The Vision: A Dual-World Sanctuary</h3>
+                    <p>Glow's Haven is no longer just a project; it is a Sanctuary in Motion. We are building an ecosystem where art meets advocacy, and where digital assets fund physical healing. Our roadmap is clear, and our commitment is unwavering:</p>
+                    <ul>
+                        <li><strong>We are the Heart:</strong> Through our counseling initiatives and peer support, we are mending what the world has exhausted.</li>
+                        <li><strong>We are the Engine:</strong> Through Wings DAO, we are setting the standard for professional branding and marketing, proving that you can build with high-level ethics in a low-trust space.</li>
+                        <li><strong>We are the Legacy:</strong> From the conservation waters of Sea Haven to the soil of Odin's Place in Tennessee, we are planting seeds for a future that outlasts any market cycle.</li>
+                    </ul>
+
+                    <h3 class="letter-subhead">To My Veterans</h3>
+                    <p>To those who have carried the weight of service: the Haven is being built specifically for you. As the wife of a veteran, I have seen the silent struggles that follow the uniform. Odin's Place and our specialized canine programs are my promise to you. We are creating a physical safe harbor here in Tennessee, where you can find solace, kinship, and the strength to keep fluttering forward.</p>
+
+                    <h3 class="letter-subhead">Our 25 Pillars</h3>
+                    <p>We operate under a code of <strong>25 Pillars of Light.</strong> These aren't just values, they are our operational DNA. Whether we are planning a global event through our DAO or sitting in a 1-on-1 support session, we choose Fortitude, Honor, and Compassion every single time.</p>
+
+                    <h3 class="letter-subhead">The Invitation</h3>
+                    <p>The world is heavy, but you don't have to carry it alone. I invite you to join us not just as a follower, but as a part of the "Wings." Whether you are here for the transmedia art of True Love, the professional expertise of our Wings DAO, or the peace of the Sanctuary, you have a place at our table.</p>
+
+                    <div class="glow-letter-signoff">
+                        <p class="la-belle-accent glow-sign-motto">Together, we shine brighter.</p>
+                        <p class="glow-sign-closing">With courage and hope,</p>
+                        <p class="cinzel-header glow-sign-name">Glow</p>
+                        <span class="glow-sign-role">Founder &amp; COO, Glow's Haven LLC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="team-haven-section" style="position: relative; padding: 100px 0; border-top: 1px solid rgba(255,255,255,0.05); background: var(--sanctuary-blue);">
+        <div class="integrity-seal-watermark"></div>
+        <div class="contact-container" style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            
+            <div class="centered-text" style="margin-bottom: 70px; text-align: center;">
+                <h2 class="cinzel-header" style="font-size: 2rem; letter-spacing: 4px; margin-bottom: 20px;">THE ARCHITECTS OF THE SANCTUARY</h2>
+                <div class="accent-line" style="margin: 0 auto 25px;"></div>
+                <p class="montserrat-text" style="font-style: italic; opacity: 0.8; max-width: 800px; margin: 0 auto; line-height: 1.8; font-size: 1.05rem; color: var(--silver-accent);">
+                    "Guided by the 25 Pillars, our team provides the professional infrastructure required to build a legacy that lasts. We are more than a staff; we are the guardians of the Haven."
+                </p>
+            </div>
+
+            <h3 class="cinzel-header team-row-title" style="margin-top: 40px; margin-bottom: 20px;">Executive Leadership</h3>
+            <div class="team-grid">
+                <div class="glass-frame team-id-card" data-tagline="Ecosystem Anchor">
+                    <div class="card-crest"><i class="fa-solid fa-crown"></i></div>
+                    <h4 class="cinzel-header card-name">Glow</h4>
+                    <span class="card-title">Founder & COO</span>
+                    <p class="montserrat-text card-role">Strategic Vision, Ecosystem Architecture, and Community Advocacy.</p>
+                </div>
+                <div class="glass-frame team-id-card" data-tagline="Operational Execution">
+                    <div class="card-crest"><i class="fa-solid fa-compass"></i></div>
+                    <h4 class="cinzel-header card-name">Mister</h4>
+                    <span class="card-title">Managing Director</span>
+                    <p class="montserrat-text card-role">Operational Leadership and Strategic Execution.</p>
+                </div>
+            </div>
+
+            <h3 class="cinzel-header team-row-title" style="margin-top: 40px; margin-bottom: 20px;">Security & Infrastructure</h3>
+            <div class="team-grid">
+                <div class="glass-frame team-id-card" data-tagline="Asset Protection">
+                    <div class="card-crest"><i class="fa-solid fa-lock"></i></div>
+                    <h4 class="cinzel-header card-name">Henry</h4>
+                    <span class="card-title">Security Specialist</span>
+                    <p class="montserrat-text card-role">Technical Infrastructure Defense and Digital Asset Protection.</p>
+                </div>
+                <div class="glass-frame team-id-card" data-tagline="System Defense Architecture">
+                    <div class="card-crest"><i class="fa-solid fa-terminal"></i></div>
+                    <h4 class="cinzel-header card-name">Red</h4>
+                    <span class="card-title">Security & Discord Developer</span>
+                    <p class="montserrat-text card-role">Server Architecture, Bot Development, and Strategic System Defense.</p>
+                </div>
+            </div>
+
+            <h3 class="cinzel-header team-row-title" style="margin-top: 40px; margin-bottom: 20px;">Administration</h3>
+            <div class="team-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <div class="glass-frame team-id-card" data-tagline="Operational Flow">
+                    <div class="card-crest"><i class="fa-solid fa-feather-pointed"></i></div>
+                    <h4 class="cinzel-header card-name">Sonia</h4>
+                    <span class="card-title">Admin & Communications Director</span>
+                    <p class="montserrat-text card-role">Systems Management, Operational Flow, and Brand Voice.</p>
+                </div>
+                <div class="glass-frame team-id-card" data-tagline="Kinship Advocacy">
+                    <div class="card-crest"><i class="fa-solid fa-comments"></i></div>
+                    <h4 class="cinzel-header card-name">The Sul</h4>
+                    <span class="card-title">Community Manager & Socials</span>
+                    <p class="montserrat-text card-role">Strategic Community Growth, Social Media Management, and Kinship Advocacy.</p>
+                </div>
+                <div class="glass-frame team-id-card" data-tagline="Guardian of the Haven">
+                    <div class="card-crest"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h4 class="cinzel-header card-name">Mr Zackson</h4>
+                    <span class="card-title">Moderator & Socials Manager</span>
+                    <p class="montserrat-text card-role">Engagement Stability, Content Distribution, and Guardian of the Haven.</p>
+                </div>
+            </div>
+
+            <h3 class="cinzel-header team-row-title" style="margin-top: 40px; margin-bottom: 20px;">Creative & Technical Design</h3>
+            <div class="team-grid">
+                <div class="glass-frame team-id-card" data-tagline="Wings DAO UX Creator">
+                    <div class="card-crest"><i class="fa-solid fa-cubes"></i></div>
+                    <h4 class="cinzel-header card-name">Gabe</h4>
+                    <span class="card-title">3D Art & Web3 Architecture</span>
+                    <p class="montserrat-text card-role">Designer for Website, App Interface, 3D Character Art, and Web3 UX.</p>
+                </div>
+                <div class="glass-frame team-id-card" data-tagline="Interface Integrity">
+                    <div class="card-crest"><i class="fa-solid fa-code"></i></div>
+                    <h4 class="cinzel-header card-name">Duck</h4>
+                    <span class="card-title">Web Developer</span>
+                    <p class="montserrat-text card-role">Digital Architecture and Interface Integrity.</p>
+                </div>
+            </div>
+
+            <h3 class="cinzel-header team-row-title" style="margin-top: 40px; margin-bottom: 20px;">Ecosystem Support</h3>
+            <div class="ecosystem-support-wrapper">
+                <div class="glass-frame team-id-card" data-tagline="Guardian Ally">
+                    <div class="card-crest"><i class="fa-solid fa-hand-fist"></i></div>
+                    <h4 class="cinzel-header card-name">Savage</h4>
+                    <span class="card-title">Ecosystem Moderator & Support</span>
+                    <p class="montserrat-text card-role">Community Infrastructure Defense, Kinship Moderation, and Operational Support.</p>
+                </div>
+            </div>
+
+            <div class="silver-bordered-box glass-frame global-network-box" style="margin-top: 80px; padding: 40px; text-align: center;">
+                <h4 class="cinzel-header" style="font-size: 1.2rem; letter-spacing: 2px; color: var(--champagne); margin-bottom: 15px;">Our Global Network</h4>
+                <p class="montserrat-text" style="font-size: 0.95rem; opacity: 0.8; line-height: 1.8; max-width: 850px; margin: 0 auto;">
+                    <strong>The Brain Trust:</strong> While our central administrative hub is located on-site in Tennessee, the Haven is powered by a world-class network of remote operators, designers, and systems architects. Our modular operational blueprint perfectly pairs physical on-site presence with elite digital specialists to safeguard ecosystem 24/7/365.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="core-spokes sanctuary-blue-bg" style="padding: 100px 0; border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="spokes-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            
+            <div id="haven-sanctuary" class="spoke-card glass-frame" style="text-align: center; padding: 30px;">
+                <div class="aurora-glow" style="margin-bottom: 20px; font-size: 2rem; color: var(--silver-accent);"><i class="fa-solid fa-building-shield"></i></div>
+                <h3 class="cinzel-header" style="font-size: 1.2rem; margin-bottom: 15px;">The Heart: Haven Sanctuary</h3>
+                <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.8; min-height: 80px; margin-bottom: 20px;">Our offline physical anchorage in Tennessee. Peer support infrastructure and avian conservation modules built for mental health solace.</p>
+                <div class="spoke-links" style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+                    <a href="sanctuary.html" class="premium-link" style="text-decoration: none; color: var(--white); font-weight: bold;">Explore Sanctuary</a>
+                    <a href="sanctuary.html" style="font-family:'Montserrat'; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; color:var(--silver-accent); text-decoration:underline;">Access Haven Files &rarr;</a>
+                </div>
+            </div>
+
+            <div id="wings-dao" class="spoke-card glass-frame" style="text-align: center; padding: 30px;">
+                <div class="aurora-glow" style="margin-bottom: 20px;"><img src="assets/WingsDaonobg.png" alt="Wings DAO Logo" class="spoke-icon" style="height: 40px; filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));"></div>
+                <h3 class="cinzel-header" style="font-size: 1.2rem; margin-bottom: 15px;">The Engine: Wings DAO</h3>
+                <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.8; min-height: 80px; margin-bottom: 20px;">The professional infrastructure of the Haven. Providing strategic branding, marketing, and quality assurance with a focus on performance.</p>
+                <div class="spoke-links" style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+                    <a href="strategy-hub.html" class="premium-link" style="text-decoration: none; color: var(--white); font-weight: bold;">Enter Strategy Hub</a>
+                    <a href="strategy-hub.html" style="font-family:'Montserrat'; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; color:var(--silver-accent); text-decoration:underline;">Access Wings Framework &rarr;</a>
+                </div>
+            </div>
+
+            <div id="sea-haven" class="spoke-card glass-frame" style="text-align: center; padding: 30px;">
+                <div class="aurora-glow" style="margin-bottom: 20px; font-size: 2rem; color: var(--silver-accent);"><i class="fas fa-water icon-sea"></i></div>
+                <h3 class="cinzel-header" style="font-size: 1.2rem; margin-bottom: 15px;">The Legacy: Sea Haven</h3>
+                <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.8; min-height: 80px; margin-bottom: 20px;">A community-led movement bridging 3D cinematic art with a world-class mission for ocean and moral educational literacy platforms.</p>
+                <div class="spoke-links" style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+                    <a href="sea-haven.html" class="premium-link" style="text-decoration: none; color: var(--white); font-weight: bold;">Guardian Portal</a>
+                    <a href="sea-haven.html" style="font-family:'Montserrat'; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; color:var(--silver-accent); text-decoration:underline;">Access Blue ocean data &rarr;</a>
+                </div>
+            </div>
+
+            <div id="true-love-spoke" class="spoke-card glass-frame" style="text-align: center; padding: 30px; border-style: dashed; opacity: 0.85;">
+                <div class="aurora-glow" style="margin-bottom: 20px; font-size: 2rem; color: rgba(255,255,255,0.3);"><i class="fa-solid fa-heart-crack"></i></div>
+                <h3 class="cinzel-header" style="font-size: 1.2rem; margin-bottom: 15px; color: rgba(255,255,255,0.6);">True Love</h3>
+                <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.6; min-height: 80px; margin-bottom: 20px;">Killers & Kisses transmedia art system. Exploring cultural dynamics through high-fidelity visual ecosystems and digital lore modules.</p>
+                <div class="spoke-links" style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+                    <span class="premium-link" style="color: var(--champagne); font-size: 0.85rem; font-weight: bold;">Coming Soon</span>
+                    <a href="#" style="font-family:'Montserrat'; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; color:rgba(255,255,255,0.3); pointer-events:none; text-decoration:underline;">Archives Locked &rarr;</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="pillars-section sanctuary-blue-bg">
+        <div class="content-container">
+            <h2 class="cinzel-header centered-text" style="text-align: center; margin-bottom: 50px;">The 25 Pillars of Light, THE DNA OF THE SANCTUARY</h2>
+            <div class="pillars-grid-container">
+                <div class="pillar-column">
+                    <h3>I. Inner Spirit</h3>
+                    <ul>
+                        <li>Authenticity</li>
+                        <li>Metamorphosis</li>
+                        <li>Resilience</li>
+                        <li>Fortitude</li>
+                        <li>Grace</li>
+                    </ul>
+                </div>
+                <div class="pillar-column">
+                    <h3>II. Social Bond</h3>
+                    <ul>
+                        <li>Kinship</li>
+                        <li>Unity</li>
+                        <li>Loyalty</li>
+                        <li>Advocacy</li>
+                        <li>Honor</li>
+                    </ul>
+                </div>
+                <div class="pillar-column">
+                    <h3>III. Healing Touch</h3>
+                    <ul>
+                        <li>Compassion</li>
+                        <li>Empathy</li>
+                        <li>Healing</li>
+                        <li>Solace</li>
+                        <li>Serenity</li>
+                    </ul>
+                </div>
+                <div class="pillar-column">
+                    <h3>IV. Guiding Light</h3>
+                    <ul>
+                        <li>Vibrance</li>
+                        <li>Optimism</li>
+                        <li>Hope</li>
+                        <li>Liberty</li>
+                        <li>Guidance</li>
+                    </ul>
+                </div>
+                <div class="pillar-column">
+                    <h3>V. Foundation</h3>
+                    <ul>
+                        <li>Protection</li>
+                        <li>Integrity</li>
+                        <li>Stability</li>
+                        <li>Creativity</li>
+                        <li>Legacy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="archives-section" class="archives-section sanctuary-blue-bg">
+        <div class="content-container centered-text">
+            <h2 class="cinzel-header">THE HAVEN ARCHIVES</h2>
+            <p class="montserrat-text silver-text">Transparency is the foundation of integrity. Explore our mission blueprints.</p>
+            <div class="digital-shelf">
+                <div class="book-mockup">
+                    <h4>Haven Whitepaper</h4>
+                    <a href="#" class="silver-button">Download</a>
+                </div>
+                <div class="book-mockup">
+                    <h4>Wings DAO Litepaper</h4>
+                    <a href="#" class="silver-button">Download</a>
+                </div>
+                <div class="book-mockup">
+                    <h4>Sea Haven Whitepaper</h4>
+                    <a href="#" class="silver-button">Download</a>
+                </div>
+                <div class="book-mockup">
+                    <p class="coming-soon">True Love Collection Whitepaper Coming Soon</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-section" class="contact-section sanctuary-blue-bg">
+        <div class="glass-frame contact-container centered-text">
+            <img src="assets/GlowsHaven1nobg.png" alt="Orb Icon" class="orb-icon-glow">
+            <h2 class="cinzel-header">REACH THE HAVEN</h2>
+            <p class="la-belle-accent">We’ve been waiting for you.</p>
+            <form id="haven-contact-form">
+                <input type="text" placeholder="Name or Alias" required>
+                <input type="email" placeholder="Email / Handle" required>
+                <textarea placeholder="Tell us your story..." rows="5"></textarea>
+                <button type="submit" class="premium-form-btn">SUBMIT</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="donation-footer-block sanctuary-blue-bg">
+        <div class="silver-bordered-box centered-text">
+            <h3 class="cinzel-header">SUPPORT THE MISSION</h3>
+            <p class="montserrat-text">Through our VIVO model, every contribution directly funds the land acquisition for our Tennessee veteran sanctuary and animal rescue.</p>
+            <a href="#" class="btn-support-silver">Donate to the Sanctuary Fund</a>
+        </div>
+    </section>
+
+    <footer class="site-footer centered-text" style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding: 40px 20px;">
+        <div class="footer-content">
+            <p class="cinzel-header" style="font-size: 1rem; letter-spacing: 2px; margin-bottom: 15px; color: var(--white);">
+                Glow’s Haven LLC: Built in Web3. Rooted in Tennessee. Defined by Integrity.
+            </p>
+            
+            <p class="montserrat-text legal-links-row" style="margin-bottom: 20px; font-size: 0.85rem; letter-spacing: 0.5px; opacity: 0.7;">
+                <a href="privacy.html" style="color: var(--silver-accent); text-decoration: none; margin: 0 10px;">Privacy Policy</a> | 
+                <a href="disclaimers.html" style="color: var(--silver-accent); text-decoration: none; margin: 0 10px;">Terms of Service</a> | 
+                <a href="disclaimers.html" style="color: var(--silver-accent); text-decoration: none; margin: 0 10px;">Project Disclaimers</a> | 
+                <a href="contact.html" style="color: var(--silver-accent); text-decoration: none; margin: 0 10px;">Contact</a>
+            </p>
+            
+            <p class="montserrat-text" style="gap: 20px; display: flex; justify-content: center; font-size: 1.2rem; margin-bottom: 25px;">
+                <a href="#" style="color: var(--silver-accent); transition: color 0.3s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#D5D8DC'"><i class="fab fa-discord"></i></a>
+                <a href="https://x.com/GlowsHaven" target="_blank" style="color: var(--silver-accent); transition: color 0.3s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#D5D8DC'"><i class="fab fa-x-twitter"></i></a>
+            </p>
+            
+            <p class="small-print" style="font-size: 0.75rem; opacity: 0.3; letter-spacing: 1px;">
+                &copy; 2026 Glow’s Haven LLC. Registered in the State of Tennessee. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
 </html>
