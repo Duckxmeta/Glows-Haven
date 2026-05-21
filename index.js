@@ -1,4 +1,23 @@
-const express = require('express');
+random() * 1.4 + 0.3,
+                phase: Math.random() * Math.PI * 2,
+                speed: 0.4 + Math.random() * 1.1,
+                baseAlpha: 0.25 + Math.random() * 0.55,
+                color: Math.random() > 0.85
+                    ? 'rgba(72,201,176,'
+                    : Math.random() > 0.6
+                        ? 'rgba(232,213,176,'
+                        : 'rgba(255,255,255,'
+            });
+        }
+    }
+
+    function draw(ts) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const t = ts * 0.001;
+
+        for (const s of stars) {
+            const alpha = s.baseAlpha * (0.45 + 0.55 * Math.sin(t * s.speed + s.phase));
+            ctx.beginPath(const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -58,26 +77,7 @@ function toggleMobileMenu() {
             stars.push({
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
-                r: Math.random() * 1.4 + 0.3,
-                phase: Math.random() * Math.PI * 2,
-                speed: 0.4 + Math.random() * 1.1,
-                baseAlpha: 0.25 + Math.random() * 0.55,
-                color: Math.random() > 0.85
-                    ? 'rgba(72,201,176,'
-                    : Math.random() > 0.6
-                        ? 'rgba(232,213,176,'
-                        : 'rgba(255,255,255,'
-            });
-        }
-    }
-
-    function draw(ts) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        const t = ts * 0.001;
-
-        for (const s of stars) {
-            const alpha = s.baseAlpha * (0.45 + 0.55 * Math.sin(t * s.speed + s.phase));
-            ctx.beginPath();
+                r: Math.);
             ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
             ctx.fillStyle = s.color + alpha.toFixed(3) + ')';
             ctx.fill();
@@ -89,4 +89,34 @@ function toggleMobileMenu() {
     window.addEventListener('resize', resize);
     resize();
     animFrame = requestAnimationFrame(draw);
+})();
+
+/* ==========================================================================
+   LETTER FRAME: scroll fades at top/bottom of inner viewport
+   ========================================================================== */
+(function initLetterScrollFades() {
+    const scrollEl = document.getElementById('letterScroll');
+    const viewport = scrollEl ? scrollEl.closest('.scroll-card-viewport') : null;
+    if (!scrollEl || !viewport) return;
+
+    const fadeTop = viewport.querySelector('.scroll-card-fade--top');
+    const fadeBottom = viewport.querySelector('.scroll-card-fade--bottom');
+    const edgeThreshold = 20;
+
+    function updateFades() {
+        const { scrollTop, scrollHeight, clientHeight } = scrollEl;
+        const atTop = scrollTop <= edgeThreshold;
+        const atBottom = scrollTop + clientHeight >= scrollHeight - edgeThreshold;
+
+        if (fadeTop) fadeTop.classList.toggle('is-hidden', atTop);
+        if (fadeBottom) fadeBottom.classList.toggle('is-hidden', atBottom);
+    }
+
+    scrollEl.addEventListener('scroll', updateFades, { passive: true });
+    window.addEventListener('resize', updateFades);
+    if (typeof ResizeObserver !== 'undefined') {
+        const ro = new ResizeObserver(updateFades);
+        ro.observe(scrollEl);
+    }
+    updateFades();
 })();
