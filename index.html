@@ -30,20 +30,14 @@
             <a href="sea-haven.html" onclick="toggleMobileMenu()">Sea Haven</a>
             <a href="library.html" onclick="toggleMobileMenu()">The Library</a>
             <a href="merch.html" onclick="toggleMobileMenu()">Outfitters</a>
-            <a href="team.html" class="mobile-only-nav-extra" onclick="toggleMobileMenu()">Team</a>
-            <a href="contact.html" class="mobile-only-nav-extra" onclick="toggleMobileMenu()">Contact</a>
             <a href="contact.html#donate" class="btn-support-silver mobile-only-cta" onclick="toggleMobileMenu()">Support the Sanctuary</a>
         </nav>
-        <div class="nav-more-wrap desktop-only-nav-more">
-            <button type="button" class="nav-more-toggle" id="navMoreToggle" aria-label="More pages" aria-expanded="false" aria-haspopup="true">
+        <div class="nav-more-wrap">
+            <button type="button" class="nav-more-toggle" id="navMoreToggle" aria-label="Open pages menu" aria-expanded="false" aria-controls="navPagesOverlay">
                 <span class="nav-more-bar"></span>
                 <span class="nav-more-bar"></span>
                 <span class="nav-more-bar"></span>
             </button>
-            <ul class="nav-more-dropdown" id="navMoreMenu" role="menu">
-                <li role="none"><a href="team.html" role="menuitem">Team</a></li>
-                <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
-            </ul>
         </div>
         <a href="contact.html#donate" class="btn-support-silver desktop-only-cta">Support the Sanctuary</a>
     </div>
@@ -297,6 +291,20 @@
     </div>
 </footer>
 
-<script src="index.js"></script>
+<div class="nav-pages-overlay" id="navPagesOverlay" aria-hidden="true">
+    <div class="nav-pages-backdrop" id="navPagesBackdrop"></div>
+    <nav class="nav-pages-panel" role="navigation" aria-label="Additional pages">
+        <button type="button" class="nav-pages-close" id="navPagesClose" aria-label="Close menu">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <p class="nav-pages-eyebrow">Haven Pages</p>
+        <ul class="nav-pages-list" id="navMoreMenu">
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+
+<script src="site.js"></script>
 </body>
 </html>
