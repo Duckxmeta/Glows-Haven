@@ -752,25 +752,27 @@ h1, h2, h3, h4, h5, .cinzel-header {
 
 /* ==========================================================================
    XI. THE LETTER: IMAGE-FRAMED SCROLL CARD
-   Full letter centered inside the ornate frame PNG, silver-tinted via filter
+   Definitive Authoritative Wide-Screen Fix (No-Stretch Layout Engine)
    ========================================================================== */
 
 /* Section wrapper */
 .founder-letter {
     padding: 120px 0 100px;
+    width: 100%;
 }
 
-/* Title block */
+/* Title block sitting proudly ABOVE the frame */
 .letter-section-title {
-    max-width: 860px;
-    margin: 0 auto 60px;
+    max-width: 1400px; /* Aligns smoothly with wide navbar container */
+    margin: 0 auto 40px;
     padding: 0 30px;
     text-align: center;
 }
 .letter-section-title h2 {
-    font-size: clamp(1.3rem, 3vw, 1.9rem);
-    letter-spacing: 4px;
+    font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+    letter-spacing: 5px;
     margin-bottom: 0;
+    color: var(--white);
 }
 .letter-title-rule {
     width: 80px;
@@ -779,118 +781,145 @@ h1, h2, h3, h4, h5, .cinzel-header {
     margin: 24px auto 0;
 }
 
-/* The scroll card: frame PNG as background, centered, max width */
+/* The scroll card structural wrapper */
 .scroll-card-outer {
-    max-width: 680px;
+    width: 90%;
+    /* Expands cleanly on wide screens up to 1200px, matches reference layouts */
+    max-width: 1200px; 
     margin: 0 auto;
     padding: 0 24px;
 }
+
 .scroll-card-inner {
     position: relative;
-    /* Silver transparent frame PNG — no background, just the ornament border */
-    background-image: url('assets/scroll-frame.png');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center center;
+    width: 100%;
+    /* Crucial Fix: Uses border-image to slice the frame so the edges NEVER warp */
+    border-style: solid;
+    border-width: 60px 80px; /* Thick luxury borders to match image reference frames */
+    border-image: url('assets/scroll-frame.png') 120 160 fill round; 
     background-color: transparent;
-    border-radius: 4px;
+    box-sizing: border-box;
 }
+
+/* Text layout container */
 .scroll-card-text {
     position: relative;
     z-index: 2;
-    /* Inset so text clears the ornate border on all sides */
-    padding: 11% 14% 11%;
+    padding: 20px 10px; /* Internal cushion to keep text away from borders */
     text-align: center;
+    width: 100%;
 }
 
-/* Letter text styles */
+/* Letter text typography alignment */
 .scroll-card-text p {
-    font-size: clamp(0.85rem, 1.5vw, 1rem);
-    margin-bottom: 22px;
+    font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+    margin-bottom: 24px;
     line-height: 1.9;
-    opacity: 0.92;
+    opacity: 0.95;
     color: var(--white);
     text-align: center;
 }
 .scroll-card-text p.letter-salutation {
-    font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+    font-size: clamp(1.05rem, 1.4vw, 1.3rem);
     font-weight: 700;
-    font-style: italic;
+    font-style: normal;
     color: var(--champagne);
-    margin-bottom: 28px;
-}
-.scroll-card-text ul {
-    list-style: none;
-    padding: 0;
-    margin: 16px 0 24px;
-    text-align: left;
-}
-.scroll-card-text ul li {
-    padding-left: 22px;
-    position: relative;
-    font-size: clamp(0.82rem, 1.4vw, 0.96rem);
-    line-height: 1.8;
-    margin-bottom: 14px;
-    opacity: 0.9;
-    color: var(--white);
-}
-.scroll-card-text ul li::before {
-    content: "✦";
-    color: var(--champagne);
-    position: absolute;
-    left: 0;
-    top: 3px;
-    font-size: 0.6rem;
-}
-.scroll-card-text .letter-subhead {
-    font-family: 'Cinzel', serif;
-    font-size: clamp(0.78rem, 1.3vw, 0.95rem);
-    color: var(--champagne);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin: 32px 0 14px;
+    margin-bottom: 36px;
     text-align: center;
 }
 
-/* Sign-off */
+/* Subheadings inside the letter frame */
+.scroll-card-text .letter-subhead {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+    color: var(--champagne);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 50px 0 24px;
+    text-align: center;
+    font-weight: 700;
+}
+
+/* Bullet list inside frame */
+.scroll-card-text ul {
+    list-style: none;
+    padding: 0;
+    margin: 24px auto;
+    max-width: 900px;
+    text-align: left;
+}
+.scroll-card-text ul li {
+    padding-left: 30px;
+    position: relative;
+    font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+    line-height: 1.8;
+    margin-bottom: 18px;
+    opacity: 0.92;
+    color: var(--white);
+}
+.scroll-card-text ul li strong {
+    color: var(--white);
+}
+.scroll-card-text ul li::before {
+    content: "•";
+    color: var(--champagne);
+    position: absolute;
+    left: 10px;
+    top: 0;
+    font-size: 1.2rem;
+}
+
+/* Sign-off Layout Engine */
 .scroll-signoff {
-    margin-top: 36px;
-    padding-top: 24px;
-    border-top: 1px solid rgba(255,255,255,0.15);
-    text-align: right;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(232, 213, 176, 0.15);
+    text-align: left; /* Left aligned matching bottom structure of image_53438d */
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .scroll-motto-line {
-    font-family: 'La Belle Aurore', cursive;
-    font-size: clamp(1.4rem, 3vw, 2rem);
-    color: var(--silver-accent);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--white);
     display: block;
-    margin-bottom: 8px;
-    line-height: 1.2;
+    margin-bottom: 20px;
 }
 .scroll-closing-line {
-    font-size: clamp(0.75rem, 1.2vw, 0.88rem);
-    opacity: 0.8;
-    font-style: italic;
+    font-size: 0.95rem;
+    opacity: 0.9;
     margin-bottom: 4px;
 }
 .scroll-name-line {
     font-family: 'Cinzel', serif;
-    font-size: clamp(1rem, 2vw, 1.3rem);
-    letter-spacing: 2px;
+    font-size: 1.3rem;
+    letter-spacing: 3px;
     color: var(--white);
-    margin: 6px 0 3px;
+    margin: 4px 0;
 }
 .scroll-role-line {
-    font-size: clamp(0.6rem, 1vw, 0.75rem);
+    font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     color: var(--champagne);
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Dead scroll-letter-section kept hidden */
-.scroll-letter-section { display: none; }
+/* --- MOBILE & TABLET FRAME RESPONSIVE OVERRIDES --- */
+@media (max-width: 768px) {
+    .scroll-card-inner {
+        border-width: 40px 30px; /* Shrinks the frame borders so content fits mobile screens */
+    }
+    .scroll-card-text {
+        padding: 10px 5px;
+    }
+    .scroll-card-text ul {
+        text-align: left;
+    }
+}
 
 /* ==========================================================================
    XII. COMPREHENSIVE RESPONSIVE AUDIT
@@ -950,7 +979,7 @@ h1, h2, h3, h4, h5, .cinzel-header {
         border-radius: 2px;
         transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
     }
-    /* Glass blur overlay: page content blurs behind, only links visible */
+    
     .nav-links-center {
         position: fixed;
         top: 0;
@@ -1003,7 +1032,6 @@ h1, h2, h3, h4, h5, .cinzel-header {
         transform: translateY(-8.75px) rotate(-45deg);
     }
 
-    /* Nav logo scales on tablet */
     .nav-logo {
         max-height: 40px;
     }
@@ -1069,15 +1097,15 @@ h1, h2, h3, h4, h5, .cinzel-header {
     .bf-2 { width: 60px; top: 65%; right: 5%; }
     .bf-3 { width: 45px; top: 38%; right: 14%; }
 
-    /* Scroll frame optimization on mobile/tablet to completely stop text clipping layout bugs */
+    /* AUDITED FIX: Safe responsive adaptation for border-image assets on tablet */
     .scroll-card-inner {
-        background-size: contain;
+        border-width: 40px 35px; /* Safely downsizes frame slice sizes */
+        background-size: auto;   /* Safely kills old background-size conflicts */
     }
     .scroll-card-text {
-        padding: 60px 45px;
+        padding: 15px 5px; /* Clean content cushion space */
     }
 
-    /* Footer link wrap */
     .legal-links-row {
         line-height: 2.2;
     }
@@ -1114,12 +1142,21 @@ h1, h2, h3, h4, h5, .cinzel-header {
         font-size: 1.7rem;
     }
 
-    /* Scroll frame safety spacing adaptation on ultra-narrow viewports */
+    /* AUDITED FIX: Safe space constraint engine for ultra-narrow mobile viewports */
+    .scroll-card-inner {
+        border-width: 30px 20px; /* Gives maximum width possible back to text lines */
+    }
     .scroll-card-text {
-        padding: 45px 30px;
+        padding: 10px 0;
+    }
+    .scroll-card-text ul {
+        margin: 16px 0;
+    }
+    .scroll-card-text ul li {
+        padding-left: 20px;
+        font-size: 0.88rem;
     }
 
-    /* Butterflies: tuck away on small phones so they don't clutter */
     .bf-2,
     .bf-3 {
         display: none;
@@ -1129,7 +1166,6 @@ h1, h2, h3, h4, h5, .cinzel-header {
         opacity: 0.5;
     }
 
-    /* Nav logo */
     .nav-logo {
         max-height: 34px;
     }
