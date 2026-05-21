@@ -23,16 +23,26 @@
             </button>
             
             <nav class="nav-links-center" id="navigationMenu">
-                <a href="index.html" onclick="toggleMobileMenu()">The Hub</a>
+                <a href="index.html" onclick="toggleMobileMenu()">The Haven</a>
                 <a href="strategy-hub.html" onclick="toggleMobileMenu()">Wings DAO</a>
                 <a href="sea-haven.html" onclick="toggleMobileMenu()">Sea Haven</a>
                 <a href="library.html" onclick="toggleMobileMenu()">The Library</a>
                 <a href="merch.html" onclick="toggleMobileMenu()">Outfitters</a>
-                <a href="contact.html" onclick="toggleMobileMenu()">Contact</a>
-                
+                <a href="team.html" class="mobile-only-nav-extra" onclick="toggleMobileMenu()">Team</a>
+                <a href="contact.html" class="mobile-only-nav-extra" onclick="toggleMobileMenu()">Contact</a>
                 <a href="contact.html#donate" class="btn-support-silver mobile-only-cta" onclick="toggleMobileMenu()">Support the Sanctuary</a>
             </nav>
-            
+            <div class="nav-more-wrap desktop-only-nav-more">
+                <button type="button" class="nav-more-toggle" id="navMoreToggle" aria-label="More pages" aria-expanded="false" aria-haspopup="true">
+                    <span class="nav-more-bar"></span>
+                    <span class="nav-more-bar"></span>
+                    <span class="nav-more-bar"></span>
+                </button>
+                <ul class="nav-more-dropdown" id="navMoreMenu" role="menu">
+                    <li role="none"><a href="team.html" role="menuitem">Team</a></li>
+                    <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+                </ul>
+            </div>
             <a href="contact.html#donate" class="btn-support-silver desktop-only-cta">Support the Sanctuary</a>
         </div>
     </header>
