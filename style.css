@@ -103,6 +103,7 @@ h1, h2, h3, h4, h5, .cinzel-header {
  display: flex;
  justify-content: space-between;
  align-items: center;
+ gap: 16px;
  max-width: 1400px;
  margin: 0 auto;
  padding: 0 40px;
@@ -173,6 +174,166 @@ h1, h2, h3, h4, h5, .cinzel-header {
  color: var(--ink);
  border-color: var(--white);
  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* More-pages menu (desktop): hamburger + dropdown */
+.desktop-only-nav-more {
+ display: inline-flex;
+ align-items: center;
+}
+.mobile-only-nav-extra {
+ display: none;
+}
+.nav-more-wrap {
+ position: relative;
+ z-index: 10002;
+}
+.nav-more-toggle {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ gap: 5px;
+ width: 40px;
+ height: 40px;
+ padding: 8px;
+ border: 1px solid rgba(213, 216, 220, 0.35);
+ border-radius: 8px;
+ background: rgba(10, 22, 40, 0.5);
+ cursor: pointer;
+ transition: var(--transition-standard);
+}
+.nav-more-toggle:hover,
+.nav-more-wrap.is-open .nav-more-toggle {
+ border-color: var(--silver-accent);
+ background: rgba(255, 255, 255, 0.06);
+}
+.nav-more-bar {
+ display: block;
+ width: 18px;
+ height: 2px;
+ background: var(--silver-accent);
+ border-radius: 2px;
+ transition: var(--transition-standard);
+}
+.nav-more-wrap.is-open .nav-more-bar:nth-child(1) {
+ transform: translateY(7px) rotate(45deg);
+}
+.nav-more-wrap.is-open .nav-more-bar:nth-child(2) {
+ opacity: 0;
+}
+.nav-more-wrap.is-open .nav-more-bar:nth-child(3) {
+ transform: translateY(-7px) rotate(-45deg);
+}
+.nav-more-dropdown {
+ position: absolute;
+ top: calc(100% + 10px);
+ right: 0;
+ min-width: 200px;
+ margin: 0;
+ padding: 10px 0;
+ list-style: none;
+ background: rgba(10, 22, 40, 0.96);
+ border: 1px solid rgba(213, 216, 220, 0.25);
+ border-radius: 12px;
+ box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+ opacity: 0;
+ visibility: hidden;
+ transform: translateY(-8px);
+ transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+.nav-more-wrap.is-open .nav-more-dropdown {
+ opacity: 1;
+ visibility: visible;
+ transform: translateY(0);
+}
+.nav-more-dropdown a {
+ display: block;
+ padding: 12px 22px;
+ font-family: 'Cinzel', serif;
+ font-size: 12px;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ color: var(--white);
+ text-decoration: none;
+ opacity: 0.85;
+ transition: var(--transition-standard);
+}
+.nav-more-dropdown a:hover,
+.nav-more-dropdown a.is-current {
+ color: var(--champagne);
+ opacity: 1;
+ background: rgba(255, 255, 255, 0.04);
+}
+
+/* Spoke card logos — uniform size, no stretch */
+.spoke-logo-wrap {
+ margin-bottom: 0;
+}
+.spoke-logo-img {
+ height: 48px;
+ width: auto;
+ max-width: 120px;
+ object-fit: contain;
+ filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+}
+
+/* Team page */
+.page-hero {
+ padding: 120px 24px 48px;
+ border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.page-hero-inner {
+ max-width: 900px;
+ margin: 0 auto;
+}
+.page-hero h1 {
+ font-size: clamp(1.5rem, 3vw, 2rem);
+ letter-spacing: 4px;
+}
+.team-page-section {
+ padding: 60px 0 100px;
+ position: relative;
+}
+.team-page-container {
+ position: relative;
+ z-index: 2;
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 20px;
+}
+.team-page-intro {
+ margin-bottom: 50px;
+ text-align: center;
+}
+.team-page-intro p {
+ font-style: italic;
+ opacity: 0.8;
+ max-width: 800px;
+ margin: 0 auto;
+ line-height: 1.8;
+ font-size: 1.05rem;
+ color: var(--silver-accent);
+}
+.team-grid--three {
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.global-network-box {
+ margin-top: 80px;
+ padding: 40px;
+ text-align: center;
+}
+.global-network-box h4 {
+ font-size: 1.2rem;
+ letter-spacing: 2px;
+ color: var(--champagne);
+ margin-bottom: 15px;
+}
+.global-network-box p {
+ font-size: 0.95rem;
+ opacity: 0.8;
+ line-height: 1.8;
+ max-width: 850px;
+ margin: 0 auto;
 }
 
 /* --- II. HERO SECTION: VEINS OF STARLIGHT --- */
@@ -1107,6 +1268,12 @@ h1, h2, h3, h4, h5, .cinzel-header {
  opacity: 1;
  visibility: visible;
  transform: translateY(0);
+ }
+ .desktop-only-nav-more {
+ display: none;
+ }
+ .mobile-only-nav-extra {
+ display: block;
  }
  .mobile-nav-toggle.open-active .hamburger-bar:nth-child(1) {
  transform: translateY(8.75px) rotate(45deg);
