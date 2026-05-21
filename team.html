@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team | Glow's Haven</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;700&family=La+Belle+Aurore&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/48c9b0a619.js" crossorigin="anonymous"></script>
+</head>
+<body class="luxury-theme">
+<div class="starfield-bg-container">
+    <img src="assets/starfield-hero.png" alt="" class="starfield-bg-img" aria-hidden="true">
+    <div class="starfield-bg-veil"></div>
+</div>
+
+<header class="site-header">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo-link">
+            <img src="assets/GlowsHavenlogonobg.png" alt="Glow's Haven Logo" class="nav-logo">
+        </a>
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu" onclick="toggleMobileMenu()">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+        </button>
+        <nav class="nav-links-center" id="navigationMenu">
+            <a href="index.html" onclick="toggleMobileMenu()">The Haven</a>
+            <a href="strategy-hub.html" onclick="toggleMobileMenu()">Wings DAO</a>
+            <a href="sea-haven.html" onclick="toggleMobileMenu()">Sea Haven</a>
+            <a href="library.html" onclick="toggleMobileMenu()">The Library</a>
+            <a href="merch.html" onclick="toggleMobileMenu()">Outfitters</a>
+            <a href="team.html" class="mobile-only-nav-extra" onclick="toggleMobileMenu()">Team</a>
+            <a href="contact.html" class="mobile-only-nav-extra" onclick="toggleMobileMenu()">Contact</a>
+            <a href="contact.html#donate" class="btn-support-silver mobile-only-cta" onclick="toggleMobileMenu()">Support the Sanctuary</a>
+        </nav>
+        <div class="nav-more-wrap desktop-only-nav-more">
+            <button type="button" class="nav-more-toggle" id="navMoreToggle" aria-label="More pages" aria-expanded="false" aria-haspopup="true">
+                <span class="nav-more-bar"></span>
+                <span class="nav-more-bar"></span>
+                <span class="nav-more-bar"></span>
+            </button>
+            <ul class="nav-more-dropdown" id="navMoreMenu" role="menu">
+                <li role="none"><a href="team.html" class="is-current" role="menuitem">Team</a></li>
+                <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+            </ul>
+        </div>
+        <a href="contact.html#donate" class="btn-support-silver desktop-only-cta">Support the Sanctuary</a>
+    </div>
+</header>
+
+<section class="page-hero sanctuary-blue-bg">
+    <div class="page-hero-inner centered-text">
+        <h1 class="cinzel-header">THE ARCHITECTS OF THE SANCTUARY</h1>
+        <div class="accent-line" style="margin: 20px auto 0;"></div>
+    </div>
+</section>
+
+<section class="team-haven-section team-page-section sanctuary-blue-bg">
+    <div class="integrity-seal-watermark"></div>
+    <div class="team-page-container">
+        <div class="centered-text team-page-intro">
+            <p class="montserrat-text">
+                "Guided by the 25 Pillars, our team provides the professional infrastructure required to build a legacy that lasts. We are more than a staff; we are the guardians of the Haven."
+            </p>
+        </div>
+        <h3 class="cinzel-header team-row-title">Executive Leadership</h3>
+        <div class="team-grid">
+            <div class="glass-frame team-id-card" data-tagline="Ecosystem Anchor">
+                <div class="card-crest"><i class="fa-solid fa-crown"></i></div>
+                <h4 class="cinzel-header card-name">Glow</h4>
+                <span class="card-title">Founder & COO</span>
+                <p class="montserrat-text card-role">Strategic Vision, Ecosystem Architecture, and Community Advocacy.</p>
+            </div>
+            <div class="glass-frame team-id-card" data-tagline="Operational Execution">
+                <div class="card-crest"><i class="fa-solid fa-compass"></i></div>
+                <h4 class="cinzel-header card-name">Mister</h4>
+                <span class="card-title">Managing Director</span>
+                <p class="montserrat-text card-role">Operational Leadership and Strategic Execution.</p>
+            </div>
+        </div>
+        <h3 class="cinzel-header team-row-title">Security & Infrastructure</h3>
+        <div class="team-grid">
+            <div class="glass-frame team-id-card" data-tagline="Asset Protection">
+                <div class="card-crest"><i class="fa-solid fa-lock"></i></div>
+                <h4 class="cinzel-header card-name">Henry</h4>
+                <span class="card-title">Security Specialist</span>
+                <p class="montserrat-text card-role">Technical Infrastructure Defense and Digital Asset Protection.</p>
+            </div>
+            <div class="glass-frame team-id-card" data-tagline="System Defense Architecture">
+                <div class="card-crest"><i class="fa-solid fa-terminal"></i></div>
+                <h4 class="cinzel-header card-name">Red</h4>
+                <span class="card-title">Security & Discord Developer</span>
+                <p class="montserrat-text card-role">Server Architecture, Bot Development, and Strategic System Defense.</p>
+            </div>
+        </div>
+        <h3 class="cinzel-header team-row-title">Administration</h3>
+        <div class="team-grid team-grid--three">
+            <div class="glass-frame team-id-card" data-tagline="Operational Flow">
+                <div class="card-crest"><i class="fa-solid fa-feather-pointed"></i></div>
+                <h4 class="cinzel-header card-name">Sonia</h4>
+                <span class="card-title">Admin & Communications Director</span>
+                <p class="montserrat-text card-role">Systems Management, Operational Flow, and Brand Voice.</p>
+            </div>
+            <div class="glass-frame team-id-card" data-tagline="Kinship Advocacy">
+                <div class="card-crest"><i class="fa-solid fa-comments"></i></div>
+                <h4 class="cinzel-header card-name">The Sul</h4>
+                <span class="card-title">Community Manager & Socials</span>
+                <p class="montserrat-text card-role">Strategic Community Growth, Social Media Management, and Kinship Advocacy.</p>
+            </div>
+            <div class="glass-frame team-id-card" data-tagline="Guardian of the Haven">
+                <div class="card-crest"><i class="fa-solid fa-shield-halved"></i></div>
+                <h4 class="cinzel-header card-name">Mr Zackson</h4>
+                <span class="card-title">Moderator & Socials Manager</span>
+                <p class="montserrat-text card-role">Engagement Stability, Content Distribution, and Guardian of the Haven.</p>
+            </div>
+        </div>
+        <h3 class="cinzel-header team-row-title">Creative & Technical Design</h3>
+        <div class="team-grid">
+            <div class="glass-frame team-id-card" data-tagline="Wings DAO UX Creator">
+                <div class="card-crest"><i class="fa-solid fa-cubes"></i></div>
+                <h4 class="cinzel-header card-name">Gabe</h4>
+                <span class="card-title">3D Art & Web3 Architecture</span>
+                <p class="montserrat-text card-role">Designer for Website, App Interface, 3D Character Art, and Web3 UX.</p>
+            </div>
+            <div class="glass-frame team-id-card" data-tagline="Interface Integrity">
+                <div class="card-crest"><i class="fa-solid fa-code"></i></div>
+                <h4 class="cinzel-header card-name">Duck</h4>
+                <span class="card-title">Web Developer</span>
+                <p class="montserrat-text card-role">Digital Architecture and Interface Integrity.</p>
+            </div>
+        </div>
+        <h3 class="cinzel-header team-row-title">Ecosystem Support</h3>
+        <div class="ecosystem-support-wrapper">
+            <div class="glass-frame team-id-card" data-tagline="Guardian Ally">
+                <div class="card-crest"><i class="fa-solid fa-hand-fist"></i></div>
+                <h4 class="cinzel-header card-name">Savage</h4>
+                <span class="card-title">Ecosystem Moderator & Support</span>
+                <p class="montserrat-text card-role">Community Infrastructure Defense, Kinship Moderation, and Operational Support.</p>
+            </div>
+        </div>
+        <div class="silver-bordered-box glass-frame global-network-box">
+            <h4 class="cinzel-header">Our Global Network</h4>
+            <p class="montserrat-text">
+                <strong>The Brain Trust:</strong> While our central administrative hub is located on-site in Tennessee, the Haven is powered by a world-class network of remote operators, designers, and systems architects. Our modular operational blueprint perfectly pairs physical on-site presence with elite digital specialists to safeguard ecosystem 24/7/365.
+            </p>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer centered-text">
+    <div class="footer-content">
+        <p class="cinzel-header footer-tagline">
+            Glow&#8217;s Haven LLC: Built in Web3. Rooted in Tennessee. Defined by Integrity.
+        </p>
+        <p class="montserrat-text legal-links-row">
+            <a href="privacy.html">Privacy Policy</a> |
+            <a href="disclaimers.html">Terms of Service</a> |
+            <a href="disclaimers.html">Project Disclaimers</a> |
+            <a href="contact.html">Contact</a>
+        </p>
+        <p class="montserrat-text footer-socials">
+            <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            <a href="https://x.com/GlowsHaven" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+        </p>
+        <p class="small-print">
+            &copy; 2026 Glow&#8217;s Haven LLC. Registered in the State of Tennessee. All Rights Reserved.
+        </p>
+    </div>
+</footer>
+
+<script src="index.js"></script>
+</body>
+</html>
