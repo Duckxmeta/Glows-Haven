@@ -33,7 +33,6 @@
         toggle.setAttribute('aria-expanded', 'true');
         if (wrap) wrap.classList.add('is-open');
         document.body.classList.add('nav-pages-open');
-        document.body.style.overflow = 'hidden';
     }
 
     function closeOverlay() {
@@ -42,7 +41,6 @@
         toggle.setAttribute('aria-expanded', 'false');
         if (wrap) wrap.classList.remove('is-open');
         document.body.classList.remove('nav-pages-open');
-        document.body.style.overflow = '';
     }
 
     window.closeNavPagesOverlay = closeOverlay;
@@ -78,21 +76,36 @@
 (function initDonateModal() {
     var openers = document.querySelectorAll('[data-donate-modal]');
     var modal = document.getElementById('donateModal');
-    if (!openers.length || !modal) return;
+    if (!modal) return;
 
     var backdrop = modal.querySelector('.donate-modal-backdrop');
     var closeBtn = modal.querySelector('.donate-modal-close');
+    var steps = modal.querySelectorAll('.donate-step');
+
+    function showStep(name) {
+        steps.forEach(function (step) {
+            var active = step.getAttribute('data-step') === name;
+            step.classList.toggle('is-active', active);
+            if (active) {
+                step.removeAttribute('hidden');
+            } else {
+                step.setAttribute('hidden', '');
+            }
+        });
+    }
 
     function openModal() {
+        showStep('paths');
         modal.classList.add('is-open');
         modal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
+        document.body.classList.add('donate-modal-open');
     }
 
     function closeModal() {
         modal.classList.remove('is-open');
         modal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
+        document.body.classList.remove('donate-modal-open');
+        showStep('paths');
     }
 
     openers.forEach(function (btn) {
@@ -101,11 +114,113 @@
             openModal();
         });
     });
+
+    modal.querySelectorAll('[data-donate-go]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            showStep(btn.getAttribute('data-donate-go'));
+        });
+    });
+
+    modal.querySelectorAll('[data-donate-back]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            showStep('paths');
+        });
+    });
+
+    modal.querySelectorAll('[data-copy-target]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var id = btn.getAttribute('data-copy-target');
+            var el = document.getElementById(id);
+            if (!el) return;
+            var text = el.textContent.trim();
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(function () {
+                    btn.textContent = 'Copied';
+                    setTimeout(function () {
+                        btn.textContent = 'Copy Address';
+                    }, 2000);
+                });
+            }
+        });
+    });
+
     if (backdrop) backdrop.addEventListener('click', closeModal);
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
     document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
     });
+})();
+
+(function initSpeciesSlider() {
+    var slider = document.getElementById('speciesSlider');
+    var range = document.getElementById('speciesRange');
+    if (!slider || !range) return;
+
+    function update() {
+        var val = parseInt(range.value, 10);
+        range.setAttribute('aria-valuenow', String(val));
+        slider.classList.remove('is-past-heavy', 'is-future-heavy');
+        if (val < 40) slider.classList.add('is-past-heavy');
+        if (val > 60) slider.classList.add('is-future-heavy');
+        var track = slider.querySelector('.before-after-slider-track');
+        if (track) {
+            track.style.gridTemplateColumns = val + '% ' + (100 - val) + '%';
+        }
+    }
+
+    range.addEventListener('input', update);
+    update();
+})();
+
+(function initRescueMap() {
+    var mapEl = document.getElementById('rescueMap');
+    if (!mapEl || typeof L === 'undefined') return;
+
+    var map = L.map(mapEl, {
+        scrollWheelZoom: false,
+        attributionControl: true
+    }).setView([28.5, -87.2], 5);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 12,
+        attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+
+    var route = [
+        [24.2, -83.5],
+        [26.1, -85.0],
+        [27.8, -86.4],
+        [28.9, -87.1],
+        [29.4, -88.2],
+        [28.6, -89.0]
+    ];
+
+    var path = L.polyline(route, {
+        color: '#48C9B0',
+        weight: 3,
+        opacity: 0.85,
+        dashArray: '8, 10'
+    }).addTo(map);
+
+    var marker = L.circleMarker(route[route.length - 1], {
+        radius: 10,
+        fillColor: '#E8D5B0',
+        color: '#48C9B0',
+        weight: 2,
+        fillOpacity: 0.95
+    }).addTo(map).bindPopup('<strong>Marina</strong><br>Last sighting: Gulf Coast<br>Status: Recovering / Healthy');
+
+    map.fitBounds(path.getBounds(), { padding: [28, 28] });
+
+    var step = 0;
+    setInterval(function () {
+        step = (step + 1) % route.length;
+        marker.setLatLng(route[step]);
+    }, 4000);
+
+    setTimeout(function () {
+        map.invalidateSize();
+    }, 400);
 })();
 
 (function initStarCanvas() {
