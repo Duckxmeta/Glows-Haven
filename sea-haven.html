@@ -3,97 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glow's Haven - The Legacy</title>
+    <title>Sea Haven | The Legacy</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;700&family=La+Belle+Aurore&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=20260521">
+    <script src="https://kit.fontawesome.com/48c9b0a619.js" crossorigin="anonymous"></script>
 </head>
-<body class="sanctuary-blue-bg">
+<body class="sea-haven-theme">
 
-    <header class="site-header">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo-link">
-                <img src="assets/GlowsHavenlogonobg.png" alt="Glow's Haven Logo" class="nav-logo">
-            </a>
-            
-            <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu" onclick="toggleMobileMenu()">
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
+<header class="site-header">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo-link">
+            <img src="assets/GlowsHavenlogonobg.png" alt="Glow's Haven Logo" class="nav-logo">
+        </a>
+        <nav class="nav-links-center" id="navigationMenu" aria-label="Main navigation">
+            <a href="sanctuary.html">The Haven</a>
+            <a href="strategy-hub.html">Wings DAO</a>
+            <a href="sea-haven.html">Sea Haven</a>
+            <a href="library.html">The Library</a>
+            <a href="merch.html">Outfitters</a>
+        </nav>
+        <div class="nav-more-wrap">
+            <button type="button" class="nav-more-toggle" id="navMoreToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navPagesOverlay">
+                <span class="nav-more-bar"></span>
+                <span class="nav-more-bar"></span>
+                <span class="nav-more-bar"></span>
             </button>
-            
-            <nav class="nav-links-center" id="navigationMenu">
-                <a href="index.html" onclick="toggleMobileMenu()">The Haven</a>
-                <a href="strategy-hub.html" onclick="toggleMobileMenu()">Wings DAO</a>
-                <a href="sea-haven.html" onclick="toggleMobileMenu()">Sea Haven</a>
-                <a href="library.html" onclick="toggleMobileMenu()">The Library</a>
-                <a href="merch.html" onclick="toggleMobileMenu()">Outfitters</a>
-                <a href="team.html" class="mobile-only-nav-extra" onclick="toggleMobileMenu()">Team</a>
-                <a href="contact.html" class="mobile-only-nav-extra" onclick="toggleMobileMenu()">Contact</a>
-                <a href="contact.html#donate" class="btn-support-silver mobile-only-cta" onclick="toggleMobileMenu()">Support the Sanctuary</a>
-            </nav>
-            <div class="nav-more-wrap desktop-only-nav-more">
-                <button type="button" class="nav-more-toggle" id="navMoreToggle" aria-label="More pages" aria-expanded="false" aria-haspopup="true">
-                    <span class="nav-more-bar"></span>
-                    <span class="nav-more-bar"></span>
-                    <span class="nav-more-bar"></span>
-                </button>
-                <ul class="nav-more-dropdown" id="navMoreMenu" role="menu">
-                    <li role="none"><a href="team.html" role="menuitem">Team</a></li>
-                    <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
-                </ul>
-            </div>
-            <a href="contact.html#donate" class="btn-support-silver desktop-only-cta">Support the Sanctuary</a>
         </div>
-    </header>
-    <main class="luxury-section" style="padding-top: 140px;">
-        <div class="contact-container">
-            <div class="glass-frame text-block-centered" style="padding: 60px 40px;">
-                <h2 class="cinzel-header" style="font-size: 2rem; letter-spacing: 3px; margin-bottom: 15px;">SEA HAVEN: THE LEGACY</h2>
-                <div class="accent-line" style="margin: 0 auto 30px;"></div>
-                
-                <p class="montserrat-text" style="font-size: 1.2rem; line-height: 1.8; opacity: 0.9; max-width: 600px; margin: 0 auto 40px;">
-                    A mission focused on Marine Preservation and Moral Literacy.
-                </p>
-                
-                <div class="centered-text">
-                    <a href="contact.html" class="glass-button">Become a Guardian of the Sea</a>
+        <a href="contact.html#donate" class="btn-support-silver desktop-only-cta">Support the Sanctuary</a>
+    </div>
+</header>
+
+<main class="spoke-page">
+    <section class="spoke-hero centered-text" style="padding-top: 130px;">
+        <p class="nav-pages-eyebrow" style="margin-bottom: 12px; color: var(--aurora-green);">Sea Haven · The Legacy</p>
+        <h1 class="cinzel-header">FROM BROKEN PROMISES TO A GLOBAL HAVEN</h1>
+        <div class="accent-line" style="margin: 24px auto;"></div>
+        <p class="montserrat-text sub-headline">Sea Haven was born from a refusal to let a mission die. Originally a Solana turtle project that promised ocean conservation but failed to deliver, the community stepped in when the original founders stepped out. We didn&#8217;t just take over the metadata; we took over the responsibility. What started as a rescue mission for a digital collection has evolved into a world class bridge between 3D cinematic art and real world marine literacy.</p>
+    </section>
+
+    <section class="spoke-section">
+        <div class="glass-frame spoke-block text-block-centered">
+            <h2 class="cinzel-header">EVOLUTION OF THE SPECIES</h2>
+            <div class="accent-line" style="margin: 20px auto 28px;"></div>
+            <div class="before-after">
+                <div class="before-after-side is-past">
+                    <span>The Past</span>
+                    <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.85;">Original 2D turtle art from the Solana collection.</p>
+                </div>
+                <div class="before-after-side is-future">
+                    <span>The Future</span>
+                    <p class="montserrat-text" style="font-size: 0.9rem;">High fidelity 3D cinematic models for Sea Haven.</p>
+                </div>
+            </div>
+            <p class="montserrat-text spoke-lead" style="margin-top: 28px;">We are honoring the original holders by evolving their legacy. See how our community led initiative is transforming classic assets into 3D characters ready for the next generation of digital storytelling.</p>
+        </div>
+    </section>
+
+    <section class="spoke-section">
+        <div class="glass-frame spoke-block text-block-centered">
+            <h2 class="cinzel-header">EVERY RIPPLE COUNTS</h2>
+            <p class="montserrat-text" style="margin-top: 12px; color: var(--aurora-green); letter-spacing: 2px; font-size: 0.85rem;">Help us rewrite the legacy</p>
+            <div class="accent-line" style="margin: 20px auto 24px;"></div>
+            <p class="montserrat-text spoke-lead">100% of these contributions go directly to our verified sea creature charities and rescue operations.</p>
+            <button type="button" class="glass-button" data-donate-modal style="margin-top: 24px; border-color: var(--aurora-green); box-shadow: 0 0 24px rgba(72, 201, 176, 0.25);">Donate to the Depths</button>
+            <p class="montserrat-text" style="margin-top: 24px; font-size: 0.8rem; opacity: 0.65; max-width: 520px; margin-left: auto; margin-right: auto;">As outlined in our whitepaper, these funds are legally separate from our land acquisition efforts. This is purely for the ocean.</p>
+        </div>
+    </section>
+
+    <section class="spoke-section">
+        <div class="glass-frame spoke-block">
+            <h2 class="cinzel-header centered-text">MEET OUR CURRENT RESCUE</h2>
+            <div class="accent-line" style="margin: 20px auto 28px;"></div>
+            <p class="montserrat-text centered-text spoke-lead">Through our Proof of Impact portal, your involvement translates directly into life saving care.</p>
+            <div class="glass-frame" style="margin-top: 28px; padding: 32px; text-align: center; border-color: rgba(72, 201, 176, 0.2);">
+                <p class="cinzel-header" style="font-size: 1rem; letter-spacing: 2px; color: var(--aurora-green); margin-bottom: 16px;">Adopt a Guardian Program</p>
+                <p class="montserrat-text" style="font-size: 0.95rem; opacity: 0.88; line-height: 1.8;"><strong>Current Status:</strong> Recovering / Healthy<br><strong>Last Sighting:</strong> Gulf Coast<br><strong>Tracking:</strong> GPS migration map available to stewards</p>
+                <p class="montserrat-text" style="margin-top: 20px; font-size: 0.9rem; opacity: 0.75;">Every holder is a steward of their journey back to the wild. Live feed and gallery integration launching with our 2026 rescue portal.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="spoke-section">
+        <div class="glass-frame spoke-block text-block-centered" style="opacity: 0.92;">
+            <h2 class="cinzel-header">THE WALL OF STEWARDS</h2>
+            <p class="montserrat-text" style="margin-top: 12px; color: var(--champagne);">Launching Late Summer 2026</p>
+            <div class="accent-line" style="margin: 20px auto 28px;"></div>
+            <p class="montserrat-text spoke-lead">We are building a permanent digital monument to those who stepped up to save this mission. The Wall of Stewards will honor our top contributors and long term holders, showcasing the Proof of Impact made by this community.</p>
+            <div class="steward-tiers">
+                <div class="steward-tier">
+                    <h4 class="cinzel-header" style="font-size: 0.8rem;">Abyssal Guardian</h4>
+                    <p class="montserrat-text" style="font-size: 0.75rem; opacity: 0.7; margin-top: 8px;">Top Tier Contributors</p>
+                </div>
+                <div class="steward-tier">
+                    <h4 class="cinzel-header" style="font-size: 0.8rem;">Reef Protector</h4>
+                    <p class="montserrat-text" style="font-size: 0.75rem; opacity: 0.7; margin-top: 8px;">Recurring Supporters</p>
+                </div>
+                <div class="steward-tier">
+                    <h4 class="cinzel-header" style="font-size: 0.8rem;">Shoreline Sentinel</h4>
+                    <p class="montserrat-text" style="font-size: 0.75rem; opacity: 0.7; margin-top: 8px;">Community Advocates</p>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
-    <aside class="donation-footer-block centered-text" style="margin-top: 60px; padding: 40px 20px; border-top: 1px solid rgba(255, 255, 255, 0.05);">
-        <div class="contact-container">
-            <p class="montserrat-text" style="font-size: 1.1rem; color: var(--champagne); font-weight: 700; letter-spacing: 1px; margin-bottom: 10px;">
-                40% of digital proceeds fund Odin's Place
-            </p>
+    <section class="spoke-section">
+        <div class="glass-frame spoke-block text-block-centered">
+            <h2 class="cinzel-header">BOOKS, LORE, AND LEGACY</h2>
+            <div class="accent-line" style="margin: 20px auto 24px;"></div>
+            <p class="montserrat-text spoke-lead">Conservation starts with education. Our Family Literacy series takes our 3D character lore and turns it into educational tools for the next generation. We aren&#8217;t just saving the seas; we&#8217;re teaching the world why they matter.</p>
         </div>
-    </aside>
+    </section>
 
-    <footer class="site-footer centered-text" style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding: 40px 20px;">
-        <div class="footer-content">
-            <p class="cinzel-header" style="font-size: 1rem; letter-spacing: 2px; margin-bottom: 15px; color: var(--white);">
-                Glow’s Haven LLC: Built in Web3. Rooted in Tennessee. Defined by Integrity.
-            </p>
-            
-            <p class="montserrat-text legal-links-row" style="margin-bottom: 20px; font-size: 0.85rem; letter-spacing: 0.5px; opacity: 0.7;">
-                <a href="privacy.html" style="color: var(--silver-accent); text-decoration: none; margin: 0 10px;">Privacy Policy</a> | 
-                <a href="disclaimers.html" style="color: var(--silver-accent); text-decoration: none; margin: 0 10px;">Terms of Service</a> | 
-                <a href="disclaimers.html" style="color: var(--silver-accent); text-decoration: none; margin: 0 10px;">Project Disclaimers</a> | 
-                <a href="contact.html" style="color: var(--silver-accent); text-decoration: none; margin: 0 10px;">Contact</a>
-            </p>
-            
-            <p class="montserrat-text" style="gap: 20px; display: flex; justify-content: center; font-size: 1.2rem; margin-bottom: 25px;">
-                <a href="#" style="color: var(--silver-accent); transition: color 0.3s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#D5D8DC'"><i class="fab fa-discord"></i></a>
-                <a href="https://x.com/GlowsHaven" target="_blank" style="color: var(--silver-accent); transition: color 0.3s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#D5D8DC'"><i class="fab fa-x-twitter"></i></a>
-            </p>
-            
-            <p class="small-print" style="font-size: 0.75rem; opacity: 0.3; letter-spacing: 1px;">
-                &copy; 2026 Glow’s Haven LLC. Registered in the State of Tennessee. All Rights Reserved.
-            </p>
+    <section class="spoke-section">
+        <div class="callout-box glass-frame">
+            <h3 class="cinzel-header" style="font-size: 1rem; letter-spacing: 2px;">Read the Proof in the Paper</h3>
+            <p class="montserrat-text" style="margin-top: 16px; font-size: 0.95rem; opacity: 0.88; line-height: 1.75;">Section 4.2 of our Whitepaper explicitly details our charitable audit process. We didn&#8217;t just take over a project; we took over a promise. See how we verify every dollar and every drop of impact.</p>
+            <a href="library.html" class="glass-button" style="margin-top: 24px;">Read the Sea Haven Blueprint</a>
+            <p class="montserrat-text" style="margin-top: 16px; font-size: 0.8rem; opacity: 0.6;">Detailed breakdowns on Proof of Impact, fund distribution, and our 2026 roadmap.</p>
         </div>
-    </footer>
+    </section>
+</main>
 
-<script src="index.js"></script>
+<div class="donate-modal" id="donateModal" aria-hidden="true" role="dialog" aria-labelledby="donateModalTitle">
+    <div class="donate-modal-backdrop"></div>
+    <div class="donate-modal-panel">
+        <button type="button" class="nav-pages-close donate-modal-close" aria-label="Close" style="position: absolute; top: 12px; right: 12px;">&times;</button>
+        <h2 class="cinzel-header" id="donateModalTitle" style="font-size: 1.2rem; letter-spacing: 2px;">Fuel the Rescue</h2>
+        <p class="montserrat-text" style="margin-top: 12px; font-size: 0.9rem; opacity: 0.85;">Choose your path. Ocean funds only.</p>
+        <div class="donate-paths">
+            <a href="contact.html#crypto" class="glass-button">Crypto · Solana / USDC</a>
+            <a href="contact.html#donate" class="glass-button">Traditional · Card / PayPal</a>
+        </div>
+    </div>
+</div>
+
+<footer class="site-footer centered-text">
+    <div class="footer-content">
+        <p class="cinzel-header footer-tagline">Glow&#8217;s Haven LLC: Built in Web3. Rooted in Tennessee. Defined by Integrity.</p>
+        <p class="montserrat-text legal-links-row">
+            <a href="privacy.html">Privacy Policy</a>
+            <span class="footer-sep" aria-hidden="true">|</span>
+            <a href="contact.html">Contact</a>
+        </p>
+        <p class="small-print">&copy; 2026 Glow&#8217;s Haven LLC. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<div class="nav-pages-overlay" id="navPagesOverlay" aria-hidden="true">
+    <div class="nav-pages-backdrop" id="navPagesBackdrop"></div>
+    <nav class="nav-pages-panel" role="navigation" aria-label="Site menu">
+        <button type="button" class="nav-pages-close" id="navPagesClose" aria-label="Close menu"><span aria-hidden="true">&times;</span></button>
+        <p class="nav-pages-eyebrow">Navigate the Haven</p>
+        <ul class="nav-pages-list" id="navMoreMenu">
+            <li class="nav-pages-mobile-only"><a href="index.html">Home</a></li>
+            <li class="nav-pages-mobile-only"><a href="sanctuary.html">The Haven</a></li>
+            <li class="nav-pages-mobile-only"><a href="strategy-hub.html">Wings DAO</a></li>
+            <li class="nav-pages-mobile-only"><a href="sea-haven.html">Sea Haven</a></li>
+            <li class="nav-pages-mobile-only"><a href="library.html">The Library</a></li>
+            <li class="nav-pages-mobile-only"><a href="merch.html">Outfitters</a></li>
+            <li class="nav-pages-mobile-only nav-pages-support"><a href="contact.html#donate" class="nav-pages-support-link">Support the Sanctuary</a></li>
+            <li class="nav-pages-divider" aria-hidden="true"></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+
+<script src="site.js?v=20260521"></script>
 </body>
 </html>
