@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team | Glow's Haven</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;700&family=La+Belle+Aurore&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=20260521">
     <script src="https://kit.fontawesome.com/48c9b0a619.js" crossorigin="anonymous"></script>
 </head>
 <body class="luxury-theme">
@@ -19,26 +19,20 @@
         <a href="index.html" class="nav-logo-link">
             <img src="assets/GlowsHavenlogonobg.png" alt="Glow's Haven Logo" class="nav-logo">
         </a>
-        <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu" onclick="toggleMobileMenu()">
-            <span class="hamburger-bar"></span>
-            <span class="hamburger-bar"></span>
-            <span class="hamburger-bar"></span>
-        </button>
-        <nav class="nav-links-center" id="navigationMenu">
-            <a href="index.html" onclick="toggleMobileMenu()">The Haven</a>
-            <a href="strategy-hub.html" onclick="toggleMobileMenu()">Wings DAO</a>
-            <a href="sea-haven.html" onclick="toggleMobileMenu()">Sea Haven</a>
-            <a href="library.html" onclick="toggleMobileMenu()">The Library</a>
-            <a href="merch.html" onclick="toggleMobileMenu()">Outfitters</a>
-            <a href="contact.html#donate" class="btn-support-silver mobile-only-cta" onclick="toggleMobileMenu()">Support the Sanctuary</a>
+        <nav class="nav-links-center" id="navigationMenu" aria-label="Main navigation">
+            <a href="sanctuary.html">The Haven</a>
+            <a href="strategy-hub.html">Wings DAO</a>
+            <a href="sea-haven.html">Sea Haven</a>
+            <a href="library.html">The Library</a>
+            <a href="merch.html">Outfitters</a>
         </nav>
         <div class="nav-more-wrap">
-            <button type="button" class="nav-more-toggle" id="navMoreToggle" aria-label="More pages" aria-expanded="false" aria-haspopup="true">
+            <button type="button" class="nav-more-toggle" id="navMoreToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navPagesOverlay">
                 <span class="nav-more-bar"></span>
                 <span class="nav-more-bar"></span>
                 <span class="nav-more-bar"></span>
             </button>
-</div>
+        </div>
         <a href="contact.html#donate" class="btn-support-silver desktop-only-cta">Support the Sanctuary</a>
     </div>
 </header>
@@ -125,7 +119,7 @@
             </div>
         </div>
         <h3 class="cinzel-header team-row-title">Ecosystem Support</h3>
-        <div class="ecosystem-support-wrapper">
+        <div class="ecosystem-support-wrapper team-ecosystem-block">
             <div class="glass-frame team-id-card" data-tagline="Guardian Ally">
                 <div class="card-crest"><i class="fa-solid fa-hand-fist"></i></div>
                 <h4 class="cinzel-header card-name">Savage</h4>
@@ -133,10 +127,15 @@
                 <p class="montserrat-text card-role">Community Infrastructure Defense, Kinship Moderation, and Operational Support.</p>
             </div>
         </div>
+    </div>
+</section>
+
+<section class="team-global-network-section sanctuary-blue-bg" aria-labelledby="global-network-heading">
+    <div class="team-page-container">
         <div class="silver-bordered-box glass-frame global-network-box">
-            <h4 class="cinzel-header">Our Global Network</h4>
+            <h4 class="cinzel-header" id="global-network-heading">Our Global Network</h4>
             <p class="montserrat-text">
-                <strong>The Brain Trust:</strong> While our central administrative hub is located on-site in Tennessee, the Haven is powered by a world-class network of remote operators, designers, and systems architects. Our modular operational blueprint perfectly pairs physical on-site presence with elite digital specialists to safeguard ecosystem 24/7/365.
+                <strong>The Brain Trust:</strong> While our central administrative hub is located on site in Tennessee, the Haven is powered by a world class network of remote operators, designers, and systems architects. Our modular operational blueprint perfectly pairs physical on site presence with elite digital specialists to safeguard ecosystem 24/7/365.
             </p>
         </div>
     </div>
@@ -165,18 +164,26 @@
 
 <div class="nav-pages-overlay" id="navPagesOverlay" aria-hidden="true">
     <div class="nav-pages-backdrop" id="navPagesBackdrop"></div>
-    <nav class="nav-pages-panel" role="navigation" aria-label="Additional pages">
+    <nav class="nav-pages-panel" role="navigation" aria-label="Site menu">
         <button type="button" class="nav-pages-close" id="navPagesClose" aria-label="Close menu">
             <span aria-hidden="true">&times;</span>
         </button>
-        <p class="nav-pages-eyebrow">Haven Pages</p>
+        <p class="nav-pages-eyebrow">Navigate the Haven</p>
         <ul class="nav-pages-list" id="navMoreMenu">
+            <li class="nav-pages-mobile-only"><a href="index.html">Home</a></li>
+            <li class="nav-pages-mobile-only"><a href="sanctuary.html">The Haven</a></li>
+            <li class="nav-pages-mobile-only"><a href="strategy-hub.html">Wings DAO</a></li>
+            <li class="nav-pages-mobile-only"><a href="sea-haven.html">Sea Haven</a></li>
+            <li class="nav-pages-mobile-only"><a href="library.html">The Library</a></li>
+            <li class="nav-pages-mobile-only"><a href="merch.html">Outfitters</a></li>
+            <li class="nav-pages-mobile-only nav-pages-support"><a href="contact.html#donate" class="nav-pages-support-link">Support the Sanctuary</a></li>
+            <li class="nav-pages-divider" aria-hidden="true"></li>
             <li><a href="team.html">Team</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 </div>
 
-<script src="site.js"></script>
+<script src="site.js?v=20260521"></script>
 </body>
 </html>
