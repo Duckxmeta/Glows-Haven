@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sea Haven | The Legacy</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;700&family=La+Belle+Aurore&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=20260521">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+    <link rel="stylesheet" href="style.css?v=20260522">
     <script src="https://kit.fontawesome.com/48c9b0a619.js" crossorigin="anonymous"></script>
 </head>
 <body class="sea-haven-theme">
@@ -33,106 +34,197 @@
     </div>
 </header>
 
-<main class="spoke-page">
-    <section class="spoke-hero centered-text" style="padding-top: 130px;">
-        <p class="nav-pages-eyebrow" style="margin-bottom: 12px; color: var(--aurora-green);">Sea Haven · The Legacy</p>
-        <h1 class="cinzel-header">FROM BROKEN PROMISES TO A GLOBAL HAVEN</h1>
-        <div class="accent-line" style="margin: 24px auto;"></div>
-        <p class="montserrat-text sub-headline">Sea Haven was born from a refusal to let a mission die. Originally a Solana turtle project that promised ocean conservation but failed to deliver, the community stepped in when the original founders stepped out. We didn&#8217;t just take over the metadata; we took over the responsibility. What started as a rescue mission for a digital collection has evolved into a world class bridge between 3D cinematic art and real world marine literacy.</p>
-    </section>
+<main class="spoke-page sea-haven-page">
+    <header class="sea-page-hero centered-text">
+        <h1 class="cinzel-header sea-page-title">Sea Haven (The Legacy)</h1>
+        <div class="accent-line"></div>
+        <p class="montserrat-text sea-page-vibe">Deep Navy and Bioluminescent Silver. High end, Discovery Channel aesthetic.</p>
+    </header>
 
-    <section class="spoke-section">
-        <div class="glass-frame spoke-block text-block-centered">
-            <h2 class="cinzel-header">EVOLUTION OF THE SPECIES</h2>
-            <div class="accent-line" style="margin: 20px auto 28px;"></div>
-            <div class="before-after">
-                <div class="before-after-side is-past">
-                    <span>The Past</span>
-                    <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.85;">Original 2D turtle art from the Solana collection.</p>
+    <div class="sea-page-container">
+        <section class="sea-section" aria-labelledby="origin-title">
+            <h2 class="cinzel-header sea-section-title" id="origin-title">The Origin Story: &ldquo;The Great Migration&rdquo;</h2>
+            <div class="glass-frame sea-section-card text-block-centered">
+                <h3 class="cinzel-header card-headline">From Broken Promises to a Global Haven</h3>
+                <div class="accent-line card-accent"></div>
+                <p class="montserrat-text card-copy">Sea Haven was born from a refusal to let a mission die. Originally a Solana turtle project that promised ocean conservation but failed to deliver, the community stepped in when the original founders stepped out. We didn&#8217;t just take over the metadata; we took over the responsibility. What started as a rescue mission for a digital collection has evolved into a world class bridge between 3D cinematic art and real world marine literacy.</p>
+            </div>
+        </section>
+
+        <section class="sea-section" aria-labelledby="transform-title">
+            <h2 class="cinzel-header sea-section-title" id="transform-title">The Transformation: Evolution of the Species</h2>
+            <div class="glass-frame sea-section-card text-block-centered">
+                <p class="montserrat-text card-label">Before &amp; After</p>
+                <div class="before-after-slider" id="speciesSlider">
+                    <div class="before-after-slider-track">
+                        <div class="before-after-panel is-past">
+                            <span class="panel-tag">The Past</span>
+                            <div class="visual-placeholder">2D Collection Art</div>
+                            <p class="montserrat-text">The original 2D turtle art from the Solana collection.</p>
+                        </div>
+                        <div class="before-after-panel is-future">
+                            <span class="panel-tag">The Future</span>
+                            <div class="visual-placeholder is-glow">3D Cinematic Model</div>
+                            <p class="montserrat-text">The high fidelity 3D cinematic models for Sea Haven.</p>
+                        </div>
+                    </div>
+                    <label class="slider-control" for="speciesRange">
+                        <span class="montserrat-text slider-hint">Drag to compare legacy and evolution</span>
+                        <input type="range" id="speciesRange" min="0" max="100" value="50" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+                    </label>
                 </div>
-                <div class="before-after-side is-future">
-                    <span>The Future</span>
-                    <p class="montserrat-text" style="font-size: 0.9rem;">High fidelity 3D cinematic models for Sea Haven.</p>
+                <p class="montserrat-text card-copy" style="margin-top: 32px;">We are honoring the original holders by evolving their legacy. See how our community led initiative is transforming classic assets into 3D characters ready for the next generation of digital storytelling.</p>
+            </div>
+        </section>
+
+        <section class="sea-section" aria-labelledby="impact-title">
+            <h2 class="cinzel-header sea-section-title" id="impact-title">Real World Impact: The &ldquo;Adopt a Guardian&rdquo; Program</h2>
+            <div class="glass-frame sea-section-card text-block-centered">
+                <h3 class="cinzel-header card-headline">Meet Our Current Rescue</h3>
+                <div class="accent-line card-accent"></div>
+                <p class="montserrat-text card-label">Featured Steward: <strong>Marina</strong> · Green Sea Turtle</p>
+
+                <div class="rescue-gallery">
+                    <div class="rescue-visual-slot">
+                        <span class="visual-label">Visual 1</span>
+                        <p class="montserrat-text slot-note">Rescue intake · Rehabilitation bay</p>
+                    </div>
+                    <div class="rescue-visual-slot">
+                        <span class="visual-label">Visual 2</span>
+                        <p class="montserrat-text slot-note">Clinical care · Recovery timeline</p>
+                    </div>
+                    <div class="rescue-visual-slot">
+                        <span class="visual-label">Visual 3</span>
+                        <p class="montserrat-text slot-note">Release prep · Open water horizon</p>
+                    </div>
+                </div>
+
+                <div class="rescue-tracking-block">
+                    <h4 class="cinzel-header card-subhead">Active Tracking Map</h4>
+                    <p class="montserrat-text card-label">GPS migration · Gulf Coast corridor</p>
+                    <div id="rescueMap" class="rescue-map" role="img" aria-label="Migration map for Marina the green sea turtle along the Gulf Coast"></div>
+                    <div class="map-legend montserrat-text">
+                        <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Last ping: Gulf Coast</span>
+                        <span><i class="fa-solid fa-route" aria-hidden="true"></i> Route updates every 6 hours</span>
+                    </div>
+                </div>
+
+                <div class="status-reports glass-frame">
+                    <h4 class="cinzel-header card-subhead">Status Reports</h4>
+                    <ul class="montserrat-text status-list">
+                        <li><strong>Current Status:</strong> Recovering / Healthy</li>
+                        <li><strong>Last Sighting:</strong> Gulf Coast</li>
+                        <li><strong>Care Phase:</strong> Pre release conditioning</li>
+                        <li><strong>Steward Tier:</strong> Reef Protector eligible</li>
+                    </ul>
+                </div>
+
+                <p class="montserrat-text card-copy impact-statement">Through our Proof of Impact portal, your involvement translates directly into life saving care. Meet Marina, our currently sponsored rescue. Every holder is a steward of their journey back to the wild.</p>
+            </div>
+        </section>
+
+        <section class="sea-section" aria-labelledby="donate-title">
+            <h2 class="cinzel-header sea-section-title" id="donate-title">Donate Now</h2>
+            <div class="glass-frame sea-section-card text-block-centered">
+                <h3 class="cinzel-header card-headline">Every Ripple Counts</h3>
+                <p class="montserrat-text card-subline">Help us rewrite the legacy</p>
+                <div class="accent-line card-accent"></div>
+                <p class="montserrat-text card-copy">100% of these contributions go directly to our verified sea creature charities and rescue operations.</p>
+                <div class="card-cta-wrap">
+                    <button type="button" class="glass-button donate-action-btn" data-donate-modal>Donate to the Depths</button>
+                </div>
+                <p class="montserrat-text transparency-note">As outlined in our whitepaper, these funds are legally separate from our land acquisition efforts. This is purely for the ocean.</p>
+            </div>
+        </section>
+
+        <section class="sea-section" aria-labelledby="stewards-title">
+            <h2 class="cinzel-header sea-section-title" id="stewards-title">The Wall of Stewards (Coming Soon)</h2>
+            <p class="montserrat-text sea-section-lead centered-text">Leaderboard of Integrity. This transforms our community from holders to philanthropists.</p>
+            <div class="glass-frame sea-section-card text-block-centered steward-card">
+                <div class="steward-trench" aria-hidden="true">
+                    <div class="steward-plaque p1"></div>
+                    <div class="steward-plaque p2"></div>
+                    <div class="steward-plaque p3"></div>
+                </div>
+                <h3 class="cinzel-header card-headline">The Wall of Stewards</h3>
+                <p class="montserrat-text card-subline">Launching Late Summer 2026</p>
+                <div class="accent-line card-accent"></div>
+                <p class="montserrat-text card-copy">We are building a permanent digital monument to those who stepped up to save this mission. The Wall of Stewards will honor our top contributors and long term holders, showcasing the Proof of Impact made by this community.</p>
+                <div class="steward-tiers">
+                    <div class="steward-tier">
+                        <h4 class="cinzel-header">Abyssal Guardian</h4>
+                        <p class="montserrat-text">Top Tier Contributors</p>
+                    </div>
+                    <div class="steward-tier">
+                        <h4 class="cinzel-header">Reef Protector</h4>
+                        <p class="montserrat-text">Recurring Supporters</p>
+                    </div>
+                    <div class="steward-tier">
+                        <h4 class="cinzel-header">Shoreline Sentinel</h4>
+                        <p class="montserrat-text">Community Advocates</p>
+                    </div>
                 </div>
             </div>
-            <p class="montserrat-text spoke-lead" style="margin-top: 28px;">We are honoring the original holders by evolving their legacy. See how our community led initiative is transforming classic assets into 3D characters ready for the next generation of digital storytelling.</p>
-        </div>
-    </section>
+        </section>
 
-    <section class="spoke-section">
-        <div class="glass-frame spoke-block text-block-centered">
-            <h2 class="cinzel-header">EVERY RIPPLE COUNTS</h2>
-            <p class="montserrat-text" style="margin-top: 12px; color: var(--aurora-green); letter-spacing: 2px; font-size: 0.85rem;">Help us rewrite the legacy</p>
-            <div class="accent-line" style="margin: 20px auto 24px;"></div>
-            <p class="montserrat-text spoke-lead">100% of these contributions go directly to our verified sea creature charities and rescue operations.</p>
-            <button type="button" class="glass-button" data-donate-modal style="margin-top: 24px; border-color: var(--aurora-green); box-shadow: 0 0 24px rgba(72, 201, 176, 0.25);">Donate to the Depths</button>
-            <p class="montserrat-text" style="margin-top: 24px; font-size: 0.8rem; opacity: 0.65; max-width: 520px; margin-left: auto; margin-right: auto;">As outlined in our whitepaper, these funds are legally separate from our land acquisition efforts. This is purely for the ocean.</p>
-        </div>
-    </section>
-
-    <section class="spoke-section">
-        <div class="glass-frame spoke-block">
-            <h2 class="cinzel-header centered-text">MEET OUR CURRENT RESCUE</h2>
-            <div class="accent-line" style="margin: 20px auto 28px;"></div>
-            <p class="montserrat-text centered-text spoke-lead">Through our Proof of Impact portal, your involvement translates directly into life saving care.</p>
-            <div class="glass-frame" style="margin-top: 28px; padding: 32px; text-align: center; border-color: rgba(72, 201, 176, 0.2);">
-                <p class="cinzel-header" style="font-size: 1rem; letter-spacing: 2px; color: var(--aurora-green); margin-bottom: 16px;">Adopt a Guardian Program</p>
-                <p class="montserrat-text" style="font-size: 0.95rem; opacity: 0.88; line-height: 1.8;"><strong>Current Status:</strong> Recovering / Healthy<br><strong>Last Sighting:</strong> Gulf Coast<br><strong>Tracking:</strong> GPS migration map available to stewards</p>
-                <p class="montserrat-text" style="margin-top: 20px; font-size: 0.9rem; opacity: 0.75;">Every holder is a steward of their journey back to the wild. Live feed and gallery integration launching with our 2026 rescue portal.</p>
+        <section class="sea-section" aria-labelledby="literacy-title">
+            <h2 class="cinzel-header sea-section-title" id="literacy-title">The &ldquo;Sea Haven&rdquo; Literacy Wing</h2>
+            <div class="glass-frame sea-section-card text-block-centered">
+                <h3 class="cinzel-header card-headline">Books, Lore, and Legacy</h3>
+                <div class="accent-line card-accent"></div>
+                <p class="montserrat-text card-copy">Conservation starts with education. Our Family Literacy series takes our 3D character lore and turns it into educational tools for the next generation. We aren&#8217;t just saving the seas; we&#8217;re teaching the world why they matter.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="spoke-section">
-        <div class="glass-frame spoke-block text-block-centered" style="opacity: 0.92;">
-            <h2 class="cinzel-header">THE WALL OF STEWARDS</h2>
-            <p class="montserrat-text" style="margin-top: 12px; color: var(--champagne);">Launching Late Summer 2026</p>
-            <div class="accent-line" style="margin: 20px auto 28px;"></div>
-            <p class="montserrat-text spoke-lead">We are building a permanent digital monument to those who stepped up to save this mission. The Wall of Stewards will honor our top contributors and long term holders, showcasing the Proof of Impact made by this community.</p>
-            <div class="steward-tiers">
-                <div class="steward-tier">
-                    <h4 class="cinzel-header" style="font-size: 0.8rem;">Abyssal Guardian</h4>
-                    <p class="montserrat-text" style="font-size: 0.75rem; opacity: 0.7; margin-top: 8px;">Top Tier Contributors</p>
+        <section class="sea-section" aria-labelledby="blueprint-title">
+            <h2 class="cinzel-header sea-section-title" id="blueprint-title">Bridge to the Whitepaper</h2>
+            <div class="glass-frame sea-section-card text-block-centered">
+                <div class="pdf-icon-wrap" aria-hidden="true">
+                    <i class="fa-solid fa-file-pdf"></i>
                 </div>
-                <div class="steward-tier">
-                    <h4 class="cinzel-header" style="font-size: 0.8rem;">Reef Protector</h4>
-                    <p class="montserrat-text" style="font-size: 0.75rem; opacity: 0.7; margin-top: 8px;">Recurring Supporters</p>
-                </div>
-                <div class="steward-tier">
-                    <h4 class="cinzel-header" style="font-size: 0.8rem;">Shoreline Sentinel</h4>
-                    <p class="montserrat-text" style="font-size: 0.75rem; opacity: 0.7; margin-top: 8px;">Community Advocates</p>
+                <a href="library.html" class="glass-button card-cta-btn">Read the Sea Haven Blueprint</a>
+                <p class="montserrat-text card-copy">Detailed breakdowns on our Proof of Impact model, fund distribution for sea creature charities, and our 2026 roadmap.</p>
+                <div class="callout-box inner-callout">
+                    <h3 class="cinzel-header card-subhead">Read the Proof in the Paper</h3>
+                    <p class="montserrat-text card-copy">Section 4.2 of our Whitepaper explicitly details our charitable audit process. We didn&#8217;t just take over a project; we took over a promise. See how we verify every dollar and every drop of impact.</p>
+                    <a href="docs/Sea_Haven_Whitepaper.pdf" download class="glass-button card-cta-btn">Download Sea Haven Whitepaper</a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="spoke-section">
-        <div class="glass-frame spoke-block text-block-centered">
-            <h2 class="cinzel-header">BOOKS, LORE, AND LEGACY</h2>
-            <div class="accent-line" style="margin: 20px auto 24px;"></div>
-            <p class="montserrat-text spoke-lead">Conservation starts with education. Our Family Literacy series takes our 3D character lore and turns it into educational tools for the next generation. We aren&#8217;t just saving the seas; we&#8217;re teaching the world why they matter.</p>
-        </div>
-    </section>
-
-    <section class="spoke-section">
-        <div class="callout-box glass-frame">
-            <h3 class="cinzel-header" style="font-size: 1rem; letter-spacing: 2px;">Read the Proof in the Paper</h3>
-            <p class="montserrat-text" style="margin-top: 16px; font-size: 0.95rem; opacity: 0.88; line-height: 1.75;">Section 4.2 of our Whitepaper explicitly details our charitable audit process. We didn&#8217;t just take over a project; we took over a promise. See how we verify every dollar and every drop of impact.</p>
-            <a href="library.html" class="glass-button" style="margin-top: 24px;">Read the Sea Haven Blueprint</a>
-            <p class="montserrat-text" style="margin-top: 16px; font-size: 0.8rem; opacity: 0.6;">Detailed breakdowns on Proof of Impact, fund distribution, and our 2026 roadmap.</p>
-        </div>
-    </section>
+        </section>
+    </div>
 </main>
 
 <div class="donate-modal" id="donateModal" aria-hidden="true" role="dialog" aria-labelledby="donateModalTitle">
     <div class="donate-modal-backdrop"></div>
-    <div class="donate-modal-panel">
-        <button type="button" class="nav-pages-close donate-modal-close" aria-label="Close" style="position: absolute; top: 12px; right: 12px;">&times;</button>
-        <h2 class="cinzel-header" id="donateModalTitle" style="font-size: 1.2rem; letter-spacing: 2px;">Fuel the Rescue</h2>
-        <p class="montserrat-text" style="margin-top: 12px; font-size: 0.9rem; opacity: 0.85;">Choose your path. Ocean funds only.</p>
-        <div class="donate-paths">
-            <a href="contact.html#crypto" class="glass-button">Crypto · Solana / USDC</a>
-            <a href="contact.html#donate" class="glass-button">Traditional · Card / PayPal</a>
+    <div class="donate-modal-panel donate-modal-panel--wide">
+        <button type="button" class="nav-pages-close donate-modal-close" aria-label="Close">&times;</button>
+        <div class="donate-step donate-step-paths is-active" data-step="paths">
+            <h2 class="cinzel-header" id="donateModalTitle">Fuel the Rescue</h2>
+            <p class="montserrat-text modal-lead">Choose your contribution path. Ocean funds only.</p>
+            <div class="donate-paths">
+                <button type="button" class="glass-button" data-donate-go="crypto">The Crypto Path (Web3)</button>
+                <button type="button" class="glass-button" data-donate-go="traditional">The Traditional Path (Web2)</button>
+            </div>
+        </div>
+        <div class="donate-step donate-step-crypto" data-step="crypto" hidden>
+            <h2 class="cinzel-header">Crypto · Solana</h2>
+            <p class="montserrat-text modal-lead">Direct support via Solana network</p>
+            <div class="solana-address-box">
+                <p class="montserrat-text address-label">Sea Haven Treasury (SOL / USDC)</p>
+                <code class="solana-address" id="solanaAddress">SeaHaven7xK9mQp2vL4nR8wT3yU6bC1dF5gH0jA2e</code>
+                <button type="button" class="glass-button copy-address-btn" data-copy-target="solanaAddress">Copy Address</button>
+            </div>
+            <a href="contact.html#crypto" class="glass-button">Connect Wallet (USDC / SOL)</a>
+            <button type="button" class="donate-back montserrat-text" data-donate-back>← Back</button>
+        </div>
+        <div class="donate-step donate-step-traditional" data-step="traditional" hidden>
+            <h2 class="cinzel-header">Traditional · Card</h2>
+            <p class="montserrat-text modal-lead">Secure giving via established processors</p>
+            <div class="donate-paths">
+                <a href="contact.html#donate" class="glass-button">Pay with Stripe</a>
+                <a href="contact.html#donate" class="glass-button">Pay with PayPal</a>
+            </div>
+            <button type="button" class="donate-back montserrat-text" data-donate-back>← Back</button>
         </div>
     </div>
 </div>
@@ -169,6 +261,7 @@
     </nav>
 </div>
 
-<script src="site.js?v=20260521"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="site.js?v=20260522"></script>
 </body>
 </html>
