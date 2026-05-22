@@ -1,22 +1,22 @@
-/* Browser-only scripts for Glow's Haven (loaded via <script src="site.js">) */
+/* Browser-only scripts for Glow's Haven */
 
-function toggleMobileMenu() {
-    if (window.innerWidth <= 991) {
-        const menu = document.getElementById('navigationMenu');
-        const toggleBtn = document.querySelector('.mobile-nav-toggle');
-        const overlay = document.getElementById('navPagesOverlay');
-
-        menu.classList.toggle('mobile-menu-active');
-        toggleBtn.classList.toggle('open-active');
-        if (overlay) closeNavPagesOverlay();
-
-        document.body.style.overflow = menu.classList.contains('mobile-menu-active')
-            ? 'hidden'
-            : '';
+(function removeLegacyNavUI() {
+    document.querySelectorAll('.mobile-nav-toggle').forEach(function (el) {
+        el.remove();
+    });
+    document.querySelectorAll('.nav-more-menu').forEach(function (el) {
+        el.remove();
+    });
+    var nav = document.getElementById('navigationMenu');
+    if (nav) {
+        nav.classList.remove('mobile-menu-active');
+        var stray = nav.querySelectorAll('a[href="team.html"], a[href="contact.html"]');
+        stray.forEach(function (link) {
+            link.remove();
+        });
     }
-}
+})();
 
-/* Full-screen pages overlay (Team, Contact, …) */
 (function initNavPagesOverlay() {
     const toggle = document.getElementById('navMoreToggle');
     const overlay = document.getElementById('navPagesOverlay');
@@ -65,12 +65,46 @@ function toggleMobileMenu() {
         }
     });
 
+    var path = window.location.pathname.split('/').pop() || 'index.html';
     menu.querySelectorAll('a').forEach(function (link) {
         link.addEventListener('click', closeOverlay);
-        var path = window.location.pathname.split('/').pop() || 'index.html';
-        if (link.getAttribute('href') === path) {
+        var href = link.getAttribute('href');
+        if (href && (href === path || href.split('#')[0] === path)) {
             link.classList.add('is-current');
         }
+    });
+})();
+
+(function initDonateModal() {
+    var openers = document.querySelectorAll('[data-donate-modal]');
+    var modal = document.getElementById('donateModal');
+    if (!openers.length || !modal) return;
+
+    var backdrop = modal.querySelector('.donate-modal-backdrop');
+    var closeBtn = modal.querySelector('.donate-modal-close');
+
+    function openModal() {
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+
+    openers.forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            openModal();
+        });
+    });
+    if (backdrop) backdrop.addEventListener('click', closeModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
     });
 })();
 
