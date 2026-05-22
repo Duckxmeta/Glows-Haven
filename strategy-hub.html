@@ -3,108 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glow's Haven - The Strategy Hub</title>
+    <title>Wings DAO Strategy Hub | Glow's Haven</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;700&family=La+Belle+Aurore&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=20260521">
+    <script src="https://kit.fontawesome.com/48c9b0a619.js" crossorigin="anonymous"></script>
 </head>
-<body class="sanctuary-blue-bg">
+<body class="wings-hub-theme">
 
-    <header class="site-header">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo-link">
-                <img src="assets/GlowsHavenlogonobg.png" alt="Glow's Haven Logo" class="nav-logo">
-            </a>
-            
-            <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu" onclick="toggleMobileMenu()">
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
+<header class="site-header">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo-link">
+            <img src="assets/GlowsHavenlogonobg.png" alt="Glow's Haven Logo" class="nav-logo">
+        </a>
+        <nav class="nav-links-center" id="navigationMenu" aria-label="Main navigation">
+            <a href="sanctuary.html">The Haven</a>
+            <a href="strategy-hub.html">Wings DAO</a>
+            <a href="sea-haven.html">Sea Haven</a>
+            <a href="library.html">The Library</a>
+            <a href="merch.html">Outfitters</a>
+        </nav>
+        <div class="nav-more-wrap">
+            <button type="button" class="nav-more-toggle" id="navMoreToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navPagesOverlay">
+                <span class="nav-more-bar"></span>
+                <span class="nav-more-bar"></span>
+                <span class="nav-more-bar"></span>
             </button>
-            
-            <nav class="nav-links-center" id="navigationMenu">
-                <a href="index.html" onclick="toggleMobileMenu()">The Haven</a>
-                <a href="strategy-hub.html" onclick="toggleMobileMenu()">Wings DAO</a>
-                <a href="sea-haven.html" onclick="toggleMobileMenu()">Sea Haven</a>
-                <a href="library.html" onclick="toggleMobileMenu()">The Library</a>
-                <a href="merch.html" onclick="toggleMobileMenu()">Outfitters</a>
-                <a href="team.html" class="mobile-only-nav-extra" onclick="toggleMobileMenu()">Team</a>
-                <a href="contact.html" class="mobile-only-nav-extra" onclick="toggleMobileMenu()">Contact</a>
-                <a href="contact.html#donate" class="btn-support-silver mobile-only-cta" onclick="toggleMobileMenu()">Support the Sanctuary</a>
-            </nav>
-            <div class="nav-more-wrap desktop-only-nav-more">
-                <button type="button" class="nav-more-toggle" id="navMoreToggle" aria-label="More pages" aria-expanded="false" aria-haspopup="true">
-                    <span class="nav-more-bar"></span>
-                    <span class="nav-more-bar"></span>
-                    <span class="nav-more-bar"></span>
-                </button>
-                <ul class="nav-more-dropdown" id="navMoreMenu" role="menu">
-                    <li role="none"><a href="team.html" role="menuitem">Team</a></li>
-                    <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
-                </ul>
-            </div>
-            <a href="contact.html#donate" class="btn-support-silver desktop-only-cta">Support the Sanctuary</a>
         </div>
-    </header>
+        <a href="contact.html#donate" class="btn-support-silver desktop-only-cta">Support the Sanctuary</a>
+    </div>
+</header>
 
-    <main class="luxury-section" style="padding-top: 140px;">
-        <div class="contact-container">
-            <div class="glass-frame text-block-centered" style="padding: 50px 40px; margin-bottom: 40px;">
-                <h1 class="cinzel-header" style="font-size: 2rem; letter-spacing: 3px; margin-bottom: 15px;">THE ARCHITECTURE OF INTEGRITY</h1>
-                <div class="accent-line" style="margin: 0 auto 25px;"></div>
-                <p class="montserrat-text" style="font-size: 1.1rem; line-height: 1.8; opacity: 0.9; max-width: 650px; margin: 0 auto;">
-                    Professional Alpha for Web3. We provide specialized services to ensure your project is built on a foundation of quality, integrity, and community.
-                </p>
-            </div>
-        </div>
-    </main>
+<main class="spoke-page">
+    <section class="spoke-hero centered-text" style="padding-top: 130px;">
+        <p class="nav-pages-eyebrow" style="margin-bottom: 12px;">The Wings DAO Strategy Hub</p>
+        <h1 class="cinzel-header">THE ARCHITECTURE OF INTEGRITY</h1>
+        <div class="accent-line" style="margin: 24px auto;"></div>
+        <p class="montserrat-text sub-headline">Wings DAO is the specialized power behind the Glow&#8217;s Haven ecosystem. We are an elite collective of strategists, developers, and creatives providing the professional infrastructure required to build high trust digital brands.</p>
+        <p class="montserrat-text" style="margin-top: 20px; opacity: 0.8; max-width: 600px; margin-left: auto; margin-right: auto;"><strong>The Mission:</strong> Providing Quality Assurance (QA), Project Management, and Strategic Branding for the modern Web3 landscape.</p>
+    </section>
 
-    <section class="luxury-section" style="padding-top: 0;">
-        <div class="contact-container">
-            <div class="glass-frame text-block-centered member-vault" style="padding: 50px 40px;">
-                <h3 class="cinzel-header" style="font-size: 1.5rem; letter-spacing: 2px; margin-bottom: 15px;">ACCESS THE VAULT</h3>
-                <div class="accent-line" style="margin: 0 auto 30px;"></div>
-                
-                <ul class="montserrat-text" style="text-align: left; max-width: 550px; margin: 0 auto; line-height: 2; font-size: 1.05rem; opacity: 0.85;">
-                    <li style="margin-bottom: 12px; list-style-type: square;">Tiered Alpha & Early-Access to partner projects.</li>
-                    <li style="margin-bottom: 12px; list-style-type: square;">Member Discounts on all services.</li>
-                    <li style="margin-bottom: 12px; list-style-type: square;">Exclusive access to our network of builders and creatives.</li>
-                </ul>
+    <section class="spoke-section">
+        <div class="glass-frame spoke-block">
+            <h2 class="cinzel-header centered-text">SPECIALIZED SERVICE TIERS</h2>
+            <div class="accent-line" style="margin: 20px auto 32px;"></div>
+            <p class="montserrat-text centered-text spoke-lead">The DAO operates as a professional agency with defined excellence at every layer.</p>
+            <div class="service-tier-grid">
+                <div class="service-tier-card">
+                    <h4 class="cinzel-header">Strategic Branding &amp; Lore</h4>
+                    <p class="montserrat-text" style="font-size: 0.88rem; opacity: 0.8; line-height: 1.65;">Crafting narratives and visual identities that withstand market cycles.</p>
+                </div>
+                <div class="service-tier-card">
+                    <h4 class="cinzel-header">Project Management &amp; QA</h4>
+                    <p class="montserrat-text" style="font-size: 0.88rem; opacity: 0.8; line-height: 1.65;">Ensuring technical integrity and ethical standards for ecosystem partners.</p>
+                </div>
+                <div class="service-tier-card">
+                    <h4 class="cinzel-header">Event Planning &amp; Outreach</h4>
+                    <p class="montserrat-text" style="font-size: 0.88rem; opacity: 0.8; line-height: 1.65;">Orchestrating global digital events and community led initiatives.</p>
+                </div>
+                <div class="service-tier-card">
+                    <h4 class="cinzel-header">Merchandise Engineering</h4>
+                    <p class="montserrat-text" style="font-size: 0.88rem; opacity: 0.8; line-height: 1.65;">Developing physical products that bridge digital ownership and real world utility.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <aside class="donation-footer-block centered-text" style="margin-top: 40px; padding: 40px 20px; border-top: 1px solid rgba(255, 255, 255, 0.05);">
-        <div class="contact-container">
-            <p class="montserrat-text" style="font-size: 1.1rem; color: var(--champagne); font-weight: 700; letter-spacing: 1px; margin-bottom: 10px;">
-                40% of digital proceeds fund Odin's Place
-            </p>
+    <section class="spoke-section">
+        <div class="glass-frame spoke-block text-block-centered member-vault">
+            <h2 class="cinzel-header">ACCESS THE VAULT</h2>
+            <div class="accent-line" style="margin: 20px auto 28px;"></div>
+            <p class="montserrat-text spoke-lead">Restricted to verified Wings Trait holders. This is our collaborative workspace for market intelligence, early access strategy, and ecosystem governance.</p>
+            <ul class="montserrat-text spoke-list" style="margin-top: 28px;">
+                <li><strong>Tiered Alpha:</strong> Market analysis and trading research (Collaborative Alpha).</li>
+                <li><strong>Ecosystem Early Access:</strong> First look at upcoming literacy projects and True Love transmedia developments.</li>
+                <li><strong>Member Discounts:</strong> Direct access to the Active Participant Fund rewards and ecosystem wide merchandise discounts.</li>
+            </ul>
         </div>
-    </aside>
+    </section>
 
-    <footer class="site-footer centered-text" style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding: 40px 20px;">
-        <div class="footer-content">
-            <p class="cinzel-header" style="font-size: 1rem; letter-spacing: 2px; margin-bottom: 15px; color: var(--white);">
-                Glow’s Haven LLC: Built in Web3. Rooted in Tennessee. Defined by Integrity.
-            </p>
-            
-            <p class="montserrat-text legal-links-row" style="margin-bottom: 20px; font-size: 0.85rem; letter-spacing: 0.5px; opacity: 0.7;">
-                <a href="privacy.html" style="color: var(--silver-accent); text-decoration: none; margin: 0 10px;">Privacy Policy</a> | 
-                <a href="disclaimers.html" style="color: var(--silver-accent); text-decoration: none; margin: 0 10px;">Terms of Service</a> | 
-                <a href="disclaimers.html" style="color: var(--silver-accent); text-decoration: none; margin: 0 10px;">Project Disclaimers</a> | 
-                <a href="contact.html" style="color: var(--silver-accent); text-decoration: none; margin: 0 10px;">Contact</a>
-            </p>
-            
-            <p class="montserrat-text" style="gap: 20px; display: flex; justify-content: center; font-size: 1.2rem; margin-bottom: 25px;">
-                <a href="#" style="color: var(--silver-accent); transition: color 0.3s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#D5D8DC'"><i class="fab fa-discord"></i></a>
-                <a href="https://x.com/GlowsHaven" target="_blank" style="color: var(--silver-accent); transition: color 0.3s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#D5D8DC'"><i class="fab fa-x-twitter"></i></a>
-            </p>
-            
-            <p class="small-print" style="font-size: 0.75rem; opacity: 0.3; letter-spacing: 1px;">
-                &copy; 2026 Glow’s Haven LLC. Registered in the State of Tennessee. All Rights Reserved.
-            </p>
+    <section class="spoke-section">
+        <div class="glass-frame spoke-block">
+            <h2 class="cinzel-header centered-text">THE AGENCY PORTFOLIO</h2>
+            <div class="accent-line" style="margin: 20px auto 24px;"></div>
+            <p class="montserrat-text centered-text spoke-lead">We don&#8217;t just advise; we execute. Our portfolio represents years of leadership across the Web3 frontier and established Web2 industries, proving that excellence is universal.</p>
+            <p class="montserrat-text centered-text" style="margin: 20px 0 8px; font-size: 0.85rem; letter-spacing: 2px; color: var(--silver-accent);">SEA HAVEN · TRUE LOVE · AND GROWING</p>
+            <div class="portfolio-grid">
+                <div class="portfolio-col glass-frame" style="padding: 28px 24px;">
+                    <h4 class="cinzel-header">Web3 &amp; Digital Ecosystems</h4>
+                    <ul class="montserrat-text">
+                        <li><strong>Sea Haven:</strong> Community led marine conservation &amp; NFT innovation.</li>
+                        <li><strong>True Love: Killers &amp; Kisses:</strong> Creative storytelling and collection management.</li>
+                        <li><strong>SolCity &amp; SolGods:</strong> Strategic operations and ecosystem scaling.</li>
+                    </ul>
+                </div>
+                <div class="portfolio-col glass-frame" style="padding: 28px 24px;">
+                    <h4 class="cinzel-header">Web2 &amp; Strategic Operations</h4>
+                    <ul class="montserrat-text">
+                        <li><strong>Glow&#8217;s Haven LLC:</strong> Physical land management and animal husbandry operations.</li>
+                        <li><strong>Wings DAO:</strong> Branding, marketing, and high level event planning.</li>
+                        <li><strong>Odin&#8217;s Place:</strong> Private sanctuary management and specialized service programs.</li>
+                        <li><strong>Digital Transformation:</strong> Editorial oversight, QA, and project management for traditional enterprises.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </footer>
+    </section>
 
-<script src="index.js"></script>
+    <section class="spoke-section">
+        <div class="glass-frame spoke-block text-block-centered">
+            <h2 class="cinzel-header">BUILD WITH INTEGRITY</h2>
+            <div class="accent-line" style="margin: 20px auto 28px;"></div>
+            <p class="montserrat-text spoke-lead">Looking to scale your project with the Haven&#8217;s standard of Quality Assurance? Our team is available for strategic consulting and branding partnerships.</p>
+            <a href="contact.html" class="glass-button" style="margin-top: 28px;">Inquire via the Invitation to Connect</a>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer centered-text">
+    <div class="footer-content">
+        <p class="cinzel-header footer-tagline">Glow&#8217;s Haven LLC: Built in Web3. Rooted in Tennessee. Defined by Integrity.</p>
+        <p class="montserrat-text legal-links-row">
+            <a href="privacy.html">Privacy Policy</a>
+            <span class="footer-sep" aria-hidden="true">|</span>
+            <a href="disclaimers.html">Terms of Service</a>
+            <span class="footer-sep" aria-hidden="true">|</span>
+            <a href="contact.html">Contact</a>
+        </p>
+        <p class="small-print">&copy; 2026 Glow&#8217;s Haven LLC. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<div class="nav-pages-overlay" id="navPagesOverlay" aria-hidden="true">
+    <div class="nav-pages-backdrop" id="navPagesBackdrop"></div>
+    <nav class="nav-pages-panel" role="navigation" aria-label="Site menu">
+        <button type="button" class="nav-pages-close" id="navPagesClose" aria-label="Close menu"><span aria-hidden="true">&times;</span></button>
+        <p class="nav-pages-eyebrow">Navigate the Haven</p>
+        <ul class="nav-pages-list" id="navMoreMenu">
+            <li class="nav-pages-mobile-only"><a href="index.html">Home</a></li>
+            <li class="nav-pages-mobile-only"><a href="sanctuary.html">The Haven</a></li>
+            <li class="nav-pages-mobile-only"><a href="strategy-hub.html">Wings DAO</a></li>
+            <li class="nav-pages-mobile-only"><a href="sea-haven.html">Sea Haven</a></li>
+            <li class="nav-pages-mobile-only"><a href="library.html">The Library</a></li>
+            <li class="nav-pages-mobile-only"><a href="merch.html">Outfitters</a></li>
+            <li class="nav-pages-mobile-only nav-pages-support"><a href="contact.html#donate" class="nav-pages-support-link">Support the Sanctuary</a></li>
+            <li class="nav-pages-divider" aria-hidden="true"></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+
+<script src="site.js?v=20260521"></script>
 </body>
 </html>
