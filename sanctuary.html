@@ -3,130 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glow's Haven - The Sanctuary</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;700&family=La+Belle+Aurore&display=swap&v=2" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>The Haven | Glow's Haven Sanctuary Vision</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;700&family=La+Belle+Aurore&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=20260521">
+    <script src="https://kit.fontawesome.com/48c9b0a619.js" crossorigin="anonymous"></script>
 </head>
 <body class="sanctuary-blue-bg">
 
-    <header class="site-header">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo-link">
-                <img src="assets/GlowsHavenlogonobg.png" alt="Glow's Haven Logo" class="nav-logo">
-            </a>
-            
-            <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu" onclick="toggleMobileMenu()">
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
+<header class="site-header">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo-link">
+            <img src="assets/GlowsHavenlogonobg.png" alt="Glow's Haven Logo" class="nav-logo">
+        </a>
+        <nav class="nav-links-center" id="navigationMenu" aria-label="Main navigation">
+            <a href="sanctuary.html">The Haven</a>
+            <a href="strategy-hub.html">Wings DAO</a>
+            <a href="sea-haven.html">Sea Haven</a>
+            <a href="library.html">The Library</a>
+            <a href="merch.html">Outfitters</a>
+        </nav>
+        <div class="nav-more-wrap">
+            <button type="button" class="nav-more-toggle" id="navMoreToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navPagesOverlay">
+                <span class="nav-more-bar"></span>
+                <span class="nav-more-bar"></span>
+                <span class="nav-more-bar"></span>
             </button>
-            
-            <nav class="nav-links-center" id="navigationMenu">
-                <a href="index.html" onclick="toggleMobileMenu()">The Haven</a>
-                <a href="strategy-hub.html" onclick="toggleMobileMenu()">Wings DAO</a>
-                <a href="sea-haven.html" onclick="toggleMobileMenu()">Sea Haven</a>
-                <a href="library.html" onclick="toggleMobileMenu()">The Library</a>
-                <a href="merch.html" onclick="toggleMobileMenu()">Outfitters</a>
-                <a href="team.html" class="mobile-only-nav-extra" onclick="toggleMobileMenu()">Team</a>
-                <a href="contact.html" class="mobile-only-nav-extra" onclick="toggleMobileMenu()">Contact</a>
-                <a href="contact.html#donate" class="btn-support-silver mobile-only-cta" onclick="toggleMobileMenu()">Support the Sanctuary</a>
-            </nav>
-            <div class="nav-more-wrap desktop-only-nav-more">
-                <button type="button" class="nav-more-toggle" id="navMoreToggle" aria-label="More pages" aria-expanded="false" aria-haspopup="true">
-                    <span class="nav-more-bar"></span>
-                    <span class="nav-more-bar"></span>
-                    <span class="nav-more-bar"></span>
-                </button>
-                <ul class="nav-more-dropdown" id="navMoreMenu" role="menu">
-                    <li role="none"><a href="team.html" role="menuitem">Team</a></li>
-                    <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+        </div>
+        <a href="contact.html#donate" class="btn-support-silver desktop-only-cta">Support the Sanctuary</a>
+    </div>
+</header>
+
+<main class="spoke-page">
+    <section class="spoke-hero page-hero sanctuary-blue-bg">
+        <div class="page-hero-inner centered-text">
+            <p class="nav-pages-eyebrow" style="margin-bottom: 16px;">The Destination</p>
+            <h1 class="cinzel-header">THE SANCTUARY VISION</h1>
+            <div class="accent-line" style="margin: 24px auto;"></div>
+            <p class="montserrat-text sub-headline">Grounded where Starlight Silver meets the Sanctuary Blue of the Tennessee sky. This is the physical heart of Glow&#8217;s Haven.</p>
+            <div style="margin-top: 36px;">
+                <a href="#odins-place" class="glass-button">Explore the Sanctuary</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="spoke-section" id="odins-place">
+        <div class="glass-frame spoke-block text-block-centered">
+            <h2 class="cinzel-header">ODIN&#8217;S PLACE: A SAFE HARBOR IN TENNESSEE</h2>
+            <div class="accent-line" style="margin: 20px auto 28px;"></div>
+            <p class="montserrat-text spoke-lead">The ultimate goal of Glow&#8217;s Haven LLC is the establishment of a physical retreat. Located on several acres of serene Tennessee land, Odin&#8217;s Place serves as a private sanctuary for recovery, reflection, and rejuvenation.</p>
+            <h3 class="cinzel-header">The Mission Detail</h3>
+            <ul class="montserrat-text spoke-list">
+                <li><strong>Veteran Peer Support:</strong> A dedicated space for those who have served to find kinship and peace away from the noise.</li>
+                <li><strong>Canine Advocacy:</strong> Home to our specialized service dog programs, focusing on the unbreakable bond between humans and their companions.</li>
+                <li><strong>Nature Based Healing:</strong> Utilizing the natural beauty of the land to provide a soft landing spot for those navigating life&#8217;s heaviest transitions.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="spoke-section" id="vivo">
+        <div class="glass-frame spoke-block">
+            <h2 class="cinzel-header centered-text">THE MODEL: VALUE IN, VALUE OUT (VIVO)</h2>
+            <div class="accent-line" style="margin: 20px auto 28px;"></div>
+            <p class="montserrat-text spoke-lead centered-text">The gears of our ecosystem. Every spoke feeds a defined fund with precision and transparency.</p>
+            <div class="vivo-flow">
+                <div class="vivo-path">
+                    <h4 class="cinzel-header">WINGS DAO PATH</h4>
+                    <div class="vivo-bar" style="width: 85%; margin-left: auto; margin-right: auto;"></div>
+                    <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.85; line-height: 1.7;">Proceeds flow into the <strong>Land Acquisition Fund</strong> to support physical expansion and infrastructure of the haven.</p>
+                </div>
+                <div class="vivo-path">
+                    <h4 class="cinzel-header">SEA HAVEN PATH</h4>
+                    <div class="vivo-bar" style="width: 70%; margin-left: auto; margin-right: auto; background: linear-gradient(90deg, rgba(72,201,176,0.2), var(--aurora-green));"></div>
+                    <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.85; line-height: 1.7;">Proceeds flow to <strong>Sea Creature Charities</strong> and <strong>Operational Costs</strong> for marine rescue and team development.</p>
+                </div>
+            </div>
+            <div style="margin-top: 40px;">
+                <h3 class="cinzel-header centered-text">Our Commitment to Transparency</h3>
+                <p class="montserrat-text spoke-lead centered-text" style="margin-top: 16px;">At Glow&#8217;s Haven, every project serves a specific purpose in our ecosystem. We ensure that your support reaches the intended cause with precision:</p>
+                <ul class="montserrat-text spoke-list">
+                    <li><strong>Wings DAO:</strong> Focused on the long term vision of our physical sanctuary. Proceeds from Wings DAO branding and event initiatives are dedicated to the Land Acquisition Fund, securing the space needed for our animals and programs.</li>
+                    <li><strong>Sea Haven:</strong> Born from the community takeover of the turtle project on Solana, Sea Haven remains dedicated to the deep blue. Funds generated here are strictly allocated to marine life rescue, ocean conservation charities, and the dedicated team members who manage these initiatives as outlined in our project whitepaper.</li>
                 </ul>
             </div>
-            <a href="contact.html#donate" class="btn-support-silver desktop-only-cta">Support the Sanctuary</a>
-        </div>
-    </header>
-
-    <section class="hero" style="background-image: linear-gradient(to bottom, rgba(5, 16, 31, 0.5), rgba(5, 16, 31, 0.95)), url('assets/GlowsHaven2.png'); background-size: cover; background-position: center; height: 50vh; display: flex; align-items: center; justify-content: center; padding-top: 80px;">
-        <div class="text-block-centered">
-            <h1 class="cinzel-header" style="font-size: 3rem; letter-spacing: 4px; text-shadow: 0 0 20px rgba(255,255,255,0.1);">A Sanctuary in Motion</h1>
         </div>
     </section>
 
-    <main class="luxury-section">
-        <div class="contact-container">
-            <div class="glass-frame text-block-centered" style="padding: 50px 40px; margin-bottom: 40px;">
-                <h2 class="cinzel-header" style="font-size: 1.8rem; letter-spacing: 2px; margin-bottom: 15px;">ODIN’S PLACE: A SAFE HARBOR IN TENNESSEE</h2>
-                <div class="accent-line" style="margin: 0 auto 25px;"></div>
-                <p class="montserrat-text" style="font-size: 1.1rem; line-height: 1.9; opacity: 0.9; max-width: 700px; margin: 0 auto;">
-                    The physical anchor of our digital sanctuary. A 7.54-acre property in Doyle, Tennessee, dedicated to veteran peer support, canine advocacy, and nature-based healing. Our VIVO (Value-In, Value-Out) model means we have an on-site creative office to produce content that brings value back to our community.
-                </p>
-            </div>
-        </div>
-    </main>
-
-    <section class="luxury-section" style="padding-top: 0;">
-        <div class="contact-container">
-            <div class="glass-frame text-block-centered roadmap" style="padding: 50px 40px;">
-                <h2 class="cinzel-header" style="font-size: 1.8rem; letter-spacing: 2px; margin-bottom: 15px;">OUR JOURNEY TO THE ANCHOR</h2>
-                <div class="accent-line" style="margin: 0 auto 40px;"></div>
-                
-                <div class="timeline" style="display: flex; flex-direction: column; gap: 30px; text-align: left; max-width: 600px; margin: 0 auto 40px;">
-                    <div class="milestone completed" style="border-left: 3px solid var(--silver-accent); padding-left: 20px; position: relative;">
-                        <h4 class="cinzel-header" style="font-size: 1.1rem; color: var(--silver-accent);">Phase 1: The Foundation</h4>
-                        <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.6; letter-spacing: 1px;">COMPLETED</p>
-                    </div>
-                    <div class="milestone current" style="border-left: 3px solid var(--champagne); padding-left: 20px; position: relative;">
-                        <h4 class="cinzel-header" style="font-size: 1.1rem; color: var(--champagne);">Phase 2: The Acquisition</h4>
-                        <p class="montserrat-text" style="font-size: 0.9rem; font-weight: bold; color: var(--champagne); letter-spacing: 1px;">CURRENT - GLOWING SILVER</p>
-                    </div>
-                    <div class="milestone" style="border-left: 3px solid rgba(255,255,255,0.1); padding-left: 20px; position: relative;">
-                        <h4 class="cinzel-header" style="font-size: 1.1rem; opacity: 0.4;">Phase 3: The Brain Trust</h4>
-                        <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.3;">Upcoming</p>
-                    </div>
-                    <div class="milestone" style="border-left: 3px solid rgba(255,255,255,0.1); padding-left: 20px; position: relative;">
-                        <h4 class="cinzel-header" style="font-size: 1.1rem; opacity: 0.4;">Phase 4: The Safe Harbor</h4>
-                        <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.3;">The Future</p>
-                    </div>
-                </div>
-                
-                <div class="centered-text">
-                    <a href="contact.html#donate" class="glass-button">Support the Land Acquisition Fund</a>
-                </div>
-            </div>
+    <section class="spoke-section">
+        <div class="glass-frame spoke-block text-block-centered">
+            <h2 class="cinzel-header">THE FUTURE: THE ON SITE CREATIVE OFFICE</h2>
+            <div class="accent-line" style="margin: 20px auto 28px;"></div>
+            <p class="montserrat-text spoke-lead">We are currently in the phase of transitioning our global digital team to a physical administrative hub on site. This office will serve as the Brain Trust for the entire Haven, ensuring that our professional operations are as grounded as our mission.</p>
+            <p class="montserrat-text spoke-lead" style="margin-top: 20px; font-size: 0.95rem; opacity: 0.8;">While our physical headquarters serves as a central hub for strategy and administration, we continue to embrace a hybrid global model. A portion of our international staff will remain as remote workers, ensuring we maintain a diverse, world class team across all time zones.</p>
         </div>
     </section>
 
-    <aside class="donation-footer-block centered-text" style="margin-top: 40px; padding: 40px 20px; border-top: 1px solid rgba(255, 255, 255, 0.05);">
-        <div class="contact-container">
-            <p class="montserrat-text" style="font-size: 1.1rem; color: var(--champagne); font-weight: 700; letter-spacing: 1px; margin-bottom: 10px;">
-                40% of digital proceeds fund Odin's Place
-            </p>
+    <section class="spoke-section" id="roadmap">
+        <div class="glass-frame spoke-block">
+            <h2 class="cinzel-header centered-text">THE SANCTUARY ROADMAP: FROM DIGITAL SPIRIT TO TENNESSEE SOIL</h2>
+            <p class="montserrat-text centered-text" style="margin-top: 16px; font-style: italic; opacity: 0.85; max-width: 640px; margin-left: auto; margin-right: auto;">The Haven is not just a destination; it is a movement in motion. We are currently building the foundation of our physical sanctuary, bridging the gap between digital vision and the earth beneath our feet.</p>
+            <div class="accent-line" style="margin: 32px auto;"></div>
+            <h3 class="cinzel-header centered-text" style="font-size: 1.1rem; letter-spacing: 3px;">OUR JOURNEY TO THE ANCHOR</h3>
+            <div class="roadmap-timeline" style="margin-top: 40px;">
+                <div class="roadmap-milestone is-done">
+                    <p class="milestone-tag">Milestone 1 · Completed</p>
+                    <h4 class="cinzel-header">THE FOUNDATION</h4>
+                    <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.85; line-height: 1.75;"><strong>The Vision:</strong> Establishing Glow&#8217;s Haven LLC as a registered professional entity in Tennessee.<br><strong>The DNA:</strong> Codifying the 25 Pillars of Light and aligning the Wings DAO and Sea Haven spokes.<br><strong>The Private Anchor:</strong> Securing the initial private acreage for Odin&#8217;s Place Executive Headquarters.</p>
+                </div>
+                <div class="roadmap-milestone is-current">
+                    <p class="milestone-tag" style="color: var(--champagne);">Milestone 2 · Current Phase</p>
+                    <h4 class="cinzel-header" style="color: var(--champagne);">THE ACQUISITION</h4>
+                    <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.9; line-height: 1.75;"><strong>The Goal:</strong> Strategic Land Acquisition.<br><strong>The Action:</strong> Utilizing our VIVO Model to divert 40% of digital proceeds into the Sanctuary Land Fund.<br><strong>The Mission:</strong> Identifying and securing the additional acreage required for our public facing veteran retreat and expanded animal rescue facilities.</p>
+                </div>
+                <div class="roadmap-milestone">
+                    <p class="milestone-tag">Milestone 3 · Upcoming</p>
+                    <h4 class="cinzel-header">THE BRAIN TRUST</h4>
+                    <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.75; line-height: 1.75;"><strong>The Infrastructure:</strong> Construction of the Glow&#8217;s Haven On Site Office.<br><strong>The Shift:</strong> Transitioning our global digital administrative team to a physical hub in TN.<br><strong>The Lore:</strong> Launching the creative studio for Sea Haven literacy media and ecosystem storytelling.</p>
+                </div>
+                <div class="roadmap-milestone">
+                    <p class="milestone-tag">Milestone 4 · The Future</p>
+                    <h4 class="cinzel-header">THE SAFE HARBOR</h4>
+                    <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.75; line-height: 1.75;"><strong>The Outreach:</strong> Official opening of the public Sanctuary grounds for peer led veteran support groups.<br><strong>The Connection:</strong> Launching on site nature based healing programs and specialized canine companionship initiatives.<br><strong>The Legacy:</strong> Realizing a fully sustainable, dual world ecosystem where digital innovation provides permanent physical solace.</p>
+                </div>
+            </div>
+            <div class="centered-text">
+                <a href="contact.html#donate" class="glass-button">Support the Land Acquisition Fund</a>
+            </div>
+            <p class="montserrat-text centered-text" style="margin-top: 36px; font-size: 0.9rem; opacity: 0.75; max-width: 620px; margin-left: auto; margin-right: auto;">Glow&#8217;s Haven LLC operates with total transparency. As we move through the Acquisition phase, our community is updated via The Morning Glow and our official archives on the progress of our Tennessee soil.</p>
         </div>
-    </aside>
+    </section>
+</main>
 
-    <footer class="site-footer centered-text" style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding: 40px 20px;">
-        <div class="footer-content">
-            <p class="cinzel-header" style="font-size: 1rem; letter-spacing: 2px; margin-bottom: 15px; color: var(--white);">
-                Glow’s Haven LLC: Built in Web3. Rooted in Tennessee. Defined by Integrity.
-            </p>
-            
-            <p class="montserrat-text legal-links-row" style="margin-bottom: 20px; font-size: 0.85rem; letter-spacing: 0.5px; opacity: 0.7;">
-                <a href="privacy.html" style="color: var(--silver-accent); text-decoration: none; margin: 0 10px;">Privacy Policy</a> | 
-                <a href="disclaimers.html" style="color: var(--silver-accent); text-decoration: none; margin: 0 10px;">Terms of Service</a> | 
-                <a href="disclaimers.html" style="color: var(--silver-accent); text-decoration: none; margin: 0 10px;">Project Disclaimers</a> | 
-                <a href="contact.html" style="color: var(--silver-accent); text-decoration: none; margin: 0 10px;">Contact</a>
-            </p>
-            
-            <p class="montserrat-text" style="gap: 20px; display: flex; justify-content: center; font-size: 1.2rem; margin-bottom: 25px;">
-                <a href="#" style="color: var(--silver-accent); transition: color 0.3s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#D5D8DC'"><i class="fab fa-discord"></i></a>
-                <a href="https://x.com/GlowsHaven" target="_blank" style="color: var(--silver-accent); transition: color 0.3s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#D5D8DC'"><i class="fab fa-x-twitter"></i></a>
-            </p>
-            
-            <p class="small-print" style="font-size: 0.75rem; opacity: 0.3; letter-spacing: 1px;">
-                &copy; 2026 Glow’s Haven LLC. Registered in the State of Tennessee. All Rights Reserved.
-            </p>
-        </div>
-    </footer>
-<script src="index.js"></script>
+<footer class="site-footer centered-text">
+    <div class="footer-content">
+        <p class="cinzel-header footer-tagline">Glow&#8217;s Haven LLC: Built in Web3. Rooted in Tennessee. Defined by Integrity.</p>
+        <p class="montserrat-text legal-links-row">
+            <a href="privacy.html">Privacy Policy</a>
+            <span class="footer-sep" aria-hidden="true">|</span>
+            <a href="disclaimers.html">Terms of Service</a>
+            <span class="footer-sep" aria-hidden="true">|</span>
+            <a href="disclaimers.html">Project Disclaimers</a>
+            <span class="footer-sep" aria-hidden="true">|</span>
+            <a href="contact.html">Contact</a>
+        </p>
+        <p class="small-print">&copy; 2026 Glow&#8217;s Haven LLC. Registered in the State of Tennessee. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<div class="nav-pages-overlay" id="navPagesOverlay" aria-hidden="true">
+    <div class="nav-pages-backdrop" id="navPagesBackdrop"></div>
+    <nav class="nav-pages-panel" role="navigation" aria-label="Site menu">
+        <button type="button" class="nav-pages-close" id="navPagesClose" aria-label="Close menu"><span aria-hidden="true">&times;</span></button>
+        <p class="nav-pages-eyebrow">Navigate the Haven</p>
+        <ul class="nav-pages-list" id="navMoreMenu">
+            <li class="nav-pages-mobile-only"><a href="index.html">Home</a></li>
+            <li class="nav-pages-mobile-only"><a href="sanctuary.html">The Haven</a></li>
+            <li class="nav-pages-mobile-only"><a href="strategy-hub.html">Wings DAO</a></li>
+            <li class="nav-pages-mobile-only"><a href="sea-haven.html">Sea Haven</a></li>
+            <li class="nav-pages-mobile-only"><a href="library.html">The Library</a></li>
+            <li class="nav-pages-mobile-only"><a href="merch.html">Outfitters</a></li>
+            <li class="nav-pages-mobile-only nav-pages-support"><a href="contact.html#donate" class="nav-pages-support-link">Support the Sanctuary</a></li>
+            <li class="nav-pages-divider" aria-hidden="true"></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+
+<script src="site.js?v=20260521"></script>
 </body>
 </html>
