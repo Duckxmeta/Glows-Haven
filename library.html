@@ -5,47 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Haven Archives | Glow's Haven</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;700&family=La+Belle+Aurore&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=1.1">
+    <link rel="stylesheet" href="style.css?v=20260521">
     <script src="https://kit.fontawesome.com/48c9b0a619.js" crossorigin="anonymous"></script>
 </head>
 <body class="sanctuary-blue-bg">
 
     <header class="site-header">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo-link">
-                <img src="assets/GlowsHavenlogonobg.png" alt="Glow's Haven Logo" class="nav-logo">
-            </a>
-            
-            <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu" onclick="toggleMobileMenu()">
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo-link">
+            <img src="assets/GlowsHavenlogonobg.png" alt="Glow's Haven Logo" class="nav-logo">
+        </a>
+        <nav class="nav-links-center" id="navigationMenu" aria-label="Main navigation">
+            <a href="sanctuary.html">The Haven</a>
+            <a href="strategy-hub.html">Wings DAO</a>
+            <a href="sea-haven.html">Sea Haven</a>
+            <a href="library.html">The Library</a>
+            <a href="merch.html">Outfitters</a>
+        </nav>
+        <div class="nav-more-wrap">
+            <button type="button" class="nav-more-toggle" id="navMoreToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navPagesOverlay">
+                <span class="nav-more-bar"></span>
+                <span class="nav-more-bar"></span>
+                <span class="nav-more-bar"></span>
             </button>
-            
-            <nav class="nav-links-center" id="navigationMenu">
-                <a href="index.html" onclick="toggleMobileMenu()">The Haven</a>
-                <a href="strategy-hub.html" onclick="toggleMobileMenu()">Wings DAO</a>
-                <a href="sea-haven.html" onclick="toggleMobileMenu()">Sea Haven</a>
-                <a href="library.html" onclick="toggleMobileMenu()">The Library</a>
-                <a href="merch.html" onclick="toggleMobileMenu()">Outfitters</a>
-                <a href="team.html" class="mobile-only-nav-extra" onclick="toggleMobileMenu()">Team</a>
-                <a href="contact.html" class="mobile-only-nav-extra" onclick="toggleMobileMenu()">Contact</a>
-                <a href="contact.html#donate" class="btn-support-silver mobile-only-cta" onclick="toggleMobileMenu()">Support the Sanctuary</a>
-            </nav>
-            <div class="nav-more-wrap desktop-only-nav-more">
-                <button type="button" class="nav-more-toggle" id="navMoreToggle" aria-label="More pages" aria-expanded="false" aria-haspopup="true">
-                    <span class="nav-more-bar"></span>
-                    <span class="nav-more-bar"></span>
-                    <span class="nav-more-bar"></span>
-                </button>
-                <ul class="nav-more-dropdown" id="navMoreMenu" role="menu">
-                    <li role="none"><a href="team.html" role="menuitem">Team</a></li>
-                    <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
-                </ul>
-            </div>
-            <a href="contact.html#donate" class="btn-support-silver desktop-only-cta">Support the Sanctuary</a>
         </div>
-    </header>
+        <a href="contact.html#donate" class="btn-support-silver desktop-only-cta">Support the Sanctuary</a>
+    </div>
+</header>
 
     <main class="luxury-section" style="padding-top: 140px; padding-bottom: 60px;">
         <div class="contact-container">
@@ -54,7 +40,7 @@
                 <h1 class="cinzel-header" style="font-size: 2.3rem; letter-spacing: 4px; margin-bottom: 15px;">THE HAVEN ARCHIVES: OUR BLUEPRINTS</h1>
                 <div class="accent-line" style="margin: 0 auto 25px;"></div>
                 <p class="montserrat-text" style="font-style: italic; opacity: 0.8; max-width: 750px; margin: 0 auto; line-height: 1.8; font-size: 1rem; color: var(--silver-accent);">
-                    "Transparency is the foundation of integrity. Explore our comprehensive whitepapers to understand the mechanics, lore, and long-term roadmap behind every spoke in our ecosystem."
+                    "Transparency is the foundation of integrity. Explore our comprehensive whitepapers to understand the mechanics, lore, and long term roadmap behind every spoke in our ecosystem."
                 </p>
             </div>
 
@@ -90,7 +76,7 @@
                     </div>
                     <div class="book-info-block text-center" style="margin-top: 25px; text-align: center;">
                         <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.7; min-height: 50px; margin-bottom: 20px;">
-                            <strong>Focus:</strong> Professional Strategy, Matrix Operations Management, and Ecosystem Governance.
+                            <strong>Focus:</strong> Professional Strategy, Operations Management, and Ecosystem Governance.
                         </p>
                         <a href="docs/Wings_DAO_Whitepaper.pdf" download class="glass-button" style="font-size: 0.8rem; padding: 10px 20px;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px;"></i> Download PDF</a>
                     </div>
@@ -118,7 +104,7 @@
 
             <div class="glass-frame" style="max-width: 450px; margin: 60px auto 0; padding: 20px; text-align: center; border: 1px dashed rgba(255,255,255,0.1); background: rgba(255,255,255,0.01);">
                 <p class="cinzel-header" style="font-size: 0.9rem; letter-spacing: 1.5px; margin: 0; color: rgba(255,255,255,0.4);">
-                    <i class="fa-solid fa-lock" style="margin-right: 10px; font-size: 0.8rem;"></i> True Love: Killers & Kisses — Coming Soon
+                    <i class="fa-solid fa-lock" style="margin-right: 10px; font-size: 0.8rem;"></i> True Love: Killers &amp; Kisses · Coming Soon
                 </p>
             </div>
 
@@ -142,6 +128,28 @@
         </div>
     </footer>
 
-<script src="index.js"></script>
+<div class="nav-pages-overlay" id="navPagesOverlay" aria-hidden="true">
+    <div class="nav-pages-backdrop" id="navPagesBackdrop"></div>
+    <nav class="nav-pages-panel" role="navigation" aria-label="Site menu">
+        <button type="button" class="nav-pages-close" id="navPagesClose" aria-label="Close menu">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <p class="nav-pages-eyebrow">Navigate the Haven</p>
+        <ul class="nav-pages-list" id="navMoreMenu">
+            <li class="nav-pages-mobile-only"><a href="index.html">Home</a></li>
+            <li class="nav-pages-mobile-only"><a href="sanctuary.html">The Haven</a></li>
+            <li class="nav-pages-mobile-only"><a href="strategy-hub.html">Wings DAO</a></li>
+            <li class="nav-pages-mobile-only"><a href="sea-haven.html">Sea Haven</a></li>
+            <li class="nav-pages-mobile-only"><a href="library.html">The Library</a></li>
+            <li class="nav-pages-mobile-only"><a href="merch.html">Outfitters</a></li>
+            <li class="nav-pages-mobile-only nav-pages-support"><a href="contact.html#donate" class="nav-pages-support-link">Support the Sanctuary</a></li>
+            <li class="nav-pages-divider" aria-hidden="true"></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+
+<script src="site.js?v=20260521"></script>
 </body>
 </html>
