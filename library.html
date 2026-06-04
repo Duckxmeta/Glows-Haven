@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Haven Archives | Glow's Haven</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;700&family=La+Belle+Aurore&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=20260522">
+    <link rel="stylesheet" href="style.css?v=20260523">
     <script src="https://kit.fontawesome.com/48c9b0a619.js" crossorigin="anonymous"></script>
 </head>
-<body class="sanctuary-blue-bg">
+<body class="page-theme-haven">
+<div class="starfield-bg-container starfield-bg-container--subtle">
+    <img src="assets/starfield-dashboard.png" alt="" class="starfield-bg-img" aria-hidden="true">
+    <canvas class="dew-canvas" aria-hidden="true"></canvas>
+    <div class="starfield-bg-veil"></div>
+</div>
 
     <header class="site-header">
     <div class="nav-container">
@@ -33,7 +38,7 @@
     </div>
 </header>
 
-    <main class="luxury-section" style="padding-top: 140px; padding-bottom: 60px;">
+    <main class="luxury-section page-main-layer" style="padding-top: 140px; padding-bottom: 60px;">
         <div class="contact-container">
             
             <div class="centered-text" style="margin-bottom: 70px;">
@@ -46,7 +51,7 @@
 
             <div class="library-grid-row">
                 
-                <div class="glass-frame archive-book-card">
+                <div class="glass-frame archive-book-card surface-card">
                     <div class="book-cover-wrapper">
                         <div class="book-cover glow-master-cover">
                             <div class="book-spine"></div>
@@ -60,11 +65,11 @@
                         <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.7; min-height: 50px; margin-bottom: 20px;">
                             <strong>Focus:</strong> The Sanctuary, Positivity Branding, and LLC Ecosystem Operations.
                         </p>
-                        <a href="docs/Glows_Haven_Master_Whitepaper.pdf" download class="glass-button" style="font-size: 0.8rem; padding: 10px 20px;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px;"></i> Download PDF</a>
+                        <a href="docs/Glows_Haven_Master_Whitepaper.pdf" download class="btn-download-pdf"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Download PDF</a>
                     </div>
                 </div>
 
-                <div class="glass-frame archive-book-card">
+                <div class="glass-frame archive-book-card surface-card">
                     <div class="book-cover-wrapper">
                         <div class="book-cover wings-dao-cover">
                             <div class="book-spine"></div>
@@ -78,11 +83,11 @@
                         <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.7; min-height: 50px; margin-bottom: 20px;">
                             <strong>Focus:</strong> Professional Strategy, Operations Management, and Ecosystem Governance.
                         </p>
-                        <a href="docs/Wings_DAO_Whitepaper.pdf" download class="glass-button" style="font-size: 0.8rem; padding: 10px 20px;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px;"></i> Download PDF</a>
+                        <a href="docs/Wings_DAO_Whitepaper.pdf" download class="btn-download-pdf"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Download PDF</a>
                     </div>
                 </div>
 
-                <div class="glass-frame archive-book-card">
+                <div class="glass-frame archive-book-card surface-card">
                     <div class="book-cover-wrapper">
                         <div class="book-cover sea-haven-cover">
                             <div class="book-spine"></div>
@@ -96,13 +101,13 @@
                         <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.7; min-height: 50px; margin-bottom: 20px;">
                             <strong>Focus:</strong> Legacy Rebirth, Ocean Conservation, and 3D Educational Literacy Frameworks.
                         </p>
-                        <a href="docs/Sea_Haven_Whitepaper.pdf" download class="glass-button" style="font-size: 0.8rem; padding: 10px 20px;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px;"></i> Download PDF</a>
+                        <a href="docs/Sea_Haven_Whitepaper.pdf" download class="btn-download-pdf"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Download PDF</a>
                     </div>
                 </div>
 
             </div>
 
-            <div class="glass-frame library-coming-soon-row" style="border: 1px dashed rgba(255,255,255,0.1); background: rgba(255,255,255,0.01);">
+            <div class="glass-frame library-coming-soon-row surface-card surface-card--muted">
                 <p class="cinzel-header" style="font-size: 0.9rem; letter-spacing: 1.5px; margin: 0; color: rgba(255,255,255,0.4);">
                     <i class="fa-solid fa-lock" style="margin-right: 10px; font-size: 0.8rem;"></i> True Love: Killers &amp; Kisses · Coming Soon
                 </p>
@@ -150,6 +155,6 @@
     </nav>
 </div>
 
-<script src="site.js?v=20260522"></script>
+<script src="site.js?v=20260523"></script>
 </body>
 </html>
