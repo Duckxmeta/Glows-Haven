@@ -645,9 +645,12 @@ body.donate-modal-open {
  position: relative;
 }
 
-.site-header, .hero, .founder-letter, .team-haven-section, .core-spokes, .pillars-section, .archives-section, .scroll-letter-section, .contact-section, .donation-footer-block, .site-footer {
+.site-header, .hero, .founder-letter, .team-haven-section, .core-spokes, .pillars-section, .archives-section, .scroll-letter-section, .contact-section, .donation-footer-block, .site-footer, .page-main-layer, .spoke-page {
  position: relative;
  z-index: 2;
+}
+.page-main-layer {
+ background: transparent;
 }
 
 /* --- III. SECTION 1: THE FOUNDER’S STATEMENT (legacy helpers) --- */
@@ -2239,5 +2242,436 @@ body.donate-modal-open {
  }
  .nav-pages-overlay {
  padding-top: 72px;
+ }
+ .book-letter-spread {
+ flex-direction: column;
+ align-items: center;
+ gap: 20px;
+ }
+ .book-frame-outer {
+ max-width: min(520px, 94vw);
+ width: 100%;
+ }
+ .book-frame-stage {
+ max-height: min(52vh, 440px);
+ }
+ .book-spine {
+ width: min(200px, 60%);
+ height: 8px;
+ min-height: 8px;
+ align-self: center;
+ }
+}
+
+/* ==========================================================================
+ XIV. DASHBOARD DEW STARFIELD + PAGE THEMES + SURFACE CARDS
+ ========================================================================== */
+.dew-canvas {
+ position: absolute;
+ inset: 0;
+ width: 100%;
+ height: 100%;
+ z-index: 2;
+ pointer-events: none;
+}
+.starfield-bg-img {
+ filter: blur(0.5px);
+ opacity: 0.82;
+}
+.starfield-bg-veil {
+ background: linear-gradient(
+ 180deg,
+ rgba(5, 16, 31, 0.72) 0%,
+ rgba(5, 16, 31, 0.45) 35%,
+ rgba(5, 16, 31, 0.55) 70%,
+ rgba(5, 16, 31, 0.78) 100%
+ );
+}
+.starfield-bg-container--subtle .starfield-bg-veil {
+ background: linear-gradient(180deg, rgba(8, 20, 38, 0.88) 0%, rgba(8, 20, 38, 0.92) 100%);
+}
+.starfield-bg-container--subtle .starfield-bg-img {
+ opacity: 0.55;
+}
+
+/* Haven palette (library, merch, contact, team base) */
+.page-theme-haven {
+ --page-bg: #071428;
+ --page-bg-deep: #040d1a;
+ --page-card: rgba(18, 42, 72, 0.92);
+ --page-card-border: rgba(72, 201, 176, 0.28);
+ --page-accent: #48c9b0;
+ --page-accent-soft: rgba(72, 201, 176, 0.15);
+ --page-text: #e8f4ff;
+ --page-muted: rgba(200, 220, 240, 0.75);
+ background: var(--page-bg-deep);
+ color: var(--page-text);
+}
+.page-theme-haven .site-header {
+ background: rgba(4, 13, 26, 0.94);
+ border-bottom-color: var(--page-card-border);
+}
+
+/* Wings DAO palette */
+.page-theme-wings {
+ --page-bg: #120818;
+ --page-bg-deep: #0a0510;
+ --page-card: rgba(28, 14, 42, 0.94);
+ --page-card-border: rgba(0, 180, 255, 0.22);
+ --page-accent: #00b4ff;
+ --page-accent-2: #e85d04;
+ --page-text: #f0f4ff;
+ background: linear-gradient(165deg, #0a0510 0%, #1a0a28 35%, #0f1838 70%, #0a0510 100%);
+ color: var(--page-text);
+}
+.page-theme-wings .site-header {
+ background: rgba(10, 5, 16, 0.94);
+ border-bottom-color: rgba(0, 180, 255, 0.2);
+}
+.page-theme-wings .wings-hub-theme {
+ background: transparent;
+}
+
+/* Sea Haven palette */
+.page-theme-sea {
+ --page-bg: #041525;
+ --page-bg-deep: #020c18;
+ --page-card: rgba(12, 38, 68, 0.94);
+ --page-card-border: rgba(90, 160, 220, 0.35);
+ --page-accent: #5aa0dc;
+ --page-accent-glow: #7ec8e8;
+ --page-text: #e6f2fa;
+ background: linear-gradient(180deg, #020c18 0%, #0c2848 45%, #041525 100%);
+ color: var(--page-text);
+}
+.page-theme-sea .site-header {
+ background: rgba(2, 12, 24, 0.94);
+ border-bottom-color: var(--page-card-border);
+}
+.page-theme-sea .sea-haven-theme {
+ background: transparent;
+}
+.sea-page-motto {
+ max-width: 640px;
+ margin: 24px auto 0;
+ font-size: 1.05rem;
+ line-height: 1.85;
+ opacity: 0.9;
+ color: var(--page-accent-glow, var(--aurora-green));
+ font-style: italic;
+}
+
+/* Surface cards: distinct from page background */
+.surface-card {
+ background: var(--page-card, rgba(18, 36, 58, 0.92)) !important;
+ border: 1px solid var(--page-card-border, rgba(213, 216, 220, 0.2)) !important;
+ box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+.page-theme-wings .surface-card {
+ background: linear-gradient(145deg, rgba(32, 18, 52, 0.96), rgba(18, 28, 58, 0.94)) !important;
+ border-color: rgba(0, 180, 255, 0.25) !important;
+}
+.page-theme-sea .surface-card {
+ background: linear-gradient(160deg, rgba(14, 42, 72, 0.96), rgba(8, 28, 52, 0.94)) !important;
+ border-color: rgba(126, 200, 232, 0.3) !important;
+}
+.surface-card--muted {
+ opacity: 0.88;
+ border-style: dashed !important;
+}
+.surface-card--contact-form {
+ background: rgba(14, 32, 56, 0.96) !important;
+ border-color: rgba(72, 201, 176, 0.35) !important;
+}
+.surface-card--donation {
+ background: rgba(22, 48, 78, 0.96) !important;
+ border: 1px solid rgba(232, 213, 176, 0.35) !important;
+ padding: 48px 36px !important;
+}
+.contact-page .orb-icon-glow,
+.contact-page .donation-box-icon {
+ filter: drop-shadow(0 0 20px rgba(72, 201, 176, 0.35));
+}
+
+/* Animated brand logos on spoke pages */
+.brand-hero-emblem {
+ margin: 0 auto 28px;
+ width: clamp(140px, 22vw, 220px);
+ height: clamp(140px, 22vw, 220px);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ animation: emblem-float 5s ease-in-out infinite;
+}
+.brand-hero-emblem img {
+ width: 100%;
+ height: 100%;
+ object-fit: contain;
+ filter: drop-shadow(0 0 28px rgba(255, 255, 255, 0.15));
+}
+.brand-hero-emblem--wings img {
+ filter: drop-shadow(0 0 32px rgba(0, 180, 255, 0.35));
+ animation: emblem-shimmer 4s ease-in-out infinite;
+}
+.brand-hero-emblem--sea img {
+ filter: drop-shadow(0 0 28px rgba(90, 160, 220, 0.45));
+}
+.brand-hero-emblem--haven img {
+ filter: drop-shadow(0 0 32px rgba(72, 201, 176, 0.4));
+}
+@keyframes emblem-float {
+ 0%, 100% { transform: translateY(0); }
+ 50% { transform: translateY(-10px); }
+}
+@keyframes emblem-shimmer {
+ 0%, 100% { filter: drop-shadow(0 0 24px rgba(0, 180, 255, 0.3)); }
+ 50% { filter: drop-shadow(0 0 40px rgba(232, 93, 4, 0.35)); }
+}
+
+/* Twin silver frames (open book, no scroll) */
+.founder-letter--book {
+ padding: 80px 24px 100px;
+ background: rgba(8, 18, 32, 0.55);
+}
+.book-letter-spread {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 6px;
+ max-width: min(1180px, 96vw);
+ margin: 40px auto 0;
+}
+.book-frame-outer {
+ flex: 1 1 0;
+ min-width: 0;
+ max-width: 540px;
+}
+.book-frame-stage {
+ position: relative;
+ width: 100%;
+ aspect-ratio: 1024 / 577;
+ max-height: min(58vh, 500px);
+}
+.book-frame-viewport {
+ overflow: hidden;
+ display: flex;
+ align-items: flex-start;
+ justify-content: center;
+}
+.book-frame-viewport .book-frame-text {
+ width: 100%;
+ height: 100%;
+ overflow: hidden;
+ padding: 2px clamp(6px, 1.2vw, 14px) 6px;
+}
+.book-letter-spread .book-frame-text p {
+ font-size: clamp(0.68rem, 0.95vw, 0.82rem);
+ margin-bottom: 10px;
+ line-height: 1.55;
+}
+.book-letter-spread .book-frame-text p.letter-salutation {
+ font-size: clamp(0.78rem, 1.05vw, 0.92rem);
+ margin-bottom: 14px;
+}
+.book-letter-spread .book-frame-text .letter-subhead {
+ font-size: clamp(0.72rem, 0.9vw, 0.84rem);
+ margin: 14px 0 8px;
+ letter-spacing: 2px;
+}
+.book-letter-spread .book-frame-text ul {
+ margin: 8px auto 10px;
+}
+.book-letter-spread .book-frame-text ul li {
+ font-size: clamp(0.65rem, 0.85vw, 0.78rem);
+ margin-bottom: 6px;
+ line-height: 1.5;
+ padding-left: 18px;
+}
+.book-letter-spread .scroll-signoff {
+ margin-top: 12px;
+ padding-top: 12px;
+}
+.book-letter-spread .scroll-motto-line {
+ font-size: 0.82rem;
+ margin-bottom: 8px;
+}
+.book-letter-spread .scroll-name-line {
+ font-size: 1rem;
+}
+.book-letter-spread .scroll-role-line {
+ font-size: 0.65rem;
+}
+.book-spine {
+ width: 12px;
+ min-width: 12px;
+ align-self: stretch;
+ min-height: 120px;
+ background: linear-gradient(90deg, rgba(232, 213, 176, 0.12), rgba(213, 216, 220, 0.5), rgba(232, 213, 176, 0.12));
+ box-shadow: inset -2px 0 10px rgba(0, 0, 0, 0.45), inset 2px 0 10px rgba(0, 0, 0, 0.45);
+ border-radius: 2px;
+}
+
+/* Home spokes: wider, shorter, uniform logos */
+.spokes-section-wrap {
+ padding: 100px 24px;
+ background: rgba(8, 18, 32, 0.5);
+ border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+.spokes-grid-home {
+ display: grid;
+ grid-template-columns: repeat(2, 1fr);
+ gap: 28px;
+ max-width: 1280px;
+ margin: 0 auto;
+}
+.spokes-grid-home .spoke-card {
+ text-align: center;
+ padding: 28px 32px 32px;
+ min-height: 0;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+.spoke-logo-wrap {
+ min-height: 100px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin-bottom: 20px;
+}
+.spoke-logo-img {
+ height: 72px !important;
+ width: auto !important;
+ max-width: 140px !important;
+ object-fit: contain !important;
+}
+.spoke-logo-img--large {
+ height: 88px !important;
+ max-width: 160px !important;
+}
+.spokes-grid-home .spoke-card h3 {
+ font-size: 1.1rem;
+ margin-bottom: 12px;
+}
+.spokes-grid-home .spoke-card p {
+ font-size: 0.88rem;
+ min-height: 0 !important;
+ margin-bottom: 18px;
+ line-height: 1.65;
+ opacity: 0.88;
+}
+
+/* Archives: starfield visible, animated cards */
+.archives-section--starfield {
+ background: transparent !important;
+ padding: 120px 40px;
+ border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.archives-section--starfield .content-container {
+ position: relative;
+ z-index: 2;
+}
+.archives-section--starfield .cinzel-header {
+ color: var(--white);
+ text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+.archives-section--starfield .silver-text {
+ color: var(--champagne);
+}
+.book-mockup-link {
+ background: linear-gradient(145deg, rgba(22, 48, 78, 0.95), rgba(10, 24, 42, 0.98)) !important;
+ border: 1px solid rgba(213, 216, 220, 0.25) !important;
+ border-left: 4px solid var(--champagne) !important;
+ transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease, border-color 0.35s ease;
+}
+.book-mockup-link h4 {
+ color: var(--white);
+ transition: color 0.3s ease;
+}
+.book-mockup-link .silver-button {
+ color: var(--silver-accent);
+ border-color: var(--silver-accent);
+}
+.book-mockup-link:hover,
+.book-mockup-link:focus-visible {
+ transform: translateY(-10px) scale(1.02);
+ box-shadow: 0 28px 50px rgba(0, 0, 0, 0.45), 0 0 32px rgba(232, 213, 176, 0.12);
+ border-color: rgba(232, 213, 176, 0.45) !important;
+}
+.book-mockup-link:hover h4 {
+ color: var(--champagne);
+}
+.book-mockup-link:active {
+ transform: translateY(-4px) scale(0.99);
+}
+
+/* Library / merch enlarged cards */
+.page-theme-haven .library-grid-row .archive-book-card,
+.page-theme-haven .merch-grid-row .merch-card {
+ padding: 44px 36px 40px !important;
+ min-height: 420px;
+}
+.page-theme-haven .merch-grid-row .merch-card {
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ gap: 24px;
+}
+.btn-download-pdf {
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ gap: 10px;
+ white-space: nowrap;
+ font-family: 'Cinzel', serif;
+ font-size: 0.75rem;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ color: var(--white);
+ text-decoration: none;
+ padding: 14px 28px;
+ border-radius: 50px;
+ border: 1px solid rgba(72, 201, 176, 0.45);
+ background: linear-gradient(135deg, rgba(72, 201, 176, 0.2), rgba(18, 42, 72, 0.9));
+ transition: var(--transition-standard);
+ margin-top: 8px;
+}
+.btn-download-pdf:hover {
+ background: var(--page-accent, var(--aurora-green));
+ color: var(--ink);
+ border-color: var(--page-accent);
+ transform: translateY(-2px);
+ box-shadow: 0 12px 28px rgba(72, 201, 176, 0.25);
+}
+.btn-download-pdf i {
+ font-size: 1rem;
+ flex-shrink: 0;
+}
+
+/* Team X links */
+.team-name-link {
+ color: var(--white);
+ text-decoration: none;
+ transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.team-name-link:hover {
+ color: var(--champagne);
+ text-shadow: 0 0 12px rgba(232, 213, 176, 0.4);
+}
+.team-id-card {
+ cursor: default;
+}
+.team-id-card .team-name-link {
+ cursor: pointer;
+}
+
+@media (max-width: 900px) {
+ .spokes-grid-home {
+ grid-template-columns: 1fr;
+ max-width: 520px;
+ }
+ .book-letter-spread .book-frame-text p {
+ font-size: 0.72rem;
+ line-height: 1.5;
  }
 }
