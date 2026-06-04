@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glow's Haven | Together, We Shine Brighter</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;700&family=La+Belle+Aurore&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=20260522">
+    <link rel="stylesheet" href="style.css?v=20260524">
     <script src="https://kit.fontawesome.com/48c9b0a619.js" crossorigin="anonymous"></script>
 </head>
 <body class="luxury-theme">
 <div class="starfield-bg-container">
-    <img src="assets/starfield-hero.png" alt="" class="starfield-bg-img" aria-hidden="true">
+    <img src="assets/starfield-dashboard.png" alt="" class="starfield-bg-img" aria-hidden="true">
+    <canvas id="dewCanvas" class="dew-canvas" aria-hidden="true"></canvas>
     <div class="starfield-bg-veil"></div>
 </div>
 
@@ -81,73 +82,79 @@
     </div>
 </section>
 
-<section class="founder-letter sanctuary-blue-bg" id="letter-from-glow">
+<section class="founder-letter founder-letter--book" id="letter-from-glow">
     <div class="letter-section-title">
         <h2 class="cinzel-header">A SANCTUARY IN MOTION:<br>A LETTER FROM GLOW</h2>
         <div class="letter-title-rule" aria-hidden="true"></div>
     </div>
 
-    <div class="scroll-card-outer">
-        <div class="scroll-card-stage">
-            <img
-                src="assets/silver-frame.png"
-                alt=""
-                class="scroll-frame-img"
-                width="1024"
-                height="577"
-                decoding="async"
-                aria-hidden="true"
-            />
-            <div class="scroll-card-viewport">
-                <div class="scroll-card-fade scroll-card-fade--top" aria-hidden="true"></div>
-                <div class="scroll-card-scroll" id="letterScroll">
-                    <div class="scroll-card-text montserrat-text">
-
-                <p class="letter-salutation">To the Wings, the Veterans, and the Seekers,</p>
-
-                <p>In the quiet hours, during the first light of <strong>The Morning Glow</strong>, I often speak about metamorphosis. We watch the butterfly and marvel at its beauty, but we rarely discuss the grit it takes to survive the cocoon.</p>
-
-                <p>Today, Glow's Haven LLC is emerging from its own cocoon.</p>
-
-                <p>What started as a digital refuge has transformed into a mission that spans worlds. We have navigated the volatile frontiers of Web3 and the complex realities of Web2, always guided by a single truth: <strong>Integrity is our only anchor.</strong></p>
-
-                <h3 class="letter-subhead">The Vision: A Dual World Sanctuary</h3>
-                <p>Glow's Haven is no longer just a project; it is a Sanctuary in Motion. We are building an ecosystem where art meets advocacy, and where digital assets fund physical healing. Our roadmap is clear, and our commitment is unwavering:</p>
-                <ul>
-                    <li><strong>We are the Heart:</strong> Through our counseling initiatives and peer support, we are mending what the world has exhausted.</li>
-                    <li><strong>We are the Engine:</strong> Through Wings DAO, we are setting the standard for professional branding and marketing, proving that you can build with high level ethics in a low trust space.</li>
-                    <li><strong>We are the Legacy:</strong> From the conservation waters of Sea Haven to the soil of Odin's Place in Tennessee, we are planting seeds for a future that outlasts any market cycle.</li>
-                </ul>
-
-                <h3 class="letter-subhead">To My Veterans</h3>
-                <p>To those who have carried the weight of service: the Haven is being built specifically for you. As the wife of a veteran, I have seen the silent struggles that follow the uniform. Odin's Place and our specialized canine programs are my promise to you. We are creating a physical safe harbor here in Tennessee, where you can find solace, kinship, and the strength to keep fluttering forward.</p>
-
-                <h3 class="letter-subhead">Our 25 Pillars</h3>
-                <p>We operate under a code of <strong>25 Pillars of Light.</strong> These aren't just values, they are our operational DNA. Whether we are planning a global event through our DAO or sitting in a one on one support session, we choose Fortitude, Honor, and Compassion every single time.</p>
-
-                <h3 class="letter-subhead">The Invitation</h3>
-                <p>The world is heavy, but you don't have to carry it alone. I invite you to join us not just as a follower, but as a part of the "Wings." Whether you are here for the transmedia art of True Love, the professional expertise of our Wings DAO, or the peace of the Sanctuary, you have a place at our table.</p>
-
-                <div class="scroll-signoff">
-                    <p class="scroll-motto-line la-belle-accent">Together, we shine brighter.</p>
-                    <p class="scroll-closing-line">With courage and hope,</p>
-                    <p class="scroll-name-line cinzel-header">Glow</p>
-                    <span class="scroll-role-line">Founder & COO, Glow's Haven LLC</span>
-                </div>
-
+    <div class="book-letter-spread">
+        <div class="book-frame-outer book-frame-outer--left">
+            <div class="book-frame-stage">
+                <img
+                    src="assets/silver-frame.png"
+                    alt=""
+                    class="scroll-frame-img"
+                    width="1024"
+                    height="577"
+                    decoding="async"
+                    aria-hidden="true"
+                />
+                <div class="book-frame-viewport scroll-card-viewport">
+                    <div class="scroll-card-text montserrat-text book-frame-text">
+                        <p class="letter-salutation">To the Wings, the Veterans, and the Seekers,</p>
+                        <p>In the quiet hours, during the first light of <strong>The Morning Glow</strong>, I often speak about metamorphosis. We watch the butterfly and marvel at its beauty, but we rarely discuss the grit it takes to survive the cocoon.</p>
+                        <p>Today, Glow's Haven LLC is emerging from its own cocoon.</p>
+                        <p>What started as a digital refuge has transformed into a mission that spans worlds. We have navigated the volatile frontiers of Web3 and the complex realities of Web2, always guided by a single truth: <strong>Integrity is our only anchor.</strong></p>
+                        <h3 class="letter-subhead">The Vision: A Dual World Sanctuary</h3>
+                        <p>Glow's Haven is no longer just a project; it is a Sanctuary in Motion. We are building an ecosystem where art meets advocacy, and where digital assets fund physical healing. Our roadmap is clear, and our commitment is unwavering:</p>
+                        <ul>
+                            <li><strong>We are the Heart:</strong> Through our counseling initiatives and peer support, we are mending what the world has exhausted.</li>
+                            <li><strong>We are the Engine:</strong> Through Wings DAO, we are setting the standard for professional branding and marketing, proving that you can build with high level ethics in a low trust space.</li>
+                            <li><strong>We are the Legacy:</strong> From the conservation waters of Sea Haven to the soil of Odin's Place in Tennessee, we are planting seeds for a future that outlasts any market cycle.</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="scroll-card-fade scroll-card-fade--bottom" aria-hidden="true"></div>
+            </div>
+        </div>
+        <div class="book-spine" aria-hidden="true"></div>
+        <div class="book-frame-outer book-frame-outer--right">
+            <div class="book-frame-stage">
+                <img
+                    src="assets/silver-frame.png"
+                    alt=""
+                    class="scroll-frame-img"
+                    width="1024"
+                    height="577"
+                    decoding="async"
+                    aria-hidden="true"
+                />
+                <div class="book-frame-viewport scroll-card-viewport">
+                    <div class="scroll-card-text montserrat-text book-frame-text">
+                        <h3 class="letter-subhead">To My Veterans</h3>
+                        <p>To those who have carried the weight of service: the Haven is being built specifically for you. As the wife of a veteran, I have seen the silent struggles that follow the uniform. Odin's Place and our specialized canine programs are my promise to you. We are creating a physical safe harbor here in Tennessee, where you can find solace, kinship, and the strength to keep fluttering forward.</p>
+                        <h3 class="letter-subhead">Our 25 Pillars</h3>
+                        <p>We operate under a code of <strong>25 Pillars of Light.</strong> These aren't just values, they are our operational DNA. Whether we are planning a global event through our DAO or sitting in a one on one support session, we choose Fortitude, Honor, and Compassion every single time.</p>
+                        <h3 class="letter-subhead">The Invitation</h3>
+                        <p>The world is heavy, but you don't have to carry it alone. I invite you to join us not just as a follower, but as a part of the "Wings." Whether you are here for the transmedia art of True Love, the professional expertise of our Wings DAO, or the peace of the Sanctuary, you have a place at our table.</p>
+                        <div class="scroll-signoff">
+                            <p class="scroll-motto-line la-belle-accent">Together, we shine brighter.</p>
+                            <p class="scroll-closing-line">With courage and hope,</p>
+                            <p class="scroll-name-line cinzel-header">Glow</p>
+                            <span class="scroll-role-line">Founder & COO, Glow's Haven LLC</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="core-spokes sanctuary-blue-bg" style="padding: 100px 0; border-top: 1px solid rgba(255,255,255,0.05);">
-    <div class="spokes-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-        <div id="haven-sanctuary" class="spoke-card glass-frame" style="text-align: center; padding: 30px;">
+<section class="core-spokes spokes-section-wrap">
+    <div class="spokes-grid spokes-grid-home">
+        <div id="haven-sanctuary" class="spoke-card surface-card">
             <div class="aurora-glow spoke-logo-wrap">
-                <img src="assets/haven-sanctuary-logo.png" alt="Haven Sanctuary" class="spoke-icon spoke-logo-img">
+                <img src="assets/haven-hero-logo.png" alt="Haven Sanctuary" class="spoke-icon spoke-logo-img spoke-logo-img--large">
             </div>
             <h3 class="cinzel-header" style="font-size: 1.2rem; margin-bottom: 15px;">The Heart: Haven Sanctuary</h3>
             <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.8; min-height: 80px; margin-bottom: 20px;">Our offline physical anchorage in Tennessee. Peer support infrastructure and avian conservation modules built for mental health solace.</p>
@@ -156,9 +163,9 @@
                 <a href="sanctuary.html" style="font-family:'Montserrat'; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; color:var(--silver-accent); text-decoration:underline;">Access Haven Files &rarr;</a>
             </div>
         </div>
-        <div id="wings-dao" class="spoke-card glass-frame" style="text-align: center; padding: 30px;">
+        <div id="wings-dao" class="spoke-card surface-card">
             <div class="aurora-glow spoke-logo-wrap">
-                <img src="assets/WingsDaonobg.png" alt="Wings DAO Logo" class="spoke-icon spoke-logo-img">
+                <img src="assets/wings-dao-hero-logo.png" alt="Wings DAO Logo" class="spoke-icon spoke-logo-img spoke-logo-img--large">
             </div>
             <h3 class="cinzel-header" style="font-size: 1.2rem; margin-bottom: 15px;">The Engine: Wings DAO</h3>
             <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.8; min-height: 80px; margin-bottom: 20px;">The professional infrastructure of the Haven. Providing strategic branding, marketing, and quality assurance with a focus on performance.</p>
@@ -167,9 +174,9 @@
                 <a href="strategy-hub.html" style="font-family:'Montserrat'; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; color:var(--silver-accent); text-decoration:underline;">Access Wings Framework &rarr;</a>
             </div>
         </div>
-        <div id="sea-haven" class="spoke-card glass-frame" style="text-align: center; padding: 30px;">
+        <div id="sea-haven" class="spoke-card surface-card">
             <div class="aurora-glow spoke-logo-wrap">
-                <img src="assets/sea-haven-logo.png" alt="Sea Haven" class="spoke-icon spoke-logo-img">
+                <img src="assets/sea-haven-hero-logo.png" alt="Sea Haven" class="spoke-icon spoke-logo-img spoke-logo-img--large">
             </div>
             <h3 class="cinzel-header" style="font-size: 1.2rem; margin-bottom: 15px;">The Legacy: Sea Haven</h3>
             <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.8; min-height: 80px; margin-bottom: 20px;">A community led movement bridging 3D cinematic art with a world class mission for ocean and moral educational literacy platforms.</p>
@@ -178,7 +185,7 @@
                 <a href="sea-haven.html" style="font-family:'Montserrat'; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; color:var(--silver-accent); text-decoration:underline;">Access Blue ocean data &rarr;</a>
             </div>
         </div>
-        <div id="true-love-spoke" class="spoke-card glass-frame" style="text-align: center; padding: 30px; border-style: dashed; opacity: 0.85;">
+        <div id="true-love-spoke" class="spoke-card surface-card surface-card--muted">
             <div class="aurora-glow" style="margin-bottom: 20px; font-size: 2rem; color: rgba(255,255,255,0.3);"><i class="fa-solid fa-heart-crack"></i></div>
             <h3 class="cinzel-header" style="font-size: 1.2rem; margin-bottom: 15px; color: rgba(255,255,255,0.6);">True Love</h3>
             <p class="montserrat-text" style="font-size: 0.9rem; opacity: 0.6; min-height: 80px; margin-bottom: 20px;">Killers & Kisses transmedia art system. Exploring cultural dynamics through high-fidelity visual ecosystems and digital lore modules.</p>
@@ -218,7 +225,7 @@
     </div>
 </section>
 
-<section id="archives-section" class="archives-section sanctuary-blue-bg">
+<section id="archives-section" class="archives-section archives-section--starfield">
     <div class="content-container centered-text">
         <h2 class="cinzel-header">THE HAVEN ARCHIVES</h2>
         <p class="montserrat-text silver-text">Transparency is the foundation of integrity. Explore our mission blueprints.</p>
@@ -243,7 +250,7 @@
 </section>
 
 <section id="contact-section" class="contact-section sanctuary-blue-bg">
-    <div class="glass-frame contact-container centered-text">
+    <div class="glass-frame contact-container surface-card centered-text">
         <img src="assets/GlowsHaven1nobg.png" alt="Orb Icon" class="orb-icon-glow">
         <h2 class="cinzel-header">REACH THE HAVEN</h2>
         <p class="la-belle-accent">We&#8217;ve been waiting for you.</p>
@@ -257,7 +264,7 @@
 </section>
 
 <section class="donation-footer-block sanctuary-blue-bg">
-    <div class="silver-bordered-box centered-text">
+    <div class="silver-bordered-box surface-card centered-text">
         <h3 class="cinzel-header">SUPPORT THE MISSION</h3>
         <p class="montserrat-text">Through our VIVO model, every contribution directly funds the land acquisition for our Tennessee veteran sanctuary and animal rescue.</p>
         <a href="contact.html#donate" class="btn-support-silver">Donate to the Sanctuary Fund</a>
@@ -307,6 +314,6 @@
     </nav>
 </div>
 
-<script src="site.js?v=20260522"></script>
+<script src="site.js?v=20260523"></script>
 </body>
 </html>
