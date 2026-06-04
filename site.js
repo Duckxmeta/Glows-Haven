@@ -278,29 +278,70 @@
     animFrame = requestAnimationFrame(draw);
 })();
 
-(function initLetterScrollFades() {
-    const scrollEl = document.getElementById('letterScroll');
-    const viewport = scrollEl ? scrollEl.closest('.scroll-card-viewport') : null;
-    if (!scrollEl || !viewport) return;
+(function initDewStarfield() {
+    var canvases = document.querySelectorAll('.dew-canvas, #dewCanvas');
+    if (!canvases.length) return;
 
-    const fadeTop = viewport.querySelector('.scroll-card-fade--top');
-    const fadeBottom = viewport.querySelector('.scroll-card-fade--bottom');
-    const edgeThreshold = 20;
+    canvases.forEach(function (canvas) {
+        var container = canvas.parentElement;
+        if (!container) return;
 
-    function updateFades() {
-        const { scrollTop, scrollHeight, clientHeight } = scrollEl;
-        const atTop = scrollTop <= edgeThreshold;
-        const atBottom = scrollTop + clientHeight >= scrollHeight - edgeThreshold;
+        var ctx = canvas.getContext('2d');
+        var particles = [];
+        var animId;
 
-        if (fadeTop) fadeTop.classList.toggle('is-hidden', atTop);
-        if (fadeBottom) fadeBottom.classList.toggle('is-hidden', atBottom);
-    }
+        function resize() {
+            canvas.width = container.offsetWidth;
+            canvas.height = container.offsetHeight;
+            buildParticles();
+        }
 
-    scrollEl.addEventListener('scroll', updateFades, { passive: true });
-    window.addEventListener('resize', updateFades);
-    if (typeof ResizeObserver !== 'undefined') {
-        const ro = new ResizeObserver(updateFades);
-        ro.observe(scrollEl);
-    }
-    updateFades();
+        function buildParticles() {
+            particles = [];
+            var count = Math.floor((canvas.width * canvas.height) / 14000);
+            if (count < 40) count = 40;
+            if (count > 120) count = 120;
+            for (var i = 0; i < count; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    r: Math.random() * 1.8 + 0.4,
+                    speed: 0.15 + Math.random() * 0.45,
+                    drift: (Math.random() - 0.5) * 0.08,
+                    phase: Math.random() * Math.PI * 2,
+                    glow: 0.35 + Math.random() * 0.45
+                });
+            }
+        }
+
+        function draw(ts) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            var t = ts * 0.001;
+            for (var j = 0; j < particles.length; j++) {
+                var p = particles[j];
+                p.y += p.speed;
+                p.x += p.drift;
+                if (p.y > canvas.height + 8) {
+                    p.y = -6;
+                    p.x = Math.random() * canvas.width;
+                }
+                if (p.x < -4) p.x = canvas.width + 4;
+                if (p.x > canvas.width + 4) p.x = -4;
+                var alpha = p.glow * (0.55 + 0.45 * Math.sin(t * 1.2 + p.phase));
+                var grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 3);
+                grad.addColorStop(0, 'rgba(255, 255, 255, ' + (alpha * 0.9).toFixed(3) + ')');
+                grad.addColorStop(0.4, 'rgba(200, 230, 255, ' + (alpha * 0.35).toFixed(3) + ')');
+                grad.addColorStop(1, 'rgba(200, 230, 255, 0)');
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.r * 2.2, 0, Math.PI * 2);
+                ctx.fillStyle = grad;
+                ctx.fill();
+            }
+            animId = requestAnimationFrame(draw);
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+        animId = requestAnimationFrame(draw);
+    });
 })();
