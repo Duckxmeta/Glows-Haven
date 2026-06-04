@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Haven Outfitters | Glow's Haven</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;700&family=La+Belle+Aurore&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=20260522">
+    <link rel="stylesheet" href="style.css?v=20260523">
     <script src="https://kit.fontawesome.com/48c9b0a619.js" crossorigin="anonymous"></script>
 </head>
-<body class="sanctuary-blue-bg">
+<body class="page-theme-haven">
+<div class="starfield-bg-container starfield-bg-container--subtle">
+    <img src="assets/starfield-dashboard.png" alt="" class="starfield-bg-img" aria-hidden="true">
+    <canvas class="dew-canvas" aria-hidden="true"></canvas>
+    <div class="starfield-bg-veil"></div>
+</div>
 
     <header class="site-header">
     <div class="nav-container">
@@ -33,7 +38,7 @@
     </div>
 </header>
     
-    <main class="luxury-section" style="padding-top: 140px; padding-bottom: 20px;">
+    <main class="luxury-section page-main-layer" style="padding-top: 140px; padding-bottom: 20px;">
         <div class="contact-container">
             <div class="centered-text" style="margin-bottom: 60px;">
                 <h1 class="cinzel-header" style="font-size: 2.5rem; letter-spacing: 4px; margin-bottom: 10px;">The Haven Outfitters</h1>
@@ -46,7 +51,7 @@
 
             <div class="merch-grid-row">
                 
-                <div class="glass-frame merch-card" style="padding: 40px 30px; display: flex; flex-direction: column; justify-content: space-between; text-align: center; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; transition: transform 0.3s ease;">
+                <div class="glass-frame merch-card surface-card">
                     <div>
                         <span class="montserrat-text" style="font-size: 0.75rem; letter-spacing: 2px; color: var(--champagne); font-weight: 700; text-transform: uppercase;">Aesthetic: Ethereal, Nature-Inspired</span>
                         <h2 class="cinzel-header" style="font-size: 1.5rem; margin: 15px 0; color: var(--white);">Glow’s Haven</h2>
@@ -57,7 +62,7 @@
                     <a href="#" class="glass-button" style="font-size: 0.8rem; letter-spacing: 1px; padding: 12px 20px;">Explore Collection</a>
                 </div>
 
-                <div class="glass-frame merch-card" style="padding: 40px 30px; display: flex; flex-direction: column; justify-content: space-between; text-align: center; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; transition: transform 0.3s ease;">
+                <div class="glass-frame merch-card surface-card">
                     <div>
                         <span class="montserrat-text" style="font-size: 0.75rem; letter-spacing: 2px; color: var(--silver-accent); font-weight: 700; text-transform: uppercase;">Aesthetic: Minimalist, High-End</span>
                         <h2 class="cinzel-header" style="font-size: 1.5rem; margin: 15px 0; color: var(--white);">Wings DAO</h2>
@@ -68,7 +73,7 @@
                     <a href="#" class="glass-button" style="font-size: 0.8rem; letter-spacing: 1px; padding: 12px 20px;">Explore Collection</a>
                 </div>
 
-                <div class="glass-frame merch-card" style="padding: 40px 30px; display: flex; flex-direction: column; justify-content: space-between; text-align: center; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; transition: transform 0.3s ease;">
+                <div class="glass-frame merch-card surface-card">
                     <div>
                         <span class="montserrat-text" style="font-size: 0.75rem; letter-spacing: 2px; color: #5dade2; font-weight: 700; text-transform: uppercase;">Aesthetic: Eco-Friendly, Coastal</span>
                         <h2 class="cinzel-header" style="font-size: 1.5rem; margin: 15px 0; color: var(--white);">Sea Haven</h2>
@@ -129,6 +134,6 @@
     </nav>
 </div>
 
-<script src="site.js?v=20260522"></script>
+<script src="site.js?v=20260523"></script>
 </body>
 </html>
