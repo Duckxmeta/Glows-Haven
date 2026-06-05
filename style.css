@@ -2246,24 +2246,28 @@ body.donate-modal-open {
  .book-letter-spread {
  flex-direction: column;
  align-items: center;
- gap: 24px;
- width: min(420px, 94vw);
+ gap: 28px;
+ width: min(480px, 94vw);
  }
- .book-frame-outer {
+ .manuscript-page {
  flex: none;
  width: 100%;
  max-width: 100%;
  min-width: 0;
+ height: auto;
+ min-height: min(78vh, 820px);
+ max-height: none;
+ padding: clamp(64px, 11vw, 88px) clamp(44px, 10vw, 60px) clamp(56px, 10vw, 80px);
  }
- .book-frame-stage {
- max-height: min(70vh, 720px);
+ .manuscript-page::before {
+ inset: clamp(44px, 8vw, 58px);
  }
  .book-spine {
- width: min(180px, 50%);
+ flex: none;
+ width: min(200px, 55%);
  height: 10px;
  min-height: 10px;
  align-self: center;
- flex: none;
  }
 }
 
@@ -2432,111 +2436,136 @@ body.donate-modal-open {
  50% { filter: drop-shadow(0 0 40px rgba(232, 93, 4, 0.35)); }
 }
 
-/* Twin portrait silver frames (open book, no scroll) */
+/* Open book letter: standard manuscript frame (SVG + fixed safe zone) */
 .founder-letter--book {
- padding: 80px 24px 100px;
+ padding: 80px 20px 100px;
  background: rgba(8, 18, 32, 0.55);
 }
 .book-letter-spread {
  display: flex;
  align-items: stretch;
  justify-content: center;
- gap: 10px;
- width: min(1100px, 96vw);
+ gap: 16px;
+ width: min(1120px, 99vw);
  margin: 40px auto 0;
 }
-.book-frame-outer {
- flex: 1 1 45%;
- width: 45%;
- min-width: 260px;
- max-width: 480px;
-}
-.book-frame-stage {
+.manuscript-page {
  position: relative;
- width: 100%;
- aspect-ratio: 576 / 1024;
- max-height: min(78vh, 820px);
- margin: 0 auto;
+ flex: 1 1 520px;
+ width: min(520px, 47vw);
+ max-width: 520px;
+ min-width: 300px;
+ height: min(88vh, 920px);
+ max-height: 920px;
+ box-sizing: border-box;
+ padding: clamp(72px, 12vh, 96px) clamp(56px, 9.5%, 72px) clamp(64px, 10vh, 88px);
+ background-image: url('assets/manuscript-frame-border.svg');
+ background-size: 100% 100%;
+ background-repeat: no-repeat;
+ background-position: center;
+ filter: drop-shadow(0 28px 48px rgba(0, 0, 0, 0.55));
 }
-.portrait-frame-img {
+.manuscript-page::before {
+ content: '';
  position: absolute;
- inset: 0;
+ inset: clamp(52px, 8.5%, 68px);
+ border-radius: 2px;
+ background: linear-gradient(
+  165deg,
+  rgba(8, 16, 28, 0.97) 0%,
+  rgba(12, 24, 42, 0.94) 50%,
+  rgba(6, 12, 22, 0.98) 100%
+ );
+ z-index: 0;
+ pointer-events: none;
+}
+.manuscript-content {
+ position: relative;
+ z-index: 1;
  width: 100%;
  height: 100%;
- object-fit: contain;
- object-position: center;
- pointer-events: none;
- z-index: 3;
- user-select: none;
- -webkit-user-drag: none;
-}
-.portrait-frame-viewport {
- position: absolute;
- top: 10%;
- right: 11%;
- bottom: 10%;
- left: 11%;
- z-index: 2;
  overflow: hidden;
  display: flex;
- align-items: flex-start;
- justify-content: center;
-}
-.portrait-frame-viewport .book-frame-text {
- width: 100%;
- height: 100%;
- overflow: hidden;
- padding: 4px clamp(4px, 1vw, 10px) 8px;
+ flex-direction: column;
+ justify-content: flex-start;
+ text-align: center;
  color: var(--white);
 }
-.book-letter-spread .book-frame-text p {
- font-size: clamp(0.72rem, 1.05vw, 0.88rem);
- margin-bottom: 11px;
+.manuscript-content p {
+ font-size: clamp(0.84rem, 0.95vw, 0.94rem);
  line-height: 1.58;
- opacity: 0.96;
+ margin-bottom: 10px;
+ opacity: 0.95;
 }
-.book-letter-spread .book-frame-text p.letter-salutation {
- font-size: clamp(0.82rem, 1.15vw, 0.98rem);
- margin-bottom: 16px;
+.manuscript-content p.letter-salutation {
+ font-size: clamp(0.92rem, 1.25vw, 1.05rem);
+ font-weight: 700;
  color: var(--champagne);
+ margin-bottom: 18px;
 }
-.book-letter-spread .book-frame-text .letter-subhead {
- font-size: clamp(0.76rem, 0.95vw, 0.9rem);
- margin: 16px 0 9px;
+.manuscript-content .letter-subhead {
+ font-family: 'Cinzel', serif;
+ font-size: clamp(0.82rem, 1.1vw, 0.95rem);
  letter-spacing: 2px;
+ text-transform: uppercase;
+ color: var(--champagne);
+ margin: 20px 0 12px;
+}
+.manuscript-content ul {
+ list-style: none;
+ margin: 10px auto 14px;
+ padding: 0;
+ max-width: 100%;
+ text-align: left;
+}
+.manuscript-content ul li {
+ position: relative;
+ padding-left: 20px;
+ margin-bottom: 8px;
+ font-size: clamp(0.76rem, 1.05vw, 0.88rem);
+ line-height: 1.55;
+}
+.manuscript-content ul li::before {
+ content: "•";
+ position: absolute;
+ left: 4px;
  color: var(--champagne);
 }
-.book-letter-spread .book-frame-text ul {
- margin: 8px auto 10px;
+.manuscript-content .scroll-signoff {
+ margin-top: auto;
+ padding-top: 16px;
+ border-top: 1px solid rgba(232, 213, 176, 0.2);
 }
-.book-letter-spread .book-frame-text ul li {
- font-size: clamp(0.65rem, 0.85vw, 0.78rem);
- margin-bottom: 6px;
- line-height: 1.5;
- padding-left: 18px;
+.manuscript-content .scroll-motto-line {
+ font-size: 0.9rem;
+ margin-bottom: 10px;
 }
-.book-letter-spread .scroll-signoff {
- margin-top: 12px;
- padding-top: 12px;
+.manuscript-content .scroll-name-line {
+ font-size: 1.05rem;
 }
-.book-letter-spread .scroll-motto-line {
- font-size: 0.82rem;
- margin-bottom: 8px;
+.manuscript-content .scroll-role-line {
+ font-size: 0.68rem;
+ letter-spacing: 1.5px;
 }
-.book-letter-spread .scroll-name-line {
- font-size: 1rem;
-}
-.book-letter-spread .scroll-role-line {
- font-size: 0.65rem;
+@media (min-width: 1100px) {
+ .manuscript-page {
+ width: min(540px, 46vw);
+ max-width: 540px;
+ height: min(90vh, 960px);
+ max-height: 960px;
+ }
+ .book-letter-spread {
+ width: min(1160px, 99vw);
+ }
 }
 .book-spine {
- width: 12px;
- min-width: 12px;
+ flex: 0 0 14px;
+ width: 14px;
  align-self: stretch;
- min-height: 120px;
- background: linear-gradient(90deg, rgba(232, 213, 176, 0.12), rgba(213, 216, 220, 0.5), rgba(232, 213, 176, 0.12));
- box-shadow: inset -2px 0 10px rgba(0, 0, 0, 0.45), inset 2px 0 10px rgba(0, 0, 0, 0.45);
- border-radius: 2px;
+ min-height: 200px;
+ background: linear-gradient(90deg, rgba(232, 213, 176, 0.1), rgba(213, 216, 220, 0.55), rgba(232, 213, 176, 0.1));
+ box-shadow: inset -3px 0 12px rgba(0, 0, 0, 0.5), inset 3px 0 12px rgba(0, 0, 0, 0.5);
+ border-radius: 3px;
 }
 
 /* Home spokes: wider, shorter, uniform logos */
@@ -2706,8 +2735,8 @@ body.donate-modal-open {
  grid-template-columns: 1fr;
  max-width: 520px;
  }
- .book-letter-spread .book-frame-text p {
- font-size: 0.72rem;
- line-height: 1.5;
+ .manuscript-content p {
+ font-size: 0.82rem;
+ line-height: 1.58;
  }
 }
