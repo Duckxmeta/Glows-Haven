@@ -30,7 +30,11 @@
  margin: 0;
  padding: 0;
 }
-html { scroll-behavior: smooth; }
+html {
+ scroll-behavior: smooth;
+ -webkit-text-size-adjust: 100%;
+ text-size-adjust: 100%;
+}
 body {
  font-family: 'Montserrat', sans-serif;
  background-color: var(--ink);
@@ -2464,7 +2468,7 @@ body.donate-modal-open {
  inset: 0;
  width: 100%;
  height: 100%;
- object-fit: fill;
+ object-fit: contain;
  pointer-events: none;
  z-index: 2;
  user-select: none;
@@ -2485,7 +2489,9 @@ body.donate-modal-open {
 .manuscript-content {
  width: 100%;
  height: 100%;
- overflow: hidden;
+ overflow-x: hidden;
+ overflow-y: auto;
+ -webkit-overflow-scrolling: touch;
  display: flex;
  flex-direction: column;
  justify-content: flex-start;
@@ -2795,5 +2801,358 @@ body.donate-modal-open {
  }
  .letter-frame-viewport--right {
  bottom: 9.5%;
+ }
+}
+
+/* ==========================================================================
+ XV. GLOW UPDATE — mobile scroll frame, gold CTA, animated pages, zoom-safe text
+ ========================================================================== */
+
+/* Mobile horizontal scroll letter — silver-frame.png */
+.scroll-card-mobile {
+ display: none;
+ width: min(1024px, 96vw);
+ margin: 0 auto;
+}
+@media (max-width: 991px) {
+ .founder-letter--book .book-letter-spread {
+ display: none !important;
+ }
+ .scroll-card-mobile {
+ display: block;
+ }
+ .scroll-card-mobile .scroll-card-stage {
+ max-height: none;
+ min-height: 380px;
+ aspect-ratio: 1024 / 577;
+ }
+ .scroll-card-mobile .scroll-card-viewport {
+ top: 15%;
+ right: 7%;
+ bottom: 12%;
+ left: 7%;
+ }
+ .scroll-card-mobile .scroll-card-scroll {
+ padding: 8px 12px 16px;
+ }
+ .scroll-card-mobile .scroll-card-text p {
+ font-size: 0.9rem;
+ line-height: 1.75;
+ }
+ .scroll-card-mobile .scroll-card-text ul li {
+ font-size: 0.85rem;
+ }
+}
+
+/* Gold donate button */
+.btn-support-gold {
+ display: inline-block;
+ border: 1.5px solid var(--champagne);
+ border-radius: 50px;
+ background: linear-gradient(135deg, rgba(232, 213, 176, 0.18), rgba(232, 213, 176, 0.06));
+ padding: 12px 26px;
+ font-family: 'Cinzel', serif;
+ font-size: 11px;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ color: var(--champagne);
+ text-decoration: none;
+ transition: var(--transition-standard);
+ white-space: normal;
+ max-width: 100%;
+ box-sizing: border-box;
+}
+.btn-support-gold:hover {
+ background: var(--champagne);
+ color: var(--ink);
+ border-color: var(--champagne);
+ box-shadow: 0 0 24px rgba(232, 213, 176, 0.35);
+}
+.donation-footer-block .donation-card-title {
+ color: var(--champagne);
+}
+.silver-bordered-box .btn-support-gold {
+ overflow: visible;
+ text-overflow: unset;
+}
+
+/* Sea Haven featured logo — card 3 */
+#sea-haven .spoke-logo-wrap {
+ min-height: 160px;
+}
+#sea-haven .spoke-logo-img--sea-featured {
+ height: 148px !important;
+ max-width: 220px !important;
+ filter: drop-shadow(0 2px 14px rgba(255, 255, 255, 0.14)) !important;
+}
+
+/* Zoom / scroll text resilience */
+body p, body li, body h1, body h2, body h3, body h4, body a, body span, body button, body label {
+ overflow-wrap: break-word;
+ word-wrap: break-word;
+}
+.letter-frame-viewport,
+.scroll-card-scroll,
+.manuscript-content {
+ overflow-y: auto !important;
+ overflow-x: hidden;
+ -webkit-overflow-scrolling: touch;
+}
+.scroll-card-text p,
+.manuscript-content p,
+.manuscript-content--right p {
+ font-size: clamp(0.85rem, 1rem, 1.05rem);
+ line-height: 1.65;
+ opacity: 1;
+}
+.manuscript-content ul li,
+.scroll-card-text ul li {
+ font-size: clamp(0.8rem, 0.95rem, 1rem);
+}
+.scroll-card-stage {
+ max-height: none;
+}
+.scroll-card-fade {
+ height: clamp(20px, 5%, 36px);
+}
+.scroll-card-fade.is-hidden {
+ opacity: 0;
+}
+
+/* Animated page backgrounds */
+.page-has-animated-bg {
+ background: transparent !important;
+}
+.animated-page-bg {
+ position: fixed;
+ inset: 0;
+ z-index: 0;
+ overflow: hidden;
+ pointer-events: none;
+}
+.animated-page-bg__layer {
+ position: absolute;
+ inset: -8%;
+ will-change: transform, filter, background-position;
+}
+.animated-page-bg__veil {
+ position: absolute;
+ inset: 0;
+ z-index: 1;
+}
+.page-has-animated-bg .site-header,
+.page-has-animated-bg .spoke-page,
+.page-has-animated-bg .site-footer,
+.page-has-animated-bg .donate-modal {
+ position: relative;
+ z-index: 2;
+}
+
+/* Wings DAO — golden hall glow */
+.animated-page-bg--wings .animated-page-bg__layer--image {
+ background: url('assets/wings-dao-bg.jpg') center center / cover no-repeat;
+ animation: wings-bg-glow 9s ease-in-out infinite, wings-bg-zoom 22s ease-in-out infinite alternate;
+}
+.animated-page-bg--wings .animated-page-bg__layer--glow {
+ background: radial-gradient(ellipse 55% 45% at 50% 18%, rgba(255, 210, 120, 0.42), transparent 68%);
+ animation: wings-glow-pulse 7s ease-in-out infinite;
+}
+.animated-page-bg--wings .animated-page-bg__veil {
+ background: linear-gradient(180deg, rgba(10, 5, 16, 0.84) 0%, rgba(10, 5, 16, 0.72) 45%, rgba(10, 5, 16, 0.88) 100%);
+}
+@keyframes wings-bg-glow {
+ 0%, 100% { filter: brightness(0.82) saturate(1.05); }
+ 50% { filter: brightness(1.02) saturate(1.15); }
+}
+@keyframes wings-bg-zoom {
+ from { transform: scale(1.02); }
+ to { transform: scale(1.09); }
+}
+@keyframes wings-glow-pulse {
+ 0%, 100% { opacity: 0.55; transform: translateY(0); }
+ 50% { opacity: 0.9; transform: translateY(-2%); }
+}
+
+/* Sea Haven — water wave */
+.animated-page-bg--sea .animated-page-bg__layer--image {
+ background: url('assets/sea-haven-bg.jpg') center center / 120% 120% repeat;
+ animation: sea-wave-drift 14s ease-in-out infinite;
+}
+.animated-page-bg--sea .animated-page-bg__layer--glow {
+ background: radial-gradient(ellipse at 30% 40%, rgba(126, 200, 232, 0.25), transparent 55%),
+ radial-gradient(ellipse at 70% 60%, rgba(90, 160, 220, 0.2), transparent 50%);
+ animation: sea-shimmer 10s ease-in-out infinite;
+}
+.animated-page-bg--sea .animated-page-bg__veil {
+ background: linear-gradient(180deg, rgba(2, 12, 24, 0.78) 0%, rgba(4, 21, 37, 0.65) 50%, rgba(2, 12, 24, 0.82) 100%);
+}
+@keyframes sea-wave-drift {
+ 0% { background-position: 0% 50%; transform: scale(1.02) skewX(0deg); }
+ 33% { background-position: 35% 48%; transform: scale(1.03) skewX(0.25deg); }
+ 66% { background-position: 70% 52%; transform: scale(1.02) skewX(-0.25deg); }
+ 100% { background-position: 100% 50%; transform: scale(1.02) skewX(0deg); }
+}
+@keyframes sea-shimmer {
+ 0%, 100% { opacity: 0.5; }
+ 50% { opacity: 0.85; }
+}
+
+/* The Haven — light clouds */
+.animated-page-bg--haven .animated-page-bg__layer--image {
+ background: url('assets/haven-clouds-bg.jpg') center 40% / cover no-repeat;
+ filter: brightness(1.2) saturate(0.9);
+ animation: haven-cloud-drift 45s linear infinite;
+}
+.animated-page-bg--haven .animated-page-bg__layer--glow {
+ background: radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.55), transparent 62%);
+ animation: haven-glow-pulse 11s ease-in-out infinite;
+}
+.animated-page-bg--haven .animated-page-bg__veil {
+ background: linear-gradient(180deg, rgba(255, 255, 255, 0.58) 0%, rgba(235, 248, 255, 0.48) 40%, rgba(220, 238, 252, 0.52) 100%);
+}
+@keyframes haven-cloud-drift {
+ from { background-position: 0% 40%; }
+ to { background-position: 100% 45%; }
+}
+@keyframes haven-glow-pulse {
+ 0%, 100% { opacity: 0.6; }
+ 50% { opacity: 1; }
+}
+
+/* Card palettes — headers vs body */
+.card-page-headline,
+.card-headline,
+.sea-section-title {
+ letter-spacing: 2px;
+}
+.card-page-body,
+.card-copy,
+.spoke-lead,
+.spoke-block p,
+.spoke-block li {
+ opacity: 0.92;
+}
+
+/* Wings DAO cards */
+.page-theme-wings .surface-card--wings-blue {
+ background: linear-gradient(155deg, rgba(0, 100, 180, 0.35), rgba(12, 28, 58, 0.94)) !important;
+ border-color: rgba(0, 180, 255, 0.38) !important;
+}
+.page-theme-wings .surface-card--wings-blue .card-page-headline,
+.page-theme-wings .surface-card--wings-blue h2,
+.page-theme-wings .surface-card--wings-blue h4 {
+ color: #00b4ff !important;
+}
+.page-theme-wings .surface-card--wings-gold {
+ background: linear-gradient(155deg, rgba(232, 93, 4, 0.28), rgba(28, 14, 8, 0.94)) !important;
+ border-color: rgba(244, 162, 97, 0.42) !important;
+}
+.page-theme-wings .surface-card--wings-gold .card-page-headline,
+.page-theme-wings .surface-card--wings-gold h2,
+.page-theme-wings .surface-card--wings-gold h4 {
+ color: #f4a261 !important;
+}
+.page-theme-wings .spoke-hero h1 {
+ color: #f0f4ff;
+ text-shadow: 0 2px 24px rgba(0, 0, 0, 0.5);
+}
+.page-theme-wings .sub-headline {
+ color: rgba(240, 244, 255, 0.9);
+}
+
+/* Sea Haven cards */
+.page-theme-sea .surface-card--sea-light {
+ background: linear-gradient(160deg, rgba(90, 180, 230, 0.32), rgba(14, 52, 82, 0.92)) !important;
+ border-color: rgba(126, 200, 232, 0.45) !important;
+}
+.page-theme-sea .surface-card--sea-light .card-headline,
+.page-theme-sea .surface-card--sea-light h3,
+.page-theme-sea .surface-card--sea-light h4 {
+ color: #7ec8e8 !important;
+}
+.page-theme-sea .surface-card--sea-deep {
+ background: linear-gradient(160deg, rgba(4, 28, 52, 0.96), rgba(2, 12, 24, 0.98)) !important;
+ border-color: rgba(12, 60, 95, 0.65) !important;
+}
+.page-theme-sea .surface-card--sea-deep .card-headline,
+.page-theme-sea .surface-card--sea-deep h3,
+.page-theme-sea .surface-card--sea-deep h4 {
+ color: #5aa0dc !important;
+}
+.page-theme-sea .card-copy,
+.page-theme-sea .card-page-body,
+.page-theme-sea p.montserrat-text {
+ color: #e6f2fa;
+}
+.page-theme-sea .sea-section-title {
+ color: var(--champagne);
+}
+
+/* Haven (sanctuary) — light cloud page */
+.page-theme-haven.page-has-animated-bg {
+ color: #0a2848;
+}
+.page-theme-haven.page-has-animated-bg .site-header {
+ background: rgba(255, 255, 255, 0.88);
+ border-bottom-color: rgba(72, 201, 176, 0.35);
+}
+.page-theme-haven.page-has-animated-bg .nav-links-center a,
+.page-theme-haven.page-has-animated-bg .nav-logo-link {
+ filter: none;
+}
+.page-theme-haven.page-has-animated-bg .nav-links-center a {
+ color: #0a3d5c;
+ opacity: 0.9;
+}
+.page-theme-haven.page-has-animated-bg .nav-links-center a:hover {
+ color: #48c9b0;
+}
+.page-theme-haven .surface-card--haven-light {
+ background: rgba(255, 255, 255, 0.88) !important;
+ border-color: rgba(72, 201, 176, 0.35) !important;
+ color: #1a3a5f;
+}
+.page-theme-haven .surface-card--haven-light .card-page-headline,
+.page-theme-haven .surface-card--haven-light h2,
+.page-theme-haven .surface-card--haven-light h3 {
+ color: #0a3d5c !important;
+}
+.page-theme-haven .surface-card--haven-teal {
+ background: linear-gradient(160deg, rgba(72, 201, 176, 0.22), rgba(255, 255, 255, 0.9)) !important;
+ border-color: rgba(72, 201, 176, 0.45) !important;
+ color: #0a2848;
+}
+.page-theme-haven .surface-card--haven-teal .card-page-headline,
+.page-theme-haven .surface-card--haven-teal h2,
+.page-theme-haven .surface-card--haven-teal h3,
+.page-theme-haven .surface-card--haven-teal h4 {
+ color: #1a6b5c !important;
+}
+.page-theme-haven.page-has-animated-bg .spoke-lead,
+.page-theme-haven.page-has-animated-bg .montserrat-text,
+.page-theme-haven.page-has-animated-bg .spoke-list li {
+ color: #1a3a5f;
+ opacity: 0.92;
+}
+.page-theme-haven.page-has-animated-bg .sub-headline {
+ color: #0a3d5c;
+}
+.page-theme-haven.page-has-animated-bg h1.cinzel-header {
+ color: #05101f;
+ text-shadow: 0 1px 12px rgba(255, 255, 255, 0.6);
+}
+.page-theme-haven.page-has-animated-bg .site-footer {
+ color: #0a2848;
+ border-top-color: rgba(72, 201, 176, 0.25);
+}
+.page-theme-haven.page-has-animated-bg .footer-tagline,
+.page-theme-haven.page-has-animated-bg .legal-links-row a {
+ color: #0a3d5c;
+}
+
+@media (prefers-reduced-motion: reduce) {
+ .animated-page-bg__layer,
+ .animated-page-bg__layer--glow {
+ animation: none !important;
  }
 }
