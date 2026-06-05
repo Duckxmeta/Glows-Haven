@@ -2246,20 +2246,24 @@ body.donate-modal-open {
  .book-letter-spread {
  flex-direction: column;
  align-items: center;
- gap: 20px;
+ gap: 24px;
+ width: min(420px, 94vw);
  }
  .book-frame-outer {
- max-width: min(520px, 94vw);
+ flex: none;
  width: 100%;
+ max-width: 100%;
+ min-width: 0;
  }
  .book-frame-stage {
- max-height: min(52vh, 440px);
+ max-height: min(70vh, 720px);
  }
  .book-spine {
- width: min(200px, 60%);
- height: 8px;
- min-height: 8px;
+ width: min(180px, 50%);
+ height: 10px;
+ min-height: 10px;
  align-self: center;
+ flex: none;
  }
 }
 
@@ -2428,55 +2432,79 @@ body.donate-modal-open {
  50% { filter: drop-shadow(0 0 40px rgba(232, 93, 4, 0.35)); }
 }
 
-/* Twin silver frames (open book, no scroll) */
+/* Twin portrait silver frames (open book, no scroll) */
 .founder-letter--book {
  padding: 80px 24px 100px;
  background: rgba(8, 18, 32, 0.55);
 }
 .book-letter-spread {
  display: flex;
- align-items: center;
+ align-items: stretch;
  justify-content: center;
- gap: 6px;
- max-width: min(1180px, 96vw);
+ gap: 10px;
+ width: min(1100px, 96vw);
  margin: 40px auto 0;
 }
 .book-frame-outer {
- flex: 1 1 0;
- min-width: 0;
- max-width: 540px;
+ flex: 1 1 45%;
+ width: 45%;
+ min-width: 260px;
+ max-width: 480px;
 }
 .book-frame-stage {
  position: relative;
  width: 100%;
- aspect-ratio: 1024 / 577;
- max-height: min(58vh, 500px);
+ aspect-ratio: 576 / 1024;
+ max-height: min(78vh, 820px);
+ margin: 0 auto;
 }
-.book-frame-viewport {
+.portrait-frame-img {
+ position: absolute;
+ inset: 0;
+ width: 100%;
+ height: 100%;
+ object-fit: contain;
+ object-position: center;
+ pointer-events: none;
+ z-index: 3;
+ user-select: none;
+ -webkit-user-drag: none;
+}
+.portrait-frame-viewport {
+ position: absolute;
+ top: 10%;
+ right: 11%;
+ bottom: 10%;
+ left: 11%;
+ z-index: 2;
  overflow: hidden;
  display: flex;
  align-items: flex-start;
  justify-content: center;
 }
-.book-frame-viewport .book-frame-text {
+.portrait-frame-viewport .book-frame-text {
  width: 100%;
  height: 100%;
  overflow: hidden;
- padding: 2px clamp(6px, 1.2vw, 14px) 6px;
+ padding: 4px clamp(4px, 1vw, 10px) 8px;
+ color: var(--white);
 }
 .book-letter-spread .book-frame-text p {
- font-size: clamp(0.68rem, 0.95vw, 0.82rem);
- margin-bottom: 10px;
- line-height: 1.55;
+ font-size: clamp(0.72rem, 1.05vw, 0.88rem);
+ margin-bottom: 11px;
+ line-height: 1.58;
+ opacity: 0.96;
 }
 .book-letter-spread .book-frame-text p.letter-salutation {
- font-size: clamp(0.78rem, 1.05vw, 0.92rem);
- margin-bottom: 14px;
+ font-size: clamp(0.82rem, 1.15vw, 0.98rem);
+ margin-bottom: 16px;
+ color: var(--champagne);
 }
 .book-letter-spread .book-frame-text .letter-subhead {
- font-size: clamp(0.72rem, 0.9vw, 0.84rem);
- margin: 14px 0 8px;
+ font-size: clamp(0.76rem, 0.95vw, 0.9rem);
+ margin: 16px 0 9px;
  letter-spacing: 2px;
+ color: var(--champagne);
 }
 .book-letter-spread .book-frame-text ul {
  margin: 8px auto 10px;
@@ -2540,14 +2568,22 @@ body.donate-modal-open {
  margin-bottom: 20px;
 }
 .spoke-logo-img {
- height: 72px !important;
+ height: 88px !important;
  width: auto !important;
- max-width: 140px !important;
+ max-width: 160px !important;
  object-fit: contain !important;
 }
 .spoke-logo-img--large {
- height: 88px !important;
- max-width: 160px !important;
+ height: 100px !important;
+ max-width: 180px !important;
+}
+.spoke-logo-img--xlarge {
+ height: 120px !important;
+ max-width: 200px !important;
+}
+.spokes-grid-home .spoke-logo-wrap {
+ min-height: 130px;
+ margin-bottom: 24px;
 }
 .spokes-grid-home .spoke-card h3 {
  font-size: 1.1rem;
