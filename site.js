@@ -345,3 +345,21 @@
         animId = requestAnimationFrame(draw);
     });
 })();
+
+(function initScrollCardFades() {
+    var scrollEl = document.getElementById('scrollCardScroll');
+    var fadeTop = document.getElementById('scrollFadeTop');
+    var fadeBottom = document.getElementById('scrollFadeBottom');
+    if (!scrollEl) return;
+
+    function updateFades() {
+        var max = scrollEl.scrollHeight - scrollEl.clientHeight;
+        var top = scrollEl.scrollTop;
+        if (fadeTop) fadeTop.classList.toggle('is-hidden', top < 8);
+        if (fadeBottom) fadeBottom.classList.toggle('is-hidden', top > max - 8);
+    }
+
+    scrollEl.addEventListener('scroll', updateFades, { passive: true });
+    window.addEventListener('resize', updateFades);
+    updateFades();
+})();
