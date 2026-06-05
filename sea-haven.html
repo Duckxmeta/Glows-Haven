@@ -6,10 +6,16 @@
     <title>Sea Haven | The Legacy</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;700&family=La+Belle+Aurore&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
-    <link rel="stylesheet" href="style.css?v=20260523">
+    <link rel="stylesheet" href="style.css?v=20260605">
     <script src="https://kit.fontawesome.com/48c9b0a619.js" crossorigin="anonymous"></script>
 </head>
-<body class="sea-haven-theme page-theme-sea">
+<body class="sea-haven-theme page-theme-sea page-has-animated-bg">
+
+<div class="animated-page-bg animated-page-bg--sea" aria-hidden="true">
+    <div class="animated-page-bg__layer animated-page-bg__layer--image"></div>
+    <div class="animated-page-bg__layer animated-page-bg__layer--glow"></div>
+    <div class="animated-page-bg__veil"></div>
+</div>
 
 <header class="site-header">
     <div class="nav-container">
@@ -47,7 +53,7 @@
     <div class="sea-page-container">
         <section class="sea-section" aria-labelledby="origin-title">
             <h2 class="cinzel-header sea-section-title" id="origin-title">The Origin Story: &ldquo;The Great Migration&rdquo;</h2>
-            <div class="glass-frame sea-section-card surface-card text-block-centered">
+            <div class="glass-frame sea-section-card surface-card surface-card--sea-light text-block-centered">
                 <h3 class="cinzel-header card-headline">From Broken Promises to a Global Haven</h3>
                 <div class="accent-line card-accent"></div>
                 <p class="montserrat-text card-copy">Sea Haven was born from a refusal to let a mission die. Originally a Solana turtle project that promised ocean conservation but failed to deliver, the community stepped in when the original founders stepped out. We didn&#8217;t just take over the metadata; we took over the responsibility. What started as a rescue mission for a digital collection has evolved into a world class bridge between 3D cinematic art and real world marine literacy.</p>
@@ -56,7 +62,7 @@
 
         <section class="sea-section" aria-labelledby="transform-title">
             <h2 class="cinzel-header sea-section-title" id="transform-title">The Transformation: Evolution of the Species</h2>
-            <div class="glass-frame sea-section-card surface-card text-block-centered">
+            <div class="glass-frame sea-section-card surface-card surface-card--sea-deep text-block-centered">
                 <p class="montserrat-text card-label">Before &amp; After</p>
                 <div class="before-after-slider" id="speciesSlider">
                     <div class="before-after-slider-track">
@@ -82,7 +88,7 @@
 
         <section class="sea-section" aria-labelledby="impact-title">
             <h2 class="cinzel-header sea-section-title" id="impact-title">Real World Impact: The &ldquo;Adopt a Guardian&rdquo; Program</h2>
-            <div class="glass-frame sea-section-card surface-card text-block-centered">
+            <div class="glass-frame sea-section-card surface-card surface-card--sea-light text-block-centered">
                 <h3 class="cinzel-header card-headline">Meet Our Current Rescue</h3>
                 <div class="accent-line card-accent"></div>
                 <p class="montserrat-text card-label">Featured Steward: <strong>Marina</strong> · Green Sea Turtle</p>
@@ -128,7 +134,7 @@
 
         <section class="sea-section" aria-labelledby="donate-title">
             <h2 class="cinzel-header sea-section-title" id="donate-title">Donate Now</h2>
-            <div class="glass-frame sea-section-card surface-card text-block-centered">
+            <div class="glass-frame sea-section-card surface-card surface-card--sea-deep text-block-centered">
                 <h3 class="cinzel-header card-headline">Every Ripple Counts</h3>
                 <p class="montserrat-text card-subline">Help us rewrite the legacy</p>
                 <div class="accent-line card-accent"></div>
@@ -143,7 +149,7 @@
         <section class="sea-section" aria-labelledby="stewards-title">
             <h2 class="cinzel-header sea-section-title" id="stewards-title">The Wall of Stewards (Coming Soon)</h2>
             <p class="montserrat-text sea-section-lead centered-text">Leaderboard of Integrity. This transforms our community from holders to philanthropists.</p>
-            <div class="glass-frame sea-section-card surface-card text-block-centered steward-card">
+            <div class="glass-frame sea-section-card surface-card surface-card--sea-light text-block-centered steward-card">
                 <div class="steward-trench" aria-hidden="true">
                     <div class="steward-plaque p1"></div>
                     <div class="steward-plaque p2"></div>
@@ -172,7 +178,7 @@
 
         <section class="sea-section" aria-labelledby="literacy-title">
             <h2 class="cinzel-header sea-section-title" id="literacy-title">The &ldquo;Sea Haven&rdquo; Literacy Wing</h2>
-            <div class="glass-frame sea-section-card surface-card text-block-centered">
+            <div class="glass-frame sea-section-card surface-card surface-card--sea-deep text-block-centered">
                 <h3 class="cinzel-header card-headline">Books, Lore, and Legacy</h3>
                 <div class="accent-line card-accent"></div>
                 <p class="montserrat-text card-copy">Conservation starts with education. Our Family Literacy series takes our 3D character lore and turns it into educational tools for the next generation. We aren&#8217;t just saving the seas; we&#8217;re teaching the world why they matter.</p>
@@ -181,13 +187,13 @@
 
         <section class="sea-section" aria-labelledby="blueprint-title">
             <h2 class="cinzel-header sea-section-title" id="blueprint-title">Bridge to the Whitepaper</h2>
-            <div class="glass-frame sea-section-card surface-card text-block-centered">
+            <div class="glass-frame sea-section-card surface-card surface-card--sea-light text-block-centered">
                 <div class="pdf-icon-wrap" aria-hidden="true">
                     <i class="fa-solid fa-file-pdf"></i>
                 </div>
                 <a href="library.html" class="glass-button card-cta-btn">Read the Sea Haven Blueprint</a>
                 <p class="montserrat-text card-copy">Detailed breakdowns on our Proof of Impact model, fund distribution for sea creature charities, and our 2026 roadmap.</p>
-                <div class="callout-box inner-callout surface-card">
+                <div class="callout-box inner-callout surface-card surface-card--sea-deep">
                     <h3 class="cinzel-header card-subhead">Read the Proof in the Paper</h3>
                     <p class="montserrat-text card-copy">Section 4.2 of our Whitepaper explicitly details our charitable audit process. We didn&#8217;t just take over a project; we took over a promise. See how we verify every dollar and every drop of impact.</p>
                     <a href="docs/Sea_Haven_Whitepaper.pdf" download class="glass-button card-cta-btn">Download Sea Haven Whitepaper</a>
@@ -265,6 +271,6 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-<script src="site.js?v=20260523"></script>
+<script src="site.js?v=20260605"></script>
 </body>
 </html>
