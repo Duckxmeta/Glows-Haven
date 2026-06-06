@@ -3156,3 +3156,549 @@ body p, body li, body h1, body h2, body h3, body h4, body a, body span, body but
  animation: none !important;
  }
 }
+
+/* ==========================================================================
+   GLOW UPDATE BATCH — Tasks 2,3,4,5,6,7
+   ========================================================================== */
+
+/* ------------------------------------------------------------------ 
+   TASK 2: Mobile letter frame — full containment, zoom-safe scroll
+   ------------------------------------------------------------------ */
+/* Portrait silver frame used on mobile */
+.scroll-card-mobile {
+  display: none;
+  width: min(520px, 96vw);
+  margin: 0 auto;
+  position: relative;
+}
+@media (max-width: 991px) {
+  .founder-letter--book .book-letter-spread {
+    display: none !important;
+  }
+  .scroll-card-mobile {
+    display: block;
+    width: min(520px, 94vw);
+    margin: 0 auto;
+  }
+  /* Use the portrait silver-frame.png (same as desktop) */
+  .scroll-card-mobile .scroll-card-stage {
+    position: relative;
+    width: 100%;
+    /* portrait ratio ~600:960 = 0.625 */
+    aspect-ratio: 600 / 960;
+    max-height: 90vh;
+    margin: 0 auto;
+    filter: drop-shadow(0 16px 36px rgba(0,0,0,0.55));
+    overflow: visible;
+  }
+  .scroll-frame-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+    z-index: 2;
+    user-select: none;
+  }
+  /* Viewport matched to the transparent center of silver-letter-frame.png */
+  .scroll-card-mobile .scroll-card-viewport {
+    position: absolute;
+    top: 14%;
+    left: 17%;
+    right: 17%;
+    bottom: 13%;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .scroll-card-mobile .scroll-card-scroll {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px 8px 16px;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(213,216,220,0.4) transparent;
+  }
+  .scroll-card-mobile .scroll-card-text {
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  /* Compact, zoom-safe text — clamp ensures it scales with viewport */
+  .scroll-card-mobile .scroll-card-text p,
+  .scroll-card-mobile .scroll-card-text li {
+    font-size: clamp(0.72rem, 2.8vw, 0.88rem);
+    line-height: 1.55;
+    margin-bottom: 7px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  .scroll-card-mobile .scroll-card-text .letter-salutation {
+    font-size: clamp(0.82rem, 3vw, 0.98rem);
+    font-weight: 700;
+    color: var(--champagne);
+    margin-bottom: 10px;
+  }
+  .scroll-card-mobile .scroll-card-text .letter-subhead {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(0.7rem, 2.5vw, 0.84rem);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--champagne);
+    margin: 10px 0 6px;
+  }
+  .scroll-card-mobile .scroll-card-text ul {
+    list-style: none;
+    margin: 4px auto 8px;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+  }
+  .scroll-card-mobile .scroll-card-text ul li {
+    position: relative;
+    padding-left: 14px;
+    margin-bottom: 5px;
+  }
+  .scroll-card-mobile .scroll-card-text ul li::before {
+    content: "•";
+    position: absolute;
+    left: 2px;
+    color: var(--champagne);
+  }
+  .scroll-card-mobile .scroll-card-text .scroll-signoff {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(232,213,176,0.25);
+  }
+  .scroll-card-mobile .scroll-card-text .scroll-motto-line {
+    font-size: clamp(0.78rem, 2.8vw, 0.9rem);
+    margin-bottom: 4px;
+  }
+  .scroll-card-mobile .scroll-card-text .scroll-name-line {
+    font-size: clamp(0.88rem, 3.2vw, 1rem);
+    font-family: 'Cinzel', serif;
+    letter-spacing: 2px;
+  }
+  .scroll-card-mobile .scroll-card-text .scroll-role-line {
+    font-size: clamp(0.6rem, 2.2vw, 0.7rem);
+    letter-spacing: 1px;
+  }
+  /* Fade indicators */
+  .scroll-card-fade {
+    position: absolute;
+    left: 17%;
+    right: 17%;
+    height: 28px;
+    pointer-events: none;
+    z-index: 3;
+  }
+  .scroll-card-fade--top {
+    top: 14%;
+    background: linear-gradient(to bottom, rgba(8,18,32,0.6), transparent);
+  }
+  .scroll-card-fade--bottom {
+    bottom: 13%;
+    background: linear-gradient(to top, rgba(8,18,32,0.6), transparent);
+  }
+}
+
+/* ------------------------------------------------------------------ 
+   TASK 3b: Remove black background from letter images — use mix-blend-mode
+   so images render with transparent-like black areas
+   ------------------------------------------------------------------ */
+.letter-frame-uploaded-img {
+  mix-blend-mode: screen;
+  background: transparent;
+}
+.letter-image-panel {
+  flex: 1 1 500px;
+  max-width: 560px;
+  min-width: 280px;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+.letter-image-panel img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: screen;
+  filter: brightness(1.05) contrast(1.02);
+}
+/* Desktop book-spread with uploaded images (task 3) */
+.founder-letter--images .book-letter-spread {
+  align-items: flex-start;
+  gap: 0;
+  width: min(1100px, 96vw);
+}
+.founder-letter--images .letter-image-panel {
+  flex: 1 1 45%;
+}
+@media (max-width: 768px) {
+  .founder-letter--images .book-letter-spread {
+    flex-direction: column;
+    align-items: center;
+  }
+  .founder-letter--images .letter-image-panel {
+    width: 100%;
+    max-width: min(520px, 94vw);
+  }
+}
+
+/* ------------------------------------------------------------------ 
+   TASK 4: Sanctuary page (sanctuary.html) updates
+   ------------------------------------------------------------------ */
+/* "The Destination" and "Explore the Sanctuary" — dim/muted color */
+.sanctuary-page-eyebrow {
+  color: rgba(10, 58, 92, 0.7) !important;
+  opacity: 0.75;
+}
+.sanctuary-explore-btn {
+  color: rgba(10, 58, 92, 0.78) !important;
+  border-color: rgba(10, 58, 92, 0.45) !important;
+  background: rgba(255,255,255,0.18) !important;
+}
+.sanctuary-explore-btn:hover {
+  color: #0a3d5c !important;
+  background: rgba(255,255,255,0.38) !important;
+}
+
+/* VIVO bar / Wings DAO path line — dim, not white */
+.vivo-path--wings .vivo-bar {
+  background: linear-gradient(90deg, rgba(30, 80, 140, 0.35), rgba(30, 80, 140, 0.75)) !important;
+  opacity: 0.65;
+}
+
+/* Milestone vertical lines — dark navy-blue */
+.roadmap-milestone {
+  border-left-color: rgba(10, 40, 80, 0.4) !important;
+}
+.roadmap-milestone h4,
+.roadmap-milestone p,
+.roadmap-milestone .milestone-tag {
+  color: #0a2848 !important;
+}
+.roadmap-milestone p.montserrat-text {
+  color: #1a3a5f !important;
+}
+/* Milestone 1 completed — green check mark & green line */
+.roadmap-milestone.is-done {
+  border-left-color: #1a8c5c !important;
+  position: relative;
+}
+.roadmap-milestone.is-done::before {
+  content: '✓';
+  position: absolute;
+  left: -16px;
+  top: 0;
+  color: #22c07a;
+  font-size: 1.1rem;
+  font-weight: 900;
+  background: #fff;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  box-shadow: 0 0 8px rgba(34,192,122,0.45);
+}
+/* Current phase — blinking blue line */
+.roadmap-milestone.is-current {
+  border-left-color: #0070d6 !important;
+  animation: milestone-blink 1.8s ease-in-out infinite;
+}
+@keyframes milestone-blink {
+  0%, 100% { border-left-color: #0070d6 !important; border-left-width: 3px; }
+  50% { border-left-color: #40b4ff !important; border-left-width: 4px; box-shadow: -3px 0 12px rgba(64,180,255,0.5); }
+}
+.roadmap-milestone.is-current h4 {
+  color: #0050a0 !important;
+}
+.roadmap-milestone.is-current .milestone-tag {
+  color: #0070d6 !important;
+}
+
+/* "Support Land Acquisition Fund" button — dark blue */
+.cta-center-wrap .glass-button {
+  background: rgba(0, 80, 160, 0.82) !important;
+  border-color: rgba(0, 100, 200, 0.9) !important;
+  color: #fff !important;
+}
+.cta-center-wrap .glass-button:hover {
+  background: rgba(0, 100, 200, 0.95) !important;
+  box-shadow: 0 8px 28px rgba(0, 80, 160, 0.45) !important;
+}
+
+/* "Support the Sanctuary" header button — dim blue, all pages */
+.btn-support-silver {
+  border-color: rgba(0, 120, 220, 0.85) !important;
+  color: #d0eaff !important;
+  background: rgba(0, 60, 140, 0.45) !important;
+}
+.btn-support-silver:hover {
+  background: rgba(0, 90, 200, 0.85) !important;
+  color: #fff !important;
+  border-color: #0070d6 !important;
+}
+
+/* ------------------------------------------------------------------ 
+   TASK 4: Sanctuary animated cloud background improvements
+   ------------------------------------------------------------------ */
+/* Enhance cloud drift to be more obvious */
+.animated-page-bg--haven .animated-page-bg__layer--image {
+  animation: haven-cloud-drift-enhanced 28s linear infinite !important;
+}
+.animated-page-bg--haven .animated-page-bg__layer--glow {
+  animation: haven-cloud-glow-enhanced 9s ease-in-out infinite !important;
+}
+@keyframes haven-cloud-drift-enhanced {
+  0%   { background-position: 0% 40%; transform: scale(1.08); }
+  50%  { background-position: 60% 42%; transform: scale(1.12); }
+  100% { background-position: 120% 44%; transform: scale(1.08); }
+}
+@keyframes haven-cloud-glow-enhanced {
+  0%, 100% { opacity: 0.55; transform: translateY(0); }
+  50% { opacity: 0.95; transform: translateY(-4px); }
+}
+
+/* ------------------------------------------------------------------ 
+   TASK 5: Wings DAO page — footer white text
+   ------------------------------------------------------------------ */
+.page-theme-wings .site-footer {
+  color: #fff !important;
+}
+.page-theme-wings .site-footer .footer-tagline,
+.page-theme-wings .site-footer .legal-links-row,
+.page-theme-wings .site-footer .legal-links-row a,
+.page-theme-wings .site-footer .footer-sep,
+.page-theme-wings .site-footer .small-print {
+  color: #fff !important;
+  opacity: 0.9;
+}
+.page-theme-wings .site-footer .legal-links-row a:hover {
+  color: #00b4ff !important;
+  opacity: 1;
+}
+
+/* ------------------------------------------------------------------ 
+   TASK 5: Wings DAO logo — switch to WingsDaonobg
+   ------------------------------------------------------------------ */
+/* Applied via strategy-hub.html HTML change */
+
+/* ------------------------------------------------------------------ 
+   TASK 5: Wings DAO animated background improvements
+   ------------------------------------------------------------------ */
+.animated-page-bg--wings .animated-page-bg__layer--image {
+  animation: wings-bg-glow-enhanced 8s ease-in-out infinite, wings-bg-zoom-enhanced 20s ease-in-out infinite alternate !important;
+}
+.animated-page-bg--wings .animated-page-bg__layer--glow {
+  animation: wings-glow-pulse-enhanced 6s ease-in-out infinite !important;
+}
+/* Extra nebula layer via pseudo */
+.animated-page-bg--wings .animated-page-bg__veil {
+  background: linear-gradient(180deg, rgba(10,5,16,0.78) 0%, rgba(10,5,16,0.55) 45%, rgba(10,5,16,0.82) 100%) !important;
+  animation: wings-veil-shift 15s ease-in-out infinite;
+}
+@keyframes wings-bg-glow-enhanced {
+  0%, 100% { filter: brightness(0.75) saturate(1.1); }
+  30% { filter: brightness(1.0) saturate(1.2); }
+  70% { filter: brightness(0.85) saturate(1.15); }
+}
+@keyframes wings-bg-zoom-enhanced {
+  from { transform: scale(1.02) translateX(0); }
+  to { transform: scale(1.1) translateX(-2%); }
+}
+@keyframes wings-glow-pulse-enhanced {
+  0%, 100% { opacity: 0.48; transform: translateY(0) scale(1); }
+  50% { opacity: 0.88; transform: translateY(-3%) scale(1.06); }
+}
+@keyframes wings-veil-shift {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.88; }
+}
+
+/* ------------------------------------------------------------------ 
+   TASK 6: Sea Haven page — footer white text
+   ------------------------------------------------------------------ */
+.page-theme-sea .site-footer {
+  color: #fff !important;
+}
+.page-theme-sea .site-footer .footer-tagline,
+.page-theme-sea .site-footer .legal-links-row,
+.page-theme-sea .site-footer .legal-links-row a,
+.page-theme-sea .site-footer .footer-sep,
+.page-theme-sea .site-footer .small-print {
+  color: #e6f2fa !important;
+  opacity: 0.92;
+}
+.page-theme-sea .site-footer .legal-links-row a:hover {
+  color: #7ec8e8 !important;
+  opacity: 1;
+}
+
+/* ------------------------------------------------------------------ 
+   TASK 6: Sea Haven — enhanced sea animation
+   ------------------------------------------------------------------ */
+.animated-page-bg--sea .animated-page-bg__layer--image {
+  animation: sea-wave-enhanced 16s ease-in-out infinite !important;
+}
+.animated-page-bg--sea .animated-page-bg__layer--glow {
+  animation: sea-shimmer-enhanced 9s ease-in-out infinite !important;
+}
+@keyframes sea-wave-enhanced {
+  0%   { background-position: 0% 40%; transform: scale(1.04) skewX(0deg); filter: brightness(0.9) saturate(1.1); }
+  25%  { background-position: 30% 50%; transform: scale(1.06) skewX(0.3deg); filter: brightness(1.0) saturate(1.15); }
+  50%  { background-position: 60% 55%; transform: scale(1.04) skewX(-0.2deg); filter: brightness(0.92) saturate(1.1); }
+  75%  { background-position: 85% 48%; transform: scale(1.07) skewX(0.2deg); filter: brightness(1.02) saturate(1.18); }
+  100% { background-position: 120% 40%; transform: scale(1.04) skewX(0deg); filter: brightness(0.9) saturate(1.1); }
+}
+@keyframes sea-shimmer-enhanced {
+  0%, 100% { opacity: 0.42; transform: scale(1); }
+  40% { opacity: 0.88; transform: scale(1.04); }
+  70% { opacity: 0.6; transform: scale(0.98); }
+}
+
+/* ------------------------------------------------------------------ 
+   TASK 7: Team page — animated clickable name cards
+   ------------------------------------------------------------------ */
+/* Override plain card with hover-lift animation */
+.team-id-card {
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.38s cubic-bezier(0.165,0.84,0.44,1), box-shadow 0.38s ease, border-color 0.3s ease !important;
+  overflow: hidden;
+  animation: team-card-breathe 4s ease-in-out infinite;
+}
+/* Stagger animations so cards feel alive but not distracting */
+.team-id-card:nth-child(1) { animation-delay: 0s; }
+.team-id-card:nth-child(2) { animation-delay: 0.7s; }
+.team-id-card:nth-child(3) { animation-delay: 1.4s; }
+.team-id-card:nth-child(4) { animation-delay: 0.35s; }
+.team-id-card:nth-child(5) { animation-delay: 1.05s; }
+@keyframes team-card-breathe {
+  0%, 100% { box-shadow: 0 8px 28px rgba(0,0,0,0.3), 0 0 0 0 rgba(72,201,176,0); }
+  50% { box-shadow: 0 12px 36px rgba(0,0,0,0.42), 0 0 16px 1px rgba(72,201,176,0.08); }
+}
+.team-id-card:hover, .team-id-card:focus-within {
+  transform: translateY(-8px) scale(1.025) !important;
+  box-shadow: 0 24px 48px rgba(0,0,0,0.5), 0 0 28px rgba(72,201,176,0.18) !important;
+  border-color: rgba(72,201,176,0.55) !important;
+  animation-play-state: paused;
+}
+/* Shimmer hint on card — "click me" effect */
+.team-id-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(130deg, transparent 40%, rgba(255,255,255,0.04) 50%, transparent 60%);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+}
+.team-id-card:hover::after {
+  transform: translateX(100%);
+}
+/* Clickable indicator on team member names */
+.card-name {
+  position: relative;
+}
+.card-name .team-name-link::after {
+  content: '↗';
+  font-size: 0.65em;
+  opacity: 0.5;
+  margin-left: 4px;
+  transition: opacity 0.25s, transform 0.25s;
+  display: inline-block;
+}
+.team-id-card:hover .team-name-link::after {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+/* ------------------------------------------------------------------ 
+   TASK 7: Team page — parallax scrolling background integration
+   ------------------------------------------------------------------ */
+.team-haven-section,
+.team-global-network-section {
+  position: relative;
+  background: transparent !important;
+}
+/* Animated flowing gradient behind the team section */
+.team-haven-section::before {
+  content: '';
+  position: absolute;
+  inset: -10% -5%;
+  background: 
+    radial-gradient(ellipse 60% 40% at 20% 30%, rgba(72,201,176,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 35% at 80% 70%, rgba(26,58,95,0.15) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 50% at 50% 50%, rgba(10,38,80,0.12) 0%, transparent 65%);
+  animation: team-bg-drift 18s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+.team-haven-section .team-page-container {
+  position: relative;
+  z-index: 1;
+}
+@keyframes team-bg-drift {
+  0% { transform: translateY(0) translateX(0) scale(1); }
+  33% { transform: translateY(-2%) translateX(1%) scale(1.01); }
+  66% { transform: translateY(1%) translateX(-1%) scale(0.99); }
+  100% { transform: translateY(-1%) translateX(2%) scale(1.01); }
+}
+/* Floating card rows — subtle wave */
+.team-grid {
+  animation: team-grid-float 6s ease-in-out infinite;
+}
+.team-grid:nth-of-type(2) { animation-delay: 1s; }
+.team-grid:nth-of-type(3) { animation-delay: 2s; }
+@keyframes team-grid-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+
+/* Task 3: Background for images section — dark needed for mix-blend-mode:screen */
+.founder-letter--images {
+  background: rgba(4, 10, 22, 0.92) !important;
+}
+.founder-letter--images .book-letter-spread {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 12px;
+  width: min(1200px, 96vw);
+  margin: 40px auto 0;
+}
+.founder-letter--images .letter-image-panel {
+  flex: 1 1 48%;
+  max-width: 580px;
+  min-width: 260px;
+}
+.founder-letter--images .book-spine {
+  flex: 0 0 12px;
+  align-self: stretch;
+}
+@media (max-width: 768px) {
+  .founder-letter--images .book-letter-spread {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .founder-letter--images .letter-image-panel {
+    width: 100%;
+    max-width: min(500px, 94vw);
+  }
+  .founder-letter--images .book-spine {
+    display: none;
+  }
+}
