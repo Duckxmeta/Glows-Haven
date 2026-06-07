@@ -3975,3 +3975,100 @@ body.nav-pages-open {
   width: 100%;
 }
 
+
+/* ==========================================================================
+   GLOW FIX BATCH 4
+   ========================================================================== */
+
+/* ------------------------------------------------------------------ 
+   FIX 3: Merch cards — centered on page
+   ------------------------------------------------------------------ */
+.merch-grid-row,
+.merch-grid-row--wider {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+  flex-wrap: wrap !important;
+  gap: 28px !important;
+  margin: 0 auto !important;
+  max-width: 1100px;
+  text-align: center;
+}
+.merch-card--wider,
+.merch-card {
+  text-align: left;
+}
+.merch-card--wider h2,
+.merch-card h2 {
+  text-align: left;
+}
+/* Center the whole merch section */
+.contact-container {
+  text-align: center;
+}
+
+/* ------------------------------------------------------------------ 
+   FIX 4: Library cards — strict horizontal row, no wrapping on desktop
+   ------------------------------------------------------------------ */
+.library-grid-row {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+  gap: 24px !important;
+  margin: 0 auto 40px !important;
+  max-width: 1100px;
+}
+.archive-book-card--wide {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  max-width: 340px !important;
+}
+@media (max-width: 768px) {
+  .library-grid-row {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .archive-book-card--wide {
+    width: 100% !important;
+    max-width: 360px !important;
+  }
+}
+
+/* ------------------------------------------------------------------ 
+   FIX 5: Sanctuary hamburger — nav overlay must escape stacking context
+   The page-has-animated-bg creates a z-index stacking context that
+   can trap the overlay. Force the overlay above everything.
+   ------------------------------------------------------------------ */
+.nav-pages-overlay {
+  position: fixed !important;
+  z-index: 999999 !important;
+  isolation: auto !important;
+}
+.nav-pages-backdrop {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+}
+.nav-pages-panel {
+  position: relative !important;
+  z-index: 2 !important;
+}
+/* Ensure page-has-animated-bg does NOT create a trapping context for the overlay */
+.page-has-animated-bg .nav-pages-overlay {
+  z-index: 999999 !important;
+}
+/* The overlay must be visible and interactive when open, on ALL page types */
+.nav-pages-overlay.is-open {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  display: flex !important;
+}
+/* Panel slides in properly */
+.nav-pages-overlay.is-open .nav-pages-panel {
+  transform: translateY(0) scale(1) !important;
+  opacity: 1 !important;
+}
+
