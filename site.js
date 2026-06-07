@@ -18,14 +18,14 @@
 })();
 
 (function initNavPagesOverlay() {
-    const toggle = document.getElementById('navMoreToggle');
-    const overlay = document.getElementById('navPagesOverlay');
-    const backdrop = document.getElementById('navPagesBackdrop');
-    const closeBtn = document.getElementById('navPagesClose');
-    const wrap = document.querySelector('.nav-more-wrap');
-    const menu = document.getElementById('navMoreMenu');
+    var toggle = document.getElementById('navMoreToggle');
+    var overlay = document.getElementById('navPagesOverlay');
+    var backdrop = document.getElementById('navPagesBackdrop');
+    var closeBtn = document.getElementById('navPagesClose');
+    var wrap = document.querySelector('.nav-more-wrap');
+    var menu = document.getElementById('navMoreMenu');
 
-    if (!toggle || !overlay || !menu) return;
+    if (!toggle || !overlay) return;
 
     function openOverlay() {
         overlay.classList.add('is-open');
@@ -33,6 +33,8 @@
         toggle.setAttribute('aria-expanded', 'true');
         if (wrap) wrap.classList.add('is-open');
         document.body.classList.add('nav-pages-open');
+        /* Allow the panel itself to scroll, not the body */
+        overlay.scrollTop = 0;
     }
 
     function closeOverlay() {
@@ -54,7 +56,14 @@
         }
     });
 
-    if (backdrop) backdrop.addEventListener('click', closeOverlay);
+    /* Backdrop closes menu */
+    if (backdrop) backdrop.addEventListener('click', function(e) {
+        /* Only close if clicking the actual backdrop, not the panel */
+        if (e.target === backdrop || e.target === overlay) {
+            closeOverlay();
+        }
+    });
+
     if (closeBtn) closeBtn.addEventListener('click', closeOverlay);
 
     document.addEventListener('keydown', function (e) {
@@ -64,13 +73,29 @@
     });
 
     var path = window.location.pathname.split('/').pop() || 'index.html';
-    menu.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', closeOverlay);
-        var href = link.getAttribute('href');
-        if (href && (href === path || href.split('#')[0] === path)) {
-            link.classList.add('is-current');
-        }
-    });
+    if (menu) {
+        menu.querySelectorAll('a').forEach(function (link) {
+            /* Mark current page */
+            var href = link.getAttribute('href');
+            if (href && (href === path || href.split('#')[0] === path)) {
+                link.classList.add('is-current');
+            }
+            /* Do NOT auto-close on link click — let navigation happen naturally */
+            /* Only close for anchor links on same page */
+            link.addEventListener('click', function () {
+                var href = link.getAttribute('href') || '';
+                var isAnchor = href.startsWith('#') ||
+                    (href.split('#')[0] === path && href.includes('#'));
+                if (isAnchor) {
+                    closeOverlay();
+                }
+                /* For page navigation links, close after brief delay so the overlay hides cleanly */
+                else {
+                    setTimeout(closeOverlay, 80);
+                }
+            });
+        });
+    }
 })();
 
 (function initDonateModal() {
