@@ -3757,3 +3757,221 @@ body p, body li, body h1, body h2, body h3, body h4, body a, body span, body but
   0%   { background-position: 0% 45%; transform: none; filter: none; }
   100% { background-position: 100% 45%; transform: none; filter: none; }
 }
+
+/* ==========================================================================
+   GLOW UPDATE BATCH 3 — Tasks 2,3,4,5,6,7
+   ========================================================================== */
+
+/* ------------------------------------------------------------------ 
+   TASK 2: Pillar cards — lighter, more visible
+   ------------------------------------------------------------------ */
+.pillar-column {
+  background: rgba(72, 201, 176, 0.07) !important;
+  border: 1px solid rgba(72, 201, 176, 0.22) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.06) !important;
+}
+.pillar-column:hover {
+  background: rgba(72, 201, 176, 0.14) !important;
+  border-color: rgba(72, 201, 176, 0.5) !important;
+  box-shadow: 0 12px 32px rgba(72,201,176,0.18), inset 0 1px 0 rgba(255,255,255,0.1) !important;
+  transform: translateY(-5px);
+}
+.pillar-column h3 {
+  color: var(--champagne) !important;
+  border-bottom-color: rgba(232,213,176,0.35) !important;
+}
+.pillar-column ul li {
+  color: rgba(255,255,255,0.92) !important;
+  opacity: 1 !important;
+}
+
+/* ------------------------------------------------------------------ 
+   TASK 4: Library cards — wider, bigger, no spine, logos
+   ------------------------------------------------------------------ */
+.archive-book-card--wide {
+  width: 100%;
+  max-width: 320px;
+  min-width: 240px;
+  padding: 32px 28px 28px !important;
+}
+.library-grid-row {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.book-cover--no-spine {
+  position: relative;
+  border-radius: 10px;
+  padding: 28px 20px 20px;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+.book-cover--no-spine .book-spine {
+  display: none !important;
+}
+.book-cover-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+.book-cover-logo img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.35));
+}
+
+/* True Love coming-soon card — centered below row */
+.library-true-love-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+.archive-book-card--coming-soon {
+  position: relative;
+  overflow: visible !important;
+  padding: 32px 48px !important;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.coming-soon-label {
+  font-size: 1rem !important;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.55) !important;
+  margin: 0;
+}
+.coming-soon-sub {
+  font-size: 0.78rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(232,213,176,0.6);
+  margin: 0;
+}
+/* Blinking light ring around coming-soon card */
+.coming-soon-pulse-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 18px;
+  border: 2px solid rgba(232,213,176,0.25);
+  pointer-events: none;
+  animation: coming-soon-ring-pulse 2.2s ease-in-out infinite;
+}
+@keyframes coming-soon-ring-pulse {
+  0%, 100% { border-color: rgba(232,213,176,0.12); box-shadow: 0 0 0 0 rgba(232,213,176,0); }
+  50% { border-color: rgba(232,213,176,0.55); box-shadow: 0 0 18px 4px rgba(232,213,176,0.18); }
+}
+
+/* ------------------------------------------------------------------ 
+   TASK 6: Merch / Outfitters — wider cards, no aesthetic text, shining btn
+   ------------------------------------------------------------------ */
+.merch-grid-row--wider {
+  gap: 28px !important;
+}
+.merch-card--wider {
+  flex: 1 1 280px !important;
+  min-width: 260px !important;
+  max-width: 380px !important;
+  aspect-ratio: unset !important;
+  min-height: 220px;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 36px 32px 32px !important;
+}
+/* Shining explore button */
+.merch-explore-btn {
+  position: relative;
+  overflow: hidden;
+  font-size: 0.85rem !important;
+  letter-spacing: 1.5px !important;
+  padding: 13px 24px !important;
+  display: block !important;
+  text-align: center;
+  animation: merch-btn-glow 2.8s ease-in-out infinite;
+}
+.merch-explore-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.22), transparent);
+  animation: merch-btn-shine 2.8s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes merch-btn-shine {
+  0%   { left: -75%; }
+  40%  { left: 125%; }
+  100% { left: 125%; }
+}
+@keyframes merch-btn-glow {
+  0%, 100% { box-shadow: 0 0 8px rgba(232,213,176,0.18), 0 2px 12px rgba(0,0,0,0.3); }
+  50% { box-shadow: 0 0 22px rgba(232,213,176,0.42), 0 4px 20px rgba(0,0,0,0.4); }
+}
+
+/* ------------------------------------------------------------------ 
+   TASK 7: Nav overlay — fully scrollable, never auto-dismisses
+   ------------------------------------------------------------------ */
+.nav-pages-overlay {
+  /* Already has overflow-y:auto from base CSS, but enforce */
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior: contain !important;
+}
+.nav-pages-panel {
+  /* Make panel taller on mobile to show all items, and scrollable */
+  max-height: none !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior: contain !important;
+}
+/* On mobile show mobile-only items */
+@media (max-width: 991px) {
+  .nav-pages-mobile-only {
+    display: list-item !important;
+  }
+  .nav-pages-panel {
+    width: min(380px, 90vw) !important;
+    padding: 44px 28px 36px !important;
+    max-height: 85vh !important;
+    overflow-y: auto !important;
+  }
+  .nav-pages-overlay {
+    padding-top: 48px !important;
+    padding-bottom: 24px !important;
+    align-items: flex-start !important;
+  }
+}
+/* Desktop — also show mobile-only items since hamburger is used on desktop too */
+@media (min-width: 992px) {
+  .nav-pages-mobile-only {
+    display: list-item !important;
+  }
+  .nav-pages-panel {
+    max-height: 80vh !important;
+    overflow-y: auto !important;
+  }
+}
+body.nav-pages-open {
+  /* Keep body scroll locked but allow overlay to scroll */
+  overflow: hidden !important;
+  position: fixed;
+  width: 100%;
+}
+
