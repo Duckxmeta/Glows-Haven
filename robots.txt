@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /node_modules/
+Disallow: /index.js
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /apphosting.yaml
+
+Sitemap: https://glowshaven.com/sitemap.xml
