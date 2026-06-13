@@ -4130,3 +4130,302 @@ body.nav-pages-open {
   filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
 }
 
+
+/* ==========================================================================
+   GLOW UPDATE BATCH 6 — Archive cards colors/logos, bigger sea logo, whitepaper page
+   ========================================================================== */
+
+/* ------------------------------------------------------------------ 
+   Haven Archives cards (index.html) — centered text, logo, distinct colors
+   ------------------------------------------------------------------ */
+.book-mockup-link .archive-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  flex: 1;
+}
+.book-mockup-link .archive-card-body h4 {
+  text-align: center;
+  margin: 0;
+}
+.archive-card-logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 10px rgba(0,0,0,0.4));
+}
+.book-mockup-link.archive-card--haven .silver-button,
+.book-mockup-link.archive-card--haven {
+  border-left-color: #6990b7 !important;
+}
+.book-mockup-link.archive-card--haven {
+  background: linear-gradient(145deg, rgba(105,144,183,0.16), rgba(10,24,42,0.98)) !important;
+}
+.book-mockup-link.archive-card--haven:hover {
+  border-color: rgba(105,144,183,0.55) !important;
+  box-shadow: 0 28px 50px rgba(0,0,0,0.45), 0 0 32px rgba(105,144,183,0.22) !important;
+}
+.book-mockup-link.archive-card--haven:hover h4 { color: #a8c4e0 !important; }
+
+.book-mockup-link.archive-card--wings {
+  border-left-color: #e0a838 !important;
+  background: linear-gradient(145deg, rgba(224,168,56,0.16), rgba(10,24,42,0.98)) !important;
+}
+.book-mockup-link.archive-card--wings:hover {
+  border-color: rgba(224,168,56,0.55) !important;
+  box-shadow: 0 28px 50px rgba(0,0,0,0.45), 0 0 32px rgba(224,168,56,0.22) !important;
+}
+.book-mockup-link.archive-card--wings:hover h4 { color: #ffd27a !important; }
+
+.book-mockup-link.archive-card--sea {
+  border-left-color: #487ba6 !important;
+  background: linear-gradient(145deg, rgba(72,123,166,0.16), rgba(10,24,42,0.98)) !important;
+}
+.book-mockup-link.archive-card--sea:hover {
+  border-color: rgba(72,123,166,0.55) !important;
+  box-shadow: 0 28px 50px rgba(0,0,0,0.45), 0 0 32px rgba(72,123,166,0.22) !important;
+}
+.book-mockup-link.archive-card--sea:hover h4 { color: #8fc4ee !important; }
+
+.book-mockup-link.archive-card--true-love {
+  border-left-color: rgba(232,213,176,0.35) !important;
+}
+.book-mockup-link.archive-card--true-love .archive-card-body {
+  justify-content: center;
+}
+
+/* ------------------------------------------------------------------ 
+   Bigger Sea Haven logo on library card
+   ------------------------------------------------------------------ */
+.book-cover-logo--large img {
+  width: 104px !important;
+  height: 104px !important;
+}
+.book-cover-logo--large {
+  margin-bottom: 8px;
+}
+
+/* ------------------------------------------------------------------ 
+   Whitepaper page (whitepapers.html)
+   ------------------------------------------------------------------ */
+.whitepaper-jumpnav {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+.whitepaper-jumplink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--white);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: all 0.3s ease;
+}
+.whitepaper-jumplink img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+.whitepaper-jumplink--haven:hover {
+  border-color: rgba(105,144,183,0.6);
+  background: rgba(105,144,183,0.14);
+  color: #a8c4e0;
+}
+.whitepaper-jumplink--wings:hover {
+  border-color: rgba(224,168,56,0.6);
+  background: rgba(224,168,56,0.14);
+  color: #ffd27a;
+}
+.whitepaper-jumplink--sea:hover {
+  border-color: rgba(72,123,166,0.6);
+  background: rgba(72,123,166,0.14);
+  color: #8fc4ee;
+}
+
+/* Whitepaper section cards */
+.whitepaper-section {
+  max-width: 880px;
+  margin: 0 auto 70px;
+  padding: 44px 40px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgba(22,48,78,0.55), rgba(8,16,30,0.85));
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+  scroll-margin-top: 110px;
+}
+.whitepaper-section--haven { border-left: 4px solid #6990b7; }
+.whitepaper-section--wings { border-left: 4px solid #e0a838; }
+.whitepaper-section--sea   { border-left: 4px solid #487ba6; }
+
+.whitepaper-section-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.whitepaper-section-logo {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 12px rgba(0,0,0,0.4));
+}
+.whitepaper-section-header h2 {
+  font-size: 1.5rem;
+  margin: 0 0 8px;
+  color: var(--white);
+  letter-spacing: 1.5px;
+}
+.whitepaper-subtitle {
+  font-size: 0.9rem;
+  opacity: 0.65;
+  font-style: italic;
+  margin: 0;
+  color: var(--silver-accent);
+}
+
+.whitepaper-body {
+  color: rgba(255,255,255,0.88);
+  line-height: 1.85;
+  font-size: 0.98rem;
+}
+.whitepaper-body p {
+  margin-bottom: 18px;
+}
+.whitepaper-h3 {
+  font-size: 1.15rem;
+  color: var(--champagne);
+  letter-spacing: 1.5px;
+  margin: 40px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(232,213,176,0.2);
+}
+.whitepaper-h3:first-child { margin-top: 0; }
+.whitepaper-h4 {
+  font-family: 'Cinzel', serif;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  color: var(--white);
+  margin: 24px 0 12px;
+  opacity: 0.92;
+}
+.whitepaper-list {
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+}
+.whitepaper-list li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+.whitepaper-list li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--champagne);
+  font-size: 0.75em;
+  top: 2px;
+}
+.whitepaper-quote {
+  margin: 28px 0;
+  padding: 18px 24px;
+  border-left: 3px solid var(--champagne);
+  background: rgba(232,213,176,0.06);
+  font-style: italic;
+  color: var(--champagne);
+  font-size: 0.95rem;
+  border-radius: 0 6px 6px 0;
+}
+
+/* VIVO allocation bars */
+.vivo-allocation-bars {
+  margin: 20px 0 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.vivo-allocation-row {
+  display: grid;
+  grid-template-columns: 160px 1fr 50px;
+  align-items: center;
+  gap: 14px;
+}
+.vivo-allocation-label {
+  font-size: 0.82rem;
+  opacity: 0.8;
+}
+.vivo-allocation-track {
+  height: 10px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.08);
+  overflow: hidden;
+}
+.vivo-allocation-fill {
+  height: 100%;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #487ba6, #6990b7, #e0a838);
+}
+.vivo-allocation-pct {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  color: var(--champagne);
+  text-align: right;
+}
+@media (max-width: 560px) {
+  .vivo-allocation-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .vivo-allocation-pct { text-align: left; }
+}
+
+/* Roadmap grid in whitepaper */
+.whitepaper-roadmap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin: 20px 0 28px;
+}
+.whitepaper-roadmap-phase {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 20px;
+}
+.whitepaper-roadmap-phase .whitepaper-h4 { margin-top: 0; }
+@media (max-width: 700px) {
+  .whitepaper-roadmap { grid-template-columns: 1fr; }
+}
+
+.whitepaper-back-row {
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  .whitepaper-section {
+    padding: 28px 20px;
+  }
+  .whitepaper-section-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 14px;
+  }
+}
+
