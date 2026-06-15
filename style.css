@@ -4156,10 +4156,6 @@ body.nav-pages-open {
   object-fit: contain;
   filter: drop-shadow(0 2px 10px rgba(0,0,0,0.4));
 }
-.archive-card--sea .archive-card-logo {
-  width: 76px;
-  height: 76px;
-}
 .book-mockup-link.archive-card--haven .silver-button,
 .book-mockup-link.archive-card--haven {
   border-left-color: #6990b7 !important;
@@ -4430,6 +4426,482 @@ body.nav-pages-open {
     flex-direction: column;
     text-align: center;
     gap: 14px;
+  }
+}
+
+
+/* ==========================================================================
+   GLOW UPDATE BATCH 7 — Archive card reorder, nav additions, Donations page
+   ========================================================================== */
+
+/* ------------------------------------------------------------------ 
+   Haven Archives cards — button above logo, light-blue "View in Library"
+   ------------------------------------------------------------------ */
+.book-mockup-link .archive-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  gap: 18px;
+  flex: 1;
+}
+.book-mockup-link .archive-card-body h4 {
+  text-align: center;
+  margin: 0;
+}
+.book-mockup-link .archive-card-body .silver-button {
+  margin-top: 0;
+  order: 2;
+}
+.book-mockup-link .archive-card-body .archive-card-logo {
+  order: 3;
+}
+/* Light-blue pill button, white text, centered */
+.book-mockup-link .archive-card-body .silver-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(72, 145, 224, 0.85) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(120, 180, 255, 0.6) !important;
+  border-radius: 24px;
+  padding: 10px 26px !important;
+  font-size: 11px;
+  letter-spacing: 1.8px;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+.book-mockup-link:hover .archive-card-body .silver-button {
+  background: rgba(102, 175, 255, 0.95) !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 18px rgba(72,145,224,0.4);
+}
+/* All archive logos same size & position */
+.archive-card-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 10px rgba(0,0,0,0.4));
+}
+.book-mockup-link.archive-card--true-love .archive-card-body {
+  justify-content: center;
+}
+
+/* ------------------------------------------------------------------ 
+   Nav: accommodate Donations + Whitepaper links
+   ------------------------------------------------------------------ */
+.nav-links-center {
+  gap: 28px;
+}
+@media (max-width: 1300px) {
+  .nav-links-center {
+    gap: 18px;
+  }
+  .nav-links-center a {
+    font-size: 11px;
+  }
+}
+@media (max-width: 1100px) {
+  .nav-links-center {
+    gap: 14px;
+  }
+}
+
+/* Highlight Donations link slightly */
+.nav-links-center a[href="donations.html"] {
+  color: var(--champagne);
+  opacity: 0.95;
+}
+.nav-links-center a[href="donations.html"]:hover {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(232,213,176,0.6);
+}
+
+
+/* ==========================================================================
+   GLOW UPDATE BATCH 7 PART 2 — Donations page + accent-line fix
+   ========================================================================== */
+
+/* Site-wide fix: .accent-line was referenced but never defined */
+.accent-line {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--champagne), transparent);
+  border: none;
+}
+
+/* Highlight current nav link */
+.nav-links-center a[aria-current="page"] {
+  color: var(--champagne);
+  opacity: 1;
+  text-shadow: 0 0 10px rgba(232,213,176,0.5);
+}
+
+/* ------------------------------------------------------------------ 
+   Donations page layout
+   ------------------------------------------------------------------ */
+.donations-page {
+  padding-top: 130px;
+  padding-bottom: 0;
+}
+.donations-hero {
+  max-width: 760px;
+  margin: 0 auto 70px;
+  padding: 0 24px;
+}
+.donations-hero-title {
+  font-size: 2.4rem;
+  letter-spacing: 3px;
+  margin-bottom: 0;
+}
+.donations-hero-sub {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  opacity: 0.85;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.donations-section {
+  padding: 0 24px;
+  margin-bottom: 70px;
+}
+.donations-section-title {
+  font-size: 1.5rem;
+  letter-spacing: 2.5px;
+  margin-bottom: 24px;
+}
+.donations-body-text {
+  line-height: 1.85;
+  font-size: 1rem;
+  opacity: 0.85;
+  margin-bottom: 18px;
+  text-align: center;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.donations-inline-link {
+  color: var(--champagne);
+  text-decoration: underline;
+  text-decoration-color: rgba(232,213,176,0.35);
+  transition: color 0.25s ease;
+}
+.donations-inline-link:hover {
+  color: #fff;
+}
+
+/* Quote block */
+.donations-quote-section {
+  padding: 0 24px;
+  margin-bottom: 70px;
+}
+.donations-quote {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 36px 40px;
+  border-left: 3px solid var(--champagne);
+  background: rgba(232,213,176,0.05);
+  border-radius: 0 10px 10px 0;
+}
+.donations-quote p {
+  font-style: italic;
+  font-size: 0.98rem;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.88);
+  margin-bottom: 16px;
+}
+.donations-quote-cite {
+  display: block;
+  text-align: right;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: var(--champagne);
+  font-style: normal;
+}
+
+/* Option header (logo + title/desc) */
+.donations-option {
+  max-width: 1000px;
+  margin: 0 auto 70px;
+}
+.donations-option-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 36px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.donations-option-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 12px rgba(0,0,0,0.4));
+}
+.donations-option-title {
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  margin: 0 0 10px;
+}
+.donations-option-desc {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  opacity: 0.8;
+  margin: 0;
+}
+@media (max-width: 600px) {
+  .donations-option-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Tier cards grid */
+.donations-tier-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.donations-tier-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: 32px 24px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgba(22,48,78,0.55), rgba(8,16,30,0.85));
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+  transition: transform 0.35s cubic-bezier(0.165,0.84,0.44,1), box-shadow 0.35s ease, border-color 0.3s ease;
+}
+.donations-tier-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(72,145,224,0.4);
+  box-shadow: 0 20px 44px rgba(0,0,0,0.4), 0 0 24px rgba(72,145,224,0.16);
+}
+.donations-tier-card--featured {
+  border-color: rgba(232,213,176,0.35);
+  background: linear-gradient(145deg, rgba(232,213,176,0.10), rgba(8,16,30,0.9));
+}
+.donations-tier-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--champagne);
+  color: #1a1a1a;
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 14px;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.donations-tier-badge--sea {
+  background: #6fb3e8;
+  color: #06223a;
+}
+.donations-tier-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--silver-accent);
+  opacity: 0.75;
+}
+.donations-tier-amount {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--white);
+  margin: 4px 0 6px;
+}
+.donations-tier-desc {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  opacity: 0.7;
+  min-height: 58px;
+  margin-bottom: 8px;
+}
+.donations-tier-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 13px 18px;
+  border-radius: 30px;
+  background: rgba(72,145,224,0.85);
+  color: #fff;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid rgba(120,180,255,0.5);
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+.donations-tier-btn:hover {
+  background: rgba(102,175,255,0.95);
+  box-shadow: 0 8px 22px rgba(72,145,224,0.4);
+  transform: translateY(-2px);
+}
+.donations-tier-btn--sea {
+  background: rgba(72,160,200,0.8);
+  border-color: rgba(120,210,240,0.5);
+}
+.donations-tier-btn--sea:hover {
+  background: rgba(100,195,235,0.95);
+  box-shadow: 0 8px 22px rgba(72,160,200,0.4);
+}
+.donations-tier-card--sea-featured {
+  border-color: rgba(111,179,232,0.35);
+  background: linear-gradient(145deg, rgba(111,179,232,0.10), rgba(8,16,30,0.9));
+}
+
+@media (max-width: 820px) {
+  .donations-tier-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+  }
+  .donations-tier-card--featured {
+    order: -1;
+  }
+}
+
+/* Custom contribution */
+.donations-custom-card {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 48px 40px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(232,213,176,0.08), rgba(8,16,30,0.85));
+  border: 1px solid rgba(232,213,176,0.22);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+}
+.donations-custom-icon {
+  font-size: 2.2rem;
+  color: var(--champagne);
+  margin-bottom: 18px;
+  display: inline-block;
+}
+.donations-custom-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  padding: 16px 40px;
+  border-radius: 30px;
+  background: var(--champagne);
+  color: #1a1a1a;
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(232,213,176,0.25);
+}
+.donations-custom-btn:hover {
+  background: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(232,213,176,0.4);
+}
+
+/* Important notice */
+.donations-notice {
+  margin-bottom: 90px;
+}
+.donations-notice-box {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 28px 32px;
+  border-radius: 12px;
+  background: rgba(255, 180, 80, 0.06);
+  border: 1px solid rgba(255, 180, 80, 0.25);
+}
+.donations-notice-icon {
+  font-size: 1.6rem;
+  color: #ffb450;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.donations-notice-title {
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  margin: 0 0 8px;
+  color: #ffb450;
+}
+.donations-notice-text {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  opacity: 0.8;
+  margin: 0;
+}
+@media (max-width: 600px) {
+  .donations-notice-box {
+    flex-direction: column;
+    text-align: center;
+  }
+  .donations-notice-icon {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .donations-hero-title {
+    font-size: 1.7rem;
+  }
+}
+
+
+/* ==========================================================================
+   GLOW UPDATE BATCH 8 — Custom contribution dual buttons
+   ========================================================================== */
+.donations-custom-btn-row {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.donations-custom-btn-row .donations-custom-btn {
+  margin-top: 0;
+  flex: 1 1 220px;
+  max-width: 280px;
+}
+.donations-custom-btn--sea {
+  background: #6fb3e8;
+  color: #06223a;
+  box-shadow: 0 8px 24px rgba(111,179,232,0.25);
+}
+.donations-custom-btn--sea:hover {
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(111,179,232,0.4);
+}
+@media (max-width: 480px) {
+  .donations-custom-btn-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .donations-custom-btn-row .donations-custom-btn {
+    width: 100%;
+    max-width: 320px;
   }
 }
 
