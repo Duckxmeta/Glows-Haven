@@ -4905,3 +4905,26 @@ body.nav-pages-open {
   }
 }
 
+
+/* ==========================================================================
+   GLOW UPDATE BATCH 9 — Bigger Sea Haven logos (archives, library, merch)
+   ========================================================================== */
+
+/* Homepage Haven Archives card */
+.archive-card--sea .archive-card-logo {
+  width: 84px;
+  height: 84px;
+}
+
+/* Library card */
+.archive-book-card--wide .book-cover-logo img[alt="Sea Haven"] {
+  width: 110px !important;
+  height: 110px !important;
+}
+
+/* Outfitters (merch) card */
+.merch-card-logo img[alt="Sea Haven"] {
+  width: 88px !important;
+  height: 88px !important;
+}
+
