@@ -5044,3 +5044,14 @@ body.nav-pages-open {
   margin: 0 auto;
   width: 100%;
 }
+
+/* ==========================================================================
+   DONATIONS — Wide inner wrapper (replaces contact-container 700px cap)
+   ========================================================================== */
+.donations-page-inner {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
