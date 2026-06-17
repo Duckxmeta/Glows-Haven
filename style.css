@@ -4713,9 +4713,11 @@ body.nav-pages-open {
 
 /* ---- Option sections ---- */
 .donations-option {
-  max-width: 1000px;
+  max-width: 960px;
   margin: 0 auto 80px;
   padding: 0 28px;
+  width: 100%;
+  box-sizing: border-box;
 }
 .donations-option-header {
   display: flex;
@@ -4765,7 +4767,11 @@ body.nav-pages-open {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
-  align-items: end;
+  align-items: stretch;
+  max-width: 920px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Base card */
@@ -4780,6 +4786,9 @@ body.nav-pages-open {
   border: 1px solid rgba(255,255,255,0.08);
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   transition: transform 0.35s cubic-bezier(0.165,0.84,0.44,1), box-shadow 0.35s ease, border-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 300px;
 }
 .donations-tier-card:hover {
   transform: translateY(-7px);
@@ -4894,7 +4903,7 @@ body.nav-pages-open {
 }
 
 @media (max-width: 820px) {
-  .donations-tier-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; align-items: stretch; }
+  .donations-tier-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
 }
 
 /* ---- Custom contribution ---- */
@@ -4902,6 +4911,8 @@ body.nav-pages-open {
   max-width: 620px;
   margin: 0 auto;
   padding: 48px 44px;
+  width: 100%;
+  box-sizing: border-box;
   border-radius: 18px;
   background: linear-gradient(145deg, rgba(232,213,176,0.07), rgba(8,16,30,0.88));
   border: 1px solid rgba(232,213,176,0.2);
@@ -5011,55 +5022,25 @@ body.nav-pages-open {
 
 
 /* ==========================================================================
-   GLOW FIX — Center option sections, tier grids, custom card
+   DONATIONS — Final centering fix (clean, no duplicates)
    ========================================================================== */
 
-/* Option sections — force center regardless of contact-container width */
-.donations-option {
-  max-width: 960px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Option header panel — centered & constrained */
-.donations-option-header {
-  max-width: 920px;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-/* Tier grid — centered with consistent max-width for BOTH sections */
-.donations-tier-grid {
-  max-width: 920px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Each card equal width — Sea Haven matches Haven */
-.donations-tier-card {
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Custom contribution card — centered */
-.donations-custom {
+/* Custom contribution section — center the card */
+.donations-custom .contact-container {
   display: flex;
   justify-content: center;
-  padding-left: 28px;
-  padding-right: 28px;
-}
-.donations-custom .contact-container {
   width: 100%;
-  max-width: 680px;
-}
-.donations-custom-card {
-  margin-left: auto !important;
-  margin-right: auto !important;
-  width: 100%;
-  box-sizing: border-box;
 }
 
+/* Tier desc — same min-height forces equal card height across both sections */
+.donations-tier-desc {
+  min-height: 72px;
+}
+
+/* Ensure Haven and Sea Haven grids are identical width/centering */
+.donations-option--haven .donations-tier-grid,
+.donations-option--sea .donations-tier-grid {
+  max-width: 920px;
+  margin: 0 auto;
+  width: 100%;
+}
