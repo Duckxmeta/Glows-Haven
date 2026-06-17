@@ -5009,3 +5009,57 @@ body.nav-pages-open {
   height: 88px !important;
 }
 
+
+/* ==========================================================================
+   GLOW FIX — Center option sections, tier grids, custom card
+   ========================================================================== */
+
+/* Option sections — force center regardless of contact-container width */
+.donations-option {
+  max-width: 960px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Option header panel — centered & constrained */
+.donations-option-header {
+  max-width: 920px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Tier grid — centered with consistent max-width for BOTH sections */
+.donations-tier-grid {
+  max-width: 920px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Each card equal width — Sea Haven matches Haven */
+.donations-tier-card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Custom contribution card — centered */
+.donations-custom {
+  display: flex;
+  justify-content: center;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+.donations-custom .contact-container {
+  width: 100%;
+  max-width: 680px;
+}
+.donations-custom-card {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 100%;
+  box-sizing: border-box;
+}
+
