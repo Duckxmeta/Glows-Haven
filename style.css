@@ -5340,3 +5340,40 @@ body.nav-pages-open {
   }
 }
 
+/* ==========================================================================
+   FIX: Library card button text overflow
+   ========================================================================== */
+
+/* Ensure the download button never overflows its card bounds */
+.archive-book-card--wide .btn-download-pdf {
+  white-space: normal !important;
+  word-break: break-word !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  
+  /* Enough padding so text breathes inside the pill */
+  padding: 14px 18px !important;
+  
+  /* Full width minus side gutters so it never escapes the card */
+  width: calc(100% - 24px) !important;
+  max-width: 240px !important;
+  
+  /* Center it */
+  margin: 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+  
+  /* Lock minimum height so short text and 2-line text cards match */
+  min-height: 52px;
+  
+  /* Allow button height to grow with text */
+  height: auto !important;
+  
+  /* Keep font readable */
+  font-size: 0.72rem !important;
+  letter-spacing: 1.5px !important;
+  line-height: 1.4 !important;
+}
