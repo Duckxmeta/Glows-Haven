@@ -5055,3 +5055,73 @@ body.nav-pages-open {
   padding: 0 24px;
   box-sizing: border-box;
 }
+
+/* ==========================================================================
+   GLOW UPDATE BATCH 10
+   ========================================================================== */
+
+/* ---- Task 2: Library cards — equal height, buttons on same horizontal line ---- */
+.library-grid-row {
+  align-items: stretch !important;
+}
+.archive-book-card--wide {
+  display: flex !important;
+  flex-direction: column !important;
+}
+.archive-book-card--wide .book-cover-wrapper {
+  flex-shrink: 0;
+}
+.archive-book-card--wide .book-info-block {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+.archive-book-card--wide .book-info-block p.montserrat-text {
+  flex: 1;
+}
+.archive-book-card--wide .btn-download-pdf {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ---- Task 4: Bigger sea haven logo in whitepaper section header ---- */
+.whitepaper-section-logo--sea {
+  width: 100px !important;
+  height: 100px !important;
+}
+
+/* ---- Task 6: Adopt a Guardian disclaimer ---- */
+.adopt-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 32px;
+  padding: 18px 24px;
+  border-radius: 10px;
+  background: rgba(72, 123, 166, 0.08);
+  border: 1px solid rgba(72, 123, 166, 0.3);
+  text-align: left;
+}
+.adopt-disclaimer-icon {
+  font-size: 1.1rem;
+  color: #6fb3e8;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.adopt-disclaimer-text {
+  font-size: 0.82rem !important;
+  line-height: 1.65 !important;
+  color: rgba(180, 210, 235, 0.8) !important;
+  margin: 0 !important;
+  opacity: 1 !important;
+}
+.adopt-disclaimer-text strong {
+  color: #8fc4ee;
+  font-weight: 700;
+}
+
