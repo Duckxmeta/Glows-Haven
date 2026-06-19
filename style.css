@@ -5409,3 +5409,24 @@ body.nav-pages-open {
   margin: 0 auto !important;
   align-self: center !important;
 }
+
+/* ==========================================================================
+   LIBRARY BUTTON — FINAL centering fix
+   inline-flex ignores margin:auto — must use flex on parent to center
+   ========================================================================== */
+.library-grid-row .archive-book-card--wide .book-info-block {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+.library-grid-row .archive-book-card--wide .btn-download-pdf {
+  display: flex !important;        /* NOT inline-flex */
+  width: fit-content !important;
+  min-width: 180px !important;
+  max-width: calc(100% - 48px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  align-self: center !important;
+  white-space: nowrap !important;
+}
