@@ -5060,34 +5060,7 @@ body.nav-pages-open {
    GLOW UPDATE BATCH 10
    ========================================================================== */
 
-/* ---- Task 2: Library cards — equal height, buttons on same horizontal line ---- */
-.library-grid-row {
-  align-items: stretch !important;
-}
-.archive-book-card--wide {
-  display: flex !important;
-  flex-direction: column !important;
-}
-.archive-book-card--wide .book-cover-wrapper {
-  flex-shrink: 0;
-}
-.archive-book-card--wide .book-info-block {
-  flex: 1 !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: space-between !important;
-}
-.archive-book-card--wide .book-info-block p.montserrat-text {
-  flex: 1;
-}
-.archive-book-card--wide .btn-download-pdf {
-  margin-top: auto;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  box-sizing: border-box;
-}
+
 
 /* ---- Task 4: Bigger sea haven logo in whitepaper section header ---- */
 .whitepaper-section-logo--sea {
@@ -5229,6 +5202,126 @@ body.nav-pages-open {
     width: 100% !important;
     max-width: 420px !important;
     grid-template-rows: auto auto 1fr auto !important;
+  }
+}
+
+
+/* ==========================================================================
+   LIBRARY CARDS — Clean aligned layout (no overlap, buttons centered)
+   ========================================================================== */
+
+/* Row: horizontal, equal height cards */
+.library-grid-row {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+  gap: 24px !important;
+  max-width: 1100px !important;
+  margin: 0 auto 40px !important;
+}
+
+/* Card: flex column so button sticks to bottom */
+.archive-book-card--wide {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  max-width: 340px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  padding: 32px 24px 28px !important;
+  box-sizing: border-box !important;
+}
+
+/* Logo zone — fixed height so all logos sit at same level */
+.archive-book-card--wide .book-cover-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 110px;
+  flex-shrink: 0;
+}
+.archive-book-card--wide .book-cover--no-spine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  min-height: unset;
+  gap: 0;
+}
+.archive-book-card--wide .book-cover-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+/* Title zone — fixed height so all titles sit at same level */
+.archive-book-card--wide .book-title-block {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-shrink: 0;
+  margin-top: 14px;
+}
+.archive-book-card--wide .book-title-block h3 {
+  margin: 0 0 4px;
+  text-align: center;
+}
+.archive-book-card--wide .book-title-block span {
+  font-size: 0.84rem;
+  opacity: 0.7;
+  text-align: center;
+}
+
+/* Info block — fills remaining space, focus text top-aligned */
+.archive-book-card--wide .book-info-block {
+  width: 100%;
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  margin-top: 20px !important;
+  padding: 0 8px !important;
+}
+.archive-book-card--wide .book-info-block p.montserrat-text {
+  flex: 1;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px !important;
+  min-height: unset !important;
+}
+
+/* Button — full width, centered, padded from card edges */
+.archive-book-card--wide .btn-download-pdf {
+  width: 100% !important;
+  max-width: 260px;
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto !important;
+  flex-shrink: 0;
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 820px) {
+  .library-grid-row {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .archive-book-card--wide {
+    width: 100% !important;
+    max-width: 400px !important;
   }
 }
 
