@@ -5235,14 +5235,15 @@ body.nav-pages-open {
   box-sizing: border-box !important;
 }
 
-/* Logo zone — fixed height so all logos sit at same level */
+/* Logo zone — fixed 120px so all logos sit at same horizontal level */
 .archive-book-card--wide .book-cover-wrapper {
   width: 100%;
+  height: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 110px;
   flex-shrink: 0;
+  margin-bottom: 24px;
 }
 .archive-book-card--wide .book-cover--no-spine {
   display: flex;
@@ -5260,29 +5261,40 @@ body.nav-pages-open {
   margin: 0;
 }
 
-/* Title zone — fixed height so all titles sit at same level */
+/* Title zone — fixed 72px: h3 only, subtitle hidden so titles align perfectly */
 .archive-book-card--wide .book-title-block {
   width: 100%;
-  height: 80px;
+  height: 72px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   flex-shrink: 0;
-  margin-top: 14px;
+  margin-bottom: 20px;
 }
 .archive-book-card--wide .book-title-block h3 {
-  margin: 0 0 4px;
+  margin: 0;
   text-align: center;
+  font-size: 1.05rem;
+  letter-spacing: 2.5px;
 }
+/* Hide subtitle (Master Whitepaper / Strategy & Governance etc) — it breaks alignment */
 .archive-book-card--wide .book-title-block span {
-  font-size: 0.84rem;
-  opacity: 0.7;
-  text-align: center;
+  display: none;
 }
 
-/* Info block — fills remaining space, focus text top-aligned */
+/* Separator line between title and focus text */
+.archive-book-card--wide .book-title-block::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: rgba(232,213,176,0.3);
+  margin: 10px auto 0;
+}
+
+/* Info block — flex:1 so it fills remaining space, focus text top-aligned */
 .archive-book-card--wide .book-info-block {
   width: 100%;
   flex: 1 !important;
@@ -5290,27 +5302,30 @@ body.nav-pages-open {
   flex-direction: column !important;
   align-items: center !important;
   justify-content: flex-start !important;
-  margin-top: 20px !important;
-  padding: 0 8px !important;
+  margin-top: 0 !important;
+  padding: 0 12px !important;
 }
 .archive-book-card--wide .book-info-block p.montserrat-text {
   flex: 1;
   width: 100%;
   text-align: center;
-  margin-bottom: 20px !important;
+  font-size: 0.92rem;
+  line-height: 1.75;
+  margin-bottom: 28px !important;
   min-height: unset !important;
 }
 
-/* Button — full width, centered, padded from card edges */
+/* Button — centered, never touches card edges */
 .archive-book-card--wide .btn-download-pdf {
-  width: 100% !important;
-  max-width: 260px;
+  width: calc(100% - 24px) !important;
+  max-width: 240px;
   box-sizing: border-box !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   margin: 0 auto !important;
   flex-shrink: 0;
+  padding: 14px 20px !important;
 }
 
 /* Mobile: stack vertically */
