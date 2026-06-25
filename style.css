@@ -1520,7 +1520,7 @@ body.donate-modal-open {
 }
 
 /* ==========================================================================
- XIII. SPOKE PAGES: HAVEN, WINGS DAO, SEA HAVEN
+ XIII. SPOKE PAGES: HAVEN, WINGS GUILD, SEA HAVEN
  ========================================================================== */
 .spoke-page {
  padding-top: 120px;
@@ -2320,7 +2320,7 @@ body.donate-modal-open {
  border-bottom-color: var(--page-card-border);
 }
 
-/* Wings DAO palette */
+/* Wings Guild palette */
 .page-theme-wings {
  --page-bg: #120818;
  --page-bg-deep: #0a0510;
@@ -2948,7 +2948,7 @@ body p, body li, body h1, body h2, body h3, body h4, body a, body span, body but
  z-index: 2;
 }
 
-/* Wings DAO — golden hall glow */
+/* Wings Guild — golden hall glow */
 .animated-page-bg--wings .animated-page-bg__layer--image {
  background: url('assets/wings-dao-bg.jpg') center center / cover no-repeat;
  animation: wings-bg-glow 9s ease-in-out infinite, wings-bg-zoom 22s ease-in-out infinite alternate;
@@ -3033,7 +3033,7 @@ body p, body li, body h1, body h2, body h3, body h4, body a, body span, body but
  opacity: 0.92;
 }
 
-/* Wings DAO cards */
+/* Wings Guild cards */
 .page-theme-wings .surface-card--wings-blue {
  background: linear-gradient(155deg, rgba(0, 100, 180, 0.35), rgba(12, 28, 58, 0.94)) !important;
  border-color: rgba(0, 180, 255, 0.38) !important;
@@ -3370,7 +3370,7 @@ body p, body li, body h1, body h2, body h3, body h4, body a, body span, body but
   background: rgba(255,255,255,0.38) !important;
 }
 
-/* VIVO bar / Wings DAO path line — dim, not white */
+/* VIVO bar / Wings Guild path line — dim, not white */
 .vivo-path--wings .vivo-bar {
   background: linear-gradient(90deg, rgba(30, 80, 140, 0.35), rgba(30, 80, 140, 0.75)) !important;
   opacity: 0.65;
@@ -3471,7 +3471,7 @@ body p, body li, body h1, body h2, body h3, body h4, body a, body span, body but
 }
 
 /* ------------------------------------------------------------------ 
-   TASK 5: Wings DAO page — footer white text
+   TASK 5: Wings Guild page — footer white text
    ------------------------------------------------------------------ */
 .page-theme-wings .site-footer {
   color: #fff !important;
@@ -3490,12 +3490,12 @@ body p, body li, body h1, body h2, body h3, body h4, body a, body span, body but
 }
 
 /* ------------------------------------------------------------------ 
-   TASK 5: Wings DAO logo — switch to WingsDaonobg
+   TASK 5: Wings Guild logo — switch to WingsDaonobg
    ------------------------------------------------------------------ */
 /* Applied via strategy-hub.html HTML change */
 
 /* ------------------------------------------------------------------ 
-   TASK 5: Wings DAO animated background improvements
+   TASK 5: Wings Guild animated background improvements
    ------------------------------------------------------------------ */
 .animated-page-bg--wings .animated-page-bg__layer--image {
   animation: wings-bg-glow-enhanced 8s ease-in-out infinite, wings-bg-zoom-enhanced 20s ease-in-out infinite alternate !important;
