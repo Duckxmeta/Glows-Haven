@@ -993,6 +993,28 @@ body.donate-modal-open {
  border-color: var(--silver-accent);
  background: rgba(255, 255, 255, 0.06);
 }
+.contact-info-note {
+ display: flex;
+ align-items: flex-start;
+ gap: 12px;
+ background: rgba(72, 201, 176, 0.06);
+ border: 1px solid rgba(72, 201, 176, 0.25);
+ border-radius: 8px;
+ padding: 14px 18px;
+ margin-top: 4px;
+}
+.contact-info-note i {
+ color: var(--aurora-green);
+ font-size: 1rem;
+ margin-top: 3px;
+ flex-shrink: 0;
+}
+.contact-info-note .text-checkbox-label {
+ margin: 0;
+ font-size: 0.88rem;
+ line-height: 1.6;
+ opacity: 0.85;
+}
 .premium-form-btn {
  background: transparent;
  border: 1px solid var(--white);
@@ -5444,4 +5466,80 @@ body.nav-pages-open {
   margin-right: auto !important;
   align-self: center !important;
   white-space: nowrap !important;
+}
+
+/* ==========================================================================
+   MERCH COMING SOON PAGE
+   ========================================================================== */
+.merch-soon-main {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 160px 20px 80px;
+  position: relative;
+}
+.merch-soon-stage {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.merch-soon-bf {
+  position: absolute;
+}
+.merch-soon-bf svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  animation: bf-wingflap 2.4s ease-in-out infinite alternate;
+}
+.merch-soon-card-wrap {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.merch-soon-card {
+  position: relative;
+  max-width: 560px;
+  width: 100%;
+  text-align: center;
+  padding: 56px 44px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.merch-soon-icon {
+  width: 84px;
+  height: 84px;
+  object-fit: contain;
+  margin-bottom: 18px;
+  animation: emblem-float 4.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 18px rgba(232, 213, 176, 0.35));
+}
+.merch-soon-headline {
+  font-size: 2.1rem;
+  letter-spacing: 3px;
+  margin: 6px 0 0;
+  color: var(--white);
+}
+.merch-soon-copy {
+  font-size: 0.98rem;
+  line-height: 1.85;
+  opacity: 0.8;
+  max-width: 420px;
+  margin: 0 auto 32px;
+}
+.merch-soon-btn {
+  display: inline-block;
+}
+@media (max-width: 720px) {
+  .merch-soon-stage { min-height: 380px; }
+  .merch-soon-card { padding: 44px 28px 36px; }
+  .merch-soon-headline { font-size: 1.6rem; letter-spacing: 2px; }
 }
