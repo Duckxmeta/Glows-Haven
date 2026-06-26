@@ -2009,6 +2009,21 @@ body.donate-modal-open {
  box-shadow: 0 0 24px rgba(72, 201, 176, 0.2);
  color: var(--aurora-green);
 }
+.visual-media {
+ display: block;
+ margin: 0 auto 16px;
+ max-width: 240px;
+ width: 100%;
+ height: auto;
+ aspect-ratio: 1 / 1;
+ object-fit: cover;
+ border-radius: 12px;
+ border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.visual-media.is-glow {
+ border-color: rgba(72, 201, 176, 0.45);
+ box-shadow: 0 0 24px rgba(72, 201, 176, 0.25);
+}
 .slider-control {
  display: block;
  margin-top: 24px;
