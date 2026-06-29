@@ -27,8 +27,8 @@
     <meta name="twitter:image" content="https://glowshaven.com/assets/GlowsHaven1.png">
 
     <!-- SEO: Favicon -->
-    <link rel="icon" type="image/png" href="/assets/GlowsHavenlogonobg.png">
-    <link rel="apple-touch-icon" href="/assets/GlowsHavenlogonobg.png">
+    <link rel="icon" type="image/png" href="assets/GlowsHavenlogonobg.png">
+    <link rel="apple-touch-icon" href="assets/GlowsHavenlogonobg.png">
 
     <!-- SEO: Schema.org JSON-LD -->
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Sea Haven","parentOrganization":{"@type":"Organization","name":"Glow's Haven LLC"},"description":"Sea Haven is Glow's Haven's ocean conservation project, funding marine rescue and educational literacy programs."}</script>
@@ -94,7 +94,7 @@
             <div class="glass-frame sea-section-card surface-card surface-card--sea-deep text-block-centered">
                 <p class="montserrat-text card-label">Before &amp; After</p>
                 <div class="before-after-slider" id="speciesSlider">
-                    <div class="before-after-slider-track">
+                    <div class="before-after-slider-track" id="speciesTrack">
                         <div class="before-after-panel is-past">
                             <span class="panel-tag">The Past</span>
                             <img src="assets/sea-haven-2d-collection-art.png" alt="Original 2D Sea Haven turtle collection art" class="visual-media visual-media--image">
@@ -105,6 +105,10 @@
                             <video class="visual-media visual-media--video is-glow" src="assets/sea-haven-3d-cinematic.mp4" autoplay loop muted playsinline aria-label="3D cinematic model of Sea Haven character"></video>
                             <p class="montserrat-text">The high fidelity 3D cinematic models for Sea Haven.</p>
                         </div>
+                    </div>
+                    <div class="swipe-dots" id="speciesSwipeDots" aria-hidden="true">
+                        <span class="is-active" data-panel="past"></span>
+                        <span data-panel="future"></span>
                     </div>
                     <label class="slider-control" for="speciesRange">
                         <span class="montserrat-text slider-hint">Drag to compare legacy and evolution</span>
@@ -121,6 +125,13 @@
                 <h3 class="cinzel-header card-headline">Meet Our Current Rescue</h3>
                 <div class="accent-line card-accent"></div>
                 <p class="montserrat-text card-label">Featured Steward: <strong>Marina</strong> · Green Sea Turtle</p>
+
+                <div class="adopt-disclaimer adopt-disclaimer--top">
+                    <i class="fa-solid fa-circle-info adopt-disclaimer-icon" aria-hidden="true"></i>
+                    <p class="montserrat-text adopt-disclaimer-text">
+                        <strong>Disclaimer:</strong> This is a preview of the experience. Full access to tracking, status reports, and rescue journey updates for your specific animal will be available upon donation and program selection.
+                    </p>
+                </div>
 
                 <div class="rescue-gallery">
                     <div class="rescue-visual-slot">
@@ -158,13 +169,6 @@
                 </div>
 
                 <p class="montserrat-text card-copy impact-statement">Through our Proof of Impact portal, your involvement translates directly into life saving care. Meet Marina, our currently sponsored rescue. Every holder is a steward of their journey back to the wild.</p>
-
-                <div class="adopt-disclaimer">
-                    <i class="fa-solid fa-circle-info adopt-disclaimer-icon" aria-hidden="true"></i>
-                    <p class="montserrat-text adopt-disclaimer-text">
-                        <strong>Disclaimer:</strong> This is a preview of the experience. Full access to tracking, status reports, and rescue journey updates for your specific animal will be available upon donation and program selection.
-                    </p>
-                </div>
             </div>
         </section>
 
