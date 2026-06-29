@@ -27,8 +27,8 @@
     <meta name="twitter:image" content="https://glowshaven.com/assets/GlowsHaven1.png">
 
     <!-- SEO: Favicon -->
-    <link rel="icon" type="image/png" href="/assets/GlowsHavenlogonobg.png">
-    <link rel="apple-touch-icon" href="/assets/GlowsHavenlogonobg.png">
+    <link rel="icon" type="image/png" href="assets/GlowsHavenlogonobg.png">
+    <link rel="apple-touch-icon" href="assets/GlowsHavenlogonobg.png">
 
     <!-- SEO: Schema.org JSON-LD -->
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"ContactPage","name":"Contact Glow's Haven","description":"Contact page and donation gateway for Glow's Haven LLC sanctuary fund."}</script>
@@ -79,7 +79,10 @@
                 </p>
             </div>
 
-            <form id="haven-contact-form" action="/submit-contact" method="POST">
+            <form id="haven-contact-form" action="https://formsubmit.co/glowshaven81@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="New message from Glow's Haven Contact page">
+                <input type="hidden" name="_template" value="box">
+                <input type="hidden" name="_captcha" value="false">
                 
                 <div class="form-group">
                     <label for="name" class="cinzel-label">How should we address you?</label>
