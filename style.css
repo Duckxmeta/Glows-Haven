@@ -2051,6 +2051,9 @@ body.donate-modal-open {
  margin-top: 24px;
  padding: 0 8px;
 }
+.swipe-dots {
+ display: none;
+}
 .slider-hint {
  display: block;
  font-size: 0.75rem;
@@ -2261,12 +2264,66 @@ body.donate-modal-open {
  border-top: 1px solid rgba(72, 201, 176, 0.2);
  }
  .before-after-slider-track {
- grid-template-columns: 1fr;
- min-height: auto;
+ grid-template-columns: none !important;
+ display: flex;
+ position: relative;
+ min-height: 260px;
+ overflow: hidden;
+ touch-action: pan-y;
+ cursor: grab;
+ }
+ .before-after-panel {
+ position: absolute;
+ inset: 0;
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ transition: transform 0.35s ease, opacity 0.35s ease;
  }
  .before-after-panel.is-future {
  border-left: none;
- border-top: 1px solid rgba(72, 201, 176, 0.2);
+ border-top: none;
+ }
+ /* Mobile swipe state: only one panel visible, swipe to switch */
+ .before-after-slider-track.show-future .before-after-panel.is-past {
+ transform: translateX(-100%);
+ position: absolute;
+ opacity: 0;
+ pointer-events: none;
+ }
+ .before-after-slider-track.show-future .before-after-panel.is-future {
+ transform: translateX(0);
+ }
+ .before-after-slider-track:not(.show-future) .before-after-panel.is-future {
+ transform: translateX(100%);
+ position: absolute;
+ opacity: 0;
+ pointer-events: none;
+ }
+ .before-after-slider-track:not(.show-future) .before-after-panel.is-past {
+ transform: translateX(0);
+ }
+ .swipe-dots {
+ display: flex;
+ justify-content: center;
+ gap: 8px;
+ margin-top: 14px;
+ }
+ .swipe-dots span {
+ width: 7px;
+ height: 7px;
+ border-radius: 50%;
+ background: rgba(255, 255, 255, 0.25);
+ transition: background 0.25s ease, transform 0.25s ease;
+ }
+ .swipe-dots span.is-active {
+ background: var(--aurora-green);
+ transform: scale(1.2);
+ }
+ /* Hide the legacy range slider on mobile; swipe replaces it */
+ .before-after-slider .slider-control {
+ display: none;
  }
  .rescue-gallery {
  grid-template-columns: 1fr;
@@ -5117,6 +5174,10 @@ body.nav-pages-open {
   border: 1px solid rgba(72, 123, 166, 0.3);
   text-align: left;
 }
+.adopt-disclaimer--top {
+  margin-top: 20px;
+  margin-bottom: 32px;
+}
 .adopt-disclaimer-icon {
   font-size: 1.1rem;
   color: #6fb3e8;
@@ -5542,4 +5603,137 @@ body.nav-pages-open {
   .merch-soon-stage { min-height: 380px; }
   .merch-soon-card { padding: 44px 28px 36px; }
   .merch-soon-headline { font-size: 1.6rem; letter-spacing: 2px; }
+}
+
+/* ==========================================================================
+   MERCH / OUTFITTERS PAGE — MOBILE COMPACT FIX
+   Keeps all text/elements within the viewport on small screens.
+   Scoped to .merch-page so desktop and other pages are unaffected.
+   ========================================================================== */
+@media (max-width: 600px) {
+  .merch-page {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    padding-top: 110px !important;
+  }
+  .merch-page .contact-container {
+    max-width: 100%;
+  }
+  .merch-page h1.cinzel-header {
+    font-size: 1.6rem !important;
+    letter-spacing: 2px !important;
+    line-height: 1.35;
+  }
+  .merch-page .la-belle-accent {
+    font-size: 1.1rem !important;
+  }
+  .merch-page > .contact-container > .centered-text {
+    margin-bottom: 36px !important;
+  }
+  .merch-page p.montserrat-text {
+    font-size: 0.85rem !important;
+    max-width: 100% !important;
+    padding: 0 4px;
+  }
+  .merch-grid-row--wider {
+    grid-template-columns: 1fr !important;
+    max-width: 100% !important;
+    width: 100%;
+    gap: 18px !important;
+    margin: 0 0 32px !important;
+  }
+  .merch-card--wider {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100%;
+    padding: 26px 20px 24px !important;
+    min-height: auto;
+  }
+  .merch-card--wider h2.cinzel-header {
+    font-size: 1.15rem !important;
+    letter-spacing: 1px !important;
+  }
+  .merch-card--wider p.montserrat-text {
+    font-size: 0.85rem !important;
+    margin-bottom: 22px !important;
+    padding: 0;
+  }
+  .merch-card-logo img {
+    width: 48px !important;
+    height: 48px !important;
+  }
+  .merch-explore-btn {
+    font-size: 0.78rem !important;
+    padding: 12px 18px !important;
+    letter-spacing: 1px !important;
+    white-space: nowrap;
+  }
+}
+@media (max-width: 380px) {
+  .merch-page h1.cinzel-header {
+    font-size: 1.35rem !important;
+    letter-spacing: 1px !important;
+  }
+  .merch-card--wider {
+    padding: 22px 16px 20px !important;
+  }
+}
+
+/* ==========================================================================
+   CONTACT PAGE FIXES
+   ========================================================================== */
+/* Fix: native <select> was unstyled and could overflow its form card */
+.select-wrapper {
+  position: relative;
+  width: 100%;
+}
+.select-wrapper select {
+  width: 100%;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 16px 40px 16px 16px;
+  color: var(--white);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: var(--transition-standard);
+  cursor: pointer;
+}
+.select-wrapper select:focus {
+  border-color: var(--silver-accent);
+  background: rgba(255, 255, 255, 0.06);
+}
+.select-wrapper select option {
+  background: var(--sanctuary-blue);
+  color: var(--white);
+}
+.select-wrapper::after {
+  content: '\f078';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  color: var(--silver-accent);
+  pointer-events: none;
+}
+
+/* Fix: "Donate to the Sanctuary Fund" wrapping onto two lines inside the card */
+.standard-glow-btn {
+  white-space: nowrap;
+  display: inline-block;
+  padding: 16px 30px;
+}
+@media (max-width: 480px) {
+  .standard-glow-btn {
+    padding: 14px 18px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
 }
