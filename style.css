@@ -1491,6 +1491,18 @@ body.donate-modal-open {
  padding: 10px 18px;
  letter-spacing: 1px;
  }
+ .donation-footer-block {
+ padding: 60px 16px;
+ }
+ .silver-bordered-box {
+ padding: 32px 16px;
+ }
+ .standard-glow-btn {
+ padding: 13px 14px;
+ font-size: 9px;
+ letter-spacing: 0.5px;
+ max-width: 100%;
+ }
  .digital-shelf {
  grid-template-columns: 1fr;
  }
@@ -2267,8 +2279,9 @@ body.donate-modal-open {
  grid-template-columns: none !important;
  display: flex;
  position: relative;
- min-height: 260px;
- overflow: hidden;
+ min-height: 380px;
+ overflow-x: hidden;
+ overflow-y: visible;
  touch-action: pan-y;
  cursor: grab;
  }
@@ -2276,9 +2289,14 @@ body.donate-modal-open {
  position: absolute;
  inset: 0;
  width: 100%;
+ height: 100%;
  display: flex;
  flex-direction: column;
  justify-content: center;
+ align-items: center;
+ padding: 24px 20px;
+ box-sizing: border-box;
+ overflow-y: auto;
  transition: transform 0.35s ease, opacity 0.35s ease;
  }
  .before-after-panel.is-future {
@@ -2309,6 +2327,19 @@ body.donate-modal-open {
  justify-content: center;
  gap: 8px;
  margin-top: 14px;
+ }
+ .before-after-panel .visual-media {
+ max-width: 170px;
+ margin-bottom: 12px;
+ }
+ .before-after-panel .panel-tag {
+ margin-bottom: 10px;
+ }
+ .before-after-panel p.montserrat-text {
+ font-size: 0.85rem;
+ line-height: 1.5;
+ margin: 0;
+ max-width: 260px;
  }
  .swipe-dots span {
  width: 7px;
@@ -5729,11 +5760,9 @@ body.nav-pages-open {
   white-space: nowrap;
   display: inline-block;
   padding: 16px 30px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
-@media (max-width: 480px) {
-  .standard-glow-btn {
-    padding: 14px 18px;
-    font-size: 10px;
-    letter-spacing: 1.5px;
-  }
-}
+/* Mobile-specific sizing lives in the @media (max-width: 480px) block above,
+   alongside .silver-bordered-box / .donation-footer-block padding adjustments,
+   so all three scale down together and the button never overflows its card. */
