@@ -197,6 +197,79 @@
     update();
 })();
 
+(function initSpeciesSwipe() {
+    var track = document.getElementById('speciesTrack');
+    var dotsWrap = document.getElementById('speciesSwipeDots');
+    if (!track || !dotsWrap) return;
+
+    var dots = dotsWrap.querySelectorAll('span');
+    var mobileQuery = window.matchMedia('(max-width: 768px)');
+    var startX = 0;
+    var startY = 0;
+    var tracking = false;
+    var showingFuture = false;
+
+    function isMobile() {
+        return mobileQuery.matches;
+    }
+
+    function setPanel(toFuture) {
+        showingFuture = toFuture;
+        track.classList.toggle('show-future', showingFuture);
+        dots.forEach(function (dot) {
+            var isActive = (dot.getAttribute('data-panel') === 'future') === showingFuture;
+            dot.classList.toggle('is-active', isActive);
+        });
+    }
+
+    function onPointerDown(e) {
+        if (!isMobile()) return;
+        var point = e.touches ? e.touches[0] : e;
+        startX = point.clientX;
+        startY = point.clientY;
+        tracking = true;
+    }
+
+    function onPointerUp(e) {
+        if (!isMobile() || !tracking) return;
+        tracking = false;
+        var point = e.changedTouches ? e.changedTouches[0] : e;
+        var dx = point.clientX - startX;
+        var dy = point.clientY - startY;
+
+        // Ignore mostly-vertical gestures so page scroll still works.
+        if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
+
+        if (dx < 0) {
+            // Swiped left -> reveal "The Future"
+            setPanel(true);
+        } else {
+            // Swiped right -> reveal "The Past"
+            setPanel(false);
+        }
+    }
+
+    track.addEventListener('touchstart', onPointerDown, { passive: true });
+    track.addEventListener('touchend', onPointerUp, { passive: true });
+
+    // Allow tapping the dots directly as a fallback to swiping.
+    dots.forEach(function (dot) {
+        dot.addEventListener('click', function () {
+            if (!isMobile()) return;
+            setPanel(dot.getAttribute('data-panel') === 'future');
+        });
+    });
+
+    // Reset to the default (past) panel when crossing the mobile breakpoint,
+    // so desktop view is never left in a "hidden panel" state.
+    mobileQuery.addEventListener('change', function () {
+        track.classList.remove('show-future');
+        setPanel(false);
+    });
+
+    setPanel(false);
+})();
+
 (function initRescueMap() {
     var mapEl = document.getElementById('rescueMap');
     if (!mapEl || typeof L === 'undefined') return;
