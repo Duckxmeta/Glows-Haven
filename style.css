@@ -5766,3 +5766,28 @@ body.nav-pages-open {
 /* Mobile-specific sizing lives in the @media (max-width: 480px) block above,
    alongside .silver-bordered-box / .donation-footer-block padding adjustments,
    so all three scale down together and the button never overflows its card. */
+
+/* ------------------------------------------------------------------
+   FIX 6: Sanctuary (The Haven) hamburger menu — belt-and-suspenders.
+   Forces the nav overlay panel to always render fully opaque and on
+   top of the animated background, regardless of page theme.
+   ------------------------------------------------------------------ */
+.page-theme-haven .nav-pages-overlay,
+.page-has-animated-bg .nav-pages-overlay {
+  z-index: 2147483647 !important;
+}
+.page-theme-haven .nav-pages-panel,
+.page-has-animated-bg .nav-pages-panel {
+  background: rgb(10, 22, 40) !important;
+  opacity: 1 !important;
+}
+.page-theme-haven .nav-pages-backdrop,
+.page-has-animated-bg .nav-pages-backdrop {
+  z-index: 1 !important;
+}
+.page-theme-haven .nav-more-toggle,
+.page-has-animated-bg .nav-more-toggle {
+  position: relative;
+  z-index: 10060;
+  pointer-events: auto !important;
+}
