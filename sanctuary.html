@@ -36,6 +36,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;700&family=La+Belle+Aurore&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=20260605">
     <script src="https://kit.fontawesome.com/48c9b0a619.js" crossorigin="anonymous"></script>
+    <style>
+        /* Inline, cache-proof guarantee that the nav overlay panel renders on this page.
+           Lives directly in the HTML so it can never be served from a stale CSS cache. */
+        #navPagesOverlay {
+            position: fixed !important;
+            inset: 0 !important;
+            z-index: 2147483647 !important;
+            display: flex !important;
+            align-items: flex-start !important;
+            justify-content: center !important;
+            padding: 88px 24px 32px !important;
+            overflow-y: auto !important;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.35s ease, visibility 0.35s ease;
+        }
+        #navPagesOverlay.is-open {
+            opacity: 1 !important;
+            visibility: visible !important;
+            pointer-events: auto !important;
+        }
+        #navPagesBackdrop {
+            position: absolute !important;
+            inset: 0 !important;
+            z-index: 1 !important;
+            background: rgba(5, 16, 31, 0.55) !important;
+            backdrop-filter: blur(14px) !important;
+            -webkit-backdrop-filter: blur(14px) !important;
+        }
+        #navPagesOverlay .nav-pages-panel {
+            position: relative !important;
+            z-index: 2 !important;
+            width: min(420px, 92vw) !important;
+            max-height: min(78vh, 640px) !important;
+            margin: auto 0 !important;
+            padding: 48px 40px 40px !important;
+            background: rgb(10, 22, 40) !important;
+            opacity: 1 !important;
+            border: 1px solid rgba(213, 216, 220, 0.28) !important;
+            border-radius: 16px !important;
+            box-shadow: 0 32px 80px rgba(0, 0, 0, 0.55) !important;
+            overflow-y: auto !important;
+            display: block !important;
+            visibility: visible !important;
+        }
+        #navMoreToggle {
+            position: relative !important;
+            z-index: 10060 !important;
+            pointer-events: auto !important;
+            cursor: pointer !important;
+        }
+    </style>
 </head>
 <body class="sanctuary-blue-bg page-theme-haven page-has-animated-bg">
 
@@ -228,5 +281,41 @@
 </div>
 
 <script src="site.js?v=20260605"></script>
+<script>
+    /* Inline fallback: guarantees the hamburger menu works on this page
+       even if site.js fails to load or execute for any reason. */
+    document.addEventListener('DOMContentLoaded', function () {
+        var toggle = document.getElementById('navMoreToggle');
+        var overlay = document.getElementById('navPagesOverlay');
+        var closeBtn = document.getElementById('navPagesClose');
+        var backdrop = document.getElementById('navPagesBackdrop');
+        if (!toggle || !overlay) return;
+
+        function isOpen() {
+            return overlay.classList.contains('is-open');
+        }
+        function open() {
+            overlay.classList.add('is-open');
+            overlay.setAttribute('aria-hidden', 'false');
+            toggle.setAttribute('aria-expanded', 'true');
+            document.body.classList.add('nav-pages-open');
+        }
+        function close() {
+            overlay.classList.remove('is-open');
+            overlay.setAttribute('aria-hidden', 'true');
+            toggle.setAttribute('aria-expanded', 'false');
+            document.body.classList.remove('nav-pages-open');
+        }
+
+        toggle.addEventListener('click', function (e) {
+            e.stopPropagation();
+            isOpen() ? close() : open();
+        });
+        if (closeBtn) closeBtn.addEventListener('click', close);
+        if (backdrop) backdrop.addEventListener('click', function (e) {
+            if (e.target === backdrop) close();
+        });
+    });
+</script>
 </body>
 </html>
