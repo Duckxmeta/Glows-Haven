@@ -2093,13 +2093,17 @@ body.donate-modal-open {
  display: grid;
  grid-template-columns: repeat(3, 1fr);
  gap: 16px;
- margin: 32px auto;
- max-width: 720px;
+ margin: 28px auto 36px;
+ max-width: 860px;
+ align-items: stretch;
+}
+.rescue-gallery--balanced {
+ grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.85fr) minmax(0, 0.85fr);
 }
 .rescue-visual-slot {
  padding: 24px 16px;
  border: 1px solid rgba(72, 201, 176, 0.2);
- border-radius: 8px;
+ border-radius: 10px;
  background: rgba(0, 0, 0, 0.25);
  min-height: 140px;
  display: flex;
@@ -2119,9 +2123,9 @@ body.donate-modal-open {
 }
 .rescue-visual-slot--link:hover,
 .rescue-visual-slot--link:focus-visible {
- border-color: rgba(72, 201, 176, 0.55);
- box-shadow: 0 0 24px rgba(72, 201, 176, 0.22);
- transform: translateY(-3px);
+ border-color: rgba(72, 201, 176, 0.6);
+ box-shadow: 0 0 28px rgba(72, 201, 176, 0.25);
+ transform: translateY(-4px);
  outline: none;
 }
 .rescue-visual-slot--featured {
@@ -2134,13 +2138,37 @@ body.donate-modal-open {
  aspect-ratio: 4 / 3;
  object-fit: cover;
 }
-.rescue-visual-title {
- margin: 14px 16px 0;
- line-height: 1.45;
+.rescue-visual-body {
+ width: 100%;
+ padding: 16px 18px 20px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 10px;
  text-align: center;
 }
+.rescue-visual-title {
+ margin: 0;
+ line-height: 1.45;
+}
 .rescue-visual-slot--link .slot-note {
- margin: 0 16px 16px;
+ margin: 0;
+}
+.rescue-visual-cta {
+ display: inline-block;
+ margin-top: 4px;
+ padding: 10px 22px !important;
+ font-size: 0.72rem !important;
+ letter-spacing: 1.5px;
+ text-transform: uppercase;
+ pointer-events: none;
+ border-color: rgba(72, 201, 176, 0.55) !important;
+ box-shadow: 0 0 18px rgba(72, 201, 176, 0.2);
+}
+.rescue-visual-slot--link:hover .rescue-visual-cta,
+.rescue-visual-slot--link:focus-visible .rescue-visual-cta {
+ border-color: var(--aurora-green) !important;
+ box-shadow: 0 0 24px rgba(72, 201, 176, 0.35);
 }
 .rescue-turtle-name {
  font-weight: 700;
@@ -2169,7 +2197,26 @@ body.donate-modal-open {
 }
 .rescue-visual-slot--soon {
  justify-content: center;
- min-height: 180px;
+ min-height: 200px;
+}
+.rescue-details-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 20px;
+ margin: 0 auto 8px;
+ max-width: 860px;
+ align-items: stretch;
+}
+.rescue-details-grid .rescue-tracking-block,
+.rescue-details-grid .status-reports {
+ margin: 0;
+ max-width: none;
+ height: 100%;
+}
+.rescue-details-grid .status-reports {
+ display: flex;
+ flex-direction: column;
+ justify-content: flex-start;
 }
 .visual-label {
  font-family: 'Cinzel', serif;
@@ -2185,6 +2232,11 @@ body.donate-modal-open {
 .rescue-tracking-block {
  margin: 40px auto 28px;
  max-width: 720px;
+ padding: 24px 20px;
+ border: 1px solid rgba(72, 201, 176, 0.18);
+ border-radius: 10px;
+ background: rgba(0, 0, 0, 0.18);
+ text-align: center;
 }
 .luna-migration-stats {
  display: grid;
@@ -2194,7 +2246,8 @@ body.donate-modal-open {
  max-width: 640px;
 }
 .luna-migration-stats--compact {
- margin-top: 16px;
+ margin-top: 12px;
+ margin-bottom: 18px;
 }
 .luna-stat {
  padding: 14px 12px;
@@ -2216,31 +2269,15 @@ body.donate-modal-open {
  font-size: 0.95rem;
  line-height: 1.35;
 }
-.rescue-map-embed-wrap {
- width: 100%;
- margin-top: 18px;
- border-radius: 10px;
- border: 1px solid rgba(72, 201, 176, 0.35);
- overflow: hidden;
- background: rgba(0, 0, 0, 0.35);
- min-height: 360px;
-}
-.rescue-map-embed {
- width: 100%;
- height: 420px;
- border: 0;
- display: block;
- background: #0a1628;
-}
 .rescue-map-external {
  display: inline-block;
- margin-top: 18px;
+ margin-top: 4px;
 }
 .stc-attribution {
- margin-top: 14px;
- font-size: 0.75rem;
- opacity: 0.7;
- line-height: 1.6;
+ margin-top: 12px;
+ font-size: 0.72rem;
+ opacity: 0.65;
+ line-height: 1.5;
 }
 .stc-attribution a {
  color: var(--aurora-green);
@@ -2573,19 +2610,20 @@ body.donate-modal-open {
  .before-after-slider .slider-control {
  display: none;
  }
- .rescue-gallery {
+ .rescue-gallery,
+ .rescue-gallery--balanced {
  grid-template-columns: 1fr;
- max-width: 320px;
+ max-width: 360px;
  }
- .luna-migration-stats,
+ .rescue-details-grid {
+ grid-template-columns: 1fr;
+ max-width: 360px;
+ }
  .luna-gallery-grid {
  grid-template-columns: 1fr;
  }
- .rescue-map-embed {
- height: 320px;
- }
- .rescue-map-embed-wrap {
- min-height: 320px;
+ .luna-migration-stats {
+ grid-template-columns: 1fr;
  }
  .sea-section-card {
  padding: 36px 22px 40px;
