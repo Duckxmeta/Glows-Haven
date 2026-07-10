@@ -40,8 +40,7 @@
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Sea Haven","parentOrganization":{"@type":"Organization","name":"Glow's Haven LLC"},"description":"Sea Haven is Glow's Haven's ocean conservation project, funding marine rescue and educational literacy programs."}</script>
     <title>Sea Haven | 3D NFT Ocean Conservation on Solana | Glow's Haven LLC</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;700&family=La+Belle+Aurore&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
-    <link rel="stylesheet" href="style.css?v=202606301">
+    <link rel="stylesheet" href="style.css?v=202607101">
     <script src="https://kit.fontawesome.com/48c9b0a619.js" crossorigin="anonymous"></script>
 </head>
 <body class="sea-haven-theme page-theme-sea page-has-animated-bg">
@@ -130,51 +129,77 @@
             <div class="glass-frame sea-section-card surface-card surface-card--sea-light text-block-centered">
                 <h3 class="cinzel-header card-headline">Meet Our Current Rescue</h3>
                 <div class="accent-line card-accent"></div>
-                <p class="montserrat-text card-label">Featured Steward: <strong>Marina</strong> · Green Sea Turtle</p>
-
-                <div class="adopt-disclaimer adopt-disclaimer--top">
-                    <i class="fa-solid fa-circle-info adopt-disclaimer-icon" aria-hidden="true"></i>
-                    <p class="montserrat-text adopt-disclaimer-text">
-                        <strong>Disclaimer:</strong> This is a preview of the experience. Full access to tracking, status reports, and rescue journey updates for your specific animal will be available upon donation and program selection.
-                    </p>
-                </div>
+                <p class="montserrat-text card-label">Featured Guardian: <strong class="rescue-turtle-name">Luna</strong> <span class="rescue-turtle-species">· Leatherback Sea Turtle</span></p>
 
                 <div class="rescue-gallery">
-                    <div class="rescue-visual-slot">
-                        <span class="visual-label">Visual 1</span>
-                        <p class="montserrat-text slot-note">Rescue intake · Rehabilitation bay</p>
-                    </div>
-                    <div class="rescue-visual-slot">
-                        <span class="visual-label">Visual 2</span>
+                    <a href="luna.html" class="rescue-visual-slot rescue-visual-slot--link rescue-visual-slot--featured">
+                        <img src="assets/luna-leatherback-rescue.png" alt="Luna, leatherback sea turtle with satellite tracker" class="rescue-visual-image" width="400" height="300" loading="lazy">
+                        <p class="rescue-visual-title montserrat-text">
+                            <strong class="rescue-turtle-name">Luna</strong>
+                            <span class="rescue-turtle-species">the Leatherback Sea Turtle</span>
+                        </p>
+                        <p class="montserrat-text slot-note">Soropta Beach, Panama · Tour de Turtles 2026</p>
+                    </a>
+                    <div class="rescue-visual-slot rescue-visual-slot--soon">
+                        <span class="coming-soon-badge">Coming Soon</span>
                         <p class="montserrat-text slot-note">Clinical care · Recovery timeline</p>
                     </div>
-                    <div class="rescue-visual-slot">
-                        <span class="visual-label">Visual 3</span>
+                    <div class="rescue-visual-slot rescue-visual-slot--soon">
+                        <span class="coming-soon-badge">Coming Soon</span>
                         <p class="montserrat-text slot-note">Release prep · Open water horizon</p>
                     </div>
                 </div>
 
                 <div class="rescue-tracking-block">
-                    <h4 class="cinzel-header card-subhead">Active Tracking Map</h4>
-                    <p class="montserrat-text card-label">GPS migration · Gulf Coast corridor</p>
-                    <div id="rescueMap" class="rescue-map" role="img" aria-label="Migration map for Marina the green sea turtle along the Gulf Coast"></div>
-                    <div class="map-legend montserrat-text">
-                        <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Last ping: Gulf Coast</span>
-                        <span><i class="fa-solid fa-route" aria-hidden="true"></i> Route updates every 6 hours</span>
+                    <h4 class="cinzel-header card-subhead">Live Migration Tracker</h4>
+                    <p class="montserrat-text card-label">Sea Turtle Conservancy · Tour de Turtles 2026</p>
+                    <div class="luna-migration-stats luna-migration-stats--compact">
+                        <div class="luna-stat">
+                            <span class="luna-stat-label montserrat-text">Last Location Date</span>
+                            <span class="luna-stat-value cinzel-header">July 09, 2026</span>
+                        </div>
+                        <div class="luna-stat">
+                            <span class="luna-stat-label montserrat-text">Distance Traveled</span>
+                            <span class="luna-stat-value cinzel-header">3,505 km</span>
+                        </div>
+                        <div class="luna-stat">
+                            <span class="luna-stat-label montserrat-text">Time Tracked</span>
+                            <span class="luna-stat-value cinzel-header">59 days</span>
+                        </div>
+                        <div class="luna-stat">
+                            <span class="luna-stat-label montserrat-text">Nesting Site</span>
+                            <span class="luna-stat-value cinzel-header">Soropta Beach, Panama</span>
+                        </div>
                     </div>
+                    <div class="rescue-map-embed-wrap">
+                        <iframe
+                            class="rescue-map-embed"
+                            title="Luna leatherback sea turtle migration map on Sea Turtle Conservancy"
+                            src="https://conserveturtles.org/turtle/luna-2026/"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                        ></iframe>
+                    </div>
+                    <div class="map-legend montserrat-text">
+                        <span><i class="fa-solid fa-satellite-dish" aria-hidden="true"></i> Satellite updates from STC</span>
+                        <span><i class="fa-solid fa-route" aria-hidden="true"></i> 3,505 km cumulative migration</span>
+                    </div>
+                    <a href="https://conserveturtles.org/turtle/luna-2026/" class="glass-button card-cta-btn rescue-map-external" target="_blank" rel="noopener noreferrer">Open Full Migration Map</a>
+                    <p class="montserrat-text stc-attribution">Tracking data and migration map courtesy of <a href="https://conserveturtles.org/turtle/luna-2026/" target="_blank" rel="noopener noreferrer">Sea Turtle Conservancy</a>.</p>
                 </div>
 
                 <div class="status-reports glass-frame">
                     <h4 class="cinzel-header card-subhead">Status Reports</h4>
                     <ul class="montserrat-text status-list">
-                        <li><strong>Current Status:</strong> Recovering / Healthy</li>
-                        <li><strong>Last Sighting:</strong> Gulf Coast</li>
-                        <li><strong>Care Phase:</strong> Pre release conditioning</li>
+                        <li><strong>Species:</strong> Adult female leatherback</li>
+                        <li><strong>Program:</strong> Tour de Turtles 2026</li>
+                        <li><strong>Last Location:</strong> July 09, 2026</li>
+                        <li><strong>Migration Leg:</strong> Trans Alps Adventure</li>
                         <li><strong>Steward Tier:</strong> Reef Protector eligible</li>
                     </ul>
                 </div>
 
-                <p class="montserrat-text card-copy impact-statement">Through our Proof of Impact portal, your involvement translates directly into life saving care. Meet Marina, our currently sponsored rescue. Every holder is a steward of their journey back to the wild.</p>
+                <p class="montserrat-text card-copy impact-statement">Through our Proof of Impact portal, your involvement translates directly into life saving care. Meet Luna, our currently sponsored rescue. Every holder is a steward of her journey across the open ocean.</p>
             </div>
         </section>
 
@@ -315,7 +340,6 @@
     </nav>
 </div>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-<script src="site.js?v=202606301"></script>
+<script src="site.js?v=202607101"></script>
 </body>
 </html>
