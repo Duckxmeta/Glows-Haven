@@ -18,14 +18,14 @@
 })();
 
 (function initNavPagesOverlay() {
-    var toggle = document.getElementById('navMoreToggle');
-    var overlay = document.getElementById('navPagesOverlay');
-    var backdrop = document.getElementById('navPagesBackdrop');
-    var closeBtn = document.getElementById('navPagesClose');
-    var wrap = document.querySelector('.nav-more-wrap');
-    var menu = document.getElementById('navMoreMenu');
+    const toggle = document.getElementById('navMoreToggle');
+    const overlay = document.getElementById('navPagesOverlay');
+    const backdrop = document.getElementById('navPagesBackdrop');
+    const closeBtn = document.getElementById('navPagesClose');
+    const wrap = document.querySelector('.nav-more-wrap');
+    const menu = document.getElementById('navMoreMenu');
 
-    if (!toggle || !overlay) return;
+    if (!toggle || !overlay || !menu) return;
 
     function openOverlay() {
         overlay.classList.add('is-open');
@@ -33,8 +33,6 @@
         toggle.setAttribute('aria-expanded', 'true');
         if (wrap) wrap.classList.add('is-open');
         document.body.classList.add('nav-pages-open');
-        /* Allow the panel itself to scroll, not the body */
-        overlay.scrollTop = 0;
     }
 
     function closeOverlay() {
@@ -56,14 +54,7 @@
         }
     });
 
-    /* Backdrop closes menu */
-    if (backdrop) backdrop.addEventListener('click', function(e) {
-        /* Only close if clicking the actual backdrop, not the panel */
-        if (e.target === backdrop || e.target === overlay) {
-            closeOverlay();
-        }
-    });
-
+    if (backdrop) backdrop.addEventListener('click', closeOverlay);
     if (closeBtn) closeBtn.addEventListener('click', closeOverlay);
 
     document.addEventListener('keydown', function (e) {
@@ -73,29 +64,13 @@
     });
 
     var path = window.location.pathname.split('/').pop() || 'index.html';
-    if (menu) {
-        menu.querySelectorAll('a').forEach(function (link) {
-            /* Mark current page */
-            var href = link.getAttribute('href');
-            if (href && (href === path || href.split('#')[0] === path)) {
-                link.classList.add('is-current');
-            }
-            /* Do NOT auto-close on link click — let navigation happen naturally */
-            /* Only close for anchor links on same page */
-            link.addEventListener('click', function () {
-                var href = link.getAttribute('href') || '';
-                var isAnchor = href.startsWith('#') ||
-                    (href.split('#')[0] === path && href.includes('#'));
-                if (isAnchor) {
-                    closeOverlay();
-                }
-                /* For page navigation links, close after brief delay so the overlay hides cleanly */
-                else {
-                    setTimeout(closeOverlay, 80);
-                }
-            });
-        });
-    }
+    menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', closeOverlay);
+        var href = link.getAttribute('href');
+        if (href && (href === path || href.split('#')[0] === path)) {
+            link.classList.add('is-current');
+        }
+    });
 })();
 
 (function initDonateModal() {
@@ -195,79 +170,6 @@
 
     range.addEventListener('input', update);
     update();
-})();
-
-(function initSpeciesSwipe() {
-    var track = document.getElementById('speciesTrack');
-    var dotsWrap = document.getElementById('speciesSwipeDots');
-    if (!track || !dotsWrap) return;
-
-    var dots = dotsWrap.querySelectorAll('span');
-    var mobileQuery = window.matchMedia('(max-width: 768px)');
-    var startX = 0;
-    var startY = 0;
-    var tracking = false;
-    var showingFuture = false;
-
-    function isMobile() {
-        return mobileQuery.matches;
-    }
-
-    function setPanel(toFuture) {
-        showingFuture = toFuture;
-        track.classList.toggle('show-future', showingFuture);
-        dots.forEach(function (dot) {
-            var isActive = (dot.getAttribute('data-panel') === 'future') === showingFuture;
-            dot.classList.toggle('is-active', isActive);
-        });
-    }
-
-    function onPointerDown(e) {
-        if (!isMobile()) return;
-        var point = e.touches ? e.touches[0] : e;
-        startX = point.clientX;
-        startY = point.clientY;
-        tracking = true;
-    }
-
-    function onPointerUp(e) {
-        if (!isMobile() || !tracking) return;
-        tracking = false;
-        var point = e.changedTouches ? e.changedTouches[0] : e;
-        var dx = point.clientX - startX;
-        var dy = point.clientY - startY;
-
-        // Ignore mostly-vertical gestures so page scroll still works.
-        if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
-
-        if (dx < 0) {
-            // Swiped left -> reveal "The Future"
-            setPanel(true);
-        } else {
-            // Swiped right -> reveal "The Past"
-            setPanel(false);
-        }
-    }
-
-    track.addEventListener('touchstart', onPointerDown, { passive: true });
-    track.addEventListener('touchend', onPointerUp, { passive: true });
-
-    // Allow tapping the dots directly as a fallback to swiping.
-    dots.forEach(function (dot) {
-        dot.addEventListener('click', function () {
-            if (!isMobile()) return;
-            setPanel(dot.getAttribute('data-panel') === 'future');
-        });
-    });
-
-    // Reset to the default (past) panel when crossing the mobile breakpoint,
-    // so desktop view is never left in a "hidden panel" state.
-    mobileQuery.addEventListener('change', function () {
-        track.classList.remove('show-future');
-        setPanel(false);
-    });
-
-    setPanel(false);
 })();
 
 (function initRescueMap() {
@@ -460,4 +362,133 @@
     scrollEl.addEventListener('scroll', updateFades, { passive: true });
     window.addEventListener('resize', updateFades);
     updateFades();
+})();
+
+(function initCommunitiesCarousel() {
+    var viewport = document.getElementById('communitiesViewport');
+    var track = document.getElementById('communitiesTrack');
+    var prevBtn = document.getElementById('communitiesPrev');
+    var nextBtn = document.getElementById('communitiesNext');
+    var dotsWrap = document.getElementById('communitiesDots');
+    if (!viewport || !track) return;
+
+    var slides = track.querySelectorAll('.communities-slide');
+    var dots = dotsWrap ? dotsWrap.querySelectorAll('.communities-dot') : [];
+    var total = slides.length;
+    var index = 0;
+    var startX = 0;
+    var currentX = 0;
+    var dragging = false;
+    var dragOffset = 0;
+
+    function clamp(i) {
+        if (i < 0) return total - 1;
+        if (i >= total) return 0;
+        return i;
+    }
+
+    function setActiveSlide(i) {
+        slides.forEach(function (slide, idx) {
+            slide.classList.toggle('is-active', idx === i);
+        });
+        dots.forEach(function (dot, idx) {
+            var active = idx === i;
+            dot.classList.toggle('is-active', active);
+            dot.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+    }
+
+    function goTo(i, animate) {
+        index = clamp(i);
+        var pct = index * 100;
+        if (animate === false) {
+            track.classList.add('is-swiping');
+        } else {
+            track.classList.remove('is-swiping');
+        }
+        track.style.transform = 'translateX(-' + pct + '%)';
+        setActiveSlide(index);
+    }
+
+    function onDragStart(clientX) {
+        dragging = true;
+        startX = clientX;
+        currentX = clientX;
+        dragOffset = 0;
+        viewport.classList.add('is-dragging');
+        track.classList.add('is-swiping');
+    }
+
+    function onDragMove(clientX) {
+        if (!dragging) return;
+        currentX = clientX;
+        dragOffset = currentX - startX;
+        var width = viewport.offsetWidth || 1;
+        var base = -index * 100;
+        var dragPct = (dragOffset / width) * 100;
+        track.style.transform = 'translateX(' + (base + dragPct) + '%)';
+    }
+
+    function onDragEnd() {
+        if (!dragging) return;
+        dragging = false;
+        viewport.classList.remove('is-dragging');
+        track.classList.remove('is-swiping');
+        var threshold = (viewport.offsetWidth || 1) * 0.18;
+        if (dragOffset < -threshold) {
+            goTo(index + 1);
+        } else if (dragOffset > threshold) {
+            goTo(index - 1);
+        } else {
+            goTo(index);
+        }
+        dragOffset = 0;
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function () {
+            goTo(index - 1);
+        });
+    }
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function () {
+            goTo(index + 1);
+        });
+    }
+    dots.forEach(function (dot) {
+        dot.addEventListener('click', function () {
+            var i = parseInt(dot.getAttribute('data-index'), 10);
+            if (!isNaN(i)) goTo(i);
+        });
+    });
+
+    viewport.addEventListener('touchstart', function (e) {
+        if (e.touches.length === 1) onDragStart(e.touches[0].clientX);
+    }, { passive: true });
+    viewport.addEventListener('touchmove', function (e) {
+        if (e.touches.length === 1) onDragMove(e.touches[0].clientX);
+    }, { passive: true });
+    viewport.addEventListener('touchend', onDragEnd);
+    viewport.addEventListener('touchcancel', onDragEnd);
+
+    viewport.addEventListener('mousedown', function (e) {
+        if (e.button !== 0) return;
+        e.preventDefault();
+        onDragStart(e.clientX);
+    });
+    window.addEventListener('mousemove', function (e) {
+        if (dragging) onDragMove(e.clientX);
+    });
+    window.addEventListener('mouseup', onDragEnd);
+
+    document.addEventListener('keydown', function (e) {
+        if (!document.body.classList.contains('communities-page')) return;
+        if (e.key === 'ArrowLeft') goTo(index - 1);
+        if (e.key === 'ArrowRight') goTo(index + 1);
+    });
+
+    goTo(0);
+    window.addEventListener('resize', function () {
+        goTo(index, false);
+    });
 })();
