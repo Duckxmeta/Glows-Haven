@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communities &amp; Social | Glow's Haven</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;700&family=La+Belle+Aurore&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=20260606">
+    <script src="https://kit.fontawesome.com/48c9b0a619.js" crossorigin="anonymous"></script>
+</head>
+<body class="page-theme-haven communities-page">
+<div class="starfield-bg-container starfield-bg-container--subtle">
+    <img src="assets/starfield-dashboard.png" alt="" class="starfield-bg-img" aria-hidden="true">
+    <canvas class="dew-canvas" aria-hidden="true"></canvas>
+    <div class="starfield-bg-veil"></div>
+</div>
+<div class="communities-orbit" aria-hidden="true">
+    <span class="communities-orbit-icon o1"><i class="fab fa-discord"></i></span>
+    <span class="communities-orbit-icon o2"><i class="fab fa-x-twitter"></i></span>
+    <span class="communities-orbit-icon o3"><i class="fab fa-instagram"></i></span>
+    <span class="communities-orbit-icon o4"><i class="fab fa-facebook"></i></span>
+</div>
+
+<header class="site-header">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo-link">
+            <img src="assets/GlowsHavenlogonobg.png" alt="Glow's Haven Logo" class="nav-logo">
+        </a>
+        <nav class="nav-links-center" id="navigationMenu" aria-label="Main navigation">
+            <a href="sanctuary.html">The Haven</a>
+            <a href="strategy-hub.html">Wings DAO</a>
+            <a href="sea-haven.html">Sea Haven</a>
+            <a href="library.html">The Library</a>
+            <a href="merch.html">Outfitters</a>
+            <a href="communities.html">Communities</a>
+        </nav>
+        <div class="nav-more-wrap">
+            <button type="button" class="nav-more-toggle" id="navMoreToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navPagesOverlay">
+                <span class="nav-more-bar"></span>
+                <span class="nav-more-bar"></span>
+                <span class="nav-more-bar"></span>
+            </button>
+        </div>
+        <a href="contact.html#donate" class="btn-support-silver desktop-only-cta">Support the Sanctuary</a>
+    </div>
+</header>
+
+<main class="communities-main page-main-layer">
+    <section class="communities-hero centered-text">
+        <p class="nav-pages-eyebrow">Stay Connected</p>
+        <h1 class="cinzel-header">Communities &amp; Social</h1>
+        <div class="accent-line communities-hero-rule"></div>
+        <p class="montserrat-text communities-hero-lead">Swipe through our hubs — Discord, social channels, and NFT collections that fuel the Haven.</p>
+        <p class="communities-swipe-hint montserrat-text"><i class="fa-solid fa-hand-pointer" aria-hidden="true"></i> Swipe or use arrows to explore</p>
+    </section>
+
+    <section class="communities-carousel-wrap" aria-label="Community platforms carousel">
+        <button type="button" class="communities-carousel-btn communities-carousel-btn--prev" id="communitiesPrev" aria-label="Previous community group">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+
+        <div class="communities-carousel-viewport" id="communitiesViewport">
+            <div class="communities-carousel-track" id="communitiesTrack">
+
+                <article class="communities-slide surface-card communities-slide--haven" data-slide="0">
+                    <div class="communities-slide-glow" aria-hidden="true"></div>
+                    <header class="communities-slide-header">
+                        <span class="communities-slide-emoji" aria-hidden="true">🪽</span>
+                        <h2 class="cinzel-header">Glows Haven &amp; Communities</h2>
+                        <p class="montserrat-text communities-slide-tagline">Official channels &amp; wings of the ecosystem</p>
+                    </header>
+                    <ul class="communities-link-list">
+                        <li>
+                            <a href="https://discord.gg/thehaven" target="_blank" rel="noopener noreferrer" class="communities-link-card communities-link-card--discord">
+                                <span class="communities-link-icon"><i class="fab fa-discord" aria-hidden="true"></i></span>
+                                <span class="communities-link-text">
+                                    <span class="communities-link-label">Discord</span>
+                                    <span class="communities-link-name">The Haven</span>
+                                </span>
+                                <span class="communities-link-go" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://x.com/glowshaven" target="_blank" rel="noopener noreferrer" class="communities-link-card communities-link-card--x">
+                                <span class="communities-link-icon"><i class="fab fa-x-twitter" aria-hidden="true"></i></span>
+                                <span class="communities-link-text">
+                                    <span class="communities-link-label">X</span>
+                                    <span class="communities-link-name">GlowsHaven</span>
+                                </span>
+                                <span class="communities-link-go" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://x.com/seahavenlife" target="_blank" rel="noopener noreferrer" class="communities-link-card communities-link-card--x">
+                                <span class="communities-link-icon"><i class="fab fa-x-twitter" aria-hidden="true"></i></span>
+                                <span class="communities-link-text">
+                                    <span class="communities-link-label">X</span>
+                                    <span class="communities-link-name">Seahavenlife</span>
+                                </span>
+                                <span class="communities-link-go" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://x.com/wingsguild" target="_blank" rel="noopener noreferrer" class="communities-link-card communities-link-card--x">
+                                <span class="communities-link-icon"><i class="fab fa-x-twitter" aria-hidden="true"></i></span>
+                                <span class="communities-link-text">
+                                    <span class="communities-link-label">X</span>
+                                    <span class="communities-link-name">WingsGuild</span>
+                                </span>
+                                <span class="communities-link-go" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/JustFluttering" target="_blank" rel="noopener noreferrer" class="communities-link-card communities-link-card--facebook">
+                                <span class="communities-link-icon"><i class="fab fa-facebook" aria-hidden="true"></i></span>
+                                <span class="communities-link-text">
+                                    <span class="communities-link-label">Facebook</span>
+                                    <span class="communities-link-name">Glows Haven</span>
+                                </span>
+                                <span class="communities-link-go" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/glowshaven/" target="_blank" rel="noopener noreferrer" class="communities-link-card communities-link-card--instagram">
+                                <span class="communities-link-icon"><i class="fab fa-instagram" aria-hidden="true"></i></span>
+                                <span class="communities-link-text">
+                                    <span class="communities-link-label">Instagram</span>
+                                    <span class="communities-link-name">GlowsHaven</span>
+                                </span>
+                                <span class="communities-link-go" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                            </a>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="communities-slide surface-card communities-slide--turtle" data-slide="1">
+                    <div class="communities-slide-glow" aria-hidden="true"></div>
+                    <header class="communities-slide-header">
+                        <span class="communities-slide-emoji" aria-hidden="true">🐢</span>
+                        <h2 class="cinzel-header">Turtles on Sol (CTO)</h2>
+                        <p class="montserrat-text communities-slide-tagline">Community takeover · Sea Haven legacy</p>
+                    </header>
+                    <ul class="communities-link-list">
+                        <li>
+                            <a href="https://magiceden.io/marketplace/turtlesonsol" target="_blank" rel="noopener noreferrer" class="communities-link-card communities-link-card--me">
+                                <span class="communities-link-icon"><i class="fa-solid fa-store" aria-hidden="true"></i></span>
+                                <span class="communities-link-text">
+                                    <span class="communities-link-label">Magic Eden</span>
+                                    <span class="communities-link-name">Turtles on Sol CTO</span>
+                                </span>
+                                <span class="communities-link-go" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                            </a>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="communities-slide surface-card communities-slide--baby" data-slide="2">
+                    <div class="communities-slide-glow" aria-hidden="true"></div>
+                    <header class="communities-slide-header">
+                        <span class="communities-slide-emoji" aria-hidden="true">🐢</span>
+                        <h2 class="cinzel-header">Baby Turtles</h2>
+                        <p class="montserrat-text communities-slide-tagline">The next generation of stewards</p>
+                    </header>
+                    <ul class="communities-link-list">
+                        <li>
+                            <a href="https://magiceden.io/marketplace/babyturtlesonsol" target="_blank" rel="noopener noreferrer" class="communities-link-card communities-link-card--me">
+                                <span class="communities-link-icon"><i class="fa-solid fa-store" aria-hidden="true"></i></span>
+                                <span class="communities-link-text">
+                                    <span class="communities-link-label">Magic Eden</span>
+                                    <span class="communities-link-name">Baby Turtles</span>
+                                </span>
+                                <span class="communities-link-go" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                            </a>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="communities-slide surface-card communities-slide--solstice" data-slide="3">
+                    <div class="communities-slide-glow" aria-hidden="true"></div>
+                    <header class="communities-slide-header">
+                        <span class="communities-slide-emoji" aria-hidden="true">🎄</span>
+                        <h2 class="cinzel-header">Solstice Spirits Collection</h2>
+                        <p class="montserrat-text communities-slide-tagline">Seasonal lore · Haven-funded art</p>
+                    </header>
+                    <ul class="communities-link-list">
+                        <li>
+                            <a href="https://launchmynft.io/sol/21615" target="_blank" rel="noopener noreferrer" class="communities-link-card communities-link-card--launch">
+                                <span class="communities-link-icon"><i class="fa-solid fa-rocket" aria-hidden="true"></i></span>
+                                <span class="communities-link-text">
+                                    <span class="communities-link-label">Launch My NFT</span>
+                                    <span class="communities-link-name">Solstice Spirits</span>
+                                </span>
+                                <span class="communities-link-go" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://magiceden.us/marketplace/solstice_spirits" target="_blank" rel="noopener noreferrer" class="communities-link-card communities-link-card--me">
+                                <span class="communities-link-icon"><i class="fa-solid fa-store" aria-hidden="true"></i></span>
+                                <span class="communities-link-text">
+                                    <span class="communities-link-label">Magic Eden</span>
+                                    <span class="communities-link-name">Solstice Spirits Marketplace</span>
+                                </span>
+                                <span class="communities-link-go" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                            </a>
+                        </li>
+                    </ul>
+                </article>
+
+            </div>
+        </div>
+
+        <button type="button" class="communities-carousel-btn communities-carousel-btn--next" id="communitiesNext" aria-label="Next community group">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
+
+        <div class="communities-dots" id="communitiesDots" role="tablist" aria-label="Community groups">
+            <button type="button" class="communities-dot is-active" role="tab" aria-selected="true" aria-label="Glows Haven and Communities" data-index="0"></button>
+            <button type="button" class="communities-dot" role="tab" aria-selected="false" aria-label="Turtles on Sol CTO" data-index="1"></button>
+            <button type="button" class="communities-dot" role="tab" aria-selected="false" aria-label="Baby Turtles" data-index="2"></button>
+            <button type="button" class="communities-dot" role="tab" aria-selected="false" aria-label="Solstice Spirits Collection" data-index="3"></button>
+        </div>
+    </section>
+
+    <p class="communities-funds-note la-belle-accent centered-text">
+        <em>All funds support Haven Projects</em>
+    </p>
+</main>
+
+<footer class="site-footer centered-text">
+    <div class="footer-content">
+        <p class="cinzel-header footer-tagline">Glow&#8217;s Haven LLC: Built in Web3. Rooted in Tennessee. Defined by Integrity.</p>
+        <p class="montserrat-text legal-links-row">
+            <a href="privacy.html">Privacy Policy</a>
+            <span class="footer-sep" aria-hidden="true">|</span>
+            <a href="disclaimers.html">Terms of Service</a>
+            <span class="footer-sep" aria-hidden="true">|</span>
+            <a href="contact.html">Contact</a>
+        </p>
+        <p class="small-print">&copy; 2026 Glow&#8217;s Haven LLC. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<div class="nav-pages-overlay" id="navPagesOverlay" aria-hidden="true">
+    <div class="nav-pages-backdrop" id="navPagesBackdrop"></div>
+    <nav class="nav-pages-panel" role="navigation" aria-label="Site menu">
+        <button type="button" class="nav-pages-close" id="navPagesClose" aria-label="Close menu"><span aria-hidden="true">&times;</span></button>
+        <p class="nav-pages-eyebrow">Navigate the Haven</p>
+        <ul class="nav-pages-list" id="navMoreMenu">
+            <li class="nav-pages-mobile-only"><a href="index.html">Home</a></li>
+            <li class="nav-pages-mobile-only"><a href="sanctuary.html">The Haven</a></li>
+            <li class="nav-pages-mobile-only"><a href="strategy-hub.html">Wings DAO</a></li>
+            <li class="nav-pages-mobile-only"><a href="sea-haven.html">Sea Haven</a></li>
+            <li class="nav-pages-mobile-only"><a href="library.html">The Library</a></li>
+            <li class="nav-pages-mobile-only"><a href="merch.html">Outfitters</a></li>
+            <li class="nav-pages-mobile-only"><a href="communities.html">Communities</a></li>
+            <li class="nav-pages-mobile-only nav-pages-support"><a href="contact.html#donate" class="nav-pages-support-link">Support the Sanctuary</a></li>
+            <li class="nav-pages-divider" aria-hidden="true"></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+
+<script src="site.js?v=20260606"></script>
+</body>
+</html>
