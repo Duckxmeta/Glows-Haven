@@ -3,44 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO: Primary Meta -->
-    <meta name="description" content="Reach Glow's Haven LLC — connect with Wings Guild for partnerships, the Tennessee Sanctuary for veteran outreach, or Sea Haven for ocean conservation. Together, we shine brighter.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://glowshaven.com/contact.html">
-
-    <!-- SEO: Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Contact & Support | Glow's Haven">
-    <meta property="og:description" content="Connect with Glow's Haven or support the sanctuary land fund. Together we shine brighter.">
-    <meta property="og:url" content="https://glowshaven.com/contact.html">
-    <meta property="og:site_name" content="Glow's Haven">
-    <meta property="og:image" content="https://glowshaven.com/assets/og-image.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:locale" content="en_US">
-
-    <!-- SEO: Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@GlowsHaven">
-    <meta name="twitter:title" content="Contact & Support | Glow's Haven">
-    <meta name="twitter:description" content="Connect with Glow's Haven or support the sanctuary land fund. Together we shine brighter.">
-    <meta name="twitter:image" content="https://glowshaven.com/assets/og-image.png">
-
-    <!-- SEO: Favicon -->
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest">
-    <meta name="theme-color" content="#0A1628">
-
-    <!-- SEO: Schema.org JSON-LD -->
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"ContactPage","name":"Contact Glow's Haven","description":"Contact page and donation gateway for Glow's Haven LLC sanctuary fund."}</script>
-    <title>Contact Glow's Haven LLC | Wings Guild Partnerships | Tennessee Sanctuary | Glow's Haven</title>
+    <title>Reach the Haven | Glow's Haven</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;700&family=La+Belle+Aurore&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=202606301">
+    <link rel="stylesheet" href="style.css?v=20260523">
 </head>
 <body class="page-theme-haven contact-page">
 <div class="starfield-bg-container starfield-bg-container--subtle">
@@ -56,10 +21,11 @@
         </a>
         <nav class="nav-links-center" id="navigationMenu" aria-label="Main navigation">
             <a href="sanctuary.html">The Haven</a>
-            <a href="strategy-hub.html">Wings Guild</a>
+            <a href="strategy-hub.html">Wings DAO</a>
             <a href="sea-haven.html">Sea Haven</a>
             <a href="library.html">The Library</a>
             <a href="merch.html">Outfitters</a>
+            <a href="communities.html">Communities</a>
         </nav>
         <div class="nav-more-wrap">
             <button type="button" class="nav-more-toggle" id="navMoreToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navPagesOverlay">
@@ -68,7 +34,7 @@
                 <span class="nav-more-bar"></span>
             </button>
         </div>
-        <a href="donations.html" class="btn-support-silver desktop-only-cta">Support the Sanctuary</a>
+        <a href="contact.html#donate" class="btn-support-silver desktop-only-cta">Support the Sanctuary</a>
     </div>
 </header>
 
@@ -76,19 +42,16 @@
         <div class="contact-container glass-frame surface-card surface-card--contact-form">
             
             <div class="centered-text">
-                <img src="assets/butterfly-logo.png" alt="Glow's Haven Icon" class="orb-icon-glow" style="width:120px;height:120px;object-fit:contain;">
+                <img src="assets/GlowsHavenLLCnobg.png" alt="Glow's Haven Icon" class="orb-icon-glow">
                 <h1 class="cinzel-header">Reach the Haven</h1>
                 <span class="la-belle-accent">We’ve been waiting for you.</span>
                 
                 <p class="montserrat-text contact-lead-in">
-                    "Whether you are a Veteran seeking a quiet harbor, a builder looking to collaborate with Wings Guild, or a community member inspired by the Morning Glow, your message is a valued thread in our web. Tell us how we can support your journey today."
+                    "Whether you are a Veteran seeking a quiet harbor, a builder looking to collaborate with Wings DAO, or a community member inspired by the Morning Glow, your message is a valued thread in our web. Tell us how we can support your journey today."
                 </p>
             </div>
 
-            <form id="haven-contact-form" action="https://formsubmit.co/glowshaven81@gmail.com" method="POST">
-                <input type="hidden" name="_subject" value="New message from Glow's Haven Contact page">
-                <input type="hidden" name="_template" value="box">
-                <input type="hidden" name="_captcha" value="false">
+            <form id="haven-contact-form" action="/submit-contact" method="POST">
                 
                 <div class="form-group">
                     <label for="name" class="cinzel-label">How should we address you?</label>
@@ -106,7 +69,7 @@
                         <select id="spoke-selection" name="spoke" required>
                             <option value="" disabled selected>Select a path...</option>
                             <option value="the-heart">The Heart (Glow’s Haven / Veteran & Mental Health Support)</option>
-                            <option value="the-engine">The Engine (Wings Guild / Professional Partnerships)</option>
+                            <option value="the-engine">The Engine (Wings DAO / Professional Partnerships)</option>
                             <option value="the-legacy">The Legacy (Sea Haven / Conservation & Literacy)</option>
                             <option value="the-lore">The Lore (True Love / Transmedia & Storytelling)</option>
                             <option value="the-morning-glow">The Morning Glow (X Spaces & Daily Inspiration)</option>
@@ -119,11 +82,11 @@
                     <textarea id="message" name="message" rows="6" placeholder="Tell us your story, your idea, or simply say hello..." required></textarea>
                 </div>
 
-                <div class="form-group contact-info-note">
-                    <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
-                    <p class="montserrat-text text-checkbox-label">
-                        You&#8217;ll automatically receive information on land acquisition and donation opportunities along with our reply.
-                    </p>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="sanctuary-fund-interest" name="fundInterest">
+                    <label for="sanctuary-fund-interest" class="montserrat-text text-checkbox-label">
+                        Check here to receive information on land acquisition and donation opportunities.
+                    </label>
                 </div>
 
                 <button type="submit" class="premium-form-btn sanctuary-btn">Submit</button>
@@ -133,12 +96,12 @@
 
     <section id="donate" class="donation-footer-block centered-text">
         <div class="silver-bordered-box glass-frame surface-card surface-card--donation">
-            <img src="assets/butterfly-logo.png" alt="Glow's Haven Icon" class="donation-box-icon" style="width:120px;height:120px;object-fit:contain;">
+            <img src="assets/GlowsHavenLLCnobg.png" alt="Glow's Haven Icon" class="donation-box-icon">
             <h3 class="cinzel-header">Secure the Anchor</h3>
             <p class="montserrat-text">
                 "Every contribution to Glow's Haven LLC is a seed planted in Tennessee soil. Through our VIVO model, your donations directly fund the 40% Land Acquisition Fund for our public-facing veteran sanctuary and animal rescue. Help us build a legacy that lasts."
             </p>
-            <a href="donations.html" class="glass-button standard-glow-btn">Donate to the Sanctuary Fund</a>
+            <a href="#" class="glass-button standard-glow-btn">Donate to the Sanctuary Fund</a>
         </div>
     </section>
 
@@ -176,11 +139,12 @@
         <ul class="nav-pages-list" id="navMoreMenu">
             <li class="nav-pages-mobile-only"><a href="index.html">Home</a></li>
             <li class="nav-pages-mobile-only"><a href="sanctuary.html">The Haven</a></li>
-            <li class="nav-pages-mobile-only"><a href="strategy-hub.html">Wings Guild</a></li>
+            <li class="nav-pages-mobile-only"><a href="strategy-hub.html">Wings DAO</a></li>
             <li class="nav-pages-mobile-only"><a href="sea-haven.html">Sea Haven</a></li>
             <li class="nav-pages-mobile-only"><a href="library.html">The Library</a></li>
             <li class="nav-pages-mobile-only"><a href="merch.html">Outfitters</a></li>
-            <li class="nav-pages-mobile-only nav-pages-support"><a href="donations.html" class="nav-pages-support-link">Support the Sanctuary</a></li>
+            <li class="nav-pages-mobile-only"><a href="communities.html">Communities</a></li>
+            <li class="nav-pages-mobile-only nav-pages-support"><a href="contact.html#donate" class="nav-pages-support-link">Support the Sanctuary</a></li>
             <li class="nav-pages-divider" aria-hidden="true"></li>
             <li><a href="team.html">Team</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -188,7 +152,6 @@
     </nav>
 </div>
 
-<script src="https://kit.fontawesome.com/48c9b0a619.js" crossorigin="anonymous"></script>
-<script src="site.js?v=202606301"></script>
+<script src="site.js?v=20260523"></script>
 </body>
 </html>
