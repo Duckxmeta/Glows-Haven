@@ -6153,6 +6153,7 @@ body.nav-pages-open {
  align-items: start;
  animation: communities-fade-up 0.8s ease-out 0.12s both;
 }
+.communities-grid-main,
 .communities-grid-side {
  display: flex;
  flex-direction: column;
@@ -6194,6 +6195,9 @@ body.nav-pages-open {
 }
 .communities-card--solstice .communities-card-glow {
  background: radial-gradient(circle at 50% 0%, rgba(200, 80, 60, 0.14), transparent 55%);
+}
+.communities-card--charities .communities-card-glow {
+ background: radial-gradient(circle at 50% 0%, rgba(126, 200, 232, 0.16), transparent 55%);
 }
 @keyframes communities-card-glow {
  0%, 100% { opacity: 0.6; }
@@ -6333,10 +6337,29 @@ body.nav-pages-open {
 }
 .communities-link-name {
  font-family: 'Cinzel', serif;
- font-size: 0.92rem;
+ font-size: 0.9rem;
  letter-spacing: 1px;
  font-weight: 700;
  color: var(--white);
+}
+.communities-link-blurb {
+ font-family: 'Montserrat', sans-serif;
+ font-size: 0.72rem;
+ line-height: 1.4;
+ color: rgba(255, 255, 255, 0.72);
+ margin-top: 2px;
+}
+.communities-link-icon--emoji {
+ font-size: 1.25rem;
+ line-height: 1;
+ background: rgba(126, 200, 232, 0.1);
+ border-color: rgba(126, 200, 232, 0.28);
+}
+.communities-link-card--charity {
+ align-items: flex-start;
+}
+.communities-link-card--charity .communities-link-icon {
+ margin-top: 1px;
 }
 .communities-link-go {
  flex-shrink: 0;
@@ -6362,6 +6385,7 @@ body.nav-pages-open {
  grid-template-columns: 1fr;
  gap: 14px;
  }
+ .communities-grid-main,
  .communities-grid-side {
  gap: 14px;
  }
