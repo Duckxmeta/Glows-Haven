@@ -6483,29 +6483,216 @@ a.archive-book-card--link .btn-download-pdf {
  min-height: 0 !important;
 }
 
-/* Outfitters — restore original 3-column card layout */
-body.page-theme-haven .merch-grid-row {
+/* Outfitters — wider balanced cards with logos */
+.merch-page .merch-main {
+ padding-top: 120px;
+ padding-bottom: 48px;
+}
+.merch-page .merch-container {
+ max-width: 1240px;
+ margin: 0 auto;
+}
+.merch-page .merch-hero {
+ margin-bottom: 36px;
+}
+.merch-page .merch-hero-title {
+ font-size: clamp(1.8rem, 3.5vw, 2.35rem);
+ letter-spacing: 3px;
+ margin-bottom: 8px;
+}
+.merch-page .merch-hero-accent {
+ color: var(--champagne);
+ font-size: 1.35rem;
+ display: block;
+}
+.merch-page .merch-hero-rule {
+ margin: 16px auto 0;
+}
+.merch-page .merch-hero-lead {
+ opacity: 0.82;
+ max-width: 620px;
+ margin: 16px auto 0;
+ font-size: 0.95rem;
+ line-height: 1.65;
+ color: rgba(255, 255, 255, 0.9);
+}
+body.merch-page .merch-grid-row--balanced,
+body.page-theme-haven .merch-grid-row--balanced {
  display: grid !important;
- grid-template-columns: repeat(3, 1fr) !important;
- gap: 32px !important;
- max-width: 1100px !important;
- margin: 0 auto 48px !important;
+ grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+ gap: 24px !important;
+ max-width: 1200px !important;
+ margin: 0 auto 24px !important;
  align-items: stretch !important;
  flex-wrap: unset !important;
 }
-body.page-theme-haven .merch-grid-row .merch-card {
- text-align: left !important;
- flex: unset !important;
+body.merch-page .merch-card--balanced,
+body.page-theme-haven .merch-card--balanced {
+ display: flex !important;
+ flex-direction: column !important;
+ align-items: center !important;
+ text-align: center !important;
+ gap: 0 !important;
+ padding: 28px 26px 24px !important;
+ min-height: 0 !important;
  max-width: none !important;
  min-width: 0 !important;
+ flex: unset !important;
 }
-body.page-theme-haven .merch-grid-row .merch-card h2 {
- text-align: left !important;
+.merch-card--balanced .merch-card-logo {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ margin: 0 0 14px;
+ height: 76px;
+}
+.merch-card--balanced .merch-card-logo img {
+ width: 72px;
+ height: 72px;
+ object-fit: contain;
+ filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.4));
+}
+.merch-card--balanced .merch-card-logo img[alt="Sea Haven"] {
+ width: 84px;
+ height: 84px;
+}
+.merch-card--balanced .merch-card-body {
+ width: 100%;
+ flex: 1;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+.merch-card--balanced .merch-card-title {
+ font-size: 1.35rem;
+ margin: 0 0 10px;
+ color: var(--white);
+ letter-spacing: 1.5px;
+ text-align: center !important;
+}
+.merch-card--balanced .merch-card-copy {
+ font-size: 0.92rem;
+ line-height: 1.65;
+ opacity: 0.86;
+ color: rgba(255, 255, 255, 0.9);
+ margin: 0 0 20px;
+ max-width: 34ch;
+}
+.merch-card--balanced .merch-card-cta {
+ display: inline-block;
+ font-size: 0.78rem;
+ letter-spacing: 1px;
+ padding: 12px 22px;
+ margin-top: auto;
 }
 @media (max-width: 960px) {
- body.page-theme-haven .merch-grid-row {
+ body.merch-page .merch-grid-row--balanced,
+ body.page-theme-haven .merch-grid-row--balanced {
  grid-template-columns: 1fr !important;
- max-width: 400px !important;
- gap: 28px !important;
+ max-width: 440px !important;
+ gap: 18px !important;
+ }
+ .merch-page .merch-main {
+ padding-top: 110px;
+ padding-bottom: 36px;
+ }
+ .merch-page .merch-hero {
+ margin-bottom: 28px;
+ }
+}
+
+/* Whitepaper readability — contrast & hierarchy */
+.whitepaper-page .whitepaper-jumpnav {
+ margin-bottom: 40px;
+ gap: 12px;
+}
+.whitepaper-page .whitepaper-jumplink {
+ color: rgba(255, 255, 255, 0.9);
+ background: rgba(255, 255, 255, 0.07);
+ border-color: rgba(232, 213, 176, 0.28);
+ font-size: 0.74rem;
+}
+.whitepaper-page .whitepaper-section {
+ max-width: 860px;
+ margin: 0 auto 56px;
+ border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.whitepaper-page .whitepaper-section-header {
+ padding: 28px 36px;
+}
+.whitepaper-page .whitepaper-section-header h2 {
+ font-size: clamp(1.25rem, 2.4vw, 1.55rem);
+ color: #ffffff !important;
+ text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+}
+.whitepaper-page .whitepaper-subtitle {
+ font-size: 0.9rem;
+ color: rgba(255, 255, 255, 0.78) !important;
+}
+.whitepaper-page .whitepaper-body {
+ background: rgba(10, 22, 40, 0.96);
+ padding: 36px 40px 40px;
+ font-size: 1.02rem;
+ line-height: 1.85;
+ color: rgba(236, 242, 250, 0.94);
+}
+.whitepaper-page .whitepaper-body p {
+ color: rgba(236, 242, 250, 0.92);
+ margin-bottom: 18px;
+ font-size: 1.02rem;
+ line-height: 1.85;
+}
+.whitepaper-page .whitepaper-h3 {
+ font-size: 1.05rem;
+ letter-spacing: 2px;
+ color: #f0d9a8;
+ margin: 36px 0 12px;
+ padding-bottom: 8px;
+ border-bottom: 1px solid rgba(240, 217, 168, 0.35);
+}
+.whitepaper-page .whitepaper-h3:first-child {
+ margin-top: 0;
+}
+.whitepaper-page .whitepaper-h4 {
+ font-size: 0.9rem;
+ letter-spacing: 1.5px;
+ color: #ffffff;
+ margin: 24px 0 8px;
+}
+.whitepaper-page .whitepaper-list li {
+ background: rgba(255, 255, 255, 0.045);
+ color: rgba(236, 242, 250, 0.92);
+ font-size: 0.98rem;
+ line-height: 1.7;
+ padding: 11px 14px 11px 30px;
+ margin-bottom: 8px;
+}
+.whitepaper-page .whitepaper-list li strong {
+ color: #ffffff;
+}
+.whitepaper-page .whitepaper-quote {
+ color: #f3e0b8;
+ background: rgba(232, 213, 176, 0.08);
+ border-left-color: #e8d5b0;
+ font-size: 1.05rem;
+ line-height: 1.7;
+}
+.whitepaper-page .vivo-allocation-label {
+ color: rgba(236, 242, 250, 0.88);
+}
+.whitepaper-page .centered-text h1 {
+ color: #ffffff;
+}
+.whitepaper-page .centered-text > .montserrat-text {
+ color: rgba(255, 255, 255, 0.85);
+ opacity: 1 !important;
+}
+@media (max-width: 700px) {
+ .whitepaper-page .whitepaper-body {
+ padding: 26px 20px 30px;
+ font-size: 0.98rem;
+ }
+ .whitepaper-page .whitepaper-section-header {
+ padding: 22px 20px;
  }
 }
